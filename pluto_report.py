@@ -15,6 +15,7 @@ from libs.deepdao.queries import (
     get_raw_dao_data,
     get_raw_dao_list,
     get_raw_token_metadata,
+    get_raw_top_holders,
 )
 
 from libs.snapshot.execution import get_proposals, get_votes
@@ -40,6 +41,7 @@ def get_historical_prices_per_date(
 
 
 async def get_dao_snapshot_data(raw_dao: dict, proposal_limit: int) -> dict[str, dict]:
+    print(f"Getting raw snapshot data for {raw_dao['daoName']}")
     raw_dao_id = raw_dao.get("organizationId")
     raw_dao_token_metadata = await get_raw_token_metadata(raw_dao_id)
     raw_dao_data = get_raw_dao_data(raw_dao_id)
@@ -89,6 +91,7 @@ async def get_dao_snapshot_data(raw_dao: dict, proposal_limit: int) -> dict[str,
             vote["proposal_scores_total"] = vote["proposal"]["scores_total"]
             vote["proposal_state"] = vote["proposal"]["state"]
             vote["proposal_space_name"] = vote["proposal"]["space"]["name"]
+            vote["organization_id"] = raw_dao_id
             vote["proposal_space_id"] = vote["proposal"]["space"]["id"]
             vote["cost"] = vote["vp"] * vote_price if vote_price else 0
             vote["cost_per_vote"] = vote_price if vote_price else 0
@@ -128,12 +131,13 @@ def get_snapshot_dataframe(dao_snapshot_vote_data: list[dict]) -> pd.DataFrame:
     return pd.DataFrame(
         dao_snapshot_vote_data,
         index=index,
-    ).drop(["voter", "id"], axis=1)
+    )
 
 
 def get_all_snapshot_dataframes_for_dao(
     dao_snapshot_datas: list[dict],
 ) -> list[pd.DataFrame]:
+    print("Generating DFs for dao snapshot data")
     dao_snapshot_dfs = []
     for snapshot_data in dao_snapshot_datas:
         for proposal in snapshot_data.values():
@@ -150,9 +154,37 @@ snapshot_datas = asyncio_run(get_all_dao_snapshot_data(5, 20, 5))
 snapshot_dataframes = get_all_snapshot_dataframes_for_dao(snapshot_datas)
 
 
+def filter_top_shareholders_from_df(snapshot_df: pd.DataFrame) -> pd.DataFrame:
+    organization_id = snapshot_df.iloc[0]["organization_id"]
+    raw_top_shareholders = get_raw_top_holders(organization_id)
+    top_shareholder_addresses = [
+        shareholder["address"] for shareholder in raw_top_shareholders
+    ]
+    lowest_holder_percentage = raw_top_shareholders[-1]["tokenSharesPercentage"]
+    snapshot_df["lowest_top_shareholder_%"] = [
+        lowest_holder_percentage for _ in range(snapshot_df.shape[0])
+    ]
+    return (
+        snapshot_df.loc[
+            lambda df: [voter not in top_shareholder_addresses for voter in df["voter"]]
+        ]
+    ).drop(["voter", "id"], axis=1)
+
+
+def filter_top_shareholders_from_all_dfs(
+    snapshot_dfs: list[pd.DataFrame],
+) -> list[pd.DataFrame]:
+    print("Filtereing out top 10 holders for each dao")
+    return [
+        filter_top_shareholders_from_df(snapshot_df) for snapshot_df in snapshot_dfs
+    ]
+
+
+filtered_snapshot_dfs = filter_top_shareholders_from_all_dfs(snapshot_dataframes)
+
 pd.set_option("display.width", 4000)
 pd.set_option("display.max_columns", 1000)
-[print(df, end="\n\n") for df in snapshot_dataframes]
+[print(df, end="\n\n") for df in filtered_snapshot_dfs]
 
 # pp.pprint(run(get_votes("Qma8KF8jTV3kwBFdjfwE9jvLpPYVMdY6RVS9pJZ6QGEur6")))
 # run(get_proposals("uniswap", 1))

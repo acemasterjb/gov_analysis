@@ -13,4 +13,6 @@ python gov_ma.py
 A `xls` file will be generated in the cloned project's root as `dao_market_analysis.xls`.
 ## Plutocracy Report
 ### Usage
-wip
+```bash
+python pluto_report.py
+```

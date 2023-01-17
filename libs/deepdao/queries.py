@@ -42,3 +42,13 @@ def get_raw_dao_data(organization_id: str) -> list[dict]:
         resp_json = resp.json()["data"]
 
         return resp_json
+
+
+def get_raw_top_holders(organization_id: str) -> list[dict]:
+    url = f"https://deepdao-server.deepdao.io/organization/ksdf3ksa-937slj3/{organization_id}/top-shareholders"
+
+    with Client(headers=headers, timeout=TIMEOUT) as client:
+        resp = client.get(url)
+        resp_json = resp.json()["shareholders"]
+
+        return resp_json
