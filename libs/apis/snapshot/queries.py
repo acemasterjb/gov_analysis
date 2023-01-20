@@ -3,7 +3,7 @@ from gql import gql
 
 
 def proposals(
-    space_id: str, limit: int, order_direction: str = "asc", skip: int = 0
+    space_id: str, limit: int, order_direction: str = "desc", skip: int = 0
 ) -> DocumentNode:
     query_params = """proposals(
         first: {limit}
@@ -57,17 +57,18 @@ def votes(proposal_id: str) -> DocumentNode:
         vp
         proposal {
             id
+            scores
             scores_total
             state
             space {
                 id
                 name
             }
+            type
             created
             choices
             snapshot
             network
-
         }
     }
     """

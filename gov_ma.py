@@ -3,24 +3,24 @@ from typing import Any
 
 import pandas as pd
 
-from libs.coingecko.adapters import (
+from libs.apis.coingecko.adapters import (
     get_circulating_supply,
     get_market_cap,
     get_token_price,
     get_total_supply,
 )
-from libs.coingecko.queries import (
+from libs.apis.coingecko.queries import (
     get_raw_market_data,
     get_raw_market_data_by_symbol,
 )
-from libs.deepdao.adapters import (
+from libs.apis.deepdao.adapters import (
     get_governance_participants,
     get_native_token_address,
     get_native_token_symbol,
     get_organization_aum,
     get_token_holders_count,
 )
-from libs.deepdao.queries import (
+from libs.apis.deepdao.queries import (
     get_raw_dao_list,
     get_raw_organization_data,
     get_raw_token_metadata,
