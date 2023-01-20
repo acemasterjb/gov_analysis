@@ -16,3 +16,4 @@ A `xls` file will be generated in the cloned project's root as `dao_market_analy
 ```bash
 python pluto_report.py
 ```
+A `xls` file will be generated in the cloned project's root as `plutocracy_report.xls`.
