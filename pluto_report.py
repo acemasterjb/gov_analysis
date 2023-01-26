@@ -15,14 +15,14 @@ from libs.apis.deepdao.queries import (
     get_raw_dao_data,
     get_raw_dao_list,
     get_raw_token_metadata,
-    get_raw_top_holders,
 )
 from libs.apis.snapshot.execution import get_proposals, get_votes
-from libs.reaggregation import (
+from libs.data_processing.reaggregation import (
     reaggregate_votes_approval,
     reaggregate_votes_single_choice_or_basic,
     reaggregate_votes_weighted,
 )
+from libs.data_processing.filters import get_quartile_by_vp
 
 
 pp = PrettyPrinter(2)
@@ -195,13 +195,13 @@ def get_all_snapshot_dataframes_for_dao(
     return dao_snapshot_dfs
 
 
-snapshot_datas = asyncio_run(get_all_dao_snapshot_data(5, 20, 5))
+snapshot_datas = asyncio_run(get_all_dao_snapshot_data(5, 50, 10))
 snapshot_dataframes = get_all_snapshot_dataframes_for_dao(snapshot_datas)
 
 
 def filter_top_shareholders_from_df(snapshot_df: pd.DataFrame) -> pd.DataFrame:
     def reaggregate_votes(
-        unfiltered_propsal: pd.DataFrame, top_shareholders: list[str]
+        unfiltered_propsal: pd.DataFrame, top_shareholders: pd.Series
     ) -> pd.DataFrame:
         proposal_type_map = {
             "single-choice": reaggregate_votes_single_choice_or_basic,
@@ -213,17 +213,10 @@ def filter_top_shareholders_from_df(snapshot_df: pd.DataFrame) -> pd.DataFrame:
 
         return proposal_type_map[proposal_type](unfiltered_propsal, top_shareholders)
 
-    organization_id = snapshot_df.iloc[0]["organization_id"]
-    raw_top_shareholders = get_raw_top_holders(organization_id)
-    top_shareholder_addresses = [
-        shareholder["address"] for shareholder in raw_top_shareholders
-    ]
-    lowest_holder_percentage = raw_top_shareholders[-1]["tokenSharesPercentage"]
-    snapshot_df["lowest_top_shareholder_%"] = [
-        lowest_holder_percentage for _ in range(snapshot_df.shape[0])
-    ]
+    top_shareholders_df = get_quartile_by_vp(snapshot_df, 0.95)
+    top_shareholder_addresses = top_shareholders_df["voter"]
     reaggregated_snapshot_df = reaggregate_votes(snapshot_df, top_shareholder_addresses)
-    if not reaggregated_snapshot_df:
+    if reaggregated_snapshot_df.empty:
         vote = snapshot_df.iloc[0]
         print(
             f"No whales voted in {vote['proposal_space_name']} for proposal {vote['proposal_id']}"
@@ -270,17 +263,25 @@ def merge_organization_dataframes(
 organization_dataframes = merge_organization_dataframes(filtered_snapshot_dfs)
 
 
-def export_organization_dataframes_to_xls(organization_dataframes: list[pd.DataFrame]):
+def export_organization_dataframes_to_xls(
+    organization_dataframes: list[pd.DataFrame], file_name: str
+):
     print("Generating Spreadsheet...")
-    with pd.ExcelWriter("./plutocracy_report.xls", engine="openpyxl") as writer:
+    with pd.ExcelWriter(file_name, engine="openpyxl") as writer:
         for organization_dataframe in organization_dataframes:
             organization_name = organization_dataframe.iloc[0]["proposal_space_name"]
             organization_dataframe.to_excel(writer, organization_name, "N/A")
 
     print("Done")
 
+
 pd.set_option("display.width", 4000)
 pd.set_option("display.max_columns", 1000)
 [print(df, end="\n\n") for df in organization_dataframes]
 
-export_organization_dataframes_to_xls(organization_dataframes)
+export_organization_dataframes_to_xls(
+    merge_organization_dataframes(snapshot_dataframes), "./plutocracy_report.xls"
+)
+export_organization_dataframes_to_xls(
+    organization_dataframes, "./plutocracy_report_filtered.xls"
+)

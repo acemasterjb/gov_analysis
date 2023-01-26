@@ -1,0 +1,7 @@
+# Python
+## dirs
+__pycache__
+.venv
+
+## Excel
+*.xls
