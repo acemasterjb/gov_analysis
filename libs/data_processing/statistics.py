@@ -2,6 +2,7 @@ import pandas as pd
 
 from .filters import get_quartile_by_vp
 
+
 def get_number_of_whales_to_all_voters_ratio(
     dao_proposals: dict[str, pd.DataFrame],
     dao_proposals_filtered: dict[str, pd.DataFrame],
@@ -17,11 +18,15 @@ def get_number_of_whales_to_all_voters_ratio(
         top_shareholders_addresses = top_shareholders_df["voter"]
         tally = {organization: [0, 0, 0, 0, 0]}
 
-        tally[organization][0] = all_proposals.shape[0] - all_proposals_filtered.shape[0]
+        tally[organization][0] = (
+            all_proposals.shape[0] - all_proposals_filtered.shape[0]
+        )
         tally[organization][1] = all_proposals.shape[0]
         tally[organization][2] = all_proposals_filtered["vp"].mean()
         tally[organization][3] = all_proposals.loc[
-            lambda df: [voter in top_shareholders_addresses.values for voter in df["voter"]]
+            lambda df: [
+                voter in top_shareholders_addresses.values for voter in df["voter"]
+            ]
         ]["vp"].mean()
         tally[organization][4] = all_proposals["cost_per_vote"].mean()
         ratios.append(tally)
@@ -64,4 +69,3 @@ def get_score_differences(
                 )
             ]
     return diffrences
-
