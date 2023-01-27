@@ -154,6 +154,7 @@ async def get_all_dao_snapshot_data(
     list_size: int,
     max_number_of_daos: int,
 ) -> list[dict]:
+    blacklist = ["Wonderland", "Fei", "OlympusDAO"]
     raw_daos: list[dict] = get_raw_dao_list(list_size)
     daos: list[dict[str, Any]] = []
 
@@ -161,10 +162,11 @@ async def get_all_dao_snapshot_data(
     i = 0
 
     while dao_counter < max_number_of_daos and i < len(raw_daos):
-        dao = await get_dao_snapshot_data(raw_daos[i], proposal_limit)
-        if dao:
-            daos.append(dao)
-            dao_counter += 1
+        if raw_daos[i]["daoName"] not in blacklist:
+            dao = await get_dao_snapshot_data(raw_daos[i], proposal_limit)
+            if dao:
+                daos.append(dao)
+                dao_counter += 1
         i += 1
 
     return daos
@@ -237,7 +239,9 @@ def filter_top_shareholders_from_all_dfs(
     filtered_dfs = []
     for snapshot_df in snapshot_dfs:
         snapshot_df_copy = snapshot_df.copy()
-        snapshot_df_copy["proposal_scores"] = deepcopy(snapshot_df["proposal_scores"].values)
+        snapshot_df_copy["proposal_scores"] = deepcopy(
+            snapshot_df["proposal_scores"].values
+        )
         filtered_dfs.append(filter_top_shareholders_from_df(snapshot_df_copy))
     return filtered_dfs
 

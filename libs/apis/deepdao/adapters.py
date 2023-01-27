@@ -39,4 +39,8 @@ def get_snapshot_id(raw_dao_data: list[dict]) -> str | None:
         raise
     if snapshot_object.get("platformTitle") != "Snapshot":
         return None
-    return snapshot_object["website"].split("/")[-1]
+    return (
+        snapshot_object["website"].split("/")[-1]
+        if snapshot_object["website"]
+        else None
+    )
