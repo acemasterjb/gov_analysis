@@ -1,4 +1,5 @@
 from asyncio import run as asyncio_run
+from copy import deepcopy
 from typing import Any
 from datetime import datetime, timedelta
 from pprint import PrettyPrinter
@@ -201,7 +202,7 @@ snapshot_dataframes = get_all_snapshot_dataframes_for_dao(snapshot_datas)
 
 def filter_top_shareholders_from_df(snapshot_df: pd.DataFrame) -> pd.DataFrame:
     def reaggregate_votes(
-        unfiltered_propsal: pd.DataFrame, top_shareholders: pd.Series
+        unfiltered_proposal: pd.DataFrame, top_shareholders: pd.Series
     ) -> pd.DataFrame:
         proposal_type_map = {
             "single-choice": reaggregate_votes_single_choice_or_basic,
@@ -209,19 +210,18 @@ def filter_top_shareholders_from_df(snapshot_df: pd.DataFrame) -> pd.DataFrame:
             "approval": reaggregate_votes_approval,
             "weighted": reaggregate_votes_weighted,
         }
-        proposal_type: str = unfiltered_propsal.iloc[0]["proposal_type"]
+        proposal_type: str = unfiltered_proposal.iloc[0]["proposal_type"]
 
-        return proposal_type_map[proposal_type](unfiltered_propsal, top_shareholders)
+        result: pd.DataFrame = proposal_type_map[proposal_type](
+            unfiltered_proposal, top_shareholders
+        )
+
+        return result
 
     top_shareholders_df = get_quartile_by_vp(snapshot_df, 0.95)
     top_shareholder_addresses = top_shareholders_df["voter"]
     reaggregated_snapshot_df = reaggregate_votes(snapshot_df, top_shareholder_addresses)
-    if reaggregated_snapshot_df.empty:
-        vote = snapshot_df.iloc[0]
-        print(
-            f"No whales voted in {vote['proposal_space_name']} for proposal {vote['proposal_id']}"
-        )
-    else:
+    if not reaggregated_snapshot_df.empty:
         snapshot_df = reaggregated_snapshot_df
     return (
         snapshot_df.loc[
@@ -234,9 +234,12 @@ def filter_top_shareholders_from_all_dfs(
     snapshot_dfs: list[pd.DataFrame],
 ) -> list[pd.DataFrame]:
     print("Filtereing out top 10 holders for each dao")
-    return [
-        filter_top_shareholders_from_df(snapshot_df) for snapshot_df in snapshot_dfs
-    ]
+    filtered_dfs = []
+    for snapshot_df in snapshot_dfs:
+        snapshot_df_copy = snapshot_df.copy()
+        snapshot_df_copy["proposal_scores"] = deepcopy(snapshot_df["proposal_scores"].values)
+        filtered_dfs.append(filter_top_shareholders_from_df(snapshot_df_copy))
+    return filtered_dfs
 
 
 filtered_snapshot_dfs = filter_top_shareholders_from_all_dfs(snapshot_dataframes)
@@ -247,6 +250,8 @@ def merge_organization_dataframes(
 ) -> list[pd.DataFrame]:
     organization_map: dict[str, list[pd.DataFrame]] = dict()
     for snapshot_df in filtered_snapshot_dfs:
+        if snapshot_df.empty:
+            continue
         organization_name: str = snapshot_df.iloc[0]["proposal_space_name"]
         if organization_name not in organization_map.keys():
             organization_map[organization_name] = []
