@@ -2,6 +2,9 @@
 ## dirs
 __pycache__
 .venv
+## jupyter-book
+_build
+.ipynb_checkpoints
 
 ## Excel
 *.xls
