@@ -70,6 +70,7 @@ def sanitize_vote(vote: dict, price_map: dict[float, float], dao_id: str):
     vote["proposal_space_name"] = vote["proposal"]["space"]["name"]
     vote["proposal_type"] = vote["proposal"]["type"]
     vote["proposal_scores"] = vote["proposal"]["scores"]
+    vote["proposal_choices"] = vote["proposal"]["choices"]
     vote["organization_id"] = dao_id
     vote["proposal_space_id"] = vote["proposal"]["space"]["id"]
     vote["cost"] = vote["vp"] * vote_price if vote_price else 0

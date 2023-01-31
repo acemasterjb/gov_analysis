@@ -42,8 +42,10 @@ def proposals(
     return gql(query)
 
 
-def votes(proposal_id: str) -> DocumentNode:
+def votes(proposal_id: str, skip: int) -> DocumentNode:
     query_params = """votes(
+        first: 1000
+        skip: {skip_clause}
         orderBy: "created"
         orderDirection: desc
         where: {where_clause}
@@ -67,6 +69,7 @@ def votes(proposal_id: str) -> DocumentNode:
             type
             created
             choices
+            votes
             snapshot
             network
         }
@@ -76,7 +79,7 @@ def votes(proposal_id: str) -> DocumentNode:
     where_clause = 'proposal: "{proposal_id}"'.format(proposal_id=proposal_id)
     where_clause = "".join(["{", where_clause, "}"])
 
-    query_params = query_params.format(where_clause=where_clause)
+    query_params = query_params.format(where_clause=where_clause, skip_clause=skip)
     query = "".join(["query{", query_params, query_body, "}"])
 
     return gql(query)

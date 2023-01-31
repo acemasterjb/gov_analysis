@@ -26,17 +26,25 @@ async def get_proposals(space_id: str, upper_limit: int) -> dict[str, list[dict]
     return result
 
 
-async def get_votes(proposal_id: str) -> dict[str, list[dict]]:
+async def get_votes(proposal_id: str, skip: int = 0) -> dict[str, list[dict]]:
     try:
         async with Client(
             transport=transport,
             fetch_schema_from_transport=True,
         ) as session:
-            query = votes(proposal_id)
+            query = votes(proposal_id, skip)
 
             result = await session.execute(query)
     except TransportServerError:
         print("\tWaiting a minute to try a Snapshot again")
         sleep(60)
         result = await get_votes(proposal_id)
+
+    result_votes = result["votes"]
+    if not result_votes:
+        return {"votes": []}
+    if skip < 4999:
+        if skip == 4000:
+            skip -= 1
+        result["votes"].extend((await get_votes(proposal_id, skip + 1000))["votes"])
     return result
