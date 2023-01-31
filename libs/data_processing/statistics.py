@@ -122,5 +122,6 @@ def get_score_comparisons(
                 score_differences,
                 total_voting_power,
                 not unfiltered_winning_choice_index == filtered_winning_choice_index,
+                eval(choices)[filtered_winning_choice_index]
             ]
     return differences
