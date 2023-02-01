@@ -1,7 +1,9 @@
 import pandas as pd
 
 
-def get_whales(unfiltered_proposal: pd.DataFrame, top_shareholders: pd.Series) -> pd.DataFrame:
+def get_whales(
+    unfiltered_proposal: pd.DataFrame, top_shareholders: pd.Series
+) -> pd.DataFrame:
     return unfiltered_proposal.loc[
         lambda df: [voter in top_shareholders.values for voter in df["voter"]]
     ]
@@ -43,8 +45,14 @@ def reaggregate_votes_weighted(
         weight_values: list[float] = [
             (weight / weight_total) * whale["vp"] for weight in weights
         ]
-        new_scores = [score - weight for score, weight in zip(scores, weight_values)]
+        new_scores = {
+            int(whale_choice): scores[int(whale_choice) - 1] - weight
+            for whale_choice, weight in zip(whale["choice"].keys(), weight_values)
+        }
+        if len(new_scores) < len(scores):
+            for choice in new_scores.keys():
+                scores[choice - 1] = new_scores[choice]
         n_rows = unfiltered_proposal.shape[0]
-        unfiltered_proposal["proposal_scores"] = [new_scores] * n_rows
+        unfiltered_proposal["proposal_scores"] = [scores] * n_rows
 
     return unfiltered_proposal
