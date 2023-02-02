@@ -6,6 +6,10 @@ on:
       - "book/**"
     branches:
       - main
+
+permissions:
+  contents: write
+
 jobs:
   publish-book:
     runs-on: ubuntu-latest
