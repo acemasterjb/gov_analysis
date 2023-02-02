@@ -231,17 +231,7 @@ title="Print to PDF"
 </div>
 <p>The data used for this article came from data sources that specialize in providing data on DAO governance, such as DeepDAO and Snapshot. Coingecko was also used to find market data for DAO native tokens.</p>
 <p>Using this data, two spreadsheets were compiled which act as the local database for this analysis. Each spreadsheet contains each voter’s choice and voting power for the last five proposals each DAO opened. <strong>One spreadsheet filters out “whales”</strong> which, in the context of this analysis, are voters of each proposal which have voting power <strong>at or above the 95th percentile of voting power for that proposal</strong>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plutocracy_report_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span>
-    <span class="s2">&quot;../plutocracy_report.xls&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span>
-<span class="p">)</span>
-<span class="n">plutocracy_report_data_filtered</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span>
-    <span class="s2">&quot;../plutocracy_report_filtered.xls&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
