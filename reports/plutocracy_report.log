@@ -23,7 +23,6 @@ plutocracy_report_data = pd.read_excel(
 plutocracy_report_data_filtered = pd.read_excel(
     "../plutocracy_report_filtered.xls", sheet_name=None, engine="openpyxl"
 )
-
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
