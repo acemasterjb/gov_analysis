@@ -1,0 +1,1668 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Cost of Plutocracy &#8212; My Jupyter Book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint single-page" id="site-navigation">
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/plutocracy_report.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/plutocracy_report.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Cost of Plutocracy</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="cost-of-plutocracy">
+<h1>Cost of Plutocracy<a class="headerlink" href="#cost-of-plutocracy" title="Permalink to this headline">#</a></h1>
+<p>The aim of this article is to analyze some of the biggest DAOs in the crypto space and see how many of them are influenced by token holders which own a disproportionate amount of tokens compared to most voters.</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<p>The data used for this article came from data sources that specialize in providing data on DAO governance, such as DeepDAO and Snapshot. Coingecko was also used to find market data for DAO native tokens.</p>
+<p>Using this data, two spreadsheets were compiled which act as the local database for this analysis. Each spreadsheet contains each voter’s choice and voting power for the last five proposals each DAO opened. <strong>One spreadsheet filters out “whales”</strong> which, in the context of this analysis, are voters of each proposal which have voting power <strong>at or above the 95th percentile of voting power for that proposal</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plutocracy_report_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span>
+    <span class="s2">&quot;../plutocracy_report.xls&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span>
+<span class="p">)</span>
+<span class="n">plutocracy_report_data_filtered</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span>
+    <span class="s2">&quot;../plutocracy_report_filtered.xls&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">plutocracy_report_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="s2">&quot;../plutocracy_report.xls&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plutocracy_report_data_filtered</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="s2">&quot;../plutocracy_report_filtered.xls&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/pandas/util/_decorators.py:211,</span> in <span class="ni">deprecate_kwarg.&lt;locals&gt;._deprecate_kwarg.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="n">kwargs</span><span class="p">[</span><span class="n">new_arg_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_arg_value</span>
+<span class="ne">--&gt; </span><span class="mi">211</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/pandas/util/_decorators.py:331,</span> in <span class="ni">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">325</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">num_allow_args</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">326</span>     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">327</span>         <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arguments</span><span class="o">=</span><span class="n">_format_argument_list</span><span class="p">(</span><span class="n">allow_args</span><span class="p">)),</span>
+<span class="g g-Whitespace">    </span><span class="mi">328</span>         <span class="ne">FutureWarning</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">329</span>         <span class="n">stacklevel</span><span class="o">=</span><span class="n">find_stack_level</span><span class="p">(),</span>
+<span class="g g-Whitespace">    </span><span class="mi">330</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">331</span> <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/pandas/io/excel/_base.py:482,</span> in <span class="ni">read_excel</span><span class="nt">(io, sheet_name, header, names, index_col, usecols, squeeze, dtype, engine, converters, true_values, false_values, skiprows, nrows, na_values, keep_default_na, na_filter, verbose, parse_dates, date_parser, thousands, decimal, comment, skipfooter, convert_float, mangle_dupe_cols, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">480</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">ExcelFile</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">481</span>     <span class="n">should_close</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="ne">--&gt; </span><span class="mi">482</span>     <span class="n">io</span> <span class="o">=</span> <span class="n">ExcelFile</span><span class="p">(</span><span class="n">io</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">483</span> <span class="k">elif</span> <span class="n">engine</span> <span class="ow">and</span> <span class="n">engine</span> <span class="o">!=</span> <span class="n">io</span><span class="o">.</span><span class="n">engine</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">484</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">485</span>         <span class="s2">&quot;Engine should not be specified when passing &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">486</span>         <span class="s2">&quot;an ExcelFile - ExcelFile already has the engine set&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">487</span>     <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/pandas/io/excel/_base.py:1695,</span> in <span class="ni">ExcelFile.__init__</span><span class="nt">(self, path_or_buffer, engine, storage_options)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1692</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span> <span class="o">=</span> <span class="n">engine</span>
+<span class="g g-Whitespace">   </span><span class="mi">1693</span> <span class="bp">self</span><span class="o">.</span><span class="n">storage_options</span> <span class="o">=</span> <span class="n">storage_options</span>
+<span class="ne">-&gt; </span><span class="mi">1695</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engines</span><span class="p">[</span><span class="n">engine</span><span class="p">](</span><span class="bp">self</span><span class="o">.</span><span class="n">_io</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/pandas/io/excel/_openpyxl.py:557,</span> in <span class="ni">OpenpyxlReader.__init__</span><span class="nt">(self, filepath_or_buffer, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">547</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">548</span><span class="sd"> Reader using openpyxl engine.</span>
+<span class="g g-Whitespace">    </span><span class="mi">549</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">554</span><span class="sd"> {storage_options}</span>
+<span class="g g-Whitespace">    </span><span class="mi">555</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">556</span> <span class="n">import_optional_dependency</span><span class="p">(</span><span class="s2">&quot;openpyxl&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">557</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/pandas/io/excel/_base.py:535,</span> in <span class="ni">BaseExcelReader.__init__</span><span class="nt">(self, filepath_or_buffer, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">531</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">IOHandles</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">532</span>     <span class="n">handle</span><span class="o">=</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+<span class="g g-Whitespace">    </span><span class="mi">533</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">534</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="p">(</span><span class="n">ExcelFile</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_workbook_class</span><span class="p">)):</span>
+<span class="ne">--&gt; </span><span class="mi">535</span>     <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">536</span>         <span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span> <span class="n">is_text</span><span class="o">=</span><span class="kc">False</span>
+<span class="g g-Whitespace">    </span><span class="mi">537</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">539</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_workbook_class</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">540</span>     <span class="bp">self</span><span class="o">.</span><span class="n">book</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/pandas/io/common.py:865,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">856</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">857</span>             <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">858</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">861</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">862</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">863</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">864</span>         <span class="c1"># Binary mode</span>
+<span class="ne">--&gt; </span><span class="mi">865</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">866</span>     <span class="n">handles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="c1"># Convert BytesIO or file objects passed with an encoding</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;../plutocracy_report.xls&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>With this, we can begin asking ourselves some questions. Such as: <strong>How many whales have voted in the last five proposals for each of the DAOs we analyzed?</strong></p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th># of whales</th>
+      <th>all voters</th>
+      <th>avg vp for non-whales</th>
+      <th>avg vp for whales</th>
+      <th>avg cost of vote</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Uniswap</th>
+      <td>568</td>
+      <td>12250</td>
+      <td>1.402462e+00</td>
+      <td>8.086719e+04</td>
+      <td>6.092379</td>
+    </tr>
+    <tr>
+      <th>ENS</th>
+      <td>74</td>
+      <td>1609</td>
+      <td>3.521251e+00</td>
+      <td>3.356937e+04</td>
+      <td>14.895998</td>
+    </tr>
+    <tr>
+      <th>Lido</th>
+      <td>129</td>
+      <td>2396</td>
+      <td>2.996389e+00</td>
+      <td>7.571993e+05</td>
+      <td>1.455704</td>
+    </tr>
+    <tr>
+      <th>Frax</th>
+      <td>1</td>
+      <td>53</td>
+      <td>9.872141e+04</td>
+      <td>2.893798e+06</td>
+      <td>10.223617</td>
+    </tr>
+    <tr>
+      <th>Decentraland</th>
+      <td>18</td>
+      <td>352</td>
+      <td>6.129250e+01</td>
+      <td>1.409692e+05</td>
+      <td>0.753464</td>
+    </tr>
+    <tr>
+      <th>Curve Finance</th>
+      <td>8</td>
+      <td>181</td>
+      <td>6.146095e+03</td>
+      <td>2.509741e+06</td>
+      <td>2.485927</td>
+    </tr>
+    <tr>
+      <th>Radicle</th>
+      <td>1</td>
+      <td>28</td>
+      <td>2.130899e+05</td>
+      <td>2.830379e+06</td>
+      <td>4.079941</td>
+    </tr>
+    <tr>
+      <th>Euler</th>
+      <td>3</td>
+      <td>81</td>
+      <td>1.014071e+03</td>
+      <td>6.796260e+04</td>
+      <td>5.253017</td>
+    </tr>
+    <tr>
+      <th>JPEG’d</th>
+      <td>3</td>
+      <td>87</td>
+      <td>4.154734e+07</td>
+      <td>7.201127e+08</td>
+      <td>0.000875</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Here we can clearly see that for the DAOs which we choose to analyze the top 5% of voters have a clear, disproportionate amount of voting power comparared to the average voter.</p>
+<p>We can also gain some insight at the economic might that these whales hold for each DAO at the time of voting by taking a look at the average cost of each vote for each DAO’s native token at the time these proposals were active.</p>
+<hr class="docutils" />
+<p>We move on to taking at what DAO participation would look like without these whale’s involvement. We do so by comparing the scores of each proposal and checking whether or not the outcome of the proposal was changed after filtering out whales.</p>
+<p>We check whether or not a propsal’s outcome has changed simply by checking if the largest vote choice score has changed after filtering out whales, more specifically, in python we do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">has_changed_outcome</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">unfiltered_winning_choice_index</span> <span class="o">==</span> <span class="n">filtered_winning_choice_index</span>
+</pre></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<p>First, let’s look at Uniswap</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Uniswap&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>type</th>
+      <th>choices</th>
+      <th>score_diffrences</th>
+      <th>total_vp</th>
+      <th>has_changed_outcome</th>
+      <th>changed_outcome_winner</th>
+    </tr>
+    <tr>
+      <th>Proposal ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0x6b8df360fdf73085b21fdf5eef9f85916fbde95621a3d454cb20fbe545ffc852</th>
+      <td>single-choice</td>
+      <td>['Wormhole', 'LayerZero', 'Celer', 'deBridge']</td>
+      <td>[23275464.75822096, 17163633.19927637, 481.545...</td>
+      <td>45581689.082320422</td>
+      <td>False</td>
+      <td>Wormhole</td>
+    </tr>
+    <tr>
+      <th>0xa3c7247632d3a08e4e73a63867908d0cd4402f48fa673945f93e3197dee5450a</th>
+      <td>single-choice</td>
+      <td>['Yes', 'No']</td>
+      <td>[20056524.265649345, 4927056.974342918]</td>
+      <td>24994560.158377878</td>
+      <td>False</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>0xfd3d3807bd2a6eda1327c311b83de235061d39ff1bdfb616c9f9b0d367c3ac2c</th>
+      <td>single-choice</td>
+      <td>['add Overnight Finance', 'add DeFiEdge', 'add...</td>
+      <td>[10054.585075893452, 2708025.0728700403, 3412....</td>
+      <td>2728492.255083876</td>
+      <td>True</td>
+      <td>add Overnight Finance</td>
+    </tr>
+    <tr>
+      <th>0x387b5e811e9673359b98729af5c7f14a50b7d0ea9b4dcf9278686b238932e25d</th>
+      <td>single-choice</td>
+      <td>['Yes - Enact changes', 'No - No change']</td>
+      <td>[30508464.50667036, 34.17723847808492]</td>
+      <td>61343398.710826278</td>
+      <td>False</td>
+      <td>Yes - Enact changes</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We observe that out of the last five proposals only one had their outcome changed after removing whales: The proposal to <a class="reference external" href="https://snapshot.org/#/uniswap/proposal/0xfd3d3807bd2a6eda1327c311b83de235061d39ff1bdfb616c9f9b0d367c3ac2c">add a Liquidity Mining Manager for the Optimism-Uniswap Liquidty Mining Program</a>.</p>
+<p>In this case, “Overnight Finance” would’ve been the chosen LMM if it weren’t for whale interevention, instead “DeFiEdge” was chosen for this campaign. From the data, we can see that without whale intervention, DeFiEdge would’ve had ~2,708,025 less votes out of the total ~2,728,492 voting power on this proposal. That is ~99.3% of voting power allocated for this proposal directed to choosing “DeFiEdge”.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>add Overnight Finance</th>
+      <th>add DeFiEdge</th>
+      <th>add none</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>14335.930887</td>
+      <td>2.710600e+06</td>
+      <td>3556.089173</td>
+    </tr>
+    <tr>
+      <th>Score Differeces</th>
+      <td>10054.585076</td>
+      <td>2.708025e+06</td>
+      <td>3412.851497</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>One highly contentious proposal whose outcome did not change after filtering out whales was <a class="reference external" href="https://snapshot.org/#/uniswap/proposal/0x6b8df360fdf73085b21fdf5eef9f85916fbde95621a3d454cb20fbe545ffc852">this temperature check to choose which Eth &lt;&gt; BNB bridge to use for Uniswap v3 governance</a>. We see that even for the least popular choices, whales still contributed to the majority of the votes. We also observe that whales held the overwhelming majority of voting power for the runner up, “LayerZero”, with 99.9% of voting power allocated to this proposal being directed to this choice. By comparison, “Wormhole” received 65.1% of voting power for this proposal coming from whales.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Wormhole</th>
+      <th>LayerZero</th>
+      <th>Celer</th>
+      <th>deBridge</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>2.840391e+07</td>
+      <td>1.717334e+07</td>
+      <td>662.606204</td>
+      <td>3772.802474</td>
+    </tr>
+    <tr>
+      <th>Score Differeces</th>
+      <td>2.327546e+07</td>
+      <td>1.716363e+07</td>
+      <td>481.545728</td>
+      <td>3402.436704</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Next up is ENS.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;ENS&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>type</th>
+      <th>choices</th>
+      <th>score_diffrences</th>
+      <th>total_vp</th>
+      <th>has_changed_outcome</th>
+      <th>changed_outcome_winner</th>
+    </tr>
+    <tr>
+      <th>Proposal ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0x41b3509b88e15677aa15680f48278517f794822fb9a79b9c621def53f1866be7</th>
+      <td>single-choice</td>
+      <td>['For', 'Against', 'Abstain']</td>
+      <td>[1667210.963067633, 0.0, 137.12454090065714]</td>
+      <td>1670185.073618348</td>
+      <td>False</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th>0xd7eff781be059513b5cd64d79e709abbbc653944c9a8c621dc051e7b42a405cb</th>
+      <td>single-choice</td>
+      <td>['For', 'Against', 'Abstain']</td>
+      <td>[1666938.9315321625, 100.38682608595627, 141.9...</td>
+      <td>1670154.219044510</td>
+      <td>False</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th>0x5788bf0f52ce82a1d3f7750a80f3001671ded49e4e0239dbbafd154275c78f8b</th>
+      <td>single-choice</td>
+      <td>['For', 'Against', 'Abstain']</td>
+      <td>[1446509.1013934365, 208348.53159207577, 13519...</td>
+      <td>1671687.088797375</td>
+      <td>False</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th>0xdaff050d30c77fe469da7eaa5b5bae0cb892f91a89c119367e47faf370667240</th>
+      <td>approval</td>
+      <td>['nick.eth', 'james.eth', 'accessor.eth', 'sim...</td>
+      <td>[2319757.8152544936, 2319757.8152544936, 23197...</td>
+      <td>2325021.309782755</td>
+      <td>False</td>
+      <td>nick.eth</td>
+    </tr>
+    <tr>
+      <th>0xa245dc7264ae072620434996e1c66d82c64cefc5a2edde5114d691a8559d0b5f</th>
+      <td>approval</td>
+      <td>['thecap.eth (Cap)', 'slobo.eth', 'limes.eth',...</td>
+      <td>[2278346.061608189, 2278346.0616081893, 227834...</td>
+      <td>2282885.783012460</td>
+      <td>False</td>
+      <td>slobo.eth</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We see that none of the proposal outcomes were changed after filtering out whales. However, if we take look at score differences as they compare to the score differences, we see that they were almost all determined by whales.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>For</th>
+      <th>Against</th>
+      <th>Abstain</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>1.669865e+06</td>
+      <td>125.702762</td>
+      <td>194.817417</td>
+    </tr>
+    <tr>
+      <th>Score Differeces</th>
+      <td>1.667211e+06</td>
+      <td>0.000000</td>
+      <td>137.124541</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><a class="reference external" href="https://snapshot.org/#/ens.eth/proposal/0x41b3509b88e15677aa15680f48278517f794822fb9a79b9c621def53f1866be7">This proposal</a> once passed will approve the funding of various grants ENS has commited to funding as detailed by the proposal, <strong>the amount of capital to be commited to this proposal is 250k USDC and 50 ETH</strong>. 99.9% of voting power allocated towards this propsal was commited to voting for its passing, 0.0001% was allocated to abstaining and even a smaller percentage was allocated to voting against its passing.</p>
+<p>Meaning that ~0.1% of the vote would’ve still been allocated towards voting for the proposal to pass even without whale intervention, which I think many would see as fine since funding of public goods is always important.</p>
+<p>Another propsal on ENS which had a large amount of voting power committed by whales is <a class="reference external" href="https://snapshot.org/#/ens.eth/proposal/0x5788bf0f52ce82a1d3f7750a80f3001671ded49e4e0239dbbafd154275c78f8b">this proposal</a> to commit <strong>935k USDC and 254 ETH</strong> to the ENS Ecosystem Working group which is responsible for <em>growing and improving the ENS Ecosystem by funding people and projects that are ENS-specific or ENS-centric</em>.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>For</th>
+      <th>Against</th>
+      <th>Abstain</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>1.449464e+06</td>
+      <td>208582.378002</td>
+      <td>13640.353424</td>
+    </tr>
+    <tr>
+      <th>Score Differeces</th>
+      <td>1.446509e+06</td>
+      <td>208348.531592</td>
+      <td>13519.449465</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Similar to the previous proposal we looked at, this one was highly influenced by whales (~86.5% of voting power committed to this proposal coming from whales that voted for its passing, ~12.5% from whales which voted against it, and ~0.8% of whales voted to abstain).</p>
+<p>Yet, even after removing whales, the proposal still passes. After doing some quick math, we can see the the remaining voting power for this proposal that voted for its passing equates to about ~0.17% out of the remaining 0.2% of voting power after removing whales.</p>
+<p>Still, I am not at all saying that the outcome of this proposal is controversial. An organisation funding initiatives that aid in the development of its product should not be a controversial topic for its members. I suppose the only thing that would be contested is the amount that is committed to this proposal.</p>
+<p>Next lets take a look at everyone’s favourite liquid staking platform: Lido.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Lido&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>type</th>
+      <th>choices</th>
+      <th>score_diffrences</th>
+      <th>total_vp</th>
+      <th>has_changed_outcome</th>
+      <th>changed_outcome_winner</th>
+    </tr>
+    <tr>
+      <th>Proposal ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0x3436b98afacec300ec2c0f79bb8dfd16685ececeeb7a45a18754d43b710179e8</th>
+      <td>single-choice</td>
+      <td>['For', 'Against']</td>
+      <td>[55124323.664074376, 2048432.8880345668]</td>
+      <td>57176658.163439780</td>
+      <td>False</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th>0x32f6f095dc4f7b97665b560781d6e6795da11f9c8218936a505575040038d70f</th>
+      <td>single-choice</td>
+      <td>['For', 'Against']</td>
+      <td>[57163748.21209293, 7563.113010643607]</td>
+      <td>57175091.606986538</td>
+      <td>False</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th>0x7ac2431dc0eddcad4a02ba220a19f451ab6b064a0eaef961ed386dc573722a7f</th>
+      <td>single-choice</td>
+      <td>['For', 'Against']</td>
+      <td>[57686947.46411716, 78.13038422652139]</td>
+      <td>57690201.588526487</td>
+      <td>False</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th>0x7f19fed19b66df88b45d64c22f9905fbf716839a5052fb79b10ee2ef1241645d</th>
+      <td>single-choice</td>
+      <td>['YAY', 'NAY']</td>
+      <td>[54546195.85193226, 7525.505910950667]</td>
+      <td>54557517.318199627</td>
+      <td>False</td>
+      <td>YAY</td>
+    </tr>
+    <tr>
+      <th>0xcbf534335fe07c046caa933e1623ac38bfb3d1890ab825264a0b47415cf7799b</th>
+      <td>single-choice</td>
+      <td>['1. For 6 new oracles, 6/11 set', '2. For 4 n...</td>
+      <td>[92934.92264371048, 52723122.2034864, 4535.772...</td>
+      <td>52826368.429703690</td>
+      <td>True</td>
+      <td>1. For 6 new oracles, 6/11 set</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Here, we see that there was a change in outcome for one of the proposals. <a class="reference external" href="https://snapshot.org/#/lido-snapshot.eth/proposal/0xcbf534335fe07c046caa933e1623ac38bfb3d1890ab825264a0b47415cf7799b">This proposal</a> to <a class="reference external" href="https://mainnet.lido.fi/#/lido-dao/0x442af784a788a5bd6f42a01ebe9f287a871243fb/">expand the oracle set and quorum</a> of Lido DAO oracle node operators was passed 16/12/22 and onboarded 4 new oracle node operators and set the quorum to 5/9 reports from orales being identical to be accepted by the protocol.</p>
+<p>Had whales not intervened, Option 1 to onboard 6 additional oracles and set the quorum to 6/11 would’ve passed.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>1. For 6 new oracles, 6/11 set</th>
+      <th>2. For 4 new oracles, 5/9 set</th>
+      <th>3. Against</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>96886.616711</td>
+      <td>5.272470e+07</td>
+      <td>4778.954352</td>
+    </tr>
+    <tr>
+      <th>Score Differeces</th>
+      <td>92934.922644</td>
+      <td>5.272312e+07</td>
+      <td>4535.772055</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Here we see that whale participation was consistent for all choices for this proposal. In fact, ~99.982% of voting power allocated to this proposal came from whales that voted for each of the outcomes. The second outcome alone had ~99.980% of the voting power allocated to this proposal, so obviously its removal would make a huge impression on the outcome.</p>
+<p>Indeed, the voting power would be comparitively low without whale intervention (if this were the case, only ~9277.7397 LDO would be allocated to this proposal). However the fact that after doing so additional oracles would still be implemented anyway, where the only other alternative would be to not implement any more oracles, shows that the community that participated in this proposal still saw it important to add more oracles to further promote decentralisation of oracles which <a class="reference external" href="https://docs.lido.fi/guides/oracle-operator-manual">report chain state from the beacon chain to the execution layer</a> of ETH 2.0 as it pertains to the operation of Lido.</p>
+<p>In conclusion of this analysis of this proposal, we can say that whales and average token holders were moving the same direction, but perhaps taking different paths. It will be interesting to see why whales opted to implement less oracles than what the majority of average token holders chose, which may require a more in depth report based on the <a class="reference external" href="https://research.lido.fi/t/expansion-of-lidos-ethereum-oracle-set/2836">forum discussions</a> on the propoal.</p>
+<p>Now we take a look at Frax.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Frax&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>type</th>
+      <th>choices</th>
+      <th>score_diffrences</th>
+      <th>total_vp</th>
+      <th>has_changed_outcome</th>
+      <th>changed_outcome_winner</th>
+    </tr>
+    <tr>
+      <th>Proposal ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0x1272233285b3b4ce026173ec4e2a59d6c8daba3d64b41e67ba160cc526fc5c7d</th>
+      <td>weighted</td>
+      <td>['For', 'Against']</td>
+      <td>[5786463.892845949, 0]</td>
+      <td>7350016.336582876</td>
+      <td>False</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th>0x9cc997cf19f797919e40d87e17c7eed87aefa10279fbeef89761cb1717ac56b8</th>
+      <td>weighted</td>
+      <td>['For', 'Against']</td>
+      <td>[3805819.97255508, 0]</td>
+      <td>6123819.651744431</td>
+      <td>False</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th>0x02aa360090c273c1218b84fe4b25e2be1d6a0210be1419087832da3ac15c38eb</th>
+      <td>weighted</td>
+      <td>['For', 'Against']</td>
+      <td>[3805825.454883847, 0]</td>
+      <td>6123455.989533540</td>
+      <td>False</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th>0xe53269e838ab2ca0d8e09f8326d2a4ffb3425ecb1b39dfe89b72b7178b486614</th>
+      <td>weighted</td>
+      <td>['For', 'Against']</td>
+      <td>[3805830.2519215182, 0]</td>
+      <td>6123331.650428076</td>
+      <td>False</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th>0xece8d5be8b180b54350c4bddee190e24e2849d233f8aac11e0ef0aa7d658ae2a</th>
+      <td>weighted</td>
+      <td>['For', 'Against']</td>
+      <td>[5792040.529852133, 0.0]</td>
+      <td>10207860.835706450</td>
+      <td>False</td>
+      <td>For</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Whilst enourmous voting power was filtered out from all the proposals listed, none had their outcomes changed.</p>
+<p>If we look at the proposal which attracted the most voting power, <a class="reference external" href="https://snapshot.org/#/frax.eth/proposal/0xece8d5be8b180b54350c4bddee190e24e2849d233f8aac11e0ef0aa7d658ae2a">this proposal</a> to renew the grant for Flywheel for 2023 (in the amount of approx $214.2k, split 50/50 in FXS and FRAX) for the promotion of “the Frax ecosystem and producing high-qulity DeFi content”, we see that just over 50% of the voting power was removed from this proposal after filtering out whales (approx 56.7%).</p>
+<p>Though, because the opposition voting power for this proposal was a paltry 1E-5% of the vote, filtering out whales did not change the outcome. This clearly was not a controversial outcome to this proposal by number of voting participants (FXS token holders which participated in this propsal).</p>
+<p>Indeed, Frax’s <a class="reference external" href="https://gov.frax.finance/t/fip-178-flywheel-grant-renewal-for-2023/2068">forum post</a> regarding this proposal had mostly positive things to say about Flywheel, which started out as a podcast promoting Frax in the wake of the collapse of Terra/Luna. Stating that since their last grant given to Flywheel in 2022, their social following has increased by 2770% on Twitter and 3140% on Youtube. They also serve as an educating branch for Frax, organizing meetups and also “attracted builders from across the ecosystem”.</p>
+<p>What’s interesting about this proposal is that whale participation contributed to just over 56.7% of the voting power for this proposal. This is probably the most fairly represented outcome looked at so far, with the outcome being clearly popular with whales and the average voter.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>For</th>
+      <th>Against</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>1.020773e+07</td>
+      <td>131.88977</td>
+    </tr>
+    <tr>
+      <th>Score Differeces</th>
+      <td>5.792041e+06</td>
+      <td>0.00000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>If we now look at Decentraland, we actually observe that there is quite a bad case of concentration of votes in the hands of whales.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Decentraland&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>type</th>
+      <th>choices</th>
+      <th>score_diffrences</th>
+      <th>total_vp</th>
+      <th>has_changed_outcome</th>
+      <th>changed_outcome_winner</th>
+    </tr>
+    <tr>
+      <th>Proposal ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0x73fa3d2c5985fc10d792a48ba0c161812813bd2c56fa07c37520b45fb6d6e2ac</th>
+      <td>single-choice</td>
+      <td>['yes', 'no']</td>
+      <td>[220232.192672885, 0]</td>
+      <td>228726.774457250</td>
+      <td>False</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>0xdfc9d87313c293cbde71adbed9d585ccd79d28ae1dde555f674613920c8856c8</th>
+      <td>single-choice</td>
+      <td>['yes', 'no']</td>
+      <td>[3358.9554568534227, 481138.6966000833]</td>
+      <td>485125.193938830</td>
+      <td>True</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>0x7f6fed8c7645d1b793526564104e4f79864a9e30ae284029f752b6297478b4f5</th>
+      <td>single-choice</td>
+      <td>['Yes', 'No', 'Invalid question/options']</td>
+      <td>[61658.53397015308, 1156691.3340859897, 0.0]</td>
+      <td>1219441.888908949</td>
+      <td>True</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>0xbf2891a1e4490c0ba14e3897c239de06483a2758dff2c8769c9f7ce9f4dfae2d</th>
+      <td>single-choice</td>
+      <td>['yes', 'no']</td>
+      <td>[3416782.371943629, 0.0]</td>
+      <td>3433412.362236338</td>
+      <td>False</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>0x6576a4e2a22df3660d64a5af2a0d6c4819aa86ec40d420f1f1a99359dbf174fc</th>
+      <td>single-choice</td>
+      <td>['Unban', 'Ban', 'Invalid question/options']</td>
+      <td>[727947.7894103363, 0.0, 538722.9524735583]</td>
+      <td>1294131.760398563</td>
+      <td>False</td>
+      <td>Unban</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>For example, this proposal to set a duration period for the tenure of Decentraland DAO commitee members saw 99.9% of voting power being concentrated to whales, with 94.85% of propsal voting power being allocated to voting for the proposal to not pass.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Yes</th>
+      <th>No</th>
+      <th>Invalid question/options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>62474.116173</td>
+      <td>1.156968e+06</td>
+      <td>0.025206</td>
+    </tr>
+    <tr>
+      <th>Score Differeces</th>
+      <td>61658.533970</td>
+      <td>1.156691e+06</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Obviously a case of centralized power voting for their own self interests, its not suprising that if whales were factored out of the proposal (which would’ve given existing and future committee members set terms, making the roles more democratic) the proposal would’ve passed, albeit, with very low voting power in comparison.</p>
+<p>Going back to DeFi, lets now look at Curve Finance</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Curve Finance&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>type</th>
+      <th>choices</th>
+      <th>score_diffrences</th>
+      <th>total_vp</th>
+      <th>has_changed_outcome</th>
+      <th>changed_outcome_winner</th>
+    </tr>
+    <tr>
+      <th>Proposal ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0x0eb23ea0b877666ad3ddcd0d7da0114acdfe5ae6390b5628b7509f4338022db5</th>
+      <td>single-choice</td>
+      <td>['Yes', 'No']</td>
+      <td>[23462.994316173717, 511330.4724932205]</td>
+      <td>574553.874246682</td>
+      <td>True</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>0x43c689ef6b7b1772abc033cd87b7caa4159f0dc281f9a159e3930fb00b57d707</th>
+      <td>single-choice</td>
+      <td>['Do Nothing', '2Pool + current 3Pool', '2Pool...</td>
+      <td>[0.0, 559204.7021513436, 2510541.702086272]</td>
+      <td>4272657.271177988</td>
+      <td>False</td>
+      <td>2Pool + current 3Pool + 4Pool</td>
+    </tr>
+    <tr>
+      <th>0xa11d4d1800b91746afe8ead922eb1d37225a32145adf30bbda0cbdba2ef97bd3</th>
+      <td>single-choice</td>
+      <td>['Yes', 'No']</td>
+      <td>[26054297.07744241, 0]</td>
+      <td>26097304.209488451</td>
+      <td>False</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>0x026a69e5c9780479332d88fa9779a3cec5a9479d05cc4ca61b1fa9eb099caa73</th>
+      <td>single-choice</td>
+      <td>['yes', 'no']</td>
+      <td>[1891.6266956075615, 0]</td>
+      <td>6893.077810757</td>
+      <td>False</td>
+      <td>yes</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Yes</th>
+      <th>No</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>45352.592228</td>
+      <td>529201.282019</td>
+    </tr>
+    <tr>
+      <th>Score Differeces</th>
+      <td>23462.994316</td>
+      <td>511330.472493</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Radicle&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>type</th>
+      <th>choices</th>
+      <th>score_diffrences</th>
+      <th>total_vp</th>
+      <th>has_changed_outcome</th>
+      <th>changed_outcome_winner</th>
+    </tr>
+    <tr>
+      <th>Proposal ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0xf95b0e03c92f9f2df976cad6c5121383f4efc887162d0bf6b59cc550700bceec</th>
+      <td>single-choice</td>
+      <td>['For', 'Against']</td>
+      <td>[2000000.0, 0]</td>
+      <td>4133689.798082654</td>
+      <td>False</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th>0x646e92794f8ea0abb333ed264dc8d8a3df7ceae909186f88701b3237852e61fb</th>
+      <td>single-choice</td>
+      <td>['Yes', 'No', 'Abstain']</td>
+      <td>[3730867.698436455, 0, 0]</td>
+      <td>6163639.615623794</td>
+      <td>False</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>bafkreia4tl25spzwtys4kfns3iiuj32n2wugyupa6adg6mlxwg77a3bzx4</th>
+      <td>single-choice</td>
+      <td>['For', 'Make No Change', 'Abstain']</td>
+      <td>[2654186.698436455, 0, 0]</td>
+      <td>6922974.673405429</td>
+      <td>False</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th>0x16400b2c86d6ebdea246372182f18a17394435d9e31f9749ebaad89e37f3eb25</th>
+      <td>basic</td>
+      <td>['For', 'Against', 'Abstain']</td>
+      <td>[3090365.0190418432, 0, 0]</td>
+      <td>4971478.525081047</td>
+      <td>False</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th>0x704025e577ff7e4e202985d342c30285c4d0d320a18c34b764aa9b4dd38fd8ec</th>
+      <td>basic</td>
+      <td>['For', 'Against', 'Abstain']</td>
+      <td>[3090365.0190418432, 0, 0]</td>
+      <td>4946306.104718991</td>
+      <td>False</td>
+      <td>For</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Euler&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>type</th>
+      <th>choices</th>
+      <th>score_diffrences</th>
+      <th>total_vp</th>
+      <th>has_changed_outcome</th>
+      <th>changed_outcome_winner</th>
+    </tr>
+    <tr>
+      <th>Proposal ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0x3e7263667b5156ca065aa6809017134c73b903f09b8aa6b77b61b76cc0f09901</th>
+      <td>single-choice</td>
+      <td>['Yes: deploy Euler to BNB Chain', 'No: make n...</td>
+      <td>[0.0, 16459.295824550856, 0.0]</td>
+      <td>37704.026691998</td>
+      <td>True</td>
+      <td>Abstain</td>
+    </tr>
+    <tr>
+      <th>0x8721e87559f34b71b5ffc51cb9717d90677259d7a2b3d1fd06524f86d3202745</th>
+      <td>single-choice</td>
+      <td>['Delegate $SAFE to StableLab', 'Delegate $SAF...</td>
+      <td>[100000.0, 14950.714739293624, 0, 317969.84325...</td>
+      <td>488824.007486842</td>
+      <td>False</td>
+      <td>Abstain</td>
+    </tr>
+    <tr>
+      <th>0xe16545bf8aa67399720dba057cf9d23f1e73caa8dad8463fef783a64c89c1837</th>
+      <td>single-choice</td>
+      <td>['YES - Implement changes', 'NO- Do not Implem...</td>
+      <td>[332920.55799487286, 0]</td>
+      <td>388710.341413462</td>
+      <td>False</td>
+      <td>YES - Implement changes</td>
+    </tr>
+    <tr>
+      <th>0x3635964ebd6535eb25ea522b8aa5981942c264249185506bb1bd9474b7c9ca72</th>
+      <td>single-choice</td>
+      <td>['Yes - make rETH collateral', 'No - do not ma...</td>
+      <td>[332920.55799487286, 0.0]</td>
+      <td>397650.270054811</td>
+      <td>False</td>
+      <td>Yes - make rETH collateral</td>
+    </tr>
+    <tr>
+      <th>0x4129f05639d2ca2f76cba392a625fa2ebe9b32964d29e7e45dc831a8792d8af9</th>
+      <td>single-choice</td>
+      <td>['YES - implement the changes ', 'NO -do not i...</td>
+      <td>[54944.92856057068, 0.0]</td>
+      <td>105724.703030176</td>
+      <td>False</td>
+      <td>YES - implement the changes</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;JPEG’d&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>type</th>
+      <th>choices</th>
+      <th>score_diffrences</th>
+      <th>total_vp</th>
+      <th>has_changed_outcome</th>
+      <th>changed_outcome_winner</th>
+    </tr>
+    <tr>
+      <th>Proposal ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0x55723c4085277bf201baea0e0d298dfd255746efd194e25642cd976ecec3b1ba</th>
+      <td>single-choice</td>
+      <td>['Yes approve new JPEG boost', 'No']</td>
+      <td>[1886964369.3630195, 0.0]</td>
+      <td>2501677551.837059975</td>
+      <td>False</td>
+      <td>Yes approve new JPEG boost</td>
+    </tr>
+    <tr>
+      <th>0xf1df891a0b7b080b7903386e47332c555d893cef5ccafc08f151a3d85b65e325</th>
+      <td>single-choice</td>
+      <td>['Yes', 'No']</td>
+      <td>[1886964369.3630195, 0.0]</td>
+      <td>3291369012.976878166</td>
+      <td>False</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th>0x43983b0760fb917c7cd0934da37788f60cd950ed275fc94b7bf0372a6858f872</th>
+      <td>single-choice</td>
+      <td>['Yes, launch the index', 'No']</td>
+      <td>[0.0, 1120208158.6913748]</td>
+      <td>2026389221.211853027</td>
+      <td>False</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th>0x0800198644ae03b79e74a37825b14e4e37be8289def68a073f01ecf829ce584a</th>
+      <td>single-choice</td>
+      <td>['Yes implement tiered vaults', 'No']</td>
+      <td>[782222810.2662988, 0.0]</td>
+      <td>2367931826.085281849</td>
+      <td>False</td>
+      <td>Yes implement tiered vaults</td>
+    </tr>
+    <tr>
+      <th>0x7d80f7739cc1697b3af01ad58591cc6c2318b949440957965b9fbe16f5374077</th>
+      <td>single-choice</td>
+      <td>['Yes - add support', 'No']</td>
+      <td>[1574931318.1311798, 0.0]</td>
+      <td>3337571044.563824177</td>
+      <td>False</td>
+      <td>Yes - add support</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
