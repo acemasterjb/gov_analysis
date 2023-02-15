@@ -18,10 +18,10 @@ Traceback (most recent call last):
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
 plutocracy_report_data = pd.read_excel(
-    "../plutocracy_report.xls", sheet_name=None, engine="openpyxl"
+    "../plutocracy_report.xlsx", sheet_name=None, engine="openpyxl"
 )
 plutocracy_report_data_filtered = pd.read_excel(
-    "../plutocracy_report_filtered.xls", sheet_name=None, engine="openpyxl"
+    "../plutocracy_report_filtered.xlsx", sheet_name=None, engine="openpyxl"
 )
 ------------------
 
@@ -29,10 +29,10 @@ plutocracy_report_data_filtered = pd.read_excel(
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
 Cell [0;32mIn[2], line 1[0m
 [0;32m----> 1[0m plutocracy_report_data [38;5;241m=[39m [43mpd[49m[38;5;241;43m.[39;49m[43mread_excel[49m[43m([49m
-[1;32m      2[0m [43m    [49m[38;5;124;43m"[39;49m[38;5;124;43m../plutocracy_report.xls[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[43msheet_name[49m[38;5;241;43m=[39;49m[38;5;28;43;01mNone[39;49;00m[43m,[49m[43m [49m[43mengine[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mopenpyxl[39;49m[38;5;124;43m"[39;49m
+[1;32m      2[0m [43m    [49m[38;5;124;43m"[39;49m[38;5;124;43m../plutocracy_report.xlsx[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[43msheet_name[49m[38;5;241;43m=[39;49m[38;5;28;43;01mNone[39;49;00m[43m,[49m[43m [49m[43mengine[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mopenpyxl[39;49m[38;5;124;43m"[39;49m
 [1;32m      3[0m [43m)[49m
 [1;32m      4[0m plutocracy_report_data_filtered [38;5;241m=[39m pd[38;5;241m.[39mread_excel(
-[1;32m      5[0m     [38;5;124m"[39m[38;5;124m../plutocracy_report_filtered.xls[39m[38;5;124m"[39m, sheet_name[38;5;241m=[39m[38;5;28;01mNone[39;00m, engine[38;5;241m=[39m[38;5;124m"[39m[38;5;124mopenpyxl[39m[38;5;124m"[39m
+[1;32m      5[0m     [38;5;124m"[39m[38;5;124m../plutocracy_report_filtered.xlsx[39m[38;5;124m"[39m, sheet_name[38;5;241m=[39m[38;5;28;01mNone[39;00m, engine[38;5;241m=[39m[38;5;124m"[39m[38;5;124mopenpyxl[39m[38;5;124m"[39m
 [1;32m      6[0m )
 
 File [0;32m/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/pandas/util/_decorators.py:211[0m, in [0;36mdeprecate_kwarg.<locals>._deprecate_kwarg.<locals>.wrapper[0;34m(*args, **kwargs)[0m
@@ -98,6 +98,6 @@ File [0;32m/opt/hostedtoolcache/Python/3.10.9/x64/lib/python3.10/site-packages/
 [1;32m    866[0m     handles[38;5;241m.[39mappend(handle)
 [1;32m    868[0m [38;5;66;03m# Convert BytesIO or file objects passed with an encoding[39;00m
 
-[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '../plutocracy_report.xls'
-FileNotFoundError: [Errno 2] No such file or directory: '../plutocracy_report.xls'
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '../plutocracy_report.xlsx'
+FileNotFoundError: [Errno 2] No such file or directory: '../plutocracy_report.xlsx'
 
