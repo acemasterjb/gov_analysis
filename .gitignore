@@ -9,3 +9,6 @@ _build
 ## Excel
 *.xls
 *.xlsx
+
+## vscode
+settings.json
