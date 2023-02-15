@@ -226,14 +226,14 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="cost-of-plutocracy">
 <h1>Cost of Plutocracy<a class="headerlink" href="#cost-of-plutocracy" title="Permalink to this headline">#</a></h1>
-<p>The aim of this article is to analyze some of the biggest DAOs in the crypto space and see how many of them are influenced by token holders which own a disproportionate amount of tokens compared to most voters.</p>
+<p>This article aims to analyze some of the biggest DAOs in the crypto space and see how many of them are influenced by token holders which own a disproportionate amount of tokens compared to most voters.</p>
 <div class="cell tag_remove-input docutils container">
 </div>
 <p>The data used for this article came from data sources that specialize in providing data on DAO governance, such as DeepDAO and Snapshot. Coingecko was also used to find market data for DAO native tokens.</p>
-<p>Using this data, two spreadsheets were compiled which act as the local database for this analysis. Each spreadsheet contains each voter’s choice and voting power for the last five proposals each DAO opened. <strong>One spreadsheet filters out “whales”</strong> which, in the context of this analysis, are voters of each proposal which have voting power <strong>at or above the 95th percentile of voting power for that proposal</strong>.</p>
+<p>Using this data, two spreadsheets were compiled which act as the local database for this analysis. Each spreadsheet contains each voter’s choice and voting power for the last fifty proposals each DAO opened. <strong>One spreadsheet filters out “whales”</strong> which, in the context of this analysis, are voters of each proposal that have voting power <strong>at or above the 95th percentile of voting power for that proposal</strong>.</p>
 <div class="cell tag_remove-input tag_remove-output docutils container">
 </div>
-<p>With this, we can begin asking ourselves some questions. Such as: <strong>How many whales have voted in the last five proposals for each of the DAOs we analyzed?</strong></p>
+<p>With this, we can begin asking ourselves some questions. Such as: <strong>How many whales have voted in the last fifty proposals for each of the DAOs we analyzed?</strong></p>
 <div class="cell tag_remove-input docutils container">
 </div>
 <div class="cell tag_remove-input docutils container">
@@ -269,7 +269,7 @@ title="Print to PDF"
       <td>791</td>
       <td>21085</td>
       <td>1.675602</td>
-      <td>9.507515e+04</td>
+      <td>95075.148034</td>
       <td>7.289716</td>
     </tr>
     <tr>
@@ -277,47 +277,23 @@ title="Print to PDF"
       <td>321</td>
       <td>9742</td>
       <td>281.564683</td>
-      <td>5.561220e+04</td>
+      <td>55612.200936</td>
       <td>29.874161</td>
     </tr>
     <tr>
-      <th>Lido</th>
-      <td>152</td>
-      <td>4384</td>
-      <td>115.907850</td>
-      <td>1.351838e+06</td>
-      <td>1.564882</td>
-    </tr>
-    <tr>
-      <th>Frax</th>
-      <td>2</td>
-      <td>161</td>
-      <td>112522.786545</td>
-      <td>1.436326e+07</td>
-      <td>8.416601</td>
-    </tr>
-    <tr>
-      <th>Curve Finance</th>
-      <td>14</td>
-      <td>235</td>
-      <td>3454.929793</td>
-      <td>1.352748e+06</td>
-      <td>3.338636</td>
-    </tr>
-    <tr>
-      <th>Decentraland</th>
-      <td>54</td>
-      <td>1182</td>
-      <td>251.487140</td>
-      <td>2.851501e+05</td>
-      <td>0.703804</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
       <th>Compound</th>
       <td>55</td>
       <td>1054</td>
       <td>0.128663</td>
-      <td>5.490055e+03</td>
+      <td>5490.055025</td>
       <td>47.541103</td>
     </tr>
     <tr>
@@ -325,18 +301,19 @@ title="Print to PDF"
       <td>18</td>
       <td>395</td>
       <td>26779.601995</td>
-      <td>9.430134e+05</td>
+      <td>943013.414884</td>
       <td>12.567908</td>
     </tr>
   </tbody>
 </table>
+<p>8 rows × 5 columns</p>
 </div></div></div>
 </div>
-<p>Here we can clearly see that for the DAOs which we choose to analyze the top 5% of voters have a clear, disproportionate amount of voting power comparared to the average voter.</p>
-<p>We can also gain some insight at the economic might that these whales hold for each DAO at the time of voting by taking a look at the average cost of each vote for each DAO’s native token at the time these proposals were active.</p>
+<p>Here we can see that for the DAOs which we choose to analyze the top 5% of voters have a clear, disproportionate amount of voting power compared to the average voter.</p>
+<p>We can also gain some insight into the economic might that these whales hold for each DAO at the time of voting by taking a look at the average cost of each vote for each DAO’s native token at the time these proposals were active (in USD).</p>
 <hr class="docutils" />
-<p>We move on to taking at what DAO participation would look like without these whale’s involvement. We do so by comparing the scores of each proposal and checking whether or not the outcome of the proposal was changed after filtering out whales.</p>
-<p>We check whether or not a propsal’s outcome has changed simply by checking if the largest vote choice score has changed after filtering out whales, more specifically, in python we do:</p>
+<p>We move on to take a look at what DAO participation would look like without whale involvement. We do so by comparing the scores of each proposal and checking whether or not the outcome of the proposal was changed after filtering out whales.</p>
+<p>We check whether or not a proposal’s outcome has changed simply by checking if the largest vote choice score has changed after filtering out whales, more specifically, in python we do:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">has_changed_outcome</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">unfiltered_winning_choice_index</span> <span class="o">==</span> <span class="n">filtered_winning_choice_index</span>
 </pre></div>
 </div>
@@ -408,400 +385,13 @@ title="Print to PDF"
       <td>For</td>
     </tr>
     <tr>
-      <th>0x6b8df36</th>
-      <td>single-choice</td>
-      <td>['Wormhole', 'LayerZero', 'Celer', 'deBridge']</td>
-      <td>[23275464.75822096, 17163633.19927637, 481.545...</td>
-      <td>45581689.082320422</td>
-      <td>False</td>
-      <td>Wormhole</td>
-    </tr>
-    <tr>
-      <th>0xa3c7247</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[20056524.265649345, 4927056.974342918]</td>
-      <td>24994560.158377878</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0xfd3d380</th>
-      <td>single-choice</td>
-      <td>['add Overnight Finance', 'add DeFiEdge', 'add...</td>
-      <td>[10054.585075893452, 2708025.0728700403, 3412....</td>
-      <td>2728492.255083876</td>
-      <td>True</td>
-      <td>add Overnight Finance</td>
-    </tr>
-    <tr>
-      <th>0x387b5e8</th>
-      <td>single-choice</td>
-      <td>['Yes - Enact changes', 'No - No change']</td>
-      <td>[30508464.50667036, 34.17723847808492]</td>
-      <td>61343398.710826278</td>
-      <td>False</td>
-      <td>Yes - Enact changes</td>
-    </tr>
-    <tr>
-      <th>0x5ad7208</th>
-      <td>single-choice</td>
-      <td>['Yes ', 'No ']</td>
-      <td>[6025893.960343872, 3000106.0924527245]</td>
-      <td>11575893.085716439</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0x31c3409</th>
-      <td>single-choice</td>
-      <td>['Yes - Fix the bridge', 'No - Make no change']</td>
-      <td>[9939544.146631507, 0.0]</td>
-      <td>12950287.668343490</td>
-      <td>False</td>
-      <td>Yes - Fix the bridge</td>
-    </tr>
-    <tr>
-      <th>0xa4a21c8</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[19833891.015727025, 0.0]</td>
-      <td>19840363.162523411</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0xe523d31</th>
-      <td>single-choice</td>
-      <td>['Yes - Deploy Uniswap v3 to Boba', 'No - Make...</td>
-      <td>[17514807.50890737, 4920088.465818722]</td>
-      <td>22439325.860326741</td>
-      <td>False</td>
-      <td>Yes - Deploy Uniswap v3 to Boba</td>
-    </tr>
-    <tr>
-      <th>0x5387b07</th>
-      <td>single-choice</td>
-      <td>['Yes - Deploy Uniswap v3 to Boba', 'No- Make ...</td>
-      <td>[14636934.646607617, 1407.8565991244254]</td>
-      <td>14642047.224558931</td>
-      <td>False</td>
-      <td>Yes - Deploy Uniswap v3 to Boba</td>
-    </tr>
-    <tr>
-      <th>0x255d433</th>
-      <td>single-choice</td>
-      <td>['WETH/USDC, WETH/DAI, WETH/OP', 'WETH/USDC, W...</td>
-      <td>[16144.16650604521, 5502240.9427379975, 201282...</td>
-      <td>5723290.905228001</td>
-      <td>True</td>
-      <td>WETH/USDC, WETH/DAI, WETH/OP</td>
-    </tr>
-    <tr>
-      <th>0x8db4528</th>
-      <td>single-choice</td>
-      <td>['2 Phases - 1 [2 week Phase 1]', '2 Phases - ...</td>
-      <td>[212664.5002764943, 3065.5786774876115, 550298...</td>
-      <td>5722321.782621147</td>
-      <td>True</td>
-      <td>2 Phases - 1 [2 week Phase 1]</td>
-    </tr>
-    <tr>
-      <th>0xe6ad203</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[24230805.91360174, 0.0]</td>
-      <td>24235309.275069810</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0xab1dbb6</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[15334953.559657434, 10.1622]</td>
-      <td>15337121.942599891</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0x2f72d9f</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[18642777.784524985, 748.578002609006]</td>
-      <td>18646586.937362339</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0xd70b3e8</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[16196238.741214184, 360.0]</td>
-      <td>16199158.040993450</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0xee48516</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[35234192.70364905, 1045.8772708206884]</td>
-      <td>35237304.209142208</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0xe9f8e5d</th>
-      <td>single-choice</td>
-      <td>['Yes, implement pilot as outlined', 'No, make...</td>
-      <td>[18661724.647510625, 405.33992196668504]</td>
-      <td>18664764.383657321</td>
-      <td>False</td>
-      <td>Yes, implement pilot as outlined</td>
-    </tr>
-    <tr>
-      <th>0x4dd49ee</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[3528257.69491436, 45.33992196668505]</td>
-      <td>3530561.110063882</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0x1bf2c3f</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[3639215.4259952004, 45.33992196668505]</td>
-      <td>3642461.395323989</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>QmV8ZeseH</th>
-      <td>single-choice</td>
-      <td>['YES', 'NO']</td>
-      <td>[11618647.329434235, 0.0]</td>
-      <td>11620997.175415430</td>
-      <td>False</td>
-      <td>YES</td>
-    </tr>
-    <tr>
-      <th>0x7f196c3</th>
-      <td>single-choice</td>
-      <td>['Yes ', 'No']</td>
-      <td>[13702073.25018142, 44.377768211682366]</td>
-      <td>13703681.067427350</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0x729c19f</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[13932010.879635258, 0.0]</td>
-      <td>13934462.310817230</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>QmcVpxCSk</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[9634852.100199798, 399.21]</td>
-      <td>9637142.125859275</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>QmaG6nJYW</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[8324795.14718152, 995.1691664253818]</td>
-      <td>8327675.403180372</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0xb328c75</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[7014236.731961837, 45.33992196668505]</td>
-      <td>7015899.387141671</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>QmZ2D27uo</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[9028416.473228524, 0.0]</td>
-      <td>9030399.369920954</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>QmWhemJom</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[8928904.72845728, 400.0]</td>
-      <td>8931025.607123053</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0xa5b0e54</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[7509032.933492684, 8260.40879909871]</td>
-      <td>7519485.867417761</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0x4fdc5d5</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[12219756.48374037, 600.0]</td>
-      <td>12222188.469121560</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0x92a16fb</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[9123747.05498445, 1255.285129448177]</td>
-      <td>9127224.521219300</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0x85a309c</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[2506275.6970308837, 0.0]</td>
-      <td>2507559.579266101</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>Qmcs5pAv7</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[12834.675040136959, 6409348.929703396]</td>
-      <td>6422911.853181398</td>
-      <td>True</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0xe3d59b3</th>
-      <td>single-choice</td>
-      <td>['Yes, grant the license.', 'No, do not grant ...</td>
-      <td>[7675.115203192913, 1727.5656849400632]</td>
-      <td>10113.681932157</td>
-      <td>False</td>
-      <td>Yes, grant the license.</td>
-    </tr>
-    <tr>
-      <th>0xbfeb7f3</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[3284016.4482889436, 400.0]</td>
-      <td>3285291.299983168</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0x4f42b32</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[234806.84444132767, 400.0]</td>
-      <td>235813.246213794</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0x1994d45</th>
-      <td>single-choice</td>
-      <td>['YES', 'NO']</td>
-      <td>[9110.72210917176, 3010486.2602346083]</td>
-      <td>3023008.061901242</td>
-      <td>False</td>
-      <td>NO</td>
-    </tr>
-    <tr>
-      <th>0xc1aec11</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[19708553.532902163, 213891.40308412275]</td>
-      <td>19926659.191040918</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0xe869bc6</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[44027983.81062064, 500000.0]</td>
-      <td>44534774.101048380</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0xfb9841f</th>
-      <td>single-choice</td>
-      <td>['support', 'veto']</td>
-      <td>[2509690.2978900475, 211973.22281612444]</td>
-      <td>2723692.236874293</td>
-      <td>False</td>
-      <td>support</td>
-    </tr>
-    <tr>
-      <th>0x47a6eed</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[7783765.424553587, 0]</td>
-      <td>7788690.570368258</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0xe377d2b</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[14530531.453472938, 228533.8487202728]</td>
-      <td>14763310.801667999</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0x9238864</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No ']</td>
-      <td>[21594.851723784308, 211246.79281612276]</td>
-      <td>234478.150056493</td>
-      <td>True</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>QmP3H8WGL</th>
-      <td>single-choice</td>
-      <td>['Add 1bps fee tier (1 tick)', 'No change']</td>
-      <td>[16362044.465611802, 0.0]</td>
-      <td>16362720.863718970</td>
-      <td>False</td>
-      <td>Add 1bps fee tier (1 tick)</td>
-    </tr>
-    <tr>
-      <th>QmRKyYeGR</th>
-      <td>single-choice</td>
-      <td>['Yes, should move', 'No, should not move']</td>
-      <td>[1796.8012211741857, 2723676.250154728]</td>
-      <td>2726100.621835154</td>
-      <td>True</td>
-      <td>Yes, should move</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
       <th>QmcpJ8Qm9</th>
@@ -823,9 +413,10 @@ title="Print to PDF"
     </tr>
   </tbody>
 </table>
+<p>48 rows × 6 columns</p>
 </div></div></div>
 </div>
-<p>We can do some quick calculations using pandas to see that that 12.5% of proposals had their outcome changed by removing whales.</p>
+<p>We can do some quick calculations using pandas to see that 12.5% of proposals had their outcome changed by removing whales.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Uniswap&quot;</span><span class="p">][</span><span class="s2">&quot;outcome_changed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -840,8 +431,8 @@ Name: outcome_changed, dtype: float64
 </div>
 </div>
 </div>
-<p>One of the proposals which had their outcome changed after removing whales was the proposal to <a class="reference external" href="https://snapshot.org/#/uniswap/proposal/0xfd3d3807bd2a6eda1327c311b83de235061d39ff1bdfb616c9f9b0d367c3ac2c">add a Liquidity Mining Manager for the Optimism-Uniswap Liquidty Mining Program</a>.</p>
-<p>In this case, “Overnight Finance” would’ve been the chosen LMM if it weren’t for whale interevention, instead “DeFiEdge” was chosen for this campaign. From the data, we can see that without whale intervention, DeFiEdge would’ve had ~2,708,025 less votes out of the total ~2,728,492 voting power on this proposal. That is ~99.3% of voting power allocated for this proposal directed to choosing “DeFiEdge”.</p>
+<p>One of the proposals which had their outcome changed after removing whales was the proposal to <a class="reference external" href="https://snapshot.org/#/uniswap/proposal/0xfd3d3807bd2a6eda1327c311b83de235061d39ff1bdfb616c9f9b0d367c3ac2c">add a Liquidity Mining Manager for the Optimism-Uniswap Liquidity Mining Program</a>.</p>
+<p>In this case, “Overnight Finance” would’ve been the chosen LMM if it weren’t for whale intervention, instead “DeFiEdge” was chosen for this campaign. From the data, we can see that without whale intervention, DeFiEdge would’ve had ~2,708,025 fewer votes out of the total ~2,728,492 voting power on this proposal. That is ~99.3% of voting power allocated for this proposal directed to choosing “DeFiEdge”.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -884,7 +475,7 @@ Name: outcome_changed, dtype: float64
 </table>
 </div></div></div>
 </div>
-<p>One highly contentious proposal whose outcome did not change after filtering out whales was <a class="reference external" href="https://snapshot.org/#/uniswap/proposal/0x6b8df360fdf73085b21fdf5eef9f85916fbde95621a3d454cb20fbe545ffc852">this temperature check to choose which Eth &lt;&gt; BNB bridge to use for Uniswap v3 governance</a>. We see that even for the least popular choices, whales still contributed to the majority of the votes. We also observe that whales held the overwhelming majority of voting power for the runner up, “LayerZero”, with 99.9% of voting power allocated to this proposal being directed to this choice. By comparison, “Wormhole” received 65.1% of voting power for this proposal coming from whales.</p>
+<p>One highly contentious proposal whose outcome did not change after filtering out whales was <a class="reference external" href="https://snapshot.org/#/uniswap/proposal/0x6b8df360fdf73085b21fdf5eef9f85916fbde95621a3d454cb20fbe545ffc852">this temperature check to choose which Eth &lt;&gt; BNB bridge to use for Uniswap v3 governance</a>. We see that even for the least popular choices, whales still contributed to the majority of the votes. We also observe that whales held the overwhelming majority of voting power for the runner-up, “LayerZero”, with 99.9% of voting power allocated to this proposal being directed to this choice. By comparison, “Wormhole” received 65.1% of voting power for this proposal coming from whales.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -993,220 +584,13 @@ Name: outcome_changed, dtype: float64
       <td>For</td>
     </tr>
     <tr>
-      <th>0x5788bf0</th>
-      <td>single-choice</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[1446509.1013934365, 208348.53159207577, 13519...</td>
-      <td>1671687.088797375</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xdaff050</th>
-      <td>approval</td>
-      <td>['nick.eth', 'james.eth', 'accessor.eth', 'sim...</td>
-      <td>[2319757.8152544936, 2319757.8152544936, 23197...</td>
-      <td>2325021.309782755</td>
-      <td>False</td>
-      <td>nick.eth</td>
-    </tr>
-    <tr>
-      <th>0xa245dc7</th>
-      <td>approval</td>
-      <td>['thecap.eth (Cap)', 'slobo.eth', 'limes.eth',...</td>
-      <td>[2278346.061608189, 2278346.0616081893, 227834...</td>
-      <td>2282885.783012460</td>
-      <td>False</td>
-      <td>slobo.eth</td>
-    </tr>
-    <tr>
-      <th>0xa714c25</th>
-      <td>approval</td>
-      <td>['daylon.eth', 'avsa.eth', 'vegayp.eth', 'hell...</td>
-      <td>[2294889.695027718, 2294889.6950277183, 229488...</td>
-      <td>2299996.536005338</td>
-      <td>False</td>
-      <td>avsa.eth</td>
-    </tr>
-    <tr>
-      <th>0x4a1aedb</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[2621541.8473638818, 700.4818368034764, 0.0]</td>
-      <td>2639656.796499248</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x5c96e49</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[2113673.2141601057, 0.0, 0.0]</td>
-      <td>2126140.031373791</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x9726578</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[2017278.8829650308, 0.0, 326847.28692344716]</td>
-      <td>2363678.995122524</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x46c7294</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[2124427.5952046057, 0.0, 0.0]</td>
-      <td>2137810.777682399</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xa64ec8b</th>
-      <td>single-choice</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[1978233.3178027126, 263527.20615106804, 0.0]</td>
-      <td>2292064.681940131</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xe072841</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[3059981.215502652, 0.0, 0.0]</td>
-      <td>3159856.849162024</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xc7186cf</th>
-      <td>single-choice</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[3157365.3605884933, 0.0, 0.0]</td>
-      <td>3252712.298464072</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x718c496</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[1651702.2134308598, 11996.90263289618, 0.0]</td>
-      <td>1683490.294924525</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x104eb11</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[2993561.763270297, 17913.822148837666, 13158....</td>
-      <td>3147195.545451538</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xe040bda</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[3154691.031681181, 17913.822148837666, 0.0]</td>
-      <td>3251460.564587127</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xdf7e59e</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[2642895.196139446, 0.0, 252671.52624930246]</td>
-      <td>3438033.082180563</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x8c05add</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[2655303.822125767, 0.0, 217953.43871406346]</td>
-      <td>3527042.061006480</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x29040b3</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[2637310.56823576, 0.0, 0.0]</td>
-      <td>3214911.942896996</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x8b68ebc</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[3031618.5321238628, 0.0, 0.0]</td>
-      <td>3710505.379290689</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x90a5f88</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[2780483.773874649, 0.0, 0.0]</td>
-      <td>3441913.380528333</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xa9a2dc5</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[1049057.124106463, 1351477.9196089536, 670306...</td>
-      <td>3653722.093675191</td>
-      <td>True</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xf854140</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[3328626.803874704, 0.0, 0.0]</td>
-      <td>3666651.311333050</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x899ead1</th>
-      <td>single-choice</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[4192298.905065261, 0.0, 0.0]</td>
-      <td>4482091.097377203</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x9ab53c7</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[2962944.148206257, 266096.6957082268, 0.0]</td>
-      <td>3409429.591652498</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xcf77c74</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[3374016.7173750284, 60521.80063714897, 48217....</td>
-      <td>3715837.911645945</td>
-      <td>False</td>
-      <td>For</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
       <th>0xfe73d1b</th>
@@ -1228,6 +612,7 @@ Name: outcome_changed, dtype: float64
     </tr>
   </tbody>
 </table>
+<p>28 rows × 6 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -1287,9 +672,9 @@ Name: outcome_changed, dtype: float64
 </table>
 </div></div></div>
 </div>
-<p><a class="reference external" href="https://snapshot.org/#/ens.eth/proposal/0x41b3509b88e15677aa15680f48278517f794822fb9a79b9c621def53f1866be7">This proposal</a> once passed will approve the funding of various grants ENS has commited to funding as detailed by the proposal, <strong>the amount of capital to be commited to this proposal is 250k USDC and 50 ETH</strong>. 99.9% of voting power allocated towards this propsal was commited to voting for its passing, 0.0001% was allocated to abstaining and even a smaller percentage was allocated to voting against its passing.</p>
-<p>Meaning that ~0.1% of the vote would’ve still been allocated towards voting for the proposal to pass even without whale intervention, which I think many would see as fine since funding of public goods is always important.</p>
-<p>Another propsal on ENS which had a large amount of voting power committed by whales is <a class="reference external" href="https://snapshot.org/#/ens.eth/proposal/0x5788bf0f52ce82a1d3f7750a80f3001671ded49e4e0239dbbafd154275c78f8b">this proposal</a> to commit <strong>935k USDC and 254 ETH</strong> to the ENS Ecosystem Working group which is responsible for <em>growing and improving the ENS Ecosystem by funding people and projects that are ENS-specific or ENS-centric</em>.</p>
+<p><a class="reference external" href="https://snapshot.org/#/ens.eth/proposal/0x41b3509b88e15677aa15680f48278517f794822fb9a79b9c621def53f1866be7">This proposal</a> once passed will approve the funding of various grants ENS has committed to funding as detailed by the proposal, <strong>the amount of capital to be committed to this proposal is 250k USDC and 50 ETH</strong>. 99.9% of voting power allocated towards this proposal was committed to voting for its passing, 0.0001% was allocated to abstaining and even a smaller percentage was allocated to voting against its passing.</p>
+<p>Meaning that ~0.1% of the vote would’ve still been allocated towards voting for the proposal to pass even without whale intervention, which I think many would see as fine since the funding of public goods is always important.</p>
+<p>Another proposal on ENS which had a large amount of voting power committed by whales is <a class="reference external" href="https://snapshot.org/#/ens.eth/proposal/0x5788bf0f52ce82a1d3f7750a80f3001671ded49e4e0239dbbafd154275c78f8b">this proposal</a> to commit <strong>935k USDC and 254 ETH</strong> to the ENS Ecosystem Working group which is responsible for <em>growing and improving the ENS Ecosystem by funding people and projects that are ENS-specific or ENS-centric</em>.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -1332,9 +717,9 @@ Name: outcome_changed, dtype: float64
 </table>
 </div></div></div>
 </div>
-<p>Similar to the previous proposal we looked at, this one was highly influenced by whales (~86.5% of voting power committed to this proposal coming from whales that voted for its passing, ~12.5% from whales which voted against it, and ~0.8% of whales voted to abstain).</p>
-<p>Yet, even after removing whales, the proposal still passes. After doing some quick math, we can see the the remaining voting power for this proposal that voted for its passing equates to about ~0.17% out of the remaining 0.2% of voting power after removing whales.</p>
-<p>Still, I am not at all saying that the outcome of this proposal is controversial. An organisation funding initiatives that aid in the development of its product should not be a controversial topic for its members. I suppose the only thing that would be contested is the amount that is committed to this proposal.</p>
+<p>Similar to the previous proposal we looked at, this one was highly influenced by whales (~86.5% of voting power committed to this proposal coming from whales that voted for its passing, ~12.5% from whales that voted against it, and ~0.8% of whales voted to abstain).</p>
+<p>Yet, even after removing whales, the proposal still passes. After doing some quick math, we can see the remaining voting power for this proposal that voted for its passing equates to about ~0.17% out of the remaining 0.2% of voting power after removing whales.</p>
+<p>Still, I am not at all saying that the outcome of this proposal is controversial. An organisation’s funding initiatives that aid in the development of its product should not be a controversial topic for its members. I suppose the only thing that would be contested is the amount that is committed to this proposal.</p>
 <hr class="docutils" />
 <p>Next lets take a look at everyone’s favourite liquid staking platform: Lido.</p>
 <div class="cell docutils container">
@@ -1399,418 +784,13 @@ Name: outcome_changed, dtype: float64
       <td>For</td>
     </tr>
     <tr>
-      <th>0x32f6f09</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[57163748.21209293, 7563.113010643607]</td>
-      <td>57175091.606986538</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x7ac2431</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[57686947.46411716, 78.13038422652139]</td>
-      <td>57690201.588526487</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x7f19fed</th>
-      <td>single-choice</td>
-      <td>['YAY', 'NAY']</td>
-      <td>[54546195.85193226, 7525.505910950667]</td>
-      <td>54557517.318199627</td>
-      <td>False</td>
-      <td>YAY</td>
-    </tr>
-    <tr>
-      <th>0xcbf5343</th>
-      <td>single-choice</td>
-      <td>['1. For 6 new oracles, 6/11 set', '2. For 4 n...</td>
-      <td>[92934.92264371048, 52723122.2034864, 4535.772...</td>
-      <td>52826368.429703690</td>
-      <td>True</td>
-      <td>1. For 6 new oracles, 6/11 set</td>
-    </tr>
-    <tr>
-      <th>0xbb5c7f1</th>
-      <td>single-choice</td>
-      <td>['Upgrade to V2', 'Do not upgrade to V2']</td>
-      <td>[38446944.67494801, 8455.104714179814]</td>
-      <td>38460661.685549140</td>
-      <td>False</td>
-      <td>Upgrade to V2</td>
-    </tr>
-    <tr>
-      <th>0xb2732eb</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[31927484.633468445, 7050320.1428119475]</td>
-      <td>38982679.409992553</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xce01f9f</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[50564569.52830553, 10941.755267164812]</td>
-      <td>50589095.777857043</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x57c8e10</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[64125466.81674186, 8224.257818396074]</td>
-      <td>64141314.491086051</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x9d39cc7</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[64107715.94387769, 22888.88502928471]</td>
-      <td>64136422.107010193</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x5844beb</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[64150676.19687338, 7871.351140166874]</td>
-      <td>64164674.852326997</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xeeadc3b</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[61372007.01979874, 11582.757643301442]</td>
-      <td>61391752.687189683</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xf2d6161</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[66488927.25297699, 8549.48767620672]</td>
-      <td>66504487.531605430</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x3fdb38c</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[39540913.87831498, 5940.3351759049]</td>
-      <td>39554938.317707747</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xa3995b1</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[47622231.768609814, 3270.640351424254]</td>
-      <td>47634227.171771370</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x933548c</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[54868213.76825537, 10799.93090101208]</td>
-      <td>54893708.995249607</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x3b1e5f9</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[55187573.61907005, 0.0]</td>
-      <td>55189367.000597410</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x1a7b390</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[54215481.851644866, 6606.093358454059]</td>
-      <td>54239752.200361364</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0xa7a8d9f</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[58032946.15740793, 10401.989735862639]</td>
-      <td>58054184.298915148</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x1454174</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[64249356.57121822, 439.250752829079]</td>
-      <td>64252614.835157558</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x0572828</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[73427043.92956617, 10548.308251109096]</td>
-      <td>73456349.052749440</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x8bbd48f</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[36864480.243306, 0.0]</td>
-      <td>36866856.628232129</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x1db8052</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[55426576.051103, 301.91519450577846]</td>
-      <td>55429125.740831673</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x2a84159</th>
-      <td>single-choice</td>
-      <td>['Yay - Execute proposal as stated', 'Nay - Do...</td>
-      <td>[60339454.000471056, 546849.4412289149]</td>
-      <td>60915827.020569943</td>
-      <td>False</td>
-      <td>Yay - Execute proposal as stated</td>
-    </tr>
-    <tr>
-      <th>0x2b368b5</th>
-      <td>single-choice</td>
-      <td>['Yay', 'Nay']</td>
-      <td>[65841534.84261388, 3164.9053041656534]</td>
-      <td>65862504.444669083</td>
-      <td>False</td>
-      <td>Yay</td>
-    </tr>
-    <tr>
-      <th>0xede83ac</th>
-      <td>single-choice</td>
-      <td>['For-Keep as listed, no lock up', 'For-Keep a...</td>
-      <td>[40042.09181, 21165133.189574376, 42456371.986...</td>
-      <td>63891116.786486097</td>
-      <td>True</td>
-      <td>For-Keep as listed, 1 yr lock up</td>
-    </tr>
-    <tr>
-      <th>0x75e91a2</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[53537448.86854501, 3063.488779023718]</td>
-      <td>53556216.584224127</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xb99f87e</th>
-      <td>single-choice</td>
-      <td>['Yes, redirect', 'No, do not redirect']</td>
-      <td>[60641480.02902158, 2195.698977681117]</td>
-      <td>60661846.836199723</td>
-      <td>False</td>
-      <td>Yes, redirect</td>
-    </tr>
-    <tr>
-      <th>0x7ea98c8</th>
-      <td>single-choice</td>
-      <td>['Yes, reduce to 0.25%', 'No, keep at 0.50%']</td>
-      <td>[57605388.993982084, 0.0]</td>
-      <td>57626527.125785202</td>
-      <td>False</td>
-      <td>Yes, reduce to 0.25%</td>
-    </tr>
-    <tr>
-      <th>0x10abedc</th>
-      <td>single-choice</td>
-      <td>["yes, let's self-limit", "no, don't self-limit"]</td>
-      <td>[0.0, 78094399.77633649]</td>
-      <td>80649556.916142002</td>
-      <td>False</td>
-      <td>no, don't self-limit</td>
-    </tr>
-    <tr>
-      <th>0xd9d13bb</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[54010196.56226674, 0.0]</td>
-      <td>54024098.338775747</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xe964fb2</th>
-      <td>single-choice</td>
-      <td>['Shut down on Terra Classic&amp;bETH', 'Do not sh...</td>
-      <td>[55703349.91346355, 115740.740740741]</td>
-      <td>55823184.335119464</td>
-      <td>False</td>
-      <td>Shut down on Terra Classic&amp;bETH</td>
-    </tr>
-    <tr>
-      <th>0xbfc4ba2</th>
-      <td>single-choice</td>
-      <td>['Yay', 'Nay']</td>
-      <td>[70358582.04099084, 0.0]</td>
-      <td>70430679.782992452</td>
-      <td>False</td>
-      <td>Yay</td>
-    </tr>
-    <tr>
-      <th>0x1ebfab7</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[60738482.385950886, 0.0]</td>
-      <td>60759858.751576193</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0x4cba967</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[50309656.20167391, 0.0, 1500000.0]</td>
-      <td>51851135.291599117</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xf4beaba</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[60422018.65535884, 0.0]</td>
-      <td>60425425.367034800</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xb932357</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[33034040.5094424, 0.0, 0]</td>
-      <td>33042378.086354189</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xfc51ff5</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[60940918.87627625, 15000.000046723642]</td>
-      <td>60967291.718204603</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0xcb31f1b</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No, dumping on the community']</td>
-      <td>[4162091.288914744, 24718.827726134557]</td>
-      <td>4209028.261093465</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0x865212c</th>
-      <td>single-choice</td>
-      <td>['No relaunch', 'Relaunch']</td>
-      <td>[54053583.83280596, 3115740.740740741]</td>
-      <td>57395503.439015463</td>
-      <td>False</td>
-      <td>No relaunch</td>
-    </tr>
-    <tr>
-      <th>0x7b93fb4</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[55484453.400596544, 0]</td>
-      <td>55500588.421676703</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0x37f68ad</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[65552031.86552656, 0.0]</td>
-      <td>65699204.760411657</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0x54677d5</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[52236543.65913692, 0.0]</td>
-      <td>52250543.043357544</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x84c06c8</th>
-      <td>single-choice</td>
-      <td>['YES', 'NO']</td>
-      <td>[1813.2955419433665, 0]</td>
-      <td>2922.175484300</td>
-      <td>False</td>
-      <td>YES</td>
-    </tr>
-    <tr>
-      <th>0xc9c65d5</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[1053.2618640318087, 0.0]</td>
-      <td>1812.380533733</td>
-      <td>False</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0x203da3e</th>
-      <td>single-choice</td>
-      <td>['yes!', 'no!']</td>
-      <td>[631.7238786818091, 0.0]</td>
-      <td>937.869389032</td>
-      <td>False</td>
-      <td>yes!</td>
-    </tr>
-    <tr>
-      <th>0xa52dd8b</th>
-      <td>single-choice</td>
-      <td>['Creator is the most handsome guy', 'hello no']</td>
-      <td>[970.7449638745323, 509.27065986]</td>
-      <td>2169.025398167</td>
-      <td>False</td>
-      <td>Creator is the most handsome guy</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
       <th>0xa2cd540</th>
@@ -1832,6 +812,7 @@ Name: outcome_changed, dtype: float64
     </tr>
   </tbody>
 </table>
+<p>50 rows × 6 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -1848,7 +829,7 @@ Name: outcome_changed, dtype: float64
 </div>
 </div>
 </div>
-<p>Here, we see that there was a change in outcome for just two of the proposals (4%). <a class="reference external" href="https://snapshot.org/#/lido-snapshot.eth/proposal/0xcbf534335fe07c046caa933e1623ac38bfb3d1890ab825264a0b47415cf7799b">This proposal</a> to <a class="reference external" href="https://mainnet.lido.fi/#/lido-dao/0x442af784a788a5bd6f42a01ebe9f287a871243fb/">expand the oracle set and quorum</a> of Lido DAO oracle node operators was passed 16/12/22 and onboarded 4 new oracle node operators and set the quorum to 5/9 reports from orales being identical to be accepted by the protocol.</p>
+<p>Here, we see that there was a change in outcome for just two of the proposals (4%). <a class="reference external" href="https://snapshot.org/#/lido-snapshot.eth/proposal/0xcbf534335fe07c046caa933e1623ac38bfb3d1890ab825264a0b47415cf7799b">This proposal</a> to <a class="reference external" href="https://mainnet.lido.fi/#/lido-dao/0x442af784a788a5bd6f42a01ebe9f287a871243fb/">expand the oracle set and quorum</a> of Lido DAO oracle node operators was passed 16/12/22 and onboarded 4 new oracle node operators and set the quorum to 5/9 reports from oracles being identical to be accepted by the protocol.</p>
 <p>Had whales not intervened, Option 1 to onboard 6 additional oracles and set the quorum to 6/11 would’ve passed.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -1892,9 +873,9 @@ Name: outcome_changed, dtype: float64
 </table>
 </div></div></div>
 </div>
-<p>Here we see that whale participation was consistent for all choices for this proposal. In fact, ~99.982% of voting power allocated to this proposal came from whales that voted for each of the outcomes. The second outcome alone had ~99.980% of the voting power allocated to this proposal, so obviously its removal would make a huge impression on the outcome.</p>
-<p>Indeed, the voting power would be comparitively low without whale intervention (if this were the case, only ~9277.7397 LDO would be allocated to this proposal). However the fact that after doing so additional oracles would still be implemented anyway, where the only other alternative would be to not implement any more oracles, shows that the community that participated in this proposal still saw it important to add more oracles to further promote decentralisation of oracles which <a class="reference external" href="https://docs.lido.fi/guides/oracle-operator-manual">report chain state from the beacon chain to the execution layer</a> of ETH 2.0 as it pertains to the operation of Lido.</p>
-<p>In conclusion of this analysis of this proposal, we can say that whales and average token holders were moving the same direction, but perhaps taking different paths. It will be interesting to see why whales opted to implement less oracles than what the majority of average token holders chose, which may require a more in depth report based on the <a class="reference external" href="https://research.lido.fi/t/expansion-of-lidos-ethereum-oracle-set/2836">forum discussions</a> on the propoal.</p>
+<p>Here we see that whale participation was consistent for all choices for this proposal. In fact, ~99.982% of voting power allocated to this proposal came from whales that voted for each of the outcomes. The second outcome alone had ~99.980% of the voting power allocated to this proposal, so obviously, its removal would make a huge impression on the outcome.</p>
+<p>Indeed, the voting power would be comparatively low without whale intervention (if this were the case, only ~9277.7397 LDO would be allocated to this proposal). However the fact that after doing so additional oracles would still be implemented anyway, where the only other alternative would be to not implement any more oracles, shows that the community that participated in this proposal still saw it important to add more oracles to further promote decentralisation of oracles which <a class="reference external" href="https://docs.lido.fi/guides/oracle-operator-manual">report chain state from the beacon chain to the execution layer</a> of ETH 2.0 as it pertains to the operation of Lido.</p>
+<p>In conclusion of this analysis of this proposal, we can say that whales and average token holders were moving in the same direction, but perhaps taking different paths. It will be interesting to see why whales opted to implement fewer oracles than what the majority of average token holders chose, which may require a more in-depth report based on the <a class="reference external" href="https://research.lido.fi/t/expansion-of-lidos-ethereum-oracle-set/2836">forum discussions</a> on the proposal.</p>
 <hr class="docutils" />
 <p>Now we take a look at Frax.</p>
 <div class="cell docutils container">
@@ -1959,418 +940,13 @@ Name: outcome_changed, dtype: float64
       <td>For</td>
     </tr>
     <tr>
-      <th>0x8f497b3</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[29460.77362414489, 0.0]</td>
-      <td>33806.253531748</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x9547dee</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[26582392.78665665, 0]</td>
-      <td>26594367.493811361</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x1272233</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[36401823.83824842, 0.0]</td>
-      <td>41369202.344253987</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x9cc997c</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[32596053.830188096, 0.0]</td>
-      <td>40176140.875503592</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x02aa360</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[32596092.76074356, 0]</td>
-      <td>40116426.022636428</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xe53269e</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[32596126.82497959, 0]</td>
-      <td>40271805.931466728</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xece8d5b</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[9238257.821819123, 0.0]</td>
-      <td>11729100.481171651</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x08c3ef9</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[3813131.3432570845, 0.0]</td>
-      <td>31288309.027494788</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xb2c5a0a</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[30415780.710523646, 0]</td>
-      <td>33767526.026965618</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xb69cd11</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[0.0, 3815579.5456971936]</td>
-      <td>36428583.772322237</td>
-      <td>False</td>
-      <td>Against</td>
-    </tr>
-    <tr>
-      <th>0x52d8c99</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[30357935.108669188, 0]</td>
-      <td>30972542.118990570</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xca4f422</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[32594228.04871399, 0]</td>
-      <td>37016360.067046657</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x6208d2b</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[32594271.832260024, 0.0]</td>
-      <td>36954803.986796796</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xa2fad6f</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[32594305.886129156, 0]</td>
-      <td>36853055.829401881</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x8fedeab</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[32594347.23725596, 0.0]</td>
-      <td>36903735.888115078</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x0f0fb69</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[32594395.885640435, 0.0]</td>
-      <td>36902103.339549631</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xc4257d3</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[32594417.77741345, 0.0]</td>
-      <td>36902641.199589193</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x68920a1</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[32594551.56047076, 0.0]</td>
-      <td>36848752.038352713</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x4837509</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[9891600.803749923, 0.0]</td>
-      <td>11212017.068196651</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x9727168</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[954806.1451496906, 0.0]</td>
-      <td>1035478.016676995</td>
-      <td>True</td>
-      <td>Against</td>
-    </tr>
-    <tr>
-      <th>0x0117a21</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[32641315.621914126, 0]</td>
-      <td>36374435.573731601</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xabcbe9d</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[28588451.101462252, 0]</td>
-      <td>30283576.446510918</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xec593d6</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[28588472.75511201, 0]</td>
-      <td>30282578.376143999</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xec0f840</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[28588494.40876177, 0]</td>
-      <td>30282627.186592679</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x889caff</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[28588518.468372613, 0.0]</td>
-      <td>30741713.147313081</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xc41bc22</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[28588544.93394454, 0.0]</td>
-      <td>30309307.956634179</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x8b2ac1a</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[5916645.3529088395, 0.0]</td>
-      <td>8648384.203795411</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xb9fe6ef</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[30386165.616269406, 0.0]</td>
-      <td>31283926.073370151</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x32da9f3</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[30386192.544893824, 0.0]</td>
-      <td>31283958.391484950</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xd84ed93</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[30386235.181882475, 0.0]</td>
-      <td>31280459.559844200</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xd7271b0</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[3873327.9601336606, 0.0]</td>
-      <td>30996284.782156110</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x08fe38d</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[3873332.757171333, 0.0]</td>
-      <td>31282674.924833801</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x3f15e06</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[30386306.99154758, 0.0]</td>
-      <td>31213874.527183380</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x28a0f9f</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[30386322.69991182, 0]</td>
-      <td>31227657.491185568</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xa32b8a6</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[30386365.336900476, 0.0]</td>
-      <td>31227143.909481529</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x665aed0</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[10010729.557360683, 0.0]</td>
-      <td>40287353.996817172</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xaeb2f47</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[0.0, 6710146.39513986]</td>
-      <td>9892088.109597405</td>
-      <td>False</td>
-      <td>Against</td>
-    </tr>
-    <tr>
-      <th>0x4540ed6</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[27085892.691025093, 0]</td>
-      <td>27175029.957200531</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x5d2e624</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[26501916.854753032, 584036.023334566]</td>
-      <td>27159149.141083241</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xc44bf39</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[27085976.176305342, 0]</td>
-      <td>27157159.271444969</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x24fbae4</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[32707181.98904157, 0.0]</td>
-      <td>33888626.906032883</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xe061287</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[3934780.406618379, 0.0]</td>
-      <td>31825082.890020680</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x85f899b</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[3941289.056401264, 0.0]</td>
-      <td>33779909.912352361</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xd1153d6</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[6560692.593072049, 0.0]</td>
-      <td>60757706.502253793</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xaa0c47e</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[30418750.98678579, 0.0]</td>
-      <td>33810817.488279060</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x9464dc7</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[0.0, 0.0]</td>
-      <td>27061072.126949251</td>
-      <td>False</td>
-      <td>For</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
       <th>0x40e711b</th>
@@ -2392,6 +968,7 @@ Name: outcome_changed, dtype: float64
     </tr>
   </tbody>
 </table>
+<p>50 rows × 6 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -2408,9 +985,9 @@ Name: outcome_changed, dtype: float64
 </div>
 </div>
 </div>
-<p>Whilst enourmous voting power was filtered out from all the proposals listed, just one had their outcomes changed (2%).</p>
-<p>If we look at the proposal which attracted the most voting power, <a class="reference external" href="https://snapshot.org/#/frax.eth/proposal/0xece8d5be8b180b54350c4bddee190e24e2849d233f8aac11e0ef0aa7d658ae2a">this proposal</a> to renew the grant for Flywheel for 2023 (in the amount of approx $214.2k, split 50/50 in FXS and FRAX) for the promotion of “the Frax ecosystem and producing high-qulity DeFi content”, we see that just over 50% of the voting power was removed from this proposal after filtering out whales (approx 56.7%).</p>
-<p>Though, because the opposition voting power for this proposal was a paltry 1E-5% of the vote, filtering out whales did not change the outcome. This clearly was not a controversial outcome to this proposal by number of voting participants (FXS token holders which participated in this propsal).</p>
+<p>Whilst enormous voting power was filtered out from all the proposals listed, just one had their outcomes changed (2%).</p>
+<p>If we look at the proposal which attracted the most voting power, <a class="reference external" href="https://snapshot.org/#/frax.eth/proposal/0xece8d5be8b180b54350c4bddee190e24e2849d233f8aac11e0ef0aa7d658ae2a">this proposal</a> to renew the grant for Flywheel for 2023 (in the amount of approx $214.2k, split 50/50 in FXS and FRAX) for the promotion of “the Frax ecosystem and producing high-quality DeFi content”, we see that just over 50% of the voting power was removed from this proposal after filtering out whales (approx 56.7%).</p>
+<p>Though, because the opposition voting power for this proposal was a paltry 1E-5% of the vote, filtering out whales did not change the outcome. This was not a controversial outcome to this proposal after observing the number of voting participants (FXS token holders who participated in this proposal).</p>
 <p>Indeed, Frax’s <a class="reference external" href="https://gov.frax.finance/t/fip-178-flywheel-grant-renewal-for-2023/2068">forum post</a> regarding this proposal had mostly positive things to say about Flywheel, which started out as a podcast promoting Frax in the wake of the collapse of Terra/Luna. Stating that since their last grant given to Flywheel in 2022, their social following has increased by 2770% on Twitter and 3140% on Youtube. They also serve as an educating branch for Frax, organizing meetups and also “attracted builders from across the ecosystem”.</p>
 <p>What’s interesting about this proposal is that whale participation contributed to just over 56.7% of the voting power for this proposal. This is probably the most fairly represented outcome looked at so far, with the outcome being clearly popular with whales and the average voter.</p>
 <div class="cell tag_remove-input docutils container">
@@ -2453,7 +1030,7 @@ Name: outcome_changed, dtype: float64
 </div></div></div>
 </div>
 <hr class="docutils" />
-<p>If we now look at Decentraland, we actually observe that there is quite a bad case of concentration of votes in the hands of whales.</p>
+<p>If we now look at Decentraland, we observe that there is quite a bad case of concentration of votes in the hands of plutocrats.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Decentraland&quot;</span><span class="p">]</span>
@@ -2516,418 +1093,13 @@ Name: outcome_changed, dtype: float64
       <td>yes</td>
     </tr>
     <tr>
-      <th>0x7acae7a</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[204322.76189336783, 4002000.0]</td>
-      <td>4207838.073517978</td>
-      <td>False</td>
-      <td>no</td>
-    </tr>
-    <tr>
-      <th>0x526eab1</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[624335.8827633569, 4677227.906455184]</td>
-      <td>5332049.831906232</td>
-      <td>True</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0x187559b</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[4013057.4165858557, 573884.5576664917]</td>
-      <td>4589827.856828686</td>
-      <td>False</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0x8b84875</th>
-      <td>single-choice</td>
-      <td>['yes I want someone to pick this up down the ...</td>
-      <td>[1758.89825942416, 4004847.239929493, 312680.3...</td>
-      <td>4879182.104053254</td>
-      <td>True</td>
-      <td>yes I want someone to pick this up down the line</td>
-    </tr>
-    <tr>
-      <th>0x4913bba</th>
-      <td>single-choice</td>
-      <td>['This is a good idea', 'This is a bad idea ',...</td>
-      <td>[6889278.390786966, 11246.553231335398, 6511.0...</td>
-      <td>7741409.420432587</td>
-      <td>False</td>
-      <td>This is a good idea</td>
-    </tr>
-    <tr>
-      <th>0x9b79389</th>
-      <td>single-choice</td>
-      <td>["We should diversify the DAO's treasury", "We...</td>
-      <td>[394684.30392451526, 4655.417903198702, 0]</td>
-      <td>400381.580846566</td>
-      <td>False</td>
-      <td>We should diversify the DAO's treasury</td>
-    </tr>
-    <tr>
-      <th>0x24be3be</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[4097189.096306793, 184549.89306984315]</td>
-      <td>4284151.947193912</td>
-      <td>False</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0x3262d5a</th>
-      <td>single-choice</td>
-      <td>['yes', 'no', 'Invalid question/options']</td>
-      <td>[0.0, 4867781.20073172, 0]</td>
-      <td>4873739.540607292</td>
-      <td>False</td>
-      <td>no</td>
-    </tr>
-    <tr>
-      <th>0xd28d40b</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No', 'Invalid question/options']</td>
-      <td>[55018.50237104497, 4842349.539461622, 234913....</td>
-      <td>5142210.171434388</td>
-      <td>False</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>0x387ab2c</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No', 'Invalid question/options']</td>
-      <td>[1446822.6210137017, 5102449.683512435, 0.0]</td>
-      <td>6598489.880862413</td>
-      <td>True</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0x9f99e7d</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No', 'Invalid question/options']</td>
-      <td>[46401.59604130001, 5953904.280364453, 339285....</td>
-      <td>6376865.349962113</td>
-      <td>False</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>0x616af9c</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[4945828.367251992, 0.0]</td>
-      <td>4980743.120903401</td>
-      <td>False</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0x29fa106</th>
-      <td>single-choice</td>
-      <td>["Yes, I'm a bot", "No, I'm not a human", "I h...</td>
-      <td>[1415770.9404869652, 0.0, 0.0, 100787.88074626...</td>
-      <td>5846430.908190408</td>
-      <td>False</td>
-      <td>Invalid question/options</td>
-    </tr>
-    <tr>
-      <th>0x768ee01</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[4002000.0, 1171711.780596778]</td>
-      <td>5183136.910767129</td>
-      <td>True</td>
-      <td>no</td>
-    </tr>
-    <tr>
-      <th>0x8668746</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[4002000.0, 1162799.5640588747]</td>
-      <td>5172164.886299748</td>
-      <td>True</td>
-      <td>no</td>
-    </tr>
-    <tr>
-      <th>0x5312e06</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No', 'Invalid question/options']</td>
-      <td>[60115.7369941974, 5139662.1441359045, 39810.4...</td>
-      <td>5259879.143333904</td>
-      <td>False</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>0x26297f8</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[5227718.366775841, 608250.7555249567]</td>
-      <td>5881523.768822696</td>
-      <td>False</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0x105e115</th>
-      <td>single-choice</td>
-      <td>['AwedJob', 'Champ', 'Martriay', 'Szjanko', 'T...</td>
-      <td>[133936.60868228367, 177199.1938361379, 777247...</td>
-      <td>9925257.706170728</td>
-      <td>True</td>
-      <td>Szjanko</td>
-    </tr>
-    <tr>
-      <th>0x1f63abb</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[7663147.697293431, 0.0]</td>
-      <td>7768502.830917304</td>
-      <td>False</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0xe353e78</th>
-      <td>single-choice</td>
-      <td>['Community Feedback', 'Community Feedback', '...</td>
-      <td>[1147397.9254583844, 0.0, 1647619.4605544386]</td>
-      <td>2809573.195131459</td>
-      <td>True</td>
-      <td>Community Feedback</td>
-    </tr>
-    <tr>
-      <th>0xbddb5c2</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[5694348.939383298, 4002000.0]</td>
-      <td>9745292.650284847</td>
-      <td>False</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0x73fa3d2</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[6195147.381200622, 0.0]</td>
-      <td>6437214.959234028</td>
-      <td>False</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0xdfc9d87</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[6498.38425178834, 1122668.0743977013]</td>
-      <td>1130731.783818342</td>
-      <td>True</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0x7f6fed8</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No', 'Invalid question/options']</td>
-      <td>[166209.6386304275, 1392896.0012876112, 0.0]</td>
-      <td>1562948.638254712</td>
-      <td>True</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0xbf2891a</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[3657224.7157918694, 0.0]</td>
-      <td>3682791.123887165</td>
-      <td>False</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0x6576a4e</th>
-      <td>single-choice</td>
-      <td>['Unban', 'Ban', 'Invalid question/options']</td>
-      <td>[727037.7894103363, 0.0, 789652.7700031851]</td>
-      <td>1563285.283364499</td>
-      <td>True</td>
-      <td>Unban</td>
-    </tr>
-    <tr>
-      <th>0xf574f75</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[2016588.965462332, 49981.66360630109]</td>
-      <td>2093934.626626681</td>
-      <td>False</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0x0278654</th>
-      <td>single-choice</td>
-      <td>['Unban', 'Keep Ban', 'Unban but Mute', 'Inval...</td>
-      <td>[2896479.754656779, 203201.1295253211, 0.0, 0.0]</td>
-      <td>3188500.479253661</td>
-      <td>False</td>
-      <td>Unban</td>
-    </tr>
-    <tr>
-      <th>0xea65740</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[1292106.205084065, 434563.7750322549]</td>
-      <td>1783089.004177297</td>
-      <td>False</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0x4f1ef94</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[4998979.935564352, 4053264.4335003807]</td>
-      <td>9084665.389531733</td>
-      <td>False</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0x36869ff</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[473662.4626787397, 260299.90800875027]</td>
-      <td>756632.986061135</td>
-      <td>True</td>
-      <td>no</td>
-    </tr>
-    <tr>
-      <th>0x57b9a3c</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[3512.3369, 1105755.1540681666]</td>
-      <td>1122799.924011478</td>
-      <td>False</td>
-      <td>no</td>
-    </tr>
-    <tr>
-      <th>0xe126f25</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[4484370.231829518, 5067699.548291741]</td>
-      <td>9704956.893500878</td>
-      <td>True</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0xefc628b</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[10026018.496265141, 95330.4541267127]</td>
-      <td>10364047.342359170</td>
-      <td>False</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0xcfa9ae3</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[728870.6695814347, 0.0]</td>
-      <td>745623.272559964</td>
-      <td>False</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0xdcf2fe1</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No', 'Invalid question/options']</td>
-      <td>[939120.0279405861, 966559.9263541966, 0.0]</td>
-      <td>1961732.464796710</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0x91d5f87</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No', 'Invalid question/options']</td>
-      <td>[254932.8721326157, 1469783.8618626662, 0.0]</td>
-      <td>1740268.168368731</td>
-      <td>False</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>0xa71b13c</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[6511.0495, 2085575.5543238777]</td>
-      <td>2112916.566925719</td>
-      <td>False</td>
-      <td>no</td>
-    </tr>
-    <tr>
-      <th>0x714d66a</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[1378291.1306937109, 772582.5534204701]</td>
-      <td>2184582.854654022</td>
-      <td>False</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0x8c7cae1</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[1963552.1388634306, 1221978.2602112116]</td>
-      <td>3276168.933900093</td>
-      <td>False</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0x42422eb</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[2013975.3763575228, 1247980.1959003948]</td>
-      <td>3385513.114297944</td>
-      <td>False</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0x4744425</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[1786688.5861812457, 0.0]</td>
-      <td>1881648.775140764</td>
-      <td>False</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0x16fa265</th>
-      <td>single-choice</td>
-      <td>['DAO should allocated funds for marketing to ...</td>
-      <td>[2695.006, 0.0, 1332333.0285564782]</td>
-      <td>1342767.537126856</td>
-      <td>False</td>
-      <td>Invalid question/options</td>
-    </tr>
-    <tr>
-      <th>0x5180e81</th>
-      <td>single-choice</td>
-      <td>['Grant Accountability Committee', 'Grant Revo...</td>
-      <td>[323950.039884666, 862520.445578286, 0.0, 1425...</td>
-      <td>1377355.142824724</td>
-      <td>False</td>
-      <td>Grant Revocations Committee</td>
-    </tr>
-    <tr>
-      <th>0x1c2b664</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[2049192.6040944208, 194714.1486254261]</td>
-      <td>2591662.676684813</td>
-      <td>False</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0x79b68a7</th>
-      <td>single-choice</td>
-      <td>['Yea I like the idea', 'no not interested', '...</td>
-      <td>[0.0, 302348.9759993614, 929354.0397820002]</td>
-      <td>1237047.644105608</td>
-      <td>False</td>
-      <td>Invalid question/options</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
       <th>0x4d2a825</th>
@@ -2949,6 +1121,7 @@ Name: outcome_changed, dtype: float64
     </tr>
   </tbody>
 </table>
+<p>50 rows × 6 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -2965,6 +1138,7 @@ Name: outcome_changed, dtype: float64
 </div>
 </div>
 </div>
+<p>Here we see that just under a quarter of proposals’ outcomes would change if whales were not involved in Decentraland governance.</p>
 <p>For example, this proposal to set a duration period for the tenure of Decentraland DAO commitee members saw 99.9% of voting power being concentrated to whales, with 94.85% of propsal voting power being allocated to voting for the proposal to not pass.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -3073,346 +1247,13 @@ Name: outcome_changed, dtype: float64
       <td>2Pool + current 3Pool + 4Pool</td>
     </tr>
     <tr>
-      <th>0xa11d4d1</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[26054297.07744241, 0]</td>
-      <td>26097304.209488451</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0x026a69e</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[1891.6266956075615, 0]</td>
-      <td>6893.077810757</td>
-      <td>False</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0x93cf3af</th>
-      <td>single-choice</td>
-      <td>['sì', ' no']</td>
-      <td>[0.0, 653.7322378921115]</td>
-      <td>1141.553091741</td>
-      <td>True</td>
-      <td>sì</td>
-    </tr>
-    <tr>
-      <th>0xf29dd4b</th>
-      <td>single-choice</td>
-      <td>['会', '不会']</td>
-      <td>[0, 1939.6283319658169]</td>
-      <td>3081.174372770</td>
-      <td>False</td>
-      <td>不会</td>
-    </tr>
-    <tr>
-      <th>0x3b2d049</th>
-      <td>single-choice</td>
-      <td>['OUI', 'NON']</td>
-      <td>[472.8191613610968, 0]</td>
-      <td>487.813738095</td>
-      <td>False</td>
-      <td>OUI</td>
-    </tr>
-    <tr>
-      <th>0x4ebcc4c</th>
-      <td>single-choice</td>
-      <td>['YES', 'NO']</td>
-      <td>[0.0, 472.81984655999344]</td>
-      <td>487.814445790</td>
-      <td>True</td>
-      <td>YES</td>
-    </tr>
-    <tr>
-      <th>0xeb4d67f</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[1945.3353636422128, 0]</td>
-      <td>2437.402576288</td>
-      <td>False</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0x6529d73</th>
-      <td>single-choice</td>
-      <td>['Oui', 'Non']</td>
-      <td>[0.0, 1945.9956977285592]</td>
-      <td>2434.857973186</td>
-      <td>False</td>
-      <td>Non</td>
-    </tr>
-    <tr>
-      <th>0x08a72b7</th>
-      <td>single-choice</td>
-      <td>['YES', 'NO']</td>
-      <td>[0.0, 1945.997058159503]</td>
-      <td>2526.967706468</td>
-      <td>False</td>
-      <td>NO</td>
-    </tr>
-    <tr>
-      <th>0xfa37c53</th>
-      <td>single-choice</td>
-      <td>['会', '不会']</td>
-      <td>[0.0, 1945.9990630051045]</td>
-      <td>2434.861892824</td>
-      <td>True</td>
-      <td>会</td>
-    </tr>
-    <tr>
-      <th>0x3dbcf83</th>
-      <td>single-choice</td>
-      <td>['BTC', 'ETH', 'XRP', 'BCH', 'LTC', 'ADA', 'NEO']</td>
-      <td>[0.0, 13498.441083512136, 0, 0.0, 0, 0, 0]</td>
-      <td>19779.656577898</td>
-      <td>False</td>
-      <td>ETH</td>
-    </tr>
-    <tr>
-      <th>0xfcde35b</th>
-      <td>single-choice</td>
-      <td>[' Oui', ' Non']</td>
-      <td>[1407.4889906129977, 0]</td>
-      <td>1458.902431101</td>
-      <td>False</td>
-      <td>Oui</td>
-    </tr>
-    <tr>
-      <th>0xd4b0b42</th>
-      <td>single-choice</td>
-      <td>['肯定会', '不会']</td>
-      <td>[0.0, 1962.445837763155]</td>
-      <td>2078.224506104</td>
-      <td>False</td>
-      <td>不会</td>
-    </tr>
-    <tr>
-      <th>0xaec626e</th>
-      <td>single-choice</td>
-      <td>['YES', 'NO']</td>
-      <td>[0.0, 1712.37017053524]</td>
-      <td>1727.484228544</td>
-      <td>True</td>
-      <td>YES</td>
-    </tr>
-    <tr>
-      <th>0x14cfc26</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[2039.7783259132257, 0.0, 0]</td>
-      <td>7066.126877814</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x97ae5c4</th>
-      <td>single-choice</td>
-      <td>['是的', ' 不是']</td>
-      <td>[1979.2047717547805, 0]</td>
-      <td>2697.688746871</td>
-      <td>False</td>
-      <td>是的</td>
-    </tr>
-    <tr>
-      <th>0x188d497</th>
-      <td>single-choice</td>
-      <td>[' Oui', ' non']</td>
-      <td>[566.4583111510817, 0]</td>
-      <td>581.660131364</td>
-      <td>False</td>
-      <td>Oui</td>
-    </tr>
-    <tr>
-      <th>0x6380932</th>
-      <td>single-choice</td>
-      <td>['YES', 'NO']</td>
-      <td>[1803.4822630480421, 0.0]</td>
-      <td>2590.357441296</td>
-      <td>True</td>
-      <td>NO</td>
-    </tr>
-    <tr>
-      <th>0x9b3a6f1</th>
-      <td>single-choice</td>
-      <td>[' sì', 'no']</td>
-      <td>[2409.440728424726, 0]</td>
-      <td>2454.872773989</td>
-      <td>False</td>
-      <td>sì</td>
-    </tr>
-    <tr>
-      <th>0xdaae7dd</th>
-      <td>single-choice</td>
-      <td>[' Oui', ' non']</td>
-      <td>[2409.443227419755, 0]</td>
-      <td>2424.708702490</td>
-      <td>False</td>
-      <td>Oui</td>
-    </tr>
-    <tr>
-      <th>0x71e63b5</th>
-      <td>single-choice</td>
-      <td>['支持', '不支持']</td>
-      <td>[-171.99464100030224, 0]</td>
-      <td>15.265483444</td>
-      <td>False</td>
-      <td>支持</td>
-    </tr>
-    <tr>
-      <th>0xfa72434</th>
-      <td>single-choice</td>
-      <td>['YES', 'NO']</td>
-      <td>[-23285.594756605908, 0]</td>
-      <td>2596.707741990</td>
-      <td>False</td>
-      <td>YES</td>
-    </tr>
-    <tr>
-      <th>0x25a91d1</th>
-      <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[37193.63143980102, 0]</td>
-      <td>39587.026129601</td>
-      <td>False</td>
-      <td>yes</td>
-    </tr>
-    <tr>
-      <th>0x38b70ed</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[4719.743280381324, -192.01027483269104]</td>
-      <td>4814.843629665</td>
-      <td>True</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>0x67293d0</th>
-      <td>single-choice</td>
-      <td>['OUI', 'NON']</td>
-      <td>[-1.574761438405403e-05, 0]</td>
-      <td>15.341543922</td>
-      <td>False</td>
-      <td>OUI</td>
-    </tr>
-    <tr>
-      <th>0x2148e6a</th>
-      <td>single-choice</td>
-      <td>['满意', '不满意']</td>
-      <td>[-447.79715224823036, 1680.2523800674132]</td>
-      <td>2293.003160633</td>
-      <td>True</td>
-      <td>满意</td>
-    </tr>
-    <tr>
-      <th>0x83d3226</th>
-      <td>single-choice</td>
-      <td>['YES', 'NO']</td>
-      <td>[-2418.558362915407, 0]</td>
-      <td>110.441913868</td>
-      <td>False</td>
-      <td>YES</td>
-    </tr>
-    <tr>
-      <th>0x4e54b47</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[2534.524465957637, -1494.3394612559373, 0]</td>
-      <td>3067.548385197</td>
-      <td>True</td>
-      <td>Against</td>
-    </tr>
-    <tr>
-      <th>0x2917727</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[4942.101830332236, 0.0, 0]</td>
-      <td>4957.475332538</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xeb6bc58</th>
-      <td>single-choice</td>
-      <td>['Oui', 'non', 'pas sur']</td>
-      <td>[2065.6541433597117, 2011.9898925379405, 0]</td>
-      <td>4095.006161048</td>
-      <td>False</td>
-      <td>Oui</td>
-    </tr>
-    <tr>
-      <th>0xf18e081</th>
-      <td>single-choice</td>
-      <td>['会', '不会', '不确定']</td>
-      <td>[5.09782899651764, 2011.533071035557]</td>
-      <td>2027.366115605</td>
-      <td>True</td>
-      <td>会</td>
-    </tr>
-    <tr>
-      <th>0x8752a03</th>
-      <td>single-choice</td>
-      <td>['YES', 'NO', 'NOT SURE']</td>
-      <td>[-560.1373274629664, 0]</td>
-      <td>2161.587923582</td>
-      <td>False</td>
-      <td>YES</td>
-    </tr>
-    <tr>
-      <th>0x377d464</th>
-      <td>single-choice</td>
-      <td>['Oui', 'non']</td>
-      <td>[-425.2028228696171, 0.4595423642710098]</td>
-      <td>26.152396037</td>
-      <td>False</td>
-      <td>Oui</td>
-    </tr>
-    <tr>
-      <th>0xe7743b0</th>
-      <td>single-choice</td>
-      <td>['继续持有', '不会持有']</td>
-      <td>[9109.363813110494, 0]</td>
-      <td>9127.614066147</td>
-      <td>False</td>
-      <td>继续持有</td>
-    </tr>
-    <tr>
-      <th>0x5ba2a21</th>
-      <td>single-choice</td>
-      <td>['&gt;80%', '50%-80%', '30%-50%', '10%-30%', '&lt;10%']</td>
-      <td>[-57.9812010885832, 0.0]</td>
-      <td>2633.271486157</td>
-      <td>True</td>
-      <td>&gt;80%</td>
-    </tr>
-    <tr>
-      <th>0xad241d0</th>
-      <td>single-choice</td>
-      <td>['&gt;80%', '50%-80%', '30%-50%', '10%-30%', '&lt;10%']</td>
-      <td>[134854.27062201133, 0]</td>
-      <td>135221.887100537</td>
-      <td>False</td>
-      <td>&gt;80%</td>
-    </tr>
-    <tr>
-      <th>0xaaa4b6e</th>
-      <td>single-choice</td>
-      <td>['2022', '2023']</td>
-      <td>[-110.56769723486315, 2035.9047887627237]</td>
-      <td>2093.885989851</td>
-      <td>True</td>
-      <td>2022</td>
-    </tr>
-    <tr>
-      <th>0x11e1976</th>
-      <td>single-choice</td>
-      <td>[' 예', '아니요']</td>
-      <td>[-621.2227192146252, 0]</td>
-      <td>15.524161757</td>
-      <td>False</td>
-      <td>예</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
       <th>0xd946d40</th>
@@ -3434,6 +1275,7 @@ Name: outcome_changed, dtype: float64
     </tr>
   </tbody>
 </table>
+<p>42 rows × 6 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
@@ -3551,67 +1393,13 @@ Name: outcome_changed, dtype: float64
       <td>Yes</td>
     </tr>
     <tr>
-      <th>bafkreia4</th>
-      <td>single-choice</td>
-      <td>['For', 'Make No Change', 'Abstain']</td>
-      <td>[2654186.698436455, 0, 0]</td>
-      <td>6922974.673405429</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x16400b2</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[3090365.0190418432, 0, 0]</td>
-      <td>4971478.525081047</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x704025e</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[3090365.0190418432, 0, 0]</td>
-      <td>4946306.104718991</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>QmW64iqHQ</th>
-      <td>basic</td>
-      <td>['For', 'Against', 'Abstain']</td>
-      <td>[478191.4276382547, 0, 0]</td>
-      <td>886529.953514751</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xe9158c0</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No', 'Abstain']</td>
-      <td>[478191.4276382547, 0, 0]</td>
-      <td>756591.962006816</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>0x4c289dd</th>
-      <td>single-choice</td>
-      <td>['Yes', 'No', 'Abstain']</td>
-      <td>[22191.20317652479, 0, 0.0]</td>
-      <td>54157.179859683</td>
-      <td>True</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <th>QmepPgXwo</th>
-      <td>single-choice</td>
-      <td>['Aye', 'Nay']</td>
-      <td>[20708.27072226024, 90218.6509325973]</td>
-      <td>201262.680259390</td>
-      <td>True</td>
-      <td>Aye</td>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
     </tr>
     <tr>
       <th>QmVypVPUP</th>
@@ -3633,6 +1421,7 @@ Name: outcome_changed, dtype: float64
     </tr>
   </tbody>
 </table>
+<p>11 rows × 6 columns</p>
 </div></div></div>
 </div>
 <div class="cell docutils container">
