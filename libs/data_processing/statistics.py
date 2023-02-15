@@ -37,19 +37,19 @@ def get_number_of_whales_to_all_voters_ratio(
 
 
 def get_all_proposals(
-    dao_proposals: dict[pd.DataFrame],
-    dao_proposals_filtered: dict[pd.DataFrame],
+    dao_proposals: dict[str, pd.DataFrame],
+    dao_proposals_filtered: dict[str, pd.DataFrame],
     organization: str,
 ) -> tuple[list, list] | None:
     all_proposals = [
-        proposal
+        proposal.sort_index()
         for _, proposal in dao_proposals[organization].groupby(
             "proposal_id", sort=False
         )
     ]
     try:
         all_proposals_filtered = [
-            proposal
+            proposal.sort_index()
             for _, proposal in dao_proposals_filtered[organization].groupby(
                 "proposal_id", sort=False
             )
@@ -116,12 +116,15 @@ def get_score_comparisons(
             )
             total_voting_power = first_row["proposal_scores_total"]
 
-            organization_proposals[first_row["proposal_id"]] = [
-                proposal_type,
-                choices,
-                score_differences,
-                total_voting_power,
-                not unfiltered_winning_choice_index == filtered_winning_choice_index,
-                eval(choices)[filtered_winning_choice_index]
-            ]
+            try:
+                organization_proposals[first_row["proposal_id"]] = [
+                    proposal_type,
+                    choices,
+                    score_differences,
+                    total_voting_power,
+                    not unfiltered_winning_choice_index == filtered_winning_choice_index,
+                    eval(choices)[filtered_winning_choice_index]
+                ]
+            except IndexError:
+                continue
     return differences

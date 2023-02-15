@@ -31,14 +31,12 @@ def get_governance_participants(raw_organization_data: dict[str, Any]) -> int:
     return raw_organization_data.get("votesCount")
 
 
-def get_snapshot_id(raw_dao_data: list[dict]) -> str | None:
-    try:
-        snapshot_object: dict = raw_dao_data[0]
-    except KeyError:
-        print(raw_dao_data)
-        raise
+def get_snapshot_id(raw_dao_data: list[dict], index: int = 0) -> str | None:
+    snapshot_object: dict = raw_dao_data[index]
     if snapshot_object.get("platformTitle") != "Snapshot":
-        return None
+        if len(raw_dao_data) <= index + 1:
+            return None
+        return get_snapshot_id(raw_dao_data, index + 1)
     return (
         snapshot_object["website"].split("/")[-1]
         if snapshot_object["website"]

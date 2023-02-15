@@ -1,7 +1,7 @@
 from asyncio import run as asyncio_run
 from copy import deepcopy
-from typing import Any
 from datetime import datetime, timedelta
+from typing import Any
 from pprint import PrettyPrinter
 
 import pandas as pd
@@ -35,6 +35,8 @@ def get_historical_prices_per_date(
     raw_historical_price_range = get_raw_historical_price_range(
         token_address, chain_name, start, end
     )
+    if not raw_historical_price_range:
+        return None
     price_map = dict()
 
     for price in raw_historical_price_range:
@@ -101,6 +103,7 @@ def get_price_map(votes: dict, token_metadata: dict) -> dict[float, float]:
 
 
 async def get_proposal_payload(proposal: dict, dao_metadata: dict) -> dict | None:
+    print(f"\tprocessing proposal {proposal['id']}")
     dao_id, token_metadata, _ = dao_metadata.values()
 
     proposal_id = proposal["id"]
@@ -119,6 +122,8 @@ async def get_proposal_payload(proposal: dict, dao_metadata: dict) -> dict | Non
 
     payload[proposal_id]["proposal"] = proposal
     price_map = get_price_map(votes, token_metadata)
+    if not price_map:
+        return None
 
     for vote in votes["votes"]:
         sanitize_vote(vote, price_map, dao_id)
@@ -128,7 +133,7 @@ async def get_proposal_payload(proposal: dict, dao_metadata: dict) -> dict | Non
 
 
 async def get_dao_snapshot_data(
-    raw_dao: dict, proposal_limit: int
+    raw_dao: dict, proposal_limit: int = None
 ) -> dict[str, dict] | None:
     print(f"Getting raw snapshot data for {raw_dao['daoName']}")
     dao_metadata = await get_dao_metadata(raw_dao)
@@ -139,6 +144,7 @@ async def get_dao_snapshot_data(
     raw_dao_proposals: list[dict] = (
         await get_proposals(dao_snapshot_id, proposal_limit)
     )["proposals"]
+    print("\tDone getting proposals")
     if not raw_dao_proposals:
         return None
     dao_proposals: dict[str, dict] = dict()
@@ -151,13 +157,18 @@ async def get_dao_snapshot_data(
 
 
 async def get_all_dao_snapshot_data(
-    proposal_limit: int,
     list_size: int,
     max_number_of_daos: int,
+    proposal_limit: int = None,
 ) -> list[dict]:
-    blacklist = ["Wonderland", "Fei", "OlympusDAO"]
+    blacklist = [
+        "Wonderland",
+        "Fei",
+        "OlympusDAO",
+        "BitDAO",
+    ]
     raw_daos: list[dict] = get_raw_dao_list(list_size)
-    daos: list[dict[str, Any]] = []
+    daos = []
 
     dao_counter = 0
     i = 0
@@ -199,7 +210,7 @@ def get_all_snapshot_dataframes_for_dao(
     return dao_snapshot_dfs
 
 
-snapshot_datas = asyncio_run(get_all_dao_snapshot_data(5, 50, 10))
+snapshot_datas = asyncio_run(get_all_dao_snapshot_data(17, 10, 50))
 snapshot_dataframes = get_all_snapshot_dataframes_for_dao(snapshot_datas)
 
 
@@ -240,9 +251,13 @@ def filter_top_shareholders_from_all_dfs(
     filtered_dfs = []
     for snapshot_df in snapshot_dfs:
         snapshot_df_copy = snapshot_df.copy()
-        snapshot_df_copy["proposal_scores"] = deepcopy(
-            snapshot_df["proposal_scores"].values
-        )
+        try:
+            snapshot_df_copy["proposal_scores"] = deepcopy(
+                snapshot_df["proposal_scores"].values
+            )
+        except KeyError:
+            pp.pprint(snapshot_df)
+            raise
         filtered_dfs.append(filter_top_shareholders_from_df(snapshot_df_copy))
     return filtered_dfs
 
@@ -279,19 +294,23 @@ def export_organization_dataframes_to_xls(
     print("Generating Spreadsheet...")
     with pd.ExcelWriter(file_name, engine="openpyxl") as writer:
         for organization_dataframe in organization_dataframes:
-            organization_name = organization_dataframe.iloc[0]["proposal_space_name"]
+            organization_name: str = organization_dataframe.iloc[0][
+                "proposal_space_name"
+            ]
+            if "/" in organization_name:
+                organization_name = organization_name.replace("/", "_")
             organization_dataframe.to_excel(writer, organization_name, "N/A")
 
     print("Done")
 
 
-pd.set_option("display.width", 4000)
-pd.set_option("display.max_columns", 1000)
-[print(df, end="\n\n") for df in organization_dataframes]
+# pd.set_option("display.width", 4000)
+# pd.set_option("display.max_columns", 1000)
+# [print(df, end="\n\n") for df in organization_dataframes]
 
 export_organization_dataframes_to_xls(
-    merge_organization_dataframes(snapshot_dataframes), "./plutocracy_report.xls"
+    merge_organization_dataframes(snapshot_dataframes), "./plutocracy_report.xlsx"
 )
 export_organization_dataframes_to_xls(
-    organization_dataframes, "./plutocracy_report_filtered.xls"
+    organization_dataframes, "./plutocracy_report_filtered.xlsx"
 )

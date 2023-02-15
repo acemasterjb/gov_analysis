@@ -1,7 +1,8 @@
+from json.decoder import JSONDecodeError
 from time import sleep
 from typing import Any
 
-from httpx import AsyncClient, Client, Timeout
+from httpx import AsyncClient, Client, ReadTimeout, Timeout
 
 COINGECKO_HEADERS = {"accept": "application/json"}
 TIMEOUT = Timeout(10.0, connect=30.0, read=30.0)
@@ -60,8 +61,18 @@ def get_raw_historical_price_range(
     }
 
     with Client(headers=COINGECKO_HEADERS, timeout=TIMEOUT, params=params) as client:
-        resp = client.get(url)
-        resp_json: dict[str, Any] = resp.json()
+        try:
+            resp = client.get(url)
+        except ReadTimeout:
+            print("\tReadTimeout error: waiting 30s before trying again...")
+            sleep(30)
+            return get_raw_historical_price_range(
+                token_address, chain_name, start, end
+            )
+        try:
+            resp_json: dict[str, Any] = resp.json()
+        except JSONDecodeError:
+            return None
         # print(resp.url)
         status: dict = resp_json.get("status")
         if status:
