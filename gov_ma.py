@@ -58,9 +58,12 @@ async def get_dao(raw_dao: dict) -> dict[str, Any] | None:
 
     native_token_address = get_native_token_address(raw_token_metadata)
     if raw_dao_chain_name == "substrate":
-        raw_market_data = await get_raw_market_data_by_symbol(
-            subtrate_translator[native_token_address]
-        )
+        try:
+            raw_market_data = await get_raw_market_data_by_symbol(
+                subtrate_translator[native_token_address]
+            )
+        except KeyError:
+            return None
     else:
         raw_market_data = await get_raw_market_data(
             native_token_address, raw_dao_chain_name
