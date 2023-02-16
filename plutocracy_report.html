@@ -743,8 +743,7 @@ Name: outcome_changed, dtype: float64
 <p>Similar to the previous proposal we looked at, this one was highly influenced by whales (~86.5% of voting power committed to this proposal coming from whales that voted for its passing, ~12.5% from whales that voted against it, and ~0.8% of whales voted to abstain).</p>
 <p>Yet, even after removing whales, the proposal still passes. After doing some quick math, we can see the remaining voting power for this proposal that voted for its passing equates to about ~0.17% out of the remaining 0.2% of voting power after removing whales.</p>
 <p>Still, I am not at all saying that the outcome of this proposal is controversial. An organisation’s funding initiatives that aid in the development of its product should not be a controversial topic for its members. I suppose the only thing that would be contested is the amount that is committed to this proposal.</p>
-<hr class="docutils" />
-<p>Next lets take a look at everyone’s favourite liquid staking platform: Lido.</p>
+<p>Next let’s take a look at everyone’s favourite liquid staking platform: Lido.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Lido&quot;</span><span class="p">]</span>
@@ -1207,7 +1206,24 @@ Name: outcome_changed, dtype: float64
 </div>
 <p>Obviously a case of centralized power voting for their own self interests, its not suprising that if whales were factored out of the proposal (which would’ve given existing and future committee members set terms, making the roles more democratic) the proposal would’ve passed, albeit, with very low voting power in comparison.</p>
 <hr class="docutils" />
-<p>Going back to DeFi, lets now look at Curve Finance.</p>
+<p>Going back to DeFi, let’s now look at Curve Finance.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mask</span> <span class="o">=</span> <span class="n">plutocracy_report_data_filtered</span><span class="p">[</span><span class="s2">&quot;Curve Finance&quot;</span><span class="p">][</span><span class="s2">&quot;proposal_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="s2">&quot;0x0eb23ea&quot;</span> <span class="o">==</span> <span class="n">s</span><span class="p">[:</span><span class="mi">9</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">plutocracy_report_data_filtered</span><span class="p">[</span><span class="s2">&quot;Curve Finance&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;proposal_id&quot;</span><span class="p">]</span>
+<span class="c1"># mask</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0x0eb23ea0b877666ad3ddcd0d7da0114acdfe5ae6390b5628b7509f4338022db5&#39;
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Curve Finance&quot;</span><span class="p">]</span>
@@ -1301,6 +1317,11 @@ Name: outcome_changed, dtype: float64
 <p>42 rows × 6 columns</p>
 </div></div></div>
 </div>
+<p>One proposal which would’ve passed if not for whale intervention was this proposal to <a class="reference external" href="https://snapshot.org/#/curve.eth/proposal/0x0eb23ea0b877666ad3ddcd0d7da0114acdfe5ae6390b5628b7509f4338022db5">add the XSTUSD-3CRV pair</a> to Curve’s <a class="reference external" href="https://resources.curve.fi/reward-gauges/understanding-gauges">gauge</a> <a class="reference external" href="https://curve.readthedocs.io/dao-gauges.html#the-gauge-controller">controller</a> to accrue CRV for liquidity providers of XSTUSD-3CRV.</p>
+<p>I don’t know much about XSTUSD, apart from that it’s a stable token deployed on Polkadot and Kusama that is backed by a synthetic token called XOR (Sora’s native token). What was really interesting about this proposal though was the <a class="reference external" href="https://gov.curve.fi/t/proposal-to-add-xstusd-3crv-to-the-gauge-controller/2998/15">governance discussion</a> on it.</p>
+<p><img alt="" src="_images/curve_governance_shenanigans.png" /></p>
+<p>What stood out to me (and was sorta a red flag) was XSTUSD’s comparison with LUNA/UST. Now, this proposal was created before the whole <a class="reference external" href="https://rekt.news/luna-rekt/">depegging disaster</a>, but even before that, <a class="reference external" href="https://twitter.com/runekek/status/1478166276979793922">quite a</a> <a class="reference external" href="https://twitter.com/FreddieRaynolds/status/1463960623402913797">few people</a> had their concerns about it. So I checked out the first 16 accounts which showed really strong support for this proposal, and almost <a class="reference external" href="https://gov.curve.fi/u/meowtopia">every single</a> <a class="reference external" href="https://gov.curve.fi/u/LiquidityKing">one was</a> <a class="reference external" href="https://gov.curve.fi/u/Ryandotrrr">created within</a> 2 days of the proposal’s forum post. Clear signs of governance forum shenanigans that was poorly executed to raise hype for a proposal.</p>
+<p>Anyway, I just wanted to highlight that whales are also sensible, and not always in the hands of the “evil” which I would classify as entities that would push proposals detrimental to the DAO for their own interests. It’s also a good thing that CRV whales didn’t have any incentive to pass this proposal, as well.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Curve Finance&quot;</span><span class="p">][</span><span class="s2">&quot;outcome_changed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
