@@ -40,20 +40,20 @@ def get_all_proposals(
     dao_proposals: dict[str, pd.DataFrame],
     dao_proposals_filtered: dict[str, pd.DataFrame],
     organization: str,
-) -> tuple[list, list] | None:
-    all_proposals = [
-        proposal.sort_index()
-        for _, proposal in dao_proposals[organization].groupby(
+) -> tuple[dict[str, pd.DataFrame], dict[str, pd.DataFrame]] | None:
+    all_proposals = {
+        proposal_df.iloc[0]["proposal_id"]: proposal_df
+        for _, proposal_df in dao_proposals[organization].groupby(
             "proposal_id", sort=False
         )
-    ]
+    }
     try:
-        all_proposals_filtered = [
-            proposal.sort_index()
-            for _, proposal in dao_proposals_filtered[organization].groupby(
+        all_proposals_filtered = {
+            proposal_df.iloc[0]["proposal_id"]: proposal_df
+            for _, proposal_df in dao_proposals_filtered[organization].groupby(
                 "proposal_id", sort=False
             )
-        ]
+        }
     except KeyError:
         return None
     return all_proposals, all_proposals_filtered
@@ -97,11 +97,18 @@ def get_score_comparisons(
             continue
         all_proposals, all_proposals_filtered = maybe_proposals
 
-        for proposal, proposal_filtered in zip(all_proposals, all_proposals_filtered):
-            first_row = proposal.iloc[0]
+        for proposal_id in all_proposals_filtered.keys():
+            proposal_filtered_df = all_proposals_filtered[proposal_id]
+            try:
+                proposal_df = all_proposals[proposal_id]
+            except KeyError:
+                print(f"issue w/ {proposal_filtered_df.iloc[0]['proposal_space_name']} on {proposal_filtered_df.iloc[0]['proposal_id']}")
+                continue
+
+            first_row = proposal_df.iloc[0]
             proposal_scores = eval(first_row["proposal_scores"])
             proposal_scores_filtered = eval(
-                proposal_filtered.iloc[0]["proposal_scores"]
+                proposal_filtered_df.iloc[0]["proposal_scores"]
             )
 
             (
@@ -116,15 +123,13 @@ def get_score_comparisons(
             )
             total_voting_power = first_row["proposal_scores_total"]
 
-            try:
-                organization_proposals[first_row["proposal_id"]] = [
-                    proposal_type,
-                    choices,
-                    score_differences,
-                    total_voting_power,
-                    not unfiltered_winning_choice_index == filtered_winning_choice_index,
-                    eval(choices)[filtered_winning_choice_index]
-                ]
-            except IndexError:
-                continue
+            organization_proposals[first_row["proposal_id"]] = [
+                proposal_type,
+                choices,
+                score_differences,
+                total_voting_power,
+                not unfiltered_winning_choice_index
+                == filtered_winning_choice_index,
+                eval(choices)[filtered_winning_choice_index],
+            ]
     return differences
