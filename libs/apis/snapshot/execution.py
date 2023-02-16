@@ -11,10 +11,12 @@ client = Client(transport=transport)
 async def get_proposals(
     space_id: str, upper_limit: int = None, skip: int = 0
 ) -> dict[str, list[dict]]:
-    async with client.connect_async(reconnecting=True) as session:
-        query = proposals(space_id, upper_limit)
+    session = await client.connect_async(reconnecting=True)
+    query = proposals(space_id, upper_limit)
 
-        result = await session.execute(query)
+    result = await session.execute(query)
+
+    await client.close_async()
 
     if not result["proposals"]:
         return {"proposals": []}
@@ -22,10 +24,12 @@ async def get_proposals(
 
 
 async def get_votes(proposal_id: str, skip: int = 0) -> dict[str, list[dict]]:
-    async with client.connect_async(reconnecting=True) as session:
-        query = votes(proposal_id, skip)
+    session = await client.connect_async(reconnecting=True)
+    query = votes(proposal_id, skip)
 
-        result = await session.execute(query)
+    result = await session.execute(query)
+
+    await client.close_async()
 
     if not result["votes"]:
         return {"votes": []}

@@ -166,6 +166,7 @@ async def get_all_dao_snapshot_data(
         "Fei",
         "OlympusDAO",
         "BitDAO",
+        "Compound",
     ]
     raw_daos: list[dict] = get_raw_dao_list(list_size)
     daos = []
@@ -210,7 +211,7 @@ def get_all_snapshot_dataframes_for_dao(
     return dao_snapshot_dfs
 
 
-snapshot_datas = asyncio_run(get_all_dao_snapshot_data(17, 10, 50))
+snapshot_datas = asyncio_run(get_all_dao_snapshot_data(23, 10, 50))
 snapshot_dataframes = get_all_snapshot_dataframes_for_dao(snapshot_datas)
 
 
