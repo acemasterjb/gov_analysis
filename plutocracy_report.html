@@ -229,12 +229,13 @@ title="Print to PDF"
 <p>This article aims to analyze some of the biggest DAOs in the crypto space and see how many of them are influenced by token holders which own a disproportionate amount of tokens compared to most voters.</p>
 <div class="cell tag_remove-input docutils container">
 </div>
-<p>The data used for this article came from data sources that specialize in providing data on DAO governance, such as DeepDAO and Snapshot. Coingecko was also used to find market data for DAO native tokens.</p>
-<p>Using this data, two spreadsheets were compiled which act as the local database for this analysis. Each spreadsheet contains each voter’s choice and voting power for the last fifty proposals each DAO opened. <strong>One spreadsheet filters out “whales”</strong> which, in the context of this analysis, are voters of each proposal that have voting power <strong>at or above the 95th percentile of voting power for that proposal</strong>.</p>
+<p>The data used for this article came from data sources that specialize in providing data on Decentralised Autonomous Organization (DAO) governance, such as DeepDAO and Snapshot. Coingecko was also used to find market data for DAO native tokens.</p>
+<p>Using this data, two spreadsheets were compiled which act as the local database for this analysis. Each spreadsheet contains each voter’s choice and voting power for the last fifty proposals each DAO opened. <strong>One spreadsheet filters out “whales”</strong> which, in the context of this analysis, are voters that have voting power <strong>at or above the 95th percentile of voting power for that proposal</strong>.</p>
 <div class="cell tag_remove-input tag_remove-output docutils container">
 </div>
-<p>With this, we can begin asking ourselves some questions. Such as: <strong>How many whales have voted in the last fifty proposals for each of the DAOs we analyzed?</strong></p>
-<div class="cell tag_remove-input docutils container">
+<p>With this, we can begin asking ourselves some questions. Such as: <strong>How many whales have voted in the last fifty proposals for each of the DAOs we analyzed?</strong> Voting power for each of these DAOs varies by the type of <a class="reference external" href="https://docs.snapshot.org/strategies/what-is-a-strategy">voting strategy</a> outlined in their respective Snapshot spaces.</p>
+<p>However, to keep this analysis simple, we assume the common <code class="docutils literal notranslate"><span class="pre">erc-20-balance</span></code> strategy and define the cost of voting power (<code class="docutils literal notranslate"><span class="pre">vp</span></code>) as the US dollar value of a DAO’s native token.</p>
+<div class="cell tag_remove-input tag_remove-output docutils container">
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -345,13 +346,7 @@ title="Print to PDF"
 <div class="cell tag_remove-input docutils container">
 </div>
 <p>First, let’s look at Uniswap</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Uniswap&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Uniswap&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
-<span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Uniswap&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -439,13 +434,8 @@ title="Print to PDF"
 <p>48 rows × 6 columns</p>
 </div></div></div>
 </div>
-<p>We can do some quick calculations using pandas to see that 12.5% of proposals had their outcome changed by removing whales.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Uniswap&quot;</span><span class="p">][</span><span class="s2">&quot;outcome_changed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<p>We can do some quick calculations using <a class="reference external" href="https://pandas.pydata.org/">pandas</a> to see that 12.5% of proposals had their outcome changed by removing whales.</p>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False    0.875
 True     0.125
@@ -545,12 +535,7 @@ Name: outcome_changed, dtype: float64
 </div></div></div>
 </div>
 <p>Next up is ENS.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;ENS&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -638,12 +623,7 @@ Name: outcome_changed, dtype: float64
 <p>28 rows × 6 columns</p>
 </div></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;ENS&quot;</span><span class="p">][</span><span class="s2">&quot;outcome_changed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False    0.964286
 True     0.035714
@@ -652,7 +632,7 @@ Name: outcome_changed, dtype: float64
 </div>
 </div>
 </div>
-<p>We see that a very small percentage of proposal outcomes were changed after filtering out whales (3.5%). However, if we take look at score differences as they compare to each score, we see that they were almost all determined by whales.</p>
+<p>We see that a very small percentage of proposal outcomes were changed after filtering out whales (3.5%). However, if we take look at score differences as they compare to each score, we see that they were almost all heavily backed by whales.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -743,13 +723,9 @@ Name: outcome_changed, dtype: float64
 <p>Similar to the previous proposal we looked at, this one was highly influenced by whales (~86.5% of voting power committed to this proposal coming from whales that voted for its passing, ~12.5% from whales that voted against it, and ~0.8% of whales voted to abstain).</p>
 <p>Yet, even after removing whales, the proposal still passes. After doing some quick math, we can see the remaining voting power for this proposal that voted for its passing equates to about ~0.17% out of the remaining 0.2% of voting power after removing whales.</p>
 <p>Still, I am not at all saying that the outcome of this proposal is controversial. An organisation’s funding initiatives that aid in the development of its product should not be a controversial topic for its members. I suppose the only thing that would be contested is the amount that is committed to this proposal.</p>
+<hr class="docutils" />
 <p>Next let’s take a look at everyone’s favourite liquid staking platform: Lido.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Lido&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -788,61 +764,28 @@ Name: outcome_changed, dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>0xc00b482</th>
+      <th>0xede83ac</th>
       <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[53104809.92512264, 143.9334151800236]</td>
-      <td>53109342.190054603</td>
-      <td>False</td>
-      <td>For</td>
+      <td>['For-Keep as listed, no lock up', 'For-Keep a...</td>
+      <td>[40042.09181, 21165133.189574376, 42456371.986...</td>
+      <td>6.389112e+07</td>
+      <td>True</td>
+      <td>For-Keep as listed, 1 yr lock up</td>
     </tr>
     <tr>
-      <th>0x3436b98</th>
+      <th>0xcbf5343</th>
       <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[55124323.664074376, 2048432.8880345668]</td>
-      <td>57176658.163439780</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>0xa2cd540</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[64857751.02380797, 0.0]</td>
-      <td>64866671.314562209</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0xdeb8cd8</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[23322855.94982495, 90633.0303001409]</td>
-      <td>23470186.408249840</td>
-      <td>False</td>
-      <td>For</td>
+      <td>['1. For 6 new oracles, 6/11 set', '2. For 4 n...</td>
+      <td>[92934.92264371048, 52723122.2034864, 4535.772...</td>
+      <td>5.282637e+07</td>
+      <td>True</td>
+      <td>1. For 6 new oracles, 6/11 set</td>
     </tr>
   </tbody>
 </table>
-<p>50 rows × 6 columns</p>
 </div></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Lido&quot;</span><span class="p">][</span><span class="s2">&quot;outcome_changed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False    0.96
 True     0.04
@@ -896,16 +839,10 @@ Name: outcome_changed, dtype: float64
 </div></div></div>
 </div>
 <p>Here we see that whale participation was consistent for all choices for this proposal. In fact, ~99.982% of voting power allocated to this proposal came from whales that voted for each of the outcomes. The second outcome alone had ~99.980% of the voting power allocated to this proposal, so obviously, its removal would make a huge impression on the outcome.</p>
-<p>Indeed, the voting power would be comparatively low without whale intervention (if this were the case, only ~9277.7397 LDO would be allocated to this proposal). However the fact that after doing so additional oracles would still be implemented anyway, where the only other alternative would be to not implement any more oracles, shows that the community that participated in this proposal still saw it important to add more oracles to further promote decentralisation of oracles which <a class="reference external" href="https://docs.lido.fi/guides/oracle-operator-manual">report chain state from the beacon chain to the execution layer</a> of ETH 2.0 as it pertains to the operation of Lido.</p>
-<p>In conclusion of this analysis of this proposal, we can say that whales and average token holders were moving in the same direction, but perhaps taking different paths. It will be interesting to see why whales opted to implement fewer oracles than what the majority of average token holders chose, which may require a more in-depth report based on the <a class="reference external" href="https://research.lido.fi/t/expansion-of-lidos-ethereum-oracle-set/2836">forum discussions</a> on the proposal.</p>
+<p>Indeed, the voting power would be comparatively low without whale intervention (if this were the case, only ~9277.7397 LDO would be allocated to this proposal). However the fact that after doing so additional oracles would still be implemented anyway, where the only other alternative would be to not implement any more oracles, shows that the community that participated in this proposal still saw the need to add more oracles to further promote decentralisation of oracles which <a class="reference external" href="https://docs.lido.fi/guides/oracle-operator-manual">report chain state from the beacon chain to the execution layer</a> of ETH 2.0 as it pertains to the operation of Lido.</p>
 <hr class="docutils" />
 <p>Now we take a look at Frax.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Frax&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -944,61 +881,19 @@ Name: outcome_changed, dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>0x1c844e1</th>
+      <th>0x9727168</th>
       <td>weighted</td>
       <td>['For', 'Against']</td>
-      <td>[6339652.010523546, 0]</td>
-      <td>6482055.593524806</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x1127ca8</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[33277228.29325966, 0.0]</td>
-      <td>33750631.491070352</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>0x40e711b</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[32776757.693645008, 0]</td>
-      <td>39954420.724392056</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>0x68c141f</th>
-      <td>weighted</td>
-      <td>['For', 'Against']</td>
-      <td>[32776774.671120502, 0.0]</td>
-      <td>40485623.779861562</td>
-      <td>False</td>
-      <td>For</td>
+      <td>[954806.1451496906, 0.0]</td>
+      <td>1.035478e+06</td>
+      <td>True</td>
+      <td>Against</td>
     </tr>
   </tbody>
 </table>
-<p>50 rows × 6 columns</p>
 </div></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Frax&quot;</span><span class="p">][</span><span class="s2">&quot;outcome_changed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False    0.98
 True     0.02
@@ -1007,11 +902,8 @@ Name: outcome_changed, dtype: float64
 </div>
 </div>
 </div>
-<p>Whilst enormous voting power was filtered out from all the proposals listed, just one had their outcomes changed (2%).</p>
+<p>Whilst enormous voting power was filtered out from all the proposals listed, just one had their outcomes changed (representing 2% of all proposals analysed).</p>
 <p>If we look at the proposal which attracted the most voting power, <a class="reference external" href="https://snapshot.org/#/frax.eth/proposal/0xece8d5be8b180b54350c4bddee190e24e2849d233f8aac11e0ef0aa7d658ae2a">this proposal</a> to renew the grant for Flywheel for 2023 (in the amount of approx $214.2k, split 50/50 in FXS and FRAX) for the promotion of “the Frax ecosystem and producing high-quality DeFi content”, we see that just over 50% of the voting power was removed from this proposal after filtering out whales (approx 56.7%).</p>
-<p>Though, because the opposition voting power for this proposal was a paltry 1E-5% of the vote, filtering out whales did not change the outcome. This was not a controversial outcome to this proposal after observing the number of voting participants (FXS token holders who participated in this proposal).</p>
-<p>Indeed, Frax’s <a class="reference external" href="https://gov.frax.finance/t/fip-178-flywheel-grant-renewal-for-2023/2068">forum post</a> regarding this proposal had mostly positive things to say about Flywheel, which started out as a podcast promoting Frax in the wake of the collapse of Terra/Luna. Stating that since their last grant given to Flywheel in 2022, their social following has increased by 2770% on Twitter and 3140% on Youtube. They also serve as an educating branch for Frax, organizing meetups and also “attracted builders from across the ecosystem”.</p>
-<p>What’s interesting about this proposal is that whale participation contributed to just over 56.7% of the voting power for this proposal. This is probably the most fairly represented outcome looked at so far, with the outcome being clearly popular with whales and the average voter.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -1051,14 +943,10 @@ Name: outcome_changed, dtype: float64
 </table>
 </div></div></div>
 </div>
+<p>Though, because the opposition voting power for this proposal was a paltry 1E-5% of the vote, filtering out whales did not change the outcome. This was not a controversial outcome to this proposal after observing the number of voting participants (FXS token holders who participated in this proposal).</p>
 <hr class="docutils" />
 <p>If we now look at Decentraland, we observe that there is quite a bad case of concentration of votes in the hands of plutocrats.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Decentraland&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -1097,21 +985,21 @@ Name: outcome_changed, dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>0xbedf554</th>
+      <th>0x105e115</th>
       <td>single-choice</td>
-      <td>['yes', 'no']</td>
-      <td>[4002000.0, 3893550.133071836]</td>
-      <td>7897313.282092846</td>
-      <td>False</td>
-      <td>yes</td>
+      <td>['AwedJob', 'Champ', 'Martriay', 'Szjanko', 'T...</td>
+      <td>[133936.60868228367, 177199.1938361379, 777247...</td>
+      <td>9.925258e+06</td>
+      <td>True</td>
+      <td>Szjanko</td>
     </tr>
     <tr>
-      <th>0xdbe9b2d</th>
+      <th>0xe126f25</th>
       <td>single-choice</td>
       <td>['yes', 'no']</td>
-      <td>[4815847.412524041, 0.0]</td>
-      <td>4828413.810218499</td>
-      <td>False</td>
+      <td>[4484370.231829518, 5067699.548291741]</td>
+      <td>9.704957e+06</td>
+      <td>True</td>
       <td>yes</td>
     </tr>
     <tr>
@@ -1124,34 +1012,29 @@ Name: outcome_changed, dtype: float64
       <td>...</td>
     </tr>
     <tr>
-      <th>0x79b68a7</th>
-      <td>single-choice</td>
-      <td>['Yea I like the idea', 'no not interested', '...</td>
-      <td>[0.0, 302348.9759993614, 929354.0397820002]</td>
-      <td>1237047.644105608</td>
-      <td>False</td>
-      <td>Invalid question/options</td>
-    </tr>
-    <tr>
-      <th>0x4d2a825</th>
+      <th>0xdfc9d87</th>
       <td>single-choice</td>
       <td>['yes', 'no']</td>
-      <td>[0.0, 1650987.4791028618]</td>
-      <td>1724953.034168607</td>
-      <td>False</td>
+      <td>[6498.38425178834, 1122668.0743977013]</td>
+      <td>1.130732e+06</td>
+      <td>True</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th>0x36869ff</th>
+      <td>single-choice</td>
+      <td>['yes', 'no']</td>
+      <td>[473662.4626787397, 260299.90800875027]</td>
+      <td>7.566330e+05</td>
+      <td>True</td>
       <td>no</td>
     </tr>
   </tbody>
 </table>
-<p>50 rows × 6 columns</p>
+<p>12 rows × 6 columns</p>
 </div></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Decentraland&quot;</span><span class="p">][</span><span class="s2">&quot;outcome_changed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False    0.76
 True     0.24
@@ -1161,7 +1044,7 @@ Name: outcome_changed, dtype: float64
 </div>
 </div>
 <p>Here we see that just under a quarter of proposals’ outcomes would change if whales were not involved in Decentraland governance.</p>
-<p>For example, this proposal to set a duration period for the tenure of Decentraland DAO commitee members saw 99.9% of voting power being concentrated to whales, with 94.85% of propsal voting power being allocated to voting for the proposal to not pass.</p>
+<p>For example, <a class="reference external" href="https://snapshot.org/#/snapshot.dcl.eth/proposal/0x7f6fed8c7645d1b793526564104e4f79864a9e30ae284029f752b6297478b4f5">this proposal</a> to set a duration period for the tenure of Decentraland DAO committee members saw 99.9% of voting power concentrated to whales, with 94.85% of proposal voting power being allocated to voting for the proposal to not pass.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -1207,12 +1090,7 @@ Name: outcome_changed, dtype: float64
 <p>Obviously a case of centralized power voting for their own self interests, its not suprising that if whales were factored out of the proposal (which would’ve given existing and future committee members set terms, making the roles more democratic) the proposal would’ve passed, albeit, with very low voting power in comparison.</p>
 <hr class="docutils" />
 <p>Going back to DeFi, let’s now look at Curve Finance.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Curve Finance&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -1255,18 +1133,18 @@ Name: outcome_changed, dtype: float64
       <td>single-choice</td>
       <td>['Yes', 'No']</td>
       <td>[23462.994316173717, 511330.4724932205]</td>
-      <td>574553.874246682</td>
+      <td>574553.874247</td>
       <td>True</td>
       <td>Yes</td>
     </tr>
     <tr>
-      <th>0x43c689e</th>
+      <th>0xad241d0</th>
       <td>single-choice</td>
-      <td>['Do Nothing', '2Pool + current 3Pool', '2Pool...</td>
-      <td>[0.0, 559204.7021513436, 2510541.702086272]</td>
-      <td>4272657.271177988</td>
-      <td>False</td>
-      <td>2Pool + current 3Pool + 4Pool</td>
+      <td>['&gt;80%', '50%-80%', '30%-50%', '10%-30%', '&lt;10%']</td>
+      <td>[134565.98764916285, 0, 0, 0.0, 0.0]</td>
+      <td>135221.887101</td>
+      <td>True</td>
+      <td>&lt;10%</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1278,34 +1156,29 @@ Name: outcome_changed, dtype: float64
       <td>...</td>
     </tr>
     <tr>
-      <th>0xb860247</th>
+      <th>0x93cf3af</th>
       <td>single-choice</td>
-      <td>['Yes', 'No']</td>
-      <td>[456680.73038604925, 0]</td>
-      <td>474117.231304990</td>
-      <td>False</td>
-      <td>Yes</td>
+      <td>['sì', ' no']</td>
+      <td>[0.0, 653.7322378921115]</td>
+      <td>1141.553092</td>
+      <td>True</td>
+      <td>sì</td>
     </tr>
     <tr>
-      <th>0xa4fb747</th>
+      <th>0x4ebcc4c</th>
       <td>single-choice</td>
-      <td>['当然', '不会']</td>
-      <td>[7167.578066496797, 0]</td>
-      <td>7183.113523668</td>
-      <td>False</td>
-      <td>当然</td>
+      <td>['YES', 'NO']</td>
+      <td>[0.0, 472.81984655999344]</td>
+      <td>487.814446</td>
+      <td>True</td>
+      <td>YES</td>
     </tr>
   </tbody>
 </table>
-<p>44 rows × 6 columns</p>
+<p>11 rows × 6 columns</p>
 </div></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Curve Finance&quot;</span><span class="p">][</span><span class="s2">&quot;outcome_changed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False    0.75
 True     0.25
@@ -1357,15 +1230,11 @@ Name: outcome_changed, dtype: float64
 </table>
 </div></div></div>
 </div>
+<p>Just over 4% of voting power for this proposal was allocated by whales to vote “Yes” (which is just over half the total voting power allocated to the “Yes” choice for this proposal), whereas ~89% of whale voting power was allocated to voting “NO” (~97% of total voting power for this choice).</p>
 <p>Anyway, I just wanted to highlight that whales are also sensible, and not always in the hands of the “evil” which I would classify as entities that would push proposals detrimental to the DAO for their own interests. It should also be noted that this was by far the proposal analyzed with the most voting power involved as well. It’s also a good thing that CRV whales didn’t have any incentive to pass this proposal, as well.</p>
 <hr class="docutils" />
 <p>Moving away from DeFi and into developer infrastructure, let’s look at Radicle</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Radicle&quot;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -1404,61 +1273,29 @@ Name: outcome_changed, dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>0xf95b0e0</th>
+      <th>QmepPgXwo</th>
       <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[2000000.0, 0]</td>
-      <td>4133689.798082654</td>
-      <td>False</td>
-      <td>For</td>
+      <td>['Aye', 'Nay']</td>
+      <td>[20708.27072226024, 90218.6509325973]</td>
+      <td>201262.680259</td>
+      <td>True</td>
+      <td>Aye</td>
     </tr>
     <tr>
-      <th>0x646e927</th>
+      <th>0x4c289dd</th>
       <td>single-choice</td>
       <td>['Yes', 'No', 'Abstain']</td>
-      <td>[3730867.698436455, 0, 0]</td>
-      <td>6163639.615623794</td>
-      <td>False</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>QmVypVPUP</th>
-      <td>single-choice</td>
-      <td>['For', 'Against']</td>
-      <td>[1820370.422397018, 0.0]</td>
-      <td>1962803.146575897</td>
-      <td>False</td>
-      <td>For</td>
-    </tr>
-    <tr>
-      <th>QmbpshrWc</th>
-      <td>single-choice</td>
-      <td>['Unpause swapping', 'Do nothing']</td>
-      <td>[949045.9988789248, 20708.27072226024]</td>
-      <td>1291030.699274630</td>
-      <td>False</td>
-      <td>Unpause swapping</td>
+      <td>[22191.20317652479, 0, 0.0]</td>
+      <td>54157.179860</td>
+      <td>True</td>
+      <td>No</td>
     </tr>
   </tbody>
 </table>
-<p>11 rows × 6 columns</p>
 </div></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Radicle&quot;</span><span class="p">][</span><span class="s2">&quot;outcome_changed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<p>We see that 18% of proposal (2 proposals) outcomes would’ve been changed had it not be for whale intervention.</p>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False    0.818182
 True     0.181818
@@ -1467,16 +1304,49 @@ Name: outcome_changed, dtype: float64
 </div>
 </div>
 </div>
-<p>There aren’t very many Snapshot proposals created on Radicle’s DAO, but one proposal whose outcome would’ve been changed if not for whales was this proposal to <a class="reference external" href="https://snapshot.org/#/gov.radicle.eth/proposal/QmepPgXwo5q9GipZFKa32rnxaYoo3LrfRqduinftbU3L3S">distribute some RAD leftover</a> from a Liquidity Bootsrapping (LBP) round conducted in February ‘21. This leftover RAD was proposed to be redistributed to participants of the LBP, i.e. people who bought RAD in this period from the Balancer LBP for RAD tokens.</p>
-<p>This proposal had a particularly interesting discussion as it seemed like a classic David v. Goliath square-up. This comment <a class="reference external" href="https://radicle.community/t/structured-discussion-distribute-lbp-unsold-tokens-to-the-people-who-contributed-to-the-lbp-in-proportion-to-their-contribution/1944/60">posted by RAD delegate Abbey</a> sums up the discussion pretty well (including her thoughts on the matter).</p>
-<p>Now, I don’t want to make it seem like I’m siding with Abbey on this one by posting her thoughts on the matter as well, but I hope that her post can summarise the sentiments of the proposal well enough. It was a very sensitive, important and highly controversial proposal that ultimately did not pass.</p>
-<p>It’s not obvious that whales were simply looking out for their own interests on this one. It’s worth debating the <a class="reference external" href="https://radicle.community/t/structured-discussion-distribute-lbp-unsold-tokens-to-the-people-who-contributed-to-the-lbp-in-proportion-to-their-contribution/1944/61">intentions of those who took part in these discussions</a> for this proposal for its passing.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Gitcoin&quot;</span><span class="p">]</span>
-</pre></div>
+<p>One such proposal was the one to <a class="reference external" href="https://snapshot.org/#/gov.radicle.eth/proposal/QmepPgXwo5q9GipZFKa32rnxaYoo3LrfRqduinftbU3L3S">distribute some RAD leftover</a> from a Liquidity Bootsrapping (LBP) round conducted in February ‘21. This leftover RAD was proposed to be redistributed to participants of the LBP, i.e. people who bought RAD in this period from the Balancer LBP for RAD tokens.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Aye</th>
+      <th>Nay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>78136.278442</td>
+      <td>123126.401817</td>
+    </tr>
+    <tr>
+      <th>Score Differeces</th>
+      <td>20708.270722</td>
+      <td>90218.650933</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
-</div>
+<p>Just over 10% of whale voting power for this proposal was allocated to voting “Aye” on this proposal (~27% of voting power allocated to the “Aye” choice came from whales). Whereas ~45% of voting power from whales was allocated to the “Nay” choice (~73% of whale voting power allocated to “Nay”).</p>
+<p>However, It’s not obvious that whales were simply looking out for their own interests on this one. It’s worth debating the <a class="reference external" href="https://radicle.community/t/structured-discussion-distribute-lbp-unsold-tokens-to-the-people-who-contributed-to-the-lbp-in-proportion-to-their-contribution/1944/61">intentions of those who took part in these discussions</a> for this proposal for its passing. <strong>Some context is always required when judging the actions of voters in DAO proposals</strong>.</p>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -1515,54 +1385,55 @@ Name: outcome_changed, dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>0x555f90d</th>
+      <th>0xa94a8e1</th>
       <td>single-choice</td>
-      <td>['Yes ', 'No', 'Abstain']</td>
-      <td>[2841653.5640241667, 0.0, 0]</td>
-      <td>2844469.085623981</td>
-      <td>False</td>
+      <td>['Yes', 'No', 'Abstain']</td>
+      <td>[4137843.9873177106, 5731585.734615851, 149817...</td>
+      <td>1.137574e+07</td>
+      <td>True</td>
       <td>Yes</td>
     </tr>
     <tr>
-      <th>0xbd3d16c</th>
+      <th>0xb154305</th>
       <td>single-choice</td>
-      <td>['Yes, fund PGF in S17', "No, don't fund PGF i...</td>
-      <td>[3759023.734368579, 0.0, 2301169.3436233173]</td>
-      <td>6065585.781372932</td>
-      <td>False</td>
-      <td>Yes, fund PGF in S17</td>
+      <td>['OPTION 1 - $390,000', 'OPTION 2 - $330,000',...</td>
+      <td>[274316.18501807004, 8530118.546664951, 290753...</td>
+      <td>9.279563e+06</td>
+      <td>True</td>
+      <td>OPTION 1 - $390,000</td>
     </tr>
     <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>0x97a2ed0</th>
+      <th>0x68899d0</th>
       <td>single-choice</td>
-      <td>['FOR', 'AGAINST']</td>
-      <td>[8197944.666313662, 0.0]</td>
-      <td>8224919.922647516</td>
-      <td>False</td>
+      <td>['FOR', 'AGAIINST', 'ABSTAIN']</td>
+      <td>[240657.94484809227, 7721191.48387823, 154011....</td>
+      <td>8.132303e+06</td>
+      <td>True</td>
       <td>FOR</td>
     </tr>
     <tr>
-      <th>0x6acb83e</th>
+      <th>0xf8a7f4c</th>
       <td>single-choice</td>
-      <td>['Yes, approve!', 'No!']</td>
-      <td>[8465672.467304813, 0.0]</td>
-      <td>8493993.919320995</td>
-      <td>False</td>
-      <td>Yes, approve!</td>
+      <td>['FOR GR14 Struct &amp; FOR New Elig', 'FOR GR14 S...</td>
+      <td>[675200.8295147448, 7344323.335575335, 1953.99...</td>
+      <td>8.027376e+06</td>
+      <td>True</td>
+      <td>FOR GR14 Struct &amp; FOR New Elig</td>
+    </tr>
+    <tr>
+      <th>0x77b9cfe</th>
+      <td>single-choice</td>
+      <td>['For', 'Against']</td>
+      <td>[2756719.14175241, 4222988.280091829]</td>
+      <td>6.990016e+06</td>
+      <td>True</td>
+      <td>For</td>
     </tr>
   </tbody>
 </table>
-<p>50 rows × 6 columns</p>
 </div></div></div>
+</div>
+<div class="cell tag_remove-input tag_remove-output docutils container">
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
