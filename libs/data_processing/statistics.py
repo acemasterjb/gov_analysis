@@ -116,20 +116,23 @@ def get_score_comparisons(
                 filtered_winning_choice_index,
             ) = get_winning_choice_indexes(proposal_scores, proposal_scores_filtered)
 
-            proposal_type = first_row["proposal_type"]
-            choices = first_row["proposal_choices"]
+            choices = eval(first_row["proposal_choices"])
             score_differences = get_score_differences(
                 proposal_scores, proposal_scores_filtered
             )
             total_voting_power = first_row["proposal_scores_total"]
+            if first_row["proposal_type"] == "approval":
+                whale_voting_power = score_differences[0]
+            else:
+                whale_voting_power = sum(score_differences)
 
             organization_proposals[first_row["proposal_id"]] = [
-                proposal_type,
-                choices,
                 score_differences,
+                whale_voting_power / total_voting_power,
                 total_voting_power,
                 not unfiltered_winning_choice_index
                 == filtered_winning_choice_index,
-                eval(choices)[filtered_winning_choice_index],
+                choices[unfiltered_winning_choice_index],
+                choices[filtered_winning_choice_index],
             ]
     return differences
