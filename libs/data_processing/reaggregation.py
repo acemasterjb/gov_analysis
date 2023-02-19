@@ -23,7 +23,7 @@ def reaggregate_votes_single_choice_or_basic(
 
 def reaggregate_votes_approval(
     unfiltered_proposal: pd.DataFrame, top_shareholders: pd.Series
-):
+) -> pd.DataFrame:
     whales: pd.DataFrame = get_whales(unfiltered_proposal, top_shareholders)
     for _, whale in whales.iterrows():
         scores: list[float | int] = unfiltered_proposal["proposal_scores"].iloc[0]
@@ -36,7 +36,7 @@ def reaggregate_votes_approval(
 
 def reaggregate_votes_weighted(
     unfiltered_proposal: pd.DataFrame, top_shareholders: pd.Series
-):
+) -> pd.DataFrame:
     whales: pd.DataFrame = get_whales(unfiltered_proposal, top_shareholders)
     for _, whale in whales.iterrows():
         scores: list[int | float] = unfiltered_proposal["proposal_scores"].iloc[0]
@@ -49,9 +49,8 @@ def reaggregate_votes_weighted(
             int(whale_choice): scores[int(whale_choice) - 1] - weight
             for whale_choice, weight in zip(whale["choice"].keys(), weight_values)
         }
-        if len(new_scores) < len(scores):
-            for choice in new_scores.keys():
-                scores[choice - 1] = new_scores[choice]
+        for choice in new_scores.keys():
+            scores[choice - 1] = new_scores[choice]
         n_rows = unfiltered_proposal.shape[0]
         unfiltered_proposal["proposal_scores"] = [scores] * n_rows
 
