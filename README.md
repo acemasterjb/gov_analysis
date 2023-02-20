@@ -1,4 +1,4 @@
-# DAO Governance Analyses
+# DAO Governance Analysis
 ### Prerequisites
 A python 3.9+ environment.
 The dependencies listed in [requirements.txt](./requirements.txt):
