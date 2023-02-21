@@ -14,14 +14,6 @@ def proposals(
     )"""
     query_body = """{
         id
-        created
-        choices
-        snapshot
-        state
-        author
-        scores
-        scores_total
-        network
         space {
             id
             name

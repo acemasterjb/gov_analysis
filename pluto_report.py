@@ -167,6 +167,8 @@ async def get_all_dao_snapshot_data(
         "OlympusDAO",
         "BitDAO",
         "Compound",
+        "Illuvium",
+        "Synthetix",
     ]
     raw_daos: list[dict] = get_raw_dao_list(list_size)
     daos = []
