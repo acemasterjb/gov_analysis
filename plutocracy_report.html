@@ -368,6 +368,40 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hop">
+   Hop
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     Filtered Proposals Analysis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     Proportion of Outcomes Changed
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gearbox">
+   Gearbox
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     Filtered Proposals Analysis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     Proportion of Outcomes Changed
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </nav>
@@ -528,6 +562,40 @@ title="Print to PDF"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id13">
+     Proportion of Outcomes Changed
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hop">
+   Hop
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     Filtered Proposals Analysis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     Proportion of Outcomes Changed
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gearbox">
+   Gearbox
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     Filtered Proposals Analysis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
      Proportion of Outcomes Changed
     </a>
    </li>
@@ -4067,20 +4135,346 @@ Name: outcome_changed, dtype: float64
   </tbody>
 </table></div></div>
 </div>
-<div class="cell tag_remove-input tag_remove-output docutils container">
-</div>
 </section>
 <section id="id13">
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_differences_dfs</span><span class="p">[</span><span class="s2">&quot;Gitcoin&quot;</span><span class="p">][</span><span class="s2">&quot;outcome_changed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False    0.9
 True     0.1
+Name: outcome_changed, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="hop">
+<h2>Hop<a class="headerlink" href="#hop" title="Permalink to this headline">#</a></h2>
+<section id="id14">
+<h3>Filtered Proposals Analysis<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>whale_vp_proportion</th>
+      <th>total_vp</th>
+      <th>outcome_changed</th>
+      <th>outcome_old</th>
+      <th>outcome_new</th>
+    </tr>
+    <tr>
+      <th>Proposal ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0xdf8dbd41184c7c401ee326c62ca6e253a8fa856b825b7d9e9311ce0faea4a5ef rel="noopener noreferrer" target="_blank">0xdf8dbd4</a></th>
+      <td>0.990016</td>
+      <td>1.319066e+07</td>
+      <td>False</td>
+      <td>For</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0x8131ad63b8bb249bd1d146f3e1412dcb98e75f89c3b2e87e28970fe453c43299 rel="noopener noreferrer" target="_blank">0x8131ad6</a></th>
+      <td>0.988627</td>
+      <td>1.214940e+07</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0x6b5136469fd7b1478c0e10b95e30e8645a1cea8bb49cabeed59a312264b518f0 rel="noopener noreferrer" target="_blank">0x6b51364</a></th>
+      <td>0.986493</td>
+      <td>1.355622e+07</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0x77dfa74f2fa447137b13d8e5a6faaa7c9f2d1a23f86e837fb6e0aea84902c82f rel="noopener noreferrer" target="_blank">0x77dfa74</a></th>
+      <td>0.986203</td>
+      <td>1.356527e+07</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0xf1bf9327ad089d25e949b044d1673501acbeef96f1657d0e79b89fe365983595 rel="noopener noreferrer" target="_blank">0xf1bf932</a></th>
+      <td>0.986168</td>
+      <td>1.356350e+07</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0x6873b0667012c18765693acc0e9005318c6d65d68ada6d6ae50edeba6ea75ecc rel="noopener noreferrer" target="_blank">0x6873b06</a></th>
+      <td>0.986155</td>
+      <td>1.097978e+07</td>
+      <td>False</td>
+      <td>For</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0x29c0205077e5041a00b602c2e71a1b2ca5d84e2f7b4f02d2c7102948d4ffc783 rel="noopener noreferrer" target="_blank">0x29c0205</a></th>
+      <td>0.984798</td>
+      <td>1.198519e+07</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0x15937d80591ed226743226721d236e8c9190461521c866f18a45cb9703773a22 rel="noopener noreferrer" target="_blank">0x15937d8</a></th>
+      <td>0.984153</td>
+      <td>1.056193e+07</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/bafkreigyulg3t2lyeu6snrufijckuugvgnwed6qll63cl5fkflcmwp5hja rel="noopener noreferrer" target="_blank">bafkreigy</a></th>
+      <td>0.982840</td>
+      <td>1.230943e+07</td>
+      <td>True</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0x3e81e9581f48b150787a5160c3dfc65d4947ff4206e6cdca053d16da0bc60a77 rel="noopener noreferrer" target="_blank">0x3e81e95</a></th>
+      <td>0.982176</td>
+      <td>9.760726e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/bafkreid2rfh5xfz7o7s7wlj2j6zyhy4oxfai3ng2x35sh3ihnzwafrcupm rel="noopener noreferrer" target="_blank">bafkreid2</a></th>
+      <td>0.980578</td>
+      <td>8.536331e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/bafkreibb4c6oh4yxkokq4brltn6zxq5vs2esms77br2h6c6llpahnlabvm rel="noopener noreferrer" target="_blank">bafkreibb</a></th>
+      <td>0.975413</td>
+      <td>1.247628e+07</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0xaa5d0ac880f020baa5be6fcc6a414f098457ca8999de16fd9d522a7850d8bb75 rel="noopener noreferrer" target="_blank">0xaa5d0ac</a></th>
+      <td>0.962056</td>
+      <td>1.853547e+06</td>
+      <td>False</td>
+      <td>For</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/bafkreifoul7zjzkaj2f2le36h3isgrhaytikfk5un3z3fz6pzd6mgvzxva rel="noopener noreferrer" target="_blank">bafkreifo</a></th>
+      <td>0.960753</td>
+      <td>8.276589e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/bafkreicliwx2wt4rnjbappi4yyk4z2qrh224guatw7z3uo3wwh7ruekeee rel="noopener noreferrer" target="_blank">bafkreicl</a></th>
+      <td>0.959179</td>
+      <td>6.714150e+06</td>
+      <td>False</td>
+      <td>For</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0x5ed734668ad7eb7a6080f23d6cf119379ba6ca3bbbac7de0a80cc47b2b09aca5 rel="noopener noreferrer" target="_blank">0x5ed7346</a></th>
+      <td>0.956643</td>
+      <td>1.415446e+07</td>
+      <td>False</td>
+      <td>Yes - Authorize Hop Foundation</td>
+      <td>Yes - Authorize Hop Foundation</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0xd8dfe984a70f7999ee8ce31ab725fc450074b83e9c9cf515b29c2e4c783b7bfe rel="noopener noreferrer" target="_blank">0xd8dfe98</a></th>
+      <td>0.953260</td>
+      <td>1.420469e+07</td>
+      <td>False</td>
+      <td>Yes - Deploy a HOP bridge</td>
+      <td>Yes - Deploy a HOP bridge</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0x3df21f676877e7c87311ef6cb6864abd865d2e58a2613d6f10dd291b4f5dbce6 rel="noopener noreferrer" target="_blank">0x3df21f6</a></th>
+      <td>0.952876</td>
+      <td>6.303571e+06</td>
+      <td>False</td>
+      <td>Yes - Deploy a HOP bridge</td>
+      <td>Yes - Deploy a HOP bridge</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0x603f0f6e54c7be8d5db7e16ae7145e6df4b439b8aac49654cdfd6b0c03eb6492 rel="noopener noreferrer" target="_blank">0x603f0f6</a></th>
+      <td>0.947185</td>
+      <td>1.429579e+07</td>
+      <td>False</td>
+      <td>Yes - Adopt the mission statemen</td>
+      <td>Yes - Adopt the mission statemen</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/bafkreihvjb3ytkqrroouve3kwuho46ho2dz2an2oljokjwnx6lwmaekumi rel="noopener noreferrer" target="_blank">bafkreihv</a></th>
+      <td>0.936266</td>
+      <td>4.459925e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/bafkreic3hu4fhna7lfyecwvvasfqccygzhpkvw2zu4mihzglccwa5om6ii rel="noopener noreferrer" target="_blank">bafkreic3</a></th>
+      <td>0.866190</td>
+      <td>7.125023e+06</td>
+      <td>False</td>
+      <td>For</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/bafkreihioi2uoubmzc4onqxbhvfuvvngsrbbox6yesbuyhfngc5a7gmuvu rel="noopener noreferrer" target="_blank">bafkreihi</a></th>
+      <td>0.851591</td>
+      <td>9.003253e+06</td>
+      <td>False</td>
+      <td>For</td>
+      <td>For</td>
+    </tr>
+  </tbody>
+</table></div></div>
+</div>
+</section>
+<section id="id15">
+<h3>Proportion of Outcomes Changed<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False    0.954545
+True     0.045455
+Name: outcome_changed, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="gearbox">
+<h2>Gearbox<a class="headerlink" href="#gearbox" title="Permalink to this headline">#</a></h2>
+<section id="id16">
+<h3>Filtered Proposals Analysis<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>whale_vp_proportion</th>
+      <th>total_vp</th>
+      <th>outcome_changed</th>
+      <th>outcome_old</th>
+      <th>outcome_new</th>
+    </tr>
+    <tr>
+      <th>Proposal ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href=http://snapshot.org/#/gearbox.eth/proposal/0xa24c9910bdd6bdbe81a5584768b65e9cbe10dd3f0ab7fecda249c698a5a6c873 rel="noopener noreferrer" target="_blank">0xa24c991</a></th>
+      <td>0.911661</td>
+      <td>2.266455e+08</td>
+      <td>False</td>
+      <td>Yes, approve</td>
+      <td>Yes, approve</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/gearbox.eth/proposal/0xc7d4eb17fdf5716dc99ae1298fc45ee646978796a2aa4d8b8903586cbe491b6f rel="noopener noreferrer" target="_blank">0xc7d4eb1</a></th>
+      <td>0.898677</td>
+      <td>2.119328e+08</td>
+      <td>False</td>
+      <td>Yes, approve</td>
+      <td>Yes, approve</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/gearbox.eth/proposal/0x7155b3966b043a338dbf0d9895bdd4f18873d861352ff1b8399ea34c7707a4be rel="noopener noreferrer" target="_blank">0x7155b39</a></th>
+      <td>0.891847</td>
+      <td>2.120120e+08</td>
+      <td>False</td>
+      <td>Yes, approve</td>
+      <td>Yes, approve</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/gearbox.eth/proposal/0x3cbd5027fa235f8742cb89c06afe8ea9ce6c1e9cda90b733e619dff8b88e210b rel="noopener noreferrer" target="_blank">0x3cbd502</a></th>
+      <td>0.888188</td>
+      <td>2.444278e+08</td>
+      <td>False</td>
+      <td>Yes, approve</td>
+      <td>Yes, approve</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/gearbox.eth/proposal/0x2d77246ae74f8b5b284a1084708f78c82ea30d5f57e9e586d06e3fd9d3de9804 rel="noopener noreferrer" target="_blank">0x2d77246</a></th>
+      <td>0.884413</td>
+      <td>2.471702e+08</td>
+      <td>False</td>
+      <td>Approve</td>
+      <td>Approve</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/gearbox.eth/proposal/0x5e348d327d89dd245c36953c6a44214e47d65afa353f93f4ed207cf2ae55c7ff rel="noopener noreferrer" target="_blank">0x5e348d3</a></th>
+      <td>0.876182</td>
+      <td>2.545753e+08</td>
+      <td>False</td>
+      <td>Yes, approve</td>
+      <td>Yes, approve</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/gearbox.eth/proposal/0x3a4f32ba602160201b6b2fe4bc05b0cf3ef3e3cc8a33d95ab32e2498fa718fb1 rel="noopener noreferrer" target="_blank">0x3a4f32b</a></th>
+      <td>0.876123</td>
+      <td>2.444973e+08</td>
+      <td>False</td>
+      <td>Yes, approve</td>
+      <td>Yes, approve</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/gearbox.eth/proposal/0x371908336143c7deec060a5be925162b26155da64e93726b80185387de3edafd rel="noopener noreferrer" target="_blank">0x3719083</a></th>
+      <td>0.872143</td>
+      <td>2.331051e+08</td>
+      <td>False</td>
+      <td>Approve OBRA</td>
+      <td>Approve OBRA</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/gearbox.eth/proposal/0x24c3f73de13eb21a4ef7f09b864b97b1e8a7c9eb46607ae568cb57a6990948e8 rel="noopener noreferrer" target="_blank">0x24c3f73</a></th>
+      <td>0.825484</td>
+      <td>2.210429e+08</td>
+      <td>False</td>
+      <td>Yes, update the Uniswap adapters</td>
+      <td>Yes, update the Uniswap adapters</td>
+    </tr>
+  </tbody>
+</table></div></div>
+</div>
+</section>
+<section id="id17">
+<h3>Proportion of Outcomes Changed<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False    1.0
 Name: outcome_changed, dtype: float64
 </pre></div>
 </div>
