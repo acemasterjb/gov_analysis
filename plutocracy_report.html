@@ -545,15 +545,15 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="cost-of-plutocracy">
 <h1>Cost of Plutocracy<a class="headerlink" href="#cost-of-plutocracy" title="Permalink to this headline">#</a></h1>
-<p>This article aims to analyze some of the biggest DAOs in the crypto space and see how many of them are influenced by token holders which own a disproportionate amount of tokens compared to most voters.</p>
+<p>This article aims to analyze the top 60 DAOs (ranked by <a class="reference external" href="https://deepdao.io/">treasury size</a>) to determine the impact of large token holders on their governance.</p>
 <div class="cell tag_remove-input docutils container">
 </div>
-<p>The data used for this article came from data sources that specialize in providing data on Decentralised Autonomous Organization (DAO) governance, such as DeepDAO and Snapshot. Coingecko was also used to find market data for DAO native tokens.</p>
-<p>Using this data, two spreadsheets were compiled which act as the local database for this analysis. Each spreadsheet contains each voter’s choice and voting power for the last fifty proposals each DAO opened. <strong>One spreadsheet filters out “whales”</strong> which, in the context of this analysis, are voters that have voting power <strong>at or above the 95th percentile of voting power for that proposal</strong>.</p>
+<p>Our data sources include DeepDAO and Snapshot, both of which specialize in providing data on Decentralised Autonomous Organization (DAO) governance. We also use Coingecko to find market data for DAO governance tokens.</p>
+<p>Using this data, we compile two spreadsheets that act as the local database for this analysis. Each spreadsheet contains each voter’s choice and voting power for the last fifty proposals in each DAO. <strong>One spreadsheet filters out “whales”</strong> which, in the context of this analysis, are voters that have voting power <strong>at or above the 95th percentile of voting power for that proposal</strong>.</p>
 <div class="cell tag_remove-input tag_remove-output docutils container">
 </div>
-<p>With this, we can begin asking ourselves some questions. Such as: <strong>How many whales have voted in the last fifty proposals for each of the DAOs we analyzed?</strong> Voting power for each of these DAOs varies by the type of <a class="reference external" href="https://docs.snapshot.org/strategies/what-is-a-strategy">voting strategy</a> outlined in their respective Snapshot spaces.</p>
-<p>However, to keep this analysis simple, we assume the common <code class="docutils literal notranslate"><span class="pre">erc-20-balance</span></code> strategy and define the cost of voting power (<code class="docutils literal notranslate"><span class="pre">vp</span></code>) as the US dollar value of a DAO’s native token.</p>
+<p>We then ask the following question: <strong>How many whales have voted in the last fifty proposals for each of the DAOs we analyzed?</strong> Voting power for each of these DAOs varies by the type of <a class="reference external" href="https://docs.snapshot.org/strategies/what-is-a-strategy">voting strategy</a> outlined in their respective Snapshot spaces.</p>
+<p>However, to keep this analysis simple, we assume the common <code class="docutils literal notranslate"><span class="pre">erc-20-balance</span></code> strategy and define the cost of voting power (<code class="docutils literal notranslate"><span class="pre">vp</span></code>) as the US dollar value of a DAO’s native token at the time of the proposal.</p>
 <div class="cell tag_remove-input tag_remove-output docutils container">
 </div>
 <div class="cell tag_remove-input docutils container">
@@ -652,11 +652,11 @@ title="Print to PDF"
 </table>
 </div></div></div>
 </div>
-<p>Here we can see that for the DAOs which we choose to analyze the top 5% of voters have a clear, disproportionate amount of voting power compared to the average voter.</p>
-<p>We can also gain some insight into the economic might that these whales hold for each DAO at the time of voting by taking a look at the average cost of each vote for each DAO’s native token at the time these proposals were active (in USD).</p>
+<p>For the DAOs above, the top 5% of voters have a disproportionate amount of voting power compared to the average voter.</p>
+<p>We also have an insight into the economic might whales hold in their respective DAO. We calculate the average cost to purchase a token to vote at the time the proposal was active (in USD) for comparative purposes.</p>
 <hr class="docutils" />
-<p>We move on to take a look at what DAO participation would look like without whale involvement. We do so by comparing the scores of each proposal and checking whether or not the outcome of the proposal was changed after filtering out whales.</p>
-<p>We check whether or not a proposal’s outcome has changed simply by checking if the largest vote choice score has changed after filtering out whales, more specifically, in python we do:</p>
+<p>Next, we take a look at how governance decisions are affected once whale votes are discounted. We do so by comparing the scores of each proposal and checking whether the outcome of the proposal is changed when whales are filtered out.</p>
+<p>We check whether a proposal’s outcome changes by checking if the largest vote choice score changes after filtering out whales. Specifically, in python we do the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">has_changed_outcome</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">unfiltered_winning_choice_index</span> <span class="o">==</span> <span class="n">filtered_winning_choice_index</span>
 </pre></div>
 </div>
@@ -1077,10 +1077,10 @@ title="Print to PDF"
   </tbody>
 </table></div></div>
 </div>
-<p>We can do some quick calculations using <a class="reference external" href="https://pandas.pydata.org/">pandas</a> to see that 12.5% of proposals had their outcome changed by removing whales.</p>
 </section>
 <section id="proportion-of-outcomes-changed">
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#proportion-of-outcomes-changed" title="Permalink to this headline">#</a></h3>
+<p>Using <a class="reference external" href="https://pandas.pydata.org/">pandas</a>, we see that <strong>12.5% of proposal outcomes change after removing whales.</strong></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False    0.875
@@ -1093,8 +1093,8 @@ Name: outcome_changed, dtype: float64
 </section>
 <section id="proposal-analysis">
 <h3>Proposal Analysis<a class="headerlink" href="#proposal-analysis" title="Permalink to this headline">#</a></h3>
-<p>One of the proposals which had their outcome changed after removing whales was the proposal to <a class="reference external" href="https://snapshot.org/#/uniswap/proposal/0xfd3d3807bd2a6eda1327c311b83de235061d39ff1bdfb616c9f9b0d367c3ac2c">add a Liquidity Mining Manager for the Optimism-Uniswap Liquidity Mining Program</a>.</p>
-<p>In this case, “Overnight Finance” would’ve been the chosen LMM if it weren’t for whale intervention, instead “DeFiEdge” was chosen for this campaign. From the data, we can see that without whale intervention, DeFiEdge would’ve had ~2,708,025 fewer votes out of the total ~2,728,492 voting power on this proposal. That is ~99.3% of voting power allocated for this proposal directed to choosing “DeFiEdge”.</p>
+<p>The outcome of the proposal to add a Liquidity Mining Manager (LMM) for the <a class="reference external" href="https://snapshot.org/#/uniswap/proposal/0xfd3d3807bd2a6eda1327c311b83de235061d39ff1bdfb616c9f9b0d367c3ac2c">Optimism-Uniswap Liquidity Mining Program</a> changes after removing whales.</p>
+<p>If not for whale intervention, “Overnight Finance” would have been chosen as the LMM. Instead, “DeFiEdge” was selected. From the data, we see that without whale intervention, DeFiEdge would’ve had ~2,708,025 fewer votes out of the total ~2,728,492 voting power on this proposal. That is ~99.3% of voting power allocated for this proposal directed to choosing “DeFiEdge”.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -1128,7 +1128,7 @@ Name: outcome_changed, dtype: float64
       <td>3556.089173</td>
     </tr>
     <tr>
-      <th>Score Differeces</th>
+      <th>Score Differences</th>
       <td>10054.585076</td>
       <td>2.708025e+06</td>
       <td>3412.851497</td>
@@ -1137,7 +1137,7 @@ Name: outcome_changed, dtype: float64
 </table>
 </div></div></div>
 </div>
-<p>One highly contentious proposal whose outcome did not change after filtering out whales was <a class="reference external" href="https://snapshot.org/#/uniswap/proposal/0x6b8df360fdf73085b21fdf5eef9f85916fbde95621a3d454cb20fbe545ffc852">this temperature check to choose which Eth &lt;&gt; BNB bridge to use for Uniswap v3 governance</a>. We see that even for the least popular choices, whales still contributed to the majority of the votes. We also observe that whales held the overwhelming majority of voting power for the runner-up, “LayerZero”, with 99.9% of voting power allocated to this proposal being directed to this choice. By comparison, “Wormhole” received 65.1% of voting power for this proposal coming from whales.</p>
+<p>One highly contentious proposal whose outcome did not change after filtering out whales was <a class="reference external" href="https://snapshot.org/#/uniswap/proposal/0x6b8df360fdf73085b21fdf5eef9f85916fbde95621a3d454cb20fbe545ffc852">this temperature check to choose which Eth &lt;&gt; BNB bridge to use for Uniswap v3 governance</a>. We see that even for the least popular choices, whales still contributed to the majority of the votes. We also observe that whales held ~37.7% of voting power for the runner-up, “LayerZero”. By comparison, “Wormhole” received ~51.1% of voting power for this proposal coming from whales.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -1173,7 +1173,7 @@ Name: outcome_changed, dtype: float64
       <td>3772.802474</td>
     </tr>
     <tr>
-      <th>Score Differeces</th>
+      <th>Score Differences</th>
       <td>2.327546e+07</td>
       <td>1.716363e+07</td>
       <td>481.545728</td>
@@ -1453,7 +1453,7 @@ Name: outcome_changed, dtype: float64
 </section>
 <section id="id2">
 <h3>Proposal Analysis<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<p>We see that a very small percentage of proposal outcomes were changed after filtering out whales (3.5%). However, if we take look at score differences as they compare to each score, we see that they were almost all heavily backed by whales.</p>
+<p>A very small percentage of proposal outcomes were changed after filtering out whales, around 3.5%. However, if we take look at score differences as they compare to each score, we see that almost all proposals were heavily backed by whales.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -1487,7 +1487,7 @@ Name: outcome_changed, dtype: float64
       <td>194.817417</td>
     </tr>
     <tr>
-      <th>Score Differeces</th>
+      <th>Score Differences</th>
       <td>1.667211e+06</td>
       <td>0.000000</td>
       <td>137.124541</td>
@@ -1496,9 +1496,9 @@ Name: outcome_changed, dtype: float64
 </table>
 </div></div></div>
 </div>
-<p><a class="reference external" href="https://snapshot.org/#/ens.eth/proposal/0x41b3509b88e15677aa15680f48278517f794822fb9a79b9c621def53f1866be7">This proposal</a> once passed will approve the funding of various grants ENS has committed to funding as detailed by the proposal, <strong>the amount of capital to be committed to this proposal is 250k USDC and 50 ETH</strong>. 99.9% of voting power allocated towards this proposal was committed to voting for its passing, 0.0001% was allocated to abstaining and even a smaller percentage was allocated to voting against its passing.</p>
-<p>Meaning that ~0.1% of the vote would’ve still been allocated towards voting for the proposal to pass even without whale intervention, which I think many would see as fine since the funding of public goods is always important.</p>
-<p>Another proposal on ENS which had a large amount of voting power committed by whales is <a class="reference external" href="https://snapshot.org/#/ens.eth/proposal/0x5788bf0f52ce82a1d3f7750a80f3001671ded49e4e0239dbbafd154275c78f8b">this proposal</a> to commit <strong>935k USDC and 254 ETH</strong> to the ENS Ecosystem Working group which is responsible for <em>growing and improving the ENS Ecosystem by funding people and projects that are ENS-specific or ENS-centric</em>.</p>
+<p><a class="reference external" href="https://snapshot.org/#/ens.eth/proposal/0x41b3509b88e15677aa15680f48278517f794822fb9a79b9c621def53f1866be7">This proposal</a> approves the funding of various grants ENS had committed to funding—-<strong>250k USDC and 50 ETH of commitments in total</strong>. 99.9% of the voting power committed to this proposal voted to approve it, 0.0001% was allocated to abstaining, and an even smaller percentage voted against it.</p>
+<p>Meaning that ~0.1% of the vote would’ve still been allocated towards voting for the proposal to pass even without whale intervention, which I think many would see as fine since the funding of public goods is always well received by DAO communities.</p>
+<p><a class="reference external" href="https://snapshot.org/#/ens.eth/proposal/0x5788bf0f52ce82a1d3f7750a80f3001671ded49e4e0239dbbafd154275c78f8b">This proposal</a> to commit <strong>935k USDC and 254 ETH</strong> to the ENS Ecosystem Working Group also enjoyed significant backing from whales. The Working Group is responsible for <em>growing and improving the ENS Ecosystem by funding people and projects that are ENS-specific or ENS-centric</em>.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -1532,7 +1532,7 @@ Name: outcome_changed, dtype: float64
       <td>13640.353424</td>
     </tr>
     <tr>
-      <th>Score Differeces</th>
+      <th>Score Differences</th>
       <td>1.446509e+06</td>
       <td>208348.531592</td>
       <td>13519.449465</td>
@@ -1541,9 +1541,9 @@ Name: outcome_changed, dtype: float64
 </table>
 </div></div></div>
 </div>
-<p>Similar to the previous proposal we looked at, this one was highly influenced by whales (~86.5% of voting power committed to this proposal coming from whales that voted for its passing, ~12.5% from whales that voted against it, and ~0.8% of whales voted to abstain).</p>
+<p>Similar to the previous proposal, this was highly influenced by whales (~86.5% of voting power committed to this proposal committed by whales that voted for it to pass, ~12.5% from whales that voted against it, and ~0.8% of whales voted to abstain).</p>
 <p>Yet, even after removing whales, the proposal still passes. After doing some quick math, we can see the remaining voting power for this proposal that voted for its passing equates to about ~0.17% out of the remaining 0.2% of voting power after removing whales.</p>
-<p>Still, I am not at all saying that the outcome of this proposal is controversial. An organisation’s funding initiatives that aid in the development of its product should not be a controversial topic for its members. I suppose the only thing that would be contested is the amount that is committed to this proposal.</p>
+<p>Still, I do not believe the outcome of this proposal is controversial. An organisation funding initiatives that aid in the development of its product should not be a controversial topic for its members.</p>
 </section>
 </section>
 <section id="lido">
@@ -1987,8 +1987,8 @@ Name: outcome_changed, dtype: float64
 </div>
 </div>
 </div>
-<p>Here, we see that there was a change in outcome for just two of the proposals (4%). <a class="reference external" href="https://snapshot.org/#/lido-snapshot.eth/proposal/0xcbf534335fe07c046caa933e1623ac38bfb3d1890ab825264a0b47415cf7799b">This proposal</a> to <a class="reference external" href="https://mainnet.lido.fi/#/lido-dao/0x442af784a788a5bd6f42a01ebe9f287a871243fb/">expand the oracle set and quorum</a> of Lido DAO oracle node operators was passed 16/12/22 and onboarded 4 new oracle node operators and set the quorum to 5/9 reports from oracles being identical to be accepted by the protocol.</p>
-<p>Had whales not intervened, Option 1 to onboard 6 additional oracles and set the quorum to 6/11 would’ve passed.</p>
+<p>Here, there was a change in outcome for just two of the proposals (4%). <a class="reference external" href="https://snapshot.org/#/lido-snapshot.eth/proposal/0xcbf534335fe07c046caa933e1623ac38bfb3d1890ab825264a0b47415cf7799b">This proposal</a> to <a class="reference external" href="https://mainnet.lido.fi/#/lido-dao/0x442af784a788a5bd6f42a01ebe9f287a871243fb/">expand the oracle set and quorum</a> of Lido DAO oracle node operators was passed on 16/12/22, onboarded 4 new oracle node operators, and set the quorum to 5/9 identical oracle reports to be accepted by the protocol.</p>
+<p>Had whales not intervened, Option 1 to onboard 6 additional oracles and set the quorum to 6/11, would’ve passed.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -2022,7 +2022,7 @@ Name: outcome_changed, dtype: float64
       <td>4778.954352</td>
     </tr>
     <tr>
-      <th>Score Differeces</th>
+      <th>Score Differences</th>
       <td>92934.922644</td>
       <td>5.272312e+07</td>
       <td>4535.772055</td>
@@ -2031,8 +2031,8 @@ Name: outcome_changed, dtype: float64
 </table>
 </div></div></div>
 </div>
-<p>Here we see that whale participation was consistent for all choices for this proposal. In fact, ~99.982% of voting power allocated to this proposal came from whales that voted for each of the outcomes. The second outcome alone had ~99.980% of the voting power allocated to this proposal, so obviously, its removal would make a huge impression on the outcome.</p>
-<p>Indeed, the voting power would be comparatively low without whale intervention (if this were the case, only ~9277.7397 LDO would be allocated to this proposal). However the fact that after doing so additional oracles would still be implemented anyway, where the only other alternative would be to not implement any more oracles, shows that the community that participated in this proposal still saw the need to add more oracles to further promote decentralisation of oracles which <a class="reference external" href="https://docs.lido.fi/guides/oracle-operator-manual">report chain state from the beacon chain to the execution layer</a> of ETH 2.0 as it pertains to the operation of Lido.</p>
+<p>Here we see whale participation was consistent for all choices for this proposal. In fact, ~99.982% of voting power allocated to this proposal came from whales that voted for each of the outcomes. The second outcome alone had ~99.980% of the voting power allocated to this proposal and so removing it would make a huge impression on the outcome.</p>
+<p>Voting power allocated to this proposal would be low without whale intervention: (only ~9277.7397 LDO would be allocated to this proposal). However, the community would still vote for adding more oracles that <a class="reference external" href="https://docs.lido.fi/guides/oracle-operator-manual">broadcasts the chain state from the beacon chain to the execution layer</a> of ETH 2.0.</p>
 </section>
 </section>
 <section id="frax">
@@ -2476,8 +2476,8 @@ Name: outcome_changed, dtype: float64
 </div>
 </div>
 </div>
-<p>Whilst enormous voting power was filtered out from all the proposals listed, just one had their outcomes changed (representing 2% of all proposals analysed).</p>
-<p>If we look at the proposal which attracted the most voting power, <a class="reference external" href="https://snapshot.org/#/frax.eth/proposal/0xece8d5be8b180b54350c4bddee190e24e2849d233f8aac11e0ef0aa7d658ae2a">this proposal</a> to renew the grant for Flywheel for 2023 (in the amount of approx $214.2k, split 50/50 in FXS and FRAX) for the promotion of “the Frax ecosystem and producing high-quality DeFi content”, we see that just over 50% of the voting power was removed from this proposal after filtering out whales (approx 56.7%).</p>
+<p>While enormous voting power was filtered out from all the proposals listed, just one had their outcomes changed (representing 2% of all proposals analysed).</p>
+<p>If we look at the <a class="reference external" href="https://snapshot.org/#/frax.eth/proposal/0xece8d5be8b180b54350c4bddee190e24e2849d233f8aac11e0ef0aa7d658ae2a">proposal which attracted the most voting power</a>, which renewed the 2023 grant for Flywheel (in the amount of approx $214.2k, split 50/50 in FXS and FRAX) for the promotion of “the Frax ecosystem and producing high-quality DeFi content”, we see that just over 50% of the voting power was removed from this proposal after filtering out whales (approx 56.7%).</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -2509,7 +2509,7 @@ Name: outcome_changed, dtype: float64
       <td>131.88977</td>
     </tr>
     <tr>
-      <th>Score Differeces</th>
+      <th>Score Differences</th>
       <td>9.238258e+06</td>
       <td>0.00000</td>
     </tr>
@@ -2517,12 +2517,12 @@ Name: outcome_changed, dtype: float64
 </table>
 </div></div></div>
 </div>
-<p>Though, because the opposition voting power for this proposal was a paltry 1E-5% of the vote, filtering out whales did not change the outcome. This was not a controversial outcome to this proposal after observing the number of voting participants (FXS token holders who participated in this proposal).</p>
+<p>Though, because the opposition voting power for this proposal was a paltry 1E-5% of the vote, filtering out whales did not change the outcome. After observing the number of voting participants (FXS token holders who participated in this proposal), this was not a controversial outcome.</p>
 </section>
 </section>
 <section id="decentraland">
 <h2>Decentraland<a class="headerlink" href="#decentraland" title="Permalink to this headline">#</a></h2>
-<p>If we now look at Decentraland, we observe that there is quite a bad case of concentration of votes in the hands of plutocrats.</p>
+<p>Let’s now look at Decentraland, where the largest holders regularly participate in governance and dominate voting.</p>
 <section id="id6">
 <h3>Filtered Proposals Analysis<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input tag_full-width docutils container">
@@ -2963,7 +2963,7 @@ Name: outcome_changed, dtype: float64
 </div>
 </div>
 <p>Here we see that just under a quarter of proposals’ outcomes would change if whales were not involved in Decentraland governance.</p>
-<p>For example, <a class="reference external" href="https://snapshot.org/#/snapshot.dcl.eth/proposal/0x7f6fed8c7645d1b793526564104e4f79864a9e30ae284029f752b6297478b4f5">this proposal</a> to set a duration period for the tenure of Decentraland DAO committee members saw 99.9% of voting power concentrated to whales, with 94.85% of proposal voting power being allocated to voting for the proposal to not pass.</p>
+<p>For example, <a class="reference external" href="https://snapshot.org/#/snapshot.dcl.eth/proposal/0x7f6fed8c7645d1b793526564104e4f79864a9e30ae284029f752b6297478b4f5">this proposal</a> to set a duration period for the tenure of Decentraland DAO committee members saw 99.9% of voting power attributed to whales, with 94.85% of proposal voting power allocated to voting for the proposal not to pass.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -2997,7 +2997,7 @@ Name: outcome_changed, dtype: float64
       <td>0.025206</td>
     </tr>
     <tr>
-      <th>Score Differeces</th>
+      <th>Score Differences</th>
       <td>166209.638630</td>
       <td>1.392896e+06</td>
       <td>0.000000</td>
@@ -3006,7 +3006,7 @@ Name: outcome_changed, dtype: float64
 </table>
 </div></div></div>
 </div>
-<p>Obviously a case of centralized power voting for their own self interests, its not suprising that if whales were factored out of the proposal (which would’ve given existing and future committee members set terms, making the roles more democratic) the proposal would’ve passed, albeit, with very low voting power in comparison.</p>
+<p>This is clearly a case of large holders voting to support their own interests. Once whales are filtered out of the votes (which would’ve given existing and future committee members set terms, making the roles more democratic) the proposal would’ve passed, albeit, with very low voting power by comparison.</p>
 </section>
 </section>
 <section id="curve-finance">
@@ -3403,9 +3403,9 @@ Name: outcome_changed, dtype: float64
 </div>
 </div>
 <p>One proposal which would’ve passed if not for whale intervention was this proposal to <a class="reference external" href="https://snapshot.org/#/curve.eth/proposal/0x0eb23ea0b877666ad3ddcd0d7da0114acdfe5ae6390b5628b7509f4338022db5">add the XSTUSD-3CRV pair</a> to Curve’s <a class="reference external" href="https://resources.curve.fi/reward-gauges/understanding-gauges">gauge</a> <a class="reference external" href="https://curve.readthedocs.io/dao-gauges.html#the-gauge-controller">controller</a> to accrue CRV for liquidity providers of XSTUSD-3CRV.</p>
-<p>I don’t know much about XSTUSD, apart from that it’s a stable token deployed on Polkadot and Kusama that is backed by a synthetic token called XOR (Sora’s native token). What was really interesting about this proposal though was the <a class="reference external" href="https://gov.curve.fi/t/proposal-to-add-xstusd-3crv-to-the-gauge-controller/2998/15">governance discussion</a> on it.</p>
+<p>XSTUSD is a stablecoin deployed on Polkadot and Kusama that’s backed by a synthetic token called XOR (Sora’s native token). The <a class="reference external" href="https://gov.curve.fi/t/proposal-to-add-xstusd-3crv-to-the-gauge-controller/2998/15">governance discussion</a> about the vote was particularly interesting.</p>
 <p><img alt="" src="_images/curve_governance_shenanigans.png" /></p>
-<p>What stood out to me (and was sorta a red flag) was XSTUSD’s comparison with LUNA/UST. Now, this proposal was created before the whole <a class="reference external" href="https://rekt.news/luna-rekt/">depegging disaster</a>, but even before that, <a class="reference external" href="https://twitter.com/runekek/status/1478166276979793922">quite a</a> <a class="reference external" href="https://twitter.com/FreddieRaynolds/status/1463960623402913797">few people</a> had their concerns about it. So I checked out the first 16 accounts which showed really strong support for this proposal, and almost <a class="reference external" href="https://gov.curve.fi/u/meowtopia">every single</a> <a class="reference external" href="https://gov.curve.fi/u/LiquidityKing">one was</a> <a class="reference external" href="https://gov.curve.fi/u/Ryandotrrr">created within</a> 2 days of the proposal’s forum post. Clear signs of governance forum shenanigans that was poorly executed to raise hype for a proposal.</p>
+<p>What stands out is XSTUSD’s comparison with LUNA/UST. This proposal was created before the LUNA/UST <a class="reference external" href="https://rekt.news/luna-rekt/">depegging disaster</a>, but even before that, <a class="reference external" href="https://twitter.com/runekek/status/1478166276979793922">quite a</a> <a class="reference external" href="https://twitter.com/FreddieRaynolds/status/1463960623402913797">few people</a> had their concerns about it. So I checked out the first 16 accounts which showed really strong support for this proposal, and almost <a class="reference external" href="https://gov.curve.fi/u/meowtopia">every single</a> <a class="reference external" href="https://gov.curve.fi/u/LiquidityKing">one was</a> <a class="reference external" href="https://gov.curve.fi/u/Ryandotrrr">created within</a> 2 days of the proposal’s forum post. Clear signs of governance forum shenanigans, executed to raise hype for a proposal.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -3437,7 +3437,7 @@ Name: outcome_changed, dtype: float64
       <td>529201.282019</td>
     </tr>
     <tr>
-      <th>Score Differeces</th>
+      <th>Score Differences</th>
       <td>23462.994316</td>
       <td>511330.472493</td>
     </tr>
@@ -3446,7 +3446,7 @@ Name: outcome_changed, dtype: float64
 </div></div></div>
 </div>
 <p>Just over 4% of voting power for this proposal was allocated by whales to vote “Yes” (which is just over half the total voting power allocated to the “Yes” choice for this proposal), whereas ~89% of whale voting power was allocated to voting “NO” (~97% of total voting power for this choice).</p>
-<p>Anyway, I just wanted to highlight that whales are also sensible, and not always in the hands of the “evil” which I would classify as entities that would push proposals detrimental to the DAO for their own interests. It should also be noted that this was by far the proposal analyzed with the most voting power involved as well. It’s also a good thing that CRV whales didn’t have any incentive to pass this proposal, as well.</p>
+<p>It’s important to highlight that whales are also sensible and not always “evil”, which I would classify as entities that promote proposals that are detrimental to the DAO for their own interests. It should also be noted that this was, by far, the proposal with the most voting power allocated. It’s a good thing that CRV whales didn’t have an incentive to pass this proposal as well.</p>
 </section>
 </section>
 <section id="radicle">
@@ -3566,7 +3566,7 @@ Name: outcome_changed, dtype: float64
   </tbody>
 </table></div></div>
 </div>
-<p>We see that 18% of proposal (2 proposals) outcomes would’ve been changed had it not be for whale intervention.</p>
+<p>We see that 18% of proposal (2 proposals) outcomes change once whale votes are removed.</p>
 </section>
 <section id="id11">
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
@@ -3579,7 +3579,7 @@ Name: outcome_changed, dtype: float64
 </div>
 </div>
 </div>
-<p>One such proposal was the one to <a class="reference external" href="https://snapshot.org/#/gov.radicle.eth/proposal/QmepPgXwo5q9GipZFKa32rnxaYoo3LrfRqduinftbU3L3S">distribute some RAD leftover</a> from a Liquidity Bootsrapping (LBP) round conducted in February ‘21. This leftover RAD was proposed to be redistributed to participants of the LBP, i.e. people who bought RAD in this period from the Balancer LBP for RAD tokens.</p>
+<p>One such proposal was the one to <a class="reference external" href="https://snapshot.org/#/gov.radicle.eth/proposal/QmepPgXwo5q9GipZFKa32rnxaYoo3LrfRqduinftbU3L3S">distribute RAD remaining</a> following a Liquidity Bootsrapping (LBP) round conducted in February ‘21. This leftover RAD was proposed to be redistributed to participants of the LBP, i.e. people who bought RAD in this period from the Balancer LBP for RAD tokens.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -3611,7 +3611,7 @@ Name: outcome_changed, dtype: float64
       <td>123126.401817</td>
     </tr>
     <tr>
-      <th>Score Differeces</th>
+      <th>Score Differences</th>
       <td>20708.270722</td>
       <td>90218.650933</td>
     </tr>
@@ -4058,7 +4058,7 @@ Name: outcome_changed, dtype: float64
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_diffrences_dfs</span><span class="p">[</span><span class="s2">&quot;Gitcoin&quot;</span><span class="p">][</span><span class="s2">&quot;outcome_changed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_differences_dfs</span><span class="p">[</span><span class="s2">&quot;Gitcoin&quot;</span><span class="p">][</span><span class="s2">&quot;outcome_changed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
