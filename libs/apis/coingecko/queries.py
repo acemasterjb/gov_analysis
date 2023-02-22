@@ -1,13 +1,14 @@
-from json.decoder import JSONDecodeError
 from time import sleep
 from typing import Any
 
-from httpx import AsyncClient, Client, ReadTimeout, Timeout
+from httpx import AsyncClient, Client, Timeout
+from tenacity import *
 
 COINGECKO_HEADERS = {"accept": "application/json"}
 TIMEOUT = Timeout(10.0, connect=30.0, read=30.0)
 
 
+@retry(stop=stop_after_attempt(5), wait=wait_incrementing(10, 10))
 async def get_raw_market_data(token_address: str, chain_name: str) -> dict[str, Any]:
     if chain_name == "polygon":
         chain_name = "polygon-pos"
@@ -18,15 +19,10 @@ async def get_raw_market_data(token_address: str, chain_name: str) -> dict[str, 
     async with AsyncClient(headers=COINGECKO_HEADERS, timeout=TIMEOUT) as client:
         resp = await client.get(url)
         resp_json: dict[str, Any] = resp.json()
-        status: dict = resp_json.get("status")
-        if status:
-            if status.get("error_code") >= 400:
-                print("\twaiting a minute for CG...")
-                sleep(60)
-                return await get_raw_market_data(token_address, chain_name)
         return resp_json if resp_json.get("error") is None else {}
 
 
+@retry(stop=stop_after_attempt(5), wait=wait_incrementing(10, 10))
 async def get_raw_market_data_by_symbol(token_symbol: str):
     url = f"https://api.coingecko.com/api/v3/coins/{token_symbol}"
     params = {"tickers": True, "market_data": True, "sparkline": True}
@@ -36,17 +32,10 @@ async def get_raw_market_data_by_symbol(token_symbol: str):
     ) as client:
         resp = await client.get(url)
         resp_json: dict[str, Any] = resp.json()
-        status: dict = resp_json.get("status")
-        if status:
-            if status.get("error_code") >= 400:
-                print("\twaiting a minute for CG...")
-                sleep(60)
-                return await get_raw_market_data_by_symbol(token_symbol)
         return resp_json if resp_json.get("error") is None else {}
 
 
-
-
+@retry(stop=stop_after_attempt(5), wait=wait_incrementing(10, 10))
 def get_raw_historical_price_range(
     token_address: str, chain_name: str, start: int, end: int
 ):
@@ -61,25 +50,10 @@ def get_raw_historical_price_range(
     }
 
     with Client(headers=COINGECKO_HEADERS, timeout=TIMEOUT, params=params) as client:
+        resp = client.get(url)
+        resp_json: dict[str, Any] = resp.json()
         try:
-            resp = client.get(url)
-        except ReadTimeout:
-            print("\tReadTimeout error: waiting 30s before trying again...")
-            sleep(30)
-            return get_raw_historical_price_range(
-                token_address, chain_name, start, end
-            )
-        try:
-            resp_json: dict[str, Any] = resp.json()
-        except JSONDecodeError:
-            return None
-        # print(resp.url)
-        status: dict = resp_json.get("status")
-        if status:
-            if status.get("error_code") >= 400:
-                print("\twaiting a minute for CG...")
-                sleep(60)
-                return get_raw_historical_price_range(
-                    token_address, chain_name, start, end
-                )
-        return resp_json["prices"] if resp_json.get("error") is None else {}
+            return resp_json["prices"] if resp_json.get("error") is None else {}
+        except KeyError:
+            sleep(60)
+            return get_raw_historical_price_range(token_address, chain_name, start, end)
