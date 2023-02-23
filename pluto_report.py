@@ -213,7 +213,7 @@ def get_all_snapshot_dataframes_for_dao(
     return dao_snapshot_dfs
 
 
-snapshot_datas = asyncio_run(get_all_dao_snapshot_data(50, 10, 50))
+snapshot_datas = asyncio_run(get_all_dao_snapshot_data(50, 20, 50))
 snapshot_dataframes = get_all_snapshot_dataframes_for_dao(snapshot_datas)
 
 
