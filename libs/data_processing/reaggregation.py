@@ -14,6 +14,8 @@ def reaggregate_votes_single_choice_or_basic(
 ) -> pd.DataFrame | None:
     whales: pd.DataFrame = get_whales(unfiltered_proposal, top_shareholders)
     for _, whale in whales.iterrows():
+        if type(whale["choice"]) is dict:
+            whale["choice"] = list(whale["choice"].values())[0]
         scores: list[float | int] = unfiltered_proposal["proposal_scores"].iloc[0]
         scores[whale["choice"] - 1] -= whale["vp"]
         unfiltered_proposal["proposal_scores"] = [scores] * unfiltered_proposal.shape[0]
