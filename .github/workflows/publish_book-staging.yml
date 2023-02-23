@@ -1,0 +1,40 @@
+name: publish-book-staging
+
+on:
+  push:
+    paths:
+      - "book/**"
+    branches:
+      - staging
+
+permissions:
+  contents: write
+
+jobs:
+  publish-book:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Make staging copy
+        run: |
+          cp ./book/plutocracy_report.ipynb ./book/plutocracy_report_staging.ipynb
+
+      - name: Build the book
+        run: |
+          jupyter-book build ./book/plutocracy_report_staging.ipynb
+
+      - name: GitHub Pages publish to staging
+        uses: peaceiris/actions-gh-pages@v3.6.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./book/_build/_page/plutocracy_report_staging/html
