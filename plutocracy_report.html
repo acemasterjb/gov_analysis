@@ -6864,6 +6864,3859 @@ Name: outcome_changed, dtype: float64
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">score_differences_dfs</span><span class="p">[</span><span class="s2">&quot;SuperRare DAO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s2">&quot;total_vp&quot;</span><span class="p">:</span> <span class="s2">&quot;float64&quot;</span><span class="p">},</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;score_differences&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;whale_vp_proportion&quot;</span><span class="p">,</span> <span class="s2">&quot;total_vp&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">render_links</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">escape</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>whale_vp_proportion</th>
+      <th>total_vp</th>
+      <th>outcome_changed</th>
+      <th>outcome_old</th>
+      <th>outcome_new</th>
+    </tr>
+    <tr>
+      <th>Proposal ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href=http://snapshot.org/#/superraredao.eth/proposal/0xf84ed27aa4583d7d5b7573842ee142297c2bdb8b5c943f23955a90e1124452f7 rel="noopener noreferrer" target="_blank">0xf84ed27</a></th>
+      <td>0.580322</td>
+      <td>6.061394e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/superraredao.eth/proposal/0xd84b09a7a9dabdc66dd5cba62e60f6607553a230884dd28577be7af62a13c6f8 rel="noopener noreferrer" target="_blank">0xd84b09a</a></th>
+      <td>0.552082</td>
+      <td>6.329435e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/superraredao.eth/proposal/0x40b7d0e62230a9acce8cf63737c521962b0f21ec09b2acb24af314f9996db5f1 rel="noopener noreferrer" target="_blank">0x40b7d0e</a></th>
+      <td>0.531639</td>
+      <td>1.639030e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/superraredao.eth/proposal/0xc9fa170547b53f870e12127440603b6f67bab905653b99735d869cd3fcfbb40f rel="noopener noreferrer" target="_blank">0xc9fa170</a></th>
+      <td>0.529507</td>
+      <td>1.650444e+07</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/superraredao.eth/proposal/0x63b7fbb55cbefc4574e3af48d58579eaff3858280ec861d1e30efe4f3d64e099 rel="noopener noreferrer" target="_blank">0x63b7fbb</a></th>
+      <td>0.507906</td>
+      <td>6.957953e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/superraredao.eth/proposal/0x1d64af476cff870e29462a636521ec24159fef6918fe5ad6faa5806bcd1ad562 rel="noopener noreferrer" target="_blank">0x1d64af4</a></th>
+      <td>0.501453</td>
+      <td>7.271877e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/superraredao.eth/proposal/0x5a5139173e3c93a16b73d060ad69ee336d6ffdccdd7b7f94985115e08ef93c3d rel="noopener noreferrer" target="_blank">0x5a51391</a></th>
+      <td>0.488250</td>
+      <td>7.337768e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/superraredao.eth/proposal/0xa73cb6573872fe91bc1c7ee0711da48d2ef46a672e92c9ec01fa59603f4edd4f rel="noopener noreferrer" target="_blank">0xa73cb65</a></th>
+      <td>0.470866</td>
+      <td>6.704130e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/superraredao.eth/proposal/0x8d3c0657612d0ac6c12e791e87f85e978f6e43ddcc1dfcf019eacf7a1a2cc8b6 rel="noopener noreferrer" target="_blank">0x8d3c065</a></th>
+      <td>0.466561</td>
+      <td>1.313154e+07</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/superraredao.eth/proposal/0x0b75ed20f76b1fca276c254db77d81a37f36e41fb448bd649a820c7dfe21179a rel="noopener noreferrer" target="_blank">0x0b75ed2</a></th>
+      <td>0.465688</td>
+      <td>5.746038e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/superraredao.eth/proposal/0x25087024f9572f70591907cb654aaf6575c7daee725c996b5769b945be4bca54 rel="noopener noreferrer" target="_blank">0x2508702</a></th>
+      <td>0.457431</td>
+      <td>5.261610e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/superraredao.eth/proposal/0x1763d237ee98337d62ea0a3d96c4aaae110bc0be373c86c7169bdbfc78d38b62 rel="noopener noreferrer" target="_blank">0x1763d23</a></th>
+      <td>0.453317</td>
+      <td>8.044046e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/superraredao.eth/proposal/0x46461bc85bd1c71eb4621489ebfb73e71a549913d71b2d6b7fae2ac3f45833ad rel="noopener noreferrer" target="_blank">0x46461bc</a></th>
+      <td>0.448403</td>
+      <td>7.181424e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/superraredao.eth/proposal/0x60745f146b79d1b6c2ccc0b0fc25044bbfa13dc0794c991f20485cc780bf7982 rel="noopener noreferrer" target="_blank">0x60745f1</a></th>
+      <td>0.434386</td>
+      <td>8.483730e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/superraredao.eth/proposal/0x1787f5de303dc534d317d67586cf9fbb24b39bcb9049f15e28635d503c9a652a rel="noopener noreferrer" target="_blank">0x1787f5d</a></th>
+      <td>0.427301</td>
+      <td>5.011283e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/superraredao.eth/proposal/0x5c46e4dddca2915b1b7a0f4c10e44bf787a2f9360ff9d9509e8fa69166ed306a rel="noopener noreferrer" target="_blank">0x5c46e4d</a></th>
+      <td>0.414785</td>
+      <td>7.243145e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_differences_dfs</span><span class="p">[</span><span class="s2">&quot;Gearbox&quot;</span><span class="p">][</span><span class="s2">&quot;outcome_changed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False    1.0
+Name: outcome_changed, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">score_differences_dfs</span><span class="p">[</span><span class="s2">&quot;Hop&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s2">&quot;total_vp&quot;</span><span class="p">:</span> <span class="s2">&quot;float64&quot;</span><span class="p">},</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;score_differences&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;whale_vp_proportion&quot;</span><span class="p">,</span> <span class="s2">&quot;total_vp&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">render_links</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">escape</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>whale_vp_proportion</th>
+      <th>total_vp</th>
+      <th>outcome_changed</th>
+      <th>outcome_old</th>
+      <th>outcome_new</th>
+    </tr>
+    <tr>
+      <th>Proposal ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0xdf8dbd41184c7c401ee326c62ca6e253a8fa856b825b7d9e9311ce0faea4a5ef rel="noopener noreferrer" target="_blank">0xdf8dbd4</a></th>
+      <td>0.990016</td>
+      <td>1.319066e+07</td>
+      <td>False</td>
+      <td>For</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0x8131ad63b8bb249bd1d146f3e1412dcb98e75f89c3b2e87e28970fe453c43299 rel="noopener noreferrer" target="_blank">0x8131ad6</a></th>
+      <td>0.988627</td>
+      <td>1.214940e+07</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0x6b5136469fd7b1478c0e10b95e30e8645a1cea8bb49cabeed59a312264b518f0 rel="noopener noreferrer" target="_blank">0x6b51364</a></th>
+      <td>0.986493</td>
+      <td>1.355622e+07</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0x77dfa74f2fa447137b13d8e5a6faaa7c9f2d1a23f86e837fb6e0aea84902c82f rel="noopener noreferrer" target="_blank">0x77dfa74</a></th>
+      <td>0.986203</td>
+      <td>1.356527e+07</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0xf1bf9327ad089d25e949b044d1673501acbeef96f1657d0e79b89fe365983595 rel="noopener noreferrer" target="_blank">0xf1bf932</a></th>
+      <td>0.986168</td>
+      <td>1.356350e+07</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0x6873b0667012c18765693acc0e9005318c6d65d68ada6d6ae50edeba6ea75ecc rel="noopener noreferrer" target="_blank">0x6873b06</a></th>
+      <td>0.986155</td>
+      <td>1.097978e+07</td>
+      <td>False</td>
+      <td>For</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0x29c0205077e5041a00b602c2e71a1b2ca5d84e2f7b4f02d2c7102948d4ffc783 rel="noopener noreferrer" target="_blank">0x29c0205</a></th>
+      <td>0.984798</td>
+      <td>1.198519e+07</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0x15937d80591ed226743226721d236e8c9190461521c866f18a45cb9703773a22 rel="noopener noreferrer" target="_blank">0x15937d8</a></th>
+      <td>0.984153</td>
+      <td>1.056193e+07</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/bafkreigyulg3t2lyeu6snrufijckuugvgnwed6qll63cl5fkflcmwp5hja rel="noopener noreferrer" target="_blank">bafkreigy</a></th>
+      <td>0.982840</td>
+      <td>1.230943e+07</td>
+      <td>True</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0x3e81e9581f48b150787a5160c3dfc65d4947ff4206e6cdca053d16da0bc60a77 rel="noopener noreferrer" target="_blank">0x3e81e95</a></th>
+      <td>0.982176</td>
+      <td>9.760726e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/bafkreid2rfh5xfz7o7s7wlj2j6zyhy4oxfai3ng2x35sh3ihnzwafrcupm rel="noopener noreferrer" target="_blank">bafkreid2</a></th>
+      <td>0.980578</td>
+      <td>8.536331e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/bafkreibb4c6oh4yxkokq4brltn6zxq5vs2esms77br2h6c6llpahnlabvm rel="noopener noreferrer" target="_blank">bafkreibb</a></th>
+      <td>0.975413</td>
+      <td>1.247628e+07</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0xaa5d0ac880f020baa5be6fcc6a414f098457ca8999de16fd9d522a7850d8bb75 rel="noopener noreferrer" target="_blank">0xaa5d0ac</a></th>
+      <td>0.974207</td>
+      <td>5.279324e+06</td>
+      <td>False</td>
+      <td>For</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/bafkreifoul7zjzkaj2f2le36h3isgrhaytikfk5un3z3fz6pzd6mgvzxva rel="noopener noreferrer" target="_blank">bafkreifo</a></th>
+      <td>0.960753</td>
+      <td>8.276589e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/bafkreicliwx2wt4rnjbappi4yyk4z2qrh224guatw7z3uo3wwh7ruekeee rel="noopener noreferrer" target="_blank">bafkreicl</a></th>
+      <td>0.959179</td>
+      <td>6.714150e+06</td>
+      <td>False</td>
+      <td>For</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0x5ed734668ad7eb7a6080f23d6cf119379ba6ca3bbbac7de0a80cc47b2b09aca5 rel="noopener noreferrer" target="_blank">0x5ed7346</a></th>
+      <td>0.956643</td>
+      <td>1.415446e+07</td>
+      <td>False</td>
+      <td>Yes - Authorize Hop Foundation</td>
+      <td>Yes - Authorize Hop Foundation</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0xd8dfe984a70f7999ee8ce31ab725fc450074b83e9c9cf515b29c2e4c783b7bfe rel="noopener noreferrer" target="_blank">0xd8dfe98</a></th>
+      <td>0.953260</td>
+      <td>1.420469e+07</td>
+      <td>False</td>
+      <td>Yes - Deploy a HOP bridge</td>
+      <td>Yes - Deploy a HOP bridge</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0x3df21f676877e7c87311ef6cb6864abd865d2e58a2613d6f10dd291b4f5dbce6 rel="noopener noreferrer" target="_blank">0x3df21f6</a></th>
+      <td>0.952876</td>
+      <td>6.303571e+06</td>
+      <td>False</td>
+      <td>Yes - Deploy a HOP bridge</td>
+      <td>Yes - Deploy a HOP bridge</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/0x603f0f6e54c7be8d5db7e16ae7145e6df4b439b8aac49654cdfd6b0c03eb6492 rel="noopener noreferrer" target="_blank">0x603f0f6</a></th>
+      <td>0.947185</td>
+      <td>1.429579e+07</td>
+      <td>False</td>
+      <td>Yes - Adopt the mission statemen</td>
+      <td>Yes - Adopt the mission statemen</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/bafkreihvjb3ytkqrroouve3kwuho46ho2dz2an2oljokjwnx6lwmaekumi rel="noopener noreferrer" target="_blank">bafkreihv</a></th>
+      <td>0.936266</td>
+      <td>4.459925e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/bafkreic3hu4fhna7lfyecwvvasfqccygzhpkvw2zu4mihzglccwa5om6ii rel="noopener noreferrer" target="_blank">bafkreic3</a></th>
+      <td>0.866190</td>
+      <td>7.125023e+06</td>
+      <td>False</td>
+      <td>For</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hop.eth/proposal/bafkreihioi2uoubmzc4onqxbhvfuvvngsrbbox6yesbuyhfngc5a7gmuvu rel="noopener noreferrer" target="_blank">bafkreihi</a></th>
+      <td>0.851591</td>
+      <td>9.003253e+06</td>
+      <td>False</td>
+      <td>For</td>
+      <td>For</td>
+    </tr>
+  </tbody>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_differences_dfs</span><span class="p">[</span><span class="s2">&quot;Hop&quot;</span><span class="p">][</span><span class="s2">&quot;outcome_changed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False    0.954545
+True     0.045455
+Name: outcome_changed, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">score_differences_dfs</span><span class="p">[</span><span class="s2">&quot;JPEG’d&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s2">&quot;total_vp&quot;</span><span class="p">:</span> <span class="s2">&quot;float64&quot;</span><span class="p">},</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;score_differences&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;whale_vp_proportion&quot;</span><span class="p">,</span> <span class="s2">&quot;total_vp&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">render_links</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">escape</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>whale_vp_proportion</th>
+      <th>total_vp</th>
+      <th>outcome_changed</th>
+      <th>outcome_old</th>
+      <th>outcome_new</th>
+    </tr>
+    <tr>
+      <th>Proposal ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/QmU5Ku31dhapFmJBms9YbX2kuqQyumsJdSgfvYNym4H5dc rel="noopener noreferrer" target="_blank">QmU5Ku31d</a></th>
+      <td>0.902504</td>
+      <td>3.055583e+09</td>
+      <td>False</td>
+      <td>Yes, commission the NFTs</td>
+      <td>Yes, commission the NFTs</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/QmZhiDLFXV5iKiDmkRAvcn5HW8vUcDxa9bsvdsg6o5t5F7 rel="noopener noreferrer" target="_blank">QmZhiDLFX</a></th>
+      <td>0.833699</td>
+      <td>2.277809e+09</td>
+      <td>False</td>
+      <td>Yes, launch NFT auctions</td>
+      <td>Yes, launch NFT auctions</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0x2f14983dcb6f37505627f776b56c2868a0cb82dd388985fb0b85afe6a69a1157 rel="noopener noreferrer" target="_blank">0x2f14983</a></th>
+      <td>0.815436</td>
+      <td>8.065378e+08</td>
+      <td>True</td>
+      <td>no</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0x04ec6841b057350d795de561561118f15baab1a21a4f5ef9ce7eacc3f2b2365d rel="noopener noreferrer" target="_blank">0x04ec684</a></th>
+      <td>0.804727</td>
+      <td>8.626524e+07</td>
+      <td>False</td>
+      <td>yes</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0x2c3a78665a73bc60a56df67b78e8cf5d1439404abd16b64efded7d6c94916c9c rel="noopener noreferrer" target="_blank">0x2c3a786</a></th>
+      <td>0.753776</td>
+      <td>3.241814e+09</td>
+      <td>False</td>
+      <td>Diversify</td>
+      <td>Diversify</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/QmahuLsSu2xXzXNzp8x1iMfY9TkHyaGDkvtGnvhe2PiEyH rel="noopener noreferrer" target="_blank">QmahuLsSu</a></th>
+      <td>0.751152</td>
+      <td>3.803228e+09</td>
+      <td>False</td>
+      <td>Design 3</td>
+      <td>Design 3</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0x8b2f168f061d4dc96aecd59e9ece50fa13f73819c5b1d351174f9c49e2d4673e rel="noopener noreferrer" target="_blank">0x8b2f168</a></th>
+      <td>0.749019</td>
+      <td>3.238020e+08</td>
+      <td>True</td>
+      <td>Yes, launch the index</td>
+      <td>Abstain</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0x55723c4085277bf201baea0e0d298dfd255746efd194e25642cd976ecec3b1ba rel="noopener noreferrer" target="_blank">0x55723c4</a></th>
+      <td>0.742123</td>
+      <td>2.542658e+09</td>
+      <td>False</td>
+      <td>Yes approve new JPEG boost</td>
+      <td>Yes approve new JPEG boost</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0x1b099f5885df54aa07614b5debe5be1645952f37fc2c37348f9e6388a268fe2f rel="noopener noreferrer" target="_blank">0x1b099f5</a></th>
+      <td>0.717871</td>
+      <td>3.491613e+08</td>
+      <td>True</td>
+      <td>yes</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/bafkreihdscoprwnk5fe6ro75vb5jo6jfqvdp6xrmfiwiwr73rtfzsu4kua rel="noopener noreferrer" target="_blank">bafkreihd</a></th>
+      <td>0.709964</td>
+      <td>2.363689e+09</td>
+      <td>False</td>
+      <td>Remove deposit fees</td>
+      <td>Remove deposit fees</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/bafkreibvg4khbu2bw5mfyeqfahmgyaxknkzlwo3s5vzmflspde4wmcbk7i rel="noopener noreferrer" target="_blank">bafkreibv</a></th>
+      <td>0.694372</td>
+      <td>4.354831e+09</td>
+      <td>False</td>
+      <td>Yes enable pETH borrowing</td>
+      <td>Yes enable pETH borrowing</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/bafkreievoych6fyzcihzyxouhd4ekc2j2xk6mzeoplxrizoe4alobvsfci rel="noopener noreferrer" target="_blank">bafkreiev</a></th>
+      <td>0.692118</td>
+      <td>2.424079e+09</td>
+      <td>False</td>
+      <td>Add Doodles</td>
+      <td>Add Doodles</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/bafkreigf22363onzjbs5jjavud2uwpmx6hjgamretz6qjnexsipsiqqnaa rel="noopener noreferrer" target="_blank">bafkreigf</a></th>
+      <td>0.690976</td>
+      <td>3.730456e+09</td>
+      <td>False</td>
+      <td>Yes authorize veCRV bribes</td>
+      <td>Yes authorize veCRV bribes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/bafkreihcyh7rk2x6tl3cmop4aslrhtbpy2h2q5p2fpblq3adgpj6xyvrqq rel="noopener noreferrer" target="_blank">bafkreihc</a></th>
+      <td>0.686093</td>
+      <td>4.640046e+09</td>
+      <td>False</td>
+      <td>Authorize DAO</td>
+      <td>Authorize DAO</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/bafkreiaca5nlr5rkah2qlzeiydrvshnkagxejryyn3zsplum5kvpkv35ky rel="noopener noreferrer" target="_blank">bafkreiac</a></th>
+      <td>0.681444</td>
+      <td>5.636676e+09</td>
+      <td>False</td>
+      <td>Yes. Offer free insurance.</td>
+      <td>Yes. Offer free insurance.</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0x452d44a7ccb5918a134c128428beef9d77f3e63f8c96795a014edae4d9dc5d29 rel="noopener noreferrer" target="_blank">0x452d44a</a></th>
+      <td>0.674629</td>
+      <td>3.289604e+09</td>
+      <td>False</td>
+      <td>Yes enable JPEG LTV boost</td>
+      <td>Yes enable JPEG LTV boost</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/bafkreiemkeb273ety3nvblmveajvogexl5dalumbuipbdnduwp5i2gtzpu rel="noopener noreferrer" target="_blank">bafkreiem</a></th>
+      <td>0.653208</td>
+      <td>2.569426e+09</td>
+      <td>False</td>
+      <td>Implement Punk Trait Multiplier</td>
+      <td>Implement Punk Trait Multiplier</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0x31d351767ac2bf5389b26608ef4fa98b4f567dff7ea42c40b813678460dfaf70 rel="noopener noreferrer" target="_blank">0x31d3517</a></th>
+      <td>0.639521</td>
+      <td>2.860513e+09</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0xa83e8a3994603ee1b4eefd71e12e12dd736c9c4051f6722e738bdf80f5ddc286 rel="noopener noreferrer" target="_blank">0xa83e8a3</a></th>
+      <td>0.620489</td>
+      <td>1.157935e+08</td>
+      <td>False</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0x7bdb01de0ed59587bbb8f8828a1d3ed6456aa041b98755d7d9ce557d7cd7da31 rel="noopener noreferrer" target="_blank">0x7bdb01d</a></th>
+      <td>0.591758</td>
+      <td>9.392267e+08</td>
+      <td>False</td>
+      <td>yes</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0xd68fd85db271a80b0b48494fca4f97204d1b39b17fd27d473b85540a031aa7aa rel="noopener noreferrer" target="_blank">0xd68fd85</a></th>
+      <td>0.582523</td>
+      <td>1.401333e+09</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0xe9ac0e9500c6f0b7766d54b7087593bcddf7484569d4789ecf924bb35876c78e rel="noopener noreferrer" target="_blank">0xe9ac0e9</a></th>
+      <td>0.577629</td>
+      <td>7.155875e+08</td>
+      <td>True</td>
+      <td>no</td>
+      <td>yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0xf1df891a0b7b080b7903386e47332c555d893cef5ccafc08f151a3d85b65e325 rel="noopener noreferrer" target="_blank">0xf1df891</a></th>
+      <td>0.573307</td>
+      <td>3.291369e+09</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/QmaTbT5Brq46L8Ptv3WRSbemzSEpyefiLth8F9QGzh42aZ rel="noopener noreferrer" target="_blank">QmaTbT5Br</a></th>
+      <td>0.562769</td>
+      <td>4.432926e+09</td>
+      <td>False</td>
+      <td>Yes authorize up to $15m CVX.</td>
+      <td>Yes authorize up to $15m CVX.</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0xec0ef9ed312615a2516c91aa87872d9e0c5707a31afe2530880aa8a92322f30b rel="noopener noreferrer" target="_blank">0xec0ef9e</a></th>
+      <td>0.561243</td>
+      <td>2.468512e+09</td>
+      <td>False</td>
+      <td>Support</td>
+      <td>Support</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0x43983b0760fb917c7cd0934da37788f60cd950ed275fc94b7bf0372a6858f872 rel="noopener noreferrer" target="_blank">0x43983b0</a></th>
+      <td>0.552810</td>
+      <td>2.026389e+09</td>
+      <td>False</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/bafkreiajys24gj77jwaii2y6l33rp4yxbgqjou3d4dexxrysefnas4e3ne rel="noopener noreferrer" target="_blank">bafkreiaj</a></th>
+      <td>0.526497</td>
+      <td>5.438990e+09</td>
+      <td>False</td>
+      <td>Yes authorize up to $15m.</td>
+      <td>Yes authorize up to $15m.</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0x8f2f51372086fafc4b19ecbd42789ee35bf10f3e40d9c7e0c28401125a16a313 rel="noopener noreferrer" target="_blank">0x8f2f513</a></th>
+      <td>0.524384</td>
+      <td>2.943279e+09</td>
+      <td>False</td>
+      <td>Yes, Enable staking and airdrop</td>
+      <td>Yes, Enable staking and airdrop</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/bafkreifbqif477xnhsfqe6yyfrkm4fjfymyezjsfqdsnkeprw4rkbiwmly rel="noopener noreferrer" target="_blank">bafkreifb</a></th>
+      <td>0.522123</td>
+      <td>4.480022e+09</td>
+      <td>False</td>
+      <td>Yes vote 100% on pETH gauge</td>
+      <td>Yes vote 100% on pETH gauge</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0x103fdd3c2d301618b07f9945240d3f278ff71097e76114e1143ef548819be0c5 rel="noopener noreferrer" target="_blank">0x103fdd3</a></th>
+      <td>0.487092</td>
+      <td>1.541569e+09</td>
+      <td>False</td>
+      <td>Yes launch the index</td>
+      <td>Yes launch the index</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0x98a890c588240cf4161eba611c2274bc30d19cc6cb68df44f88189e6c281ae03 rel="noopener noreferrer" target="_blank">0x98a890c</a></th>
+      <td>0.486323</td>
+      <td>3.004328e+09</td>
+      <td>False</td>
+      <td>Support Subsidizing JPEG-pETH</td>
+      <td>Support Subsidizing JPEG-pETH</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0x5cfa59ba9e37ddc8f50ae355a24da0f1aa56727e3ab6fd0953495be0ce6201b2 rel="noopener noreferrer" target="_blank">0x5cfa59b</a></th>
+      <td>0.483359</td>
+      <td>3.914539e+09</td>
+      <td>False</td>
+      <td>Yes approve PIP</td>
+      <td>Yes approve PIP</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/bafkreibwmftbnj2hl3rk62savhez2avhuvwraskctb5v5bltw3nznuoymu rel="noopener noreferrer" target="_blank">bafkreibw</a></th>
+      <td>0.477312</td>
+      <td>5.066019e+09</td>
+      <td>False</td>
+      <td>Yes remove fees</td>
+      <td>Yes remove fees</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0x7d80f7739cc1697b3af01ad58591cc6c2318b949440957965b9fbe16f5374077 rel="noopener noreferrer" target="_blank">0x7d80f77</a></th>
+      <td>0.471879</td>
+      <td>3.337571e+09</td>
+      <td>False</td>
+      <td>Yes - add support</td>
+      <td>Yes - add support</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/bafkreihiyodelnc35mkkwvpwisijrnyrimdjvia64i6blnocgwkfxvnixq rel="noopener noreferrer" target="_blank">bafkreihi</a></th>
+      <td>0.469616</td>
+      <td>3.070628e+09</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/bafkreicqhz5vdiqqii3gtmvtt3zujsx3gdsbkzhl2n5u2ct367sarjil4y rel="noopener noreferrer" target="_blank">bafkreicq</a></th>
+      <td>0.457358</td>
+      <td>3.061497e+09</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0xa0ae2900433f8a28826788492c1cee959c7a3257ee22c8fbab1bc6893b1aedcc rel="noopener noreferrer" target="_blank">0xa0ae290</a></th>
+      <td>0.422897</td>
+      <td>2.688742e+09</td>
+      <td>False</td>
+      <td>Yes, enable BAYC traits Boost</td>
+      <td>Yes, enable BAYC traits Boost</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0xcbe086a80ad28b41bc3bf817c9fcbe4ea933545f6b5e9161cac448aa028e7406 rel="noopener noreferrer" target="_blank">0xcbe086a</a></th>
+      <td>0.418084</td>
+      <td>3.346360e+09</td>
+      <td>False</td>
+      <td>no</td>
+      <td>no</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0xd9dc4feb17c6dd9fb9d6fcb7e761d0bbd6afaf2e2fb4b81c9686a3f7a8411795 rel="noopener noreferrer" target="_blank">0xd9dc4fe</a></th>
+      <td>0.415669</td>
+      <td>2.779636e+09</td>
+      <td>False</td>
+      <td>Set Debt Ceiling to 2469 pETH</td>
+      <td>Set Debt Ceiling to 2469 pETH</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/bafkreibcqdgkkff5ysys7t7huddjzccvg2g2jrg7e34zqch3rslemj43xy rel="noopener noreferrer" target="_blank">bafkreibc</a></th>
+      <td>0.404101</td>
+      <td>3.426069e+09</td>
+      <td>False</td>
+      <td>Yes add collections</td>
+      <td>Yes add collections</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/bafkreigymxmmku6527vedevgroak5yc3a3wi7faaa54aywswp67r26lt5e rel="noopener noreferrer" target="_blank">bafkreigy</a></th>
+      <td>0.403021</td>
+      <td>3.084989e+09</td>
+      <td>False</td>
+      <td>Yes increase base TVL</td>
+      <td>Yes increase base TVL</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/bafkreibwjbbqmirfd5zy2fwcnvieg6ci2ioonlirrm2valzo7lkhoejwsa rel="noopener noreferrer" target="_blank">bafkreibw</a></th>
+      <td>0.400393</td>
+      <td>3.457796e+09</td>
+      <td>False</td>
+      <td>Yes launch bonds</td>
+      <td>Yes launch bonds</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/bafkreickuiwa3gmtzxlbwp3vjpzfczgnk5avcxeftdukvbdbnzuuhc6tja rel="noopener noreferrer" target="_blank">bafkreick</a></th>
+      <td>0.398210</td>
+      <td>2.465479e+09</td>
+      <td>False</td>
+      <td>Yes Authorize the budget</td>
+      <td>Yes Authorize the budget</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/bafkreidabge6gv2gzgrzbshfxynx2ovvlgke2wt5hrwod442elytx5f5q4 rel="noopener noreferrer" target="_blank">bafkreida</a></th>
+      <td>0.391640</td>
+      <td>3.174632e+09</td>
+      <td>False</td>
+      <td>Yes increase cigarette boost</td>
+      <td>Yes increase cigarette boost</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0xaa6a1776a3f65be0815bdfbfd9ffbe553d46cbcbf0770f0668c01690aa7e5f65 rel="noopener noreferrer" target="_blank">0xaa6a177</a></th>
+      <td>0.381108</td>
+      <td>2.395368e+09</td>
+      <td>False</td>
+      <td>Yes, allow team.</td>
+      <td>Yes, allow team.</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0x9ee968a9c838816eba055374ed737336b376a4c94e7ce19cca8e47923245ca7a rel="noopener noreferrer" target="_blank">0x9ee968a</a></th>
+      <td>0.345234</td>
+      <td>2.001095e+09</td>
+      <td>False</td>
+      <td>Against</td>
+      <td>Against</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/bafkreihjy6iacuwjnyaoua65kx3fqm5tevxis3ky35tirl5migt6km7xzm rel="noopener noreferrer" target="_blank">bafkreihj</a></th>
+      <td>0.341538</td>
+      <td>1.217826e+09</td>
+      <td>False</td>
+      <td>Yes launch CVX bonds</td>
+      <td>Yes launch CVX bonds</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0xd06178793625ad116b8b68eb0b84b42e5ee0956e4d0a1613228177453309f3ed rel="noopener noreferrer" target="_blank">0xd061787</a></th>
+      <td>0.331523</td>
+      <td>2.931509e+09</td>
+      <td>False</td>
+      <td>Support</td>
+      <td>Support</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0x0800198644ae03b79e74a37825b14e4e37be8289def68a073f01ecf829ce584a rel="noopener noreferrer" target="_blank">0x0800198</a></th>
+      <td>0.330340</td>
+      <td>2.367932e+09</td>
+      <td>False</td>
+      <td>Yes implement tiered vaults</td>
+      <td>Yes implement tiered vaults</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/jpeg’d.eth/proposal/0x20e3d10e84f371a81646f5350c57521a4442c64bf75f22fa4a71faf24977ec36 rel="noopener noreferrer" target="_blank">0x20e3d10</a></th>
+      <td>0.327731</td>
+      <td>2.648948e+09</td>
+      <td>False</td>
+      <td>Yes, launch JPEG Index</td>
+      <td>Yes, launch JPEG Index</td>
+    </tr>
+  </tbody>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_differences_dfs</span><span class="p">[</span><span class="s2">&quot;JPEG’d&quot;</span><span class="p">][</span><span class="s2">&quot;outcome_changed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False    0.92
+True     0.08
+Name: outcome_changed, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">score_differences_dfs</span><span class="p">[</span><span class="s2">&quot;Merit Circle&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s2">&quot;total_vp&quot;</span><span class="p">:</span> <span class="s2">&quot;float64&quot;</span><span class="p">},</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;score_differences&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;whale_vp_proportion&quot;</span><span class="p">,</span> <span class="s2">&quot;total_vp&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">render_links</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">escape</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>whale_vp_proportion</th>
+      <th>total_vp</th>
+      <th>outcome_changed</th>
+      <th>outcome_old</th>
+      <th>outcome_new</th>
+    </tr>
+    <tr>
+      <th>Proposal ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/0xd15551329fa3e83c68ec4dabd885ff17e8c26a20e1d44899510765d16a0cacf4 rel="noopener noreferrer" target="_blank">0xd155513</a></th>
+      <td>0.701893</td>
+      <td>4.135070e+06</td>
+      <td>False</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/QmQkG8aWrpiPjcL4fw5eeHmteYiVDwPSXYDtM8PzD6WJzm rel="noopener noreferrer" target="_blank">QmQkG8aWr</a></th>
+      <td>0.693401</td>
+      <td>5.812888e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/0x0915881a0135b71466db7b3238bd9dc5bb9e6027a465981e866abd0ce875c527 rel="noopener noreferrer" target="_blank">0x0915881</a></th>
+      <td>0.664194</td>
+      <td>4.153706e+06</td>
+      <td>False</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/0xb304e099072121a40183e0ce30371ce927a0d3dfd9eb912c876bb934230b9223 rel="noopener noreferrer" target="_blank">0xb304e09</a></th>
+      <td>0.625963</td>
+      <td>1.184047e+07</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/0xc5d25c7acff0bb109e1b05c1b139bfa4206cd28a34b1ecc701e4fabb0d97145f rel="noopener noreferrer" target="_blank">0xc5d25c7</a></th>
+      <td>0.619293</td>
+      <td>3.233531e+06</td>
+      <td>False</td>
+      <td>MC/ETH</td>
+      <td>MC/ETH</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/0x14664200f2e58651eaf659da8f5ae8cf95edd3d194d41ba475ed21046fbb8161 rel="noopener noreferrer" target="_blank">0x1466420</a></th>
+      <td>0.611997</td>
+      <td>6.576268e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/0xf06600beda3c784822bca0d16023774b7cc5764b43729a049fa97518832605d8 rel="noopener noreferrer" target="_blank">0xf06600b</a></th>
+      <td>0.609372</td>
+      <td>5.918585e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/0xbd4b35e7ef4fa6aa3d354084a6c6cde2db9f4f029554169357faf3690c3bdef4 rel="noopener noreferrer" target="_blank">0xbd4b35e</a></th>
+      <td>0.597107</td>
+      <td>8.199661e+06</td>
+      <td>False</td>
+      <td>MC/USDC</td>
+      <td>MC/USDC</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/0x732345cee235149d38bcb2884d287214a958074d32fe1df6385a832bfd728e3f rel="noopener noreferrer" target="_blank">0x732345c</a></th>
+      <td>0.594546</td>
+      <td>6.370837e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/QmT71tWtTwk6q5Cd2kvhoLzxm76SpNaQGBR9RE7pCxBM58 rel="noopener noreferrer" target="_blank">QmT71tWtT</a></th>
+      <td>0.592031</td>
+      <td>5.932188e+06</td>
+      <td>False</td>
+      <td>Yes, with clause</td>
+      <td>Yes, with clause</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/0x2927e0acb6a03756b3281dcff43bdb7cfe2b28e343630f7e4ec98f859ca3ed3b rel="noopener noreferrer" target="_blank">0x2927e0a</a></th>
+      <td>0.590119</td>
+      <td>6.123841e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/0x20f45fab6813322dfe420c3a8c9a033a5379b720815b9d617fe3768eec5ba4ec rel="noopener noreferrer" target="_blank">0x20f45fa</a></th>
+      <td>0.588765</td>
+      <td>6.717105e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/QmanW7dTyF2LvvU9iAGwj3i9D4F3TS7ZbxR33jVCmKMrgR rel="noopener noreferrer" target="_blank">QmanW7dTy</a></th>
+      <td>0.573289</td>
+      <td>5.651846e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/0x98ce918100070c35dcbe85a7048c4901fa17d256a21e5cdf32c93fbc39dad6c8 rel="noopener noreferrer" target="_blank">0x98ce918</a></th>
+      <td>0.569722</td>
+      <td>5.274294e+06</td>
+      <td>False</td>
+      <td>No</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/0x412aa19cc429214afa1cf72f0257f5c80695540c84bb9b84b724715a87e882db rel="noopener noreferrer" target="_blank">0x412aa19</a></th>
+      <td>0.567492</td>
+      <td>7.593664e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/0xec08b6f38941c02319ddeca4b8631be36da542a6f629a465b182a81b4e0deba3 rel="noopener noreferrer" target="_blank">0xec08b6f</a></th>
+      <td>0.561837</td>
+      <td>5.388914e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/0x3542e2c294a535e9c6d943ceb73f65b6ae0a10c0fe9314523db76df82667b9b2 rel="noopener noreferrer" target="_blank">0x3542e2c</a></th>
+      <td>0.539303</td>
+      <td>7.187220e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/0x4e20025e3673afd8a552a3f1b65dfaee47834122328105487714c5ab5a9403d1 rel="noopener noreferrer" target="_blank">0x4e20025</a></th>
+      <td>0.533138</td>
+      <td>5.957648e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/0x82bda0ce04a3aac44bb4c3aa2bf70701513c82d792c0574df49f934cd11a6a37 rel="noopener noreferrer" target="_blank">0x82bda0c</a></th>
+      <td>0.512506</td>
+      <td>3.795175e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/0x64a669acccf77471e8aee82ecbfdda431d4b487ca01e66b2cc4c1764b5ef97d0 rel="noopener noreferrer" target="_blank">0x64a669a</a></th>
+      <td>0.507373</td>
+      <td>4.441823e+06</td>
+      <td>False</td>
+      <td>48 months</td>
+      <td>48 months</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/QmYVB6JAudqLR8sMZWiRZENWxY3Jm3ewJjWhPkyhAjoTHg rel="noopener noreferrer" target="_blank">QmYVB6JAu</a></th>
+      <td>0.488554</td>
+      <td>3.442413e+06</td>
+      <td>False</td>
+      <td>Uniswap v2</td>
+      <td>Uniswap v2</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/0x45b53873700c5745a8fb8490503efed7209883c950ea8dc39e3177b04222c311 rel="noopener noreferrer" target="_blank">0x45b5387</a></th>
+      <td>0.477794</td>
+      <td>3.082149e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/QmcZfm6ytj536u8fpNB8Npme8b2gdjLiipQQtYbPt9pbnB rel="noopener noreferrer" target="_blank">QmcZfm6yt</a></th>
+      <td>0.444433</td>
+      <td>4.376475e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/0xae27e762c1f5b3f9f08675f18ab1824346f29828dc95036a6dba9462df24e363 rel="noopener noreferrer" target="_blank">0xae27e76</a></th>
+      <td>0.438073</td>
+      <td>4.110631e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/0x4972826f925eb31902ffaea50ab809e456480a8c33bebb8df9fde87c8168e30f rel="noopener noreferrer" target="_blank">0x4972826</a></th>
+      <td>0.370973</td>
+      <td>2.814769e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/meritcircle.eth/proposal/0xb77d29313a2d878c23bb4792b0bb269f4e4bab1e1bb2b28bf992b27f64cf110f rel="noopener noreferrer" target="_blank">0xb77d293</a></th>
+      <td>0.358561</td>
+      <td>2.635321e+06</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_differences_dfs</span><span class="p">[</span><span class="s2">&quot;Merit Circle&quot;</span><span class="p">][</span><span class="s2">&quot;outcome_changed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False    1.0
+Name: outcome_changed, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">score_differences_dfs</span><span class="p">[</span><span class="s2">&quot;Aavegotchi&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s2">&quot;total_vp&quot;</span><span class="p">:</span> <span class="s2">&quot;float64&quot;</span><span class="p">},</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;score_differences&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;whale_vp_proportion&quot;</span><span class="p">,</span> <span class="s2">&quot;total_vp&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">render_links</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">escape</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>whale_vp_proportion</th>
+      <th>total_vp</th>
+      <th>outcome_changed</th>
+      <th>outcome_old</th>
+      <th>outcome_new</th>
+    </tr>
+    <tr>
+      <th>Proposal ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xd5076e7360c364d33ea0807b3dc05c6f4281a8013822520481dc1edaebd654dc rel="noopener noreferrer" target="_blank">0xd5076e7</a></th>
+      <td>0.918711</td>
+      <td>5.028414e+06</td>
+      <td>False</td>
+      <td>Yaaaaaas</td>
+      <td>Yaaaaaas</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x7a909952a8badb720b6cb7a6369a9f0b546d0d2f844b5e433cb3b90d24a400dc rel="noopener noreferrer" target="_blank">0x7a90995</a></th>
+      <td>0.853771</td>
+      <td>8.107947e+06</td>
+      <td>False</td>
+      <td>Once per 24 hr Window</td>
+      <td>Once per 24 hr Window</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x1dcc158c82df2e95f977ff5853c6dc9ff9a96ccfb2a5f70c30b7c20d75d0346f rel="noopener noreferrer" target="_blank">0x1dcc158</a></th>
+      <td>0.845668</td>
+      <td>1.086557e+07</td>
+      <td>False</td>
+      <td>Fund Completed Work/Bounties</td>
+      <td>Fund Completed Work/Bounties</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x1ea93e1b5aafb2e6c541efe69eb3e15835efa29c2a92ab834578bfef482374d2 rel="noopener noreferrer" target="_blank">0x1ea93e1</a></th>
+      <td>0.821143</td>
+      <td>1.052393e+07</td>
+      <td>False</td>
+      <td>A</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x2ab8f9ec193623518f69cbdf31c3c945a03af82bcac03300f927ec87149c0782 rel="noopener noreferrer" target="_blank">0x2ab8f9e</a></th>
+      <td>0.812639</td>
+      <td>1.474443e+07</td>
+      <td>False</td>
+      <td>Yes, agree to 25/25/25/25 split</td>
+      <td>Yes, agree to 25/25/25/25 split</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x2d9a7ecb7a5e503a3fb1b252bbf66a3bc20f07517de83c8043cf36e0954496a4 rel="noopener noreferrer" target="_blank">0x2d9a7ec</a></th>
+      <td>0.810330</td>
+      <td>1.459242e+07</td>
+      <td>False</td>
+      <td>Yes. Form and fund the CTT.</td>
+      <td>Yes. Form and fund the CTT.</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xe95a5edba1d582d8288812a89846e7ac72b850312f34335e36a9b04a831312cc rel="noopener noreferrer" target="_blank">0xe95a5ed</a></th>
+      <td>0.809063</td>
+      <td>1.267284e+07</td>
+      <td>False</td>
+      <td>Keep spillover turned off</td>
+      <td>Keep spillover turned off</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x0a5979a05cebab1c87e08bbe8d142657d3442e0987d45d36c2eb41584d86da7b rel="noopener noreferrer" target="_blank">0x0a5979a</a></th>
+      <td>0.805901</td>
+      <td>1.346150e+07</td>
+      <td>True</td>
+      <td>Yes. Launch Round 2 parcel roll</td>
+      <td>No. Wait until the great battle.</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x6fd66b330df28c8ca3fab19da85d632be22a3dc393ae468bee6e9e88fa248b25 rel="noopener noreferrer" target="_blank">0x6fd66b3</a></th>
+      <td>0.804271</td>
+      <td>1.378177e+07</td>
+      <td>False</td>
+      <td>YES Fund 4.5k ghst partnership</td>
+      <td>YES Fund 4.5k ghst partnership</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x0f8ae0b2eebe1eddf0dc7e2c49b07fcec17338101a4a21f5aa48e9bb3f35ef28 rel="noopener noreferrer" target="_blank">0x0f8ae0b</a></th>
+      <td>0.803015</td>
+      <td>1.604231e+07</td>
+      <td>False</td>
+      <td>Yes, turn off the GHST Curve</td>
+      <td>Yes, turn off the GHST Curve</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x1399095d33be4ea641e5781dfcf290bf1ca9d4248be904cebdf737a1bfe54eda rel="noopener noreferrer" target="_blank">0x1399095</a></th>
+      <td>0.802998</td>
+      <td>1.025068e+07</td>
+      <td>False</td>
+      <td>Yes. Vote for vQi-Qi</td>
+      <td>Yes. Vote for vQi-Qi</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x1db830856f24fb599f56db6aad4d9599d4f89168977ca7a1c6c9f6c21b68b0c4 rel="noopener noreferrer" target="_blank">0x1db8308</a></th>
+      <td>0.800414</td>
+      <td>1.175213e+07</td>
+      <td>False</td>
+      <td>Do something else</td>
+      <td>Do something else</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xbe89c5f01a02817058d66459cb00a399c45aa8991e29121fb1ca3b0e11e0c84b rel="noopener noreferrer" target="_blank">0xbe89c5f</a></th>
+      <td>0.799211</td>
+      <td>1.810475e+07</td>
+      <td>False</td>
+      <td>Yes, once per 24h window</td>
+      <td>Yes, once per 24h window</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x0e51eab4886527f297d8470f0434e502032be7368d69a2f71ac06057e193ebec rel="noopener noreferrer" target="_blank">0x0e51eab</a></th>
+      <td>0.792168</td>
+      <td>1.290773e+07</td>
+      <td>False</td>
+      <td>Yes, fund the competition</td>
+      <td>Yes, fund the competition</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xa0822fa69d7a7c66e75462ebe3dc212fdcf20100ff6226de36ba31e9ccc6b534 rel="noopener noreferrer" target="_blank">0xa0822fa</a></th>
+      <td>0.791717</td>
+      <td>1.318666e+07</td>
+      <td>False</td>
+      <td>Yes, do it.</td>
+      <td>Yes, do it.</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x1338064afddf6631e90e1a95d12117cf516e5de54e00eb557db5996845f75f47 rel="noopener noreferrer" target="_blank">0x1338064</a></th>
+      <td>0.791642</td>
+      <td>1.691898e+07</td>
+      <td>False</td>
+      <td>Yes. Transfer Parcels/alchemica</td>
+      <td>Yes. Transfer Parcels/alchemica</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xda5dc0306f37d55d5a1b61d8ddc3dd3af70bf96377476706514f75198dc98950 rel="noopener noreferrer" target="_blank">0xda5dc03</a></th>
+      <td>0.789643</td>
+      <td>1.586067e+07</td>
+      <td>False</td>
+      <td>Yes, secure $4M for liquidity</td>
+      <td>Yes, secure $4M for liquidity</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x7ab0300ee19b177737704e15ac53602ef3080285cd9b2eedf3236807873323f4 rel="noopener noreferrer" target="_blank">0x7ab0300</a></th>
+      <td>0.789319</td>
+      <td>1.487652e+07</td>
+      <td>False</td>
+      <td>Link estate size to Aaltar level</td>
+      <td>Link estate size to Aaltar level</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x16f6d4043da35ef318a9071e701e905adab8fe3928c2584880aae786c2357eb3 rel="noopener noreferrer" target="_blank">0x16f6d40</a></th>
+      <td>0.787757</td>
+      <td>1.487486e+07</td>
+      <td>False</td>
+      <td>Yes, Fund the experience</td>
+      <td>Yes, Fund the experience</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x57055266d44a9c8679807c917fb0518bfd3ea92e6f21e81b977ce9892c191b6a rel="noopener noreferrer" target="_blank">0x5705526</a></th>
+      <td>0.787251</td>
+      <td>1.686189e+07</td>
+      <td>False</td>
+      <td>Add 50k GHST + equal alchemica</td>
+      <td>Add 50k GHST + equal alchemica</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x23655a075cd863a6c91f5a55557413c2b20b6cf3d41ab12c575437b321e9b851 rel="noopener noreferrer" target="_blank">0x23655a0</a></th>
+      <td>0.782410</td>
+      <td>1.418741e+07</td>
+      <td>False</td>
+      <td>Yes. Fund and implement geodes.</td>
+      <td>Yes. Fund and implement geodes.</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xd32d9f40f79c98b69761a9f09f8de0f28a8ec005cc0f01a7f4c9ea3ee8f2e1dc rel="noopener noreferrer" target="_blank">0xd32d9f4</a></th>
+      <td>0.780687</td>
+      <td>1.474219e+07</td>
+      <td>False</td>
+      <td>Fund Gotchi Lodge 2023</td>
+      <td>Fund Gotchi Lodge 2023</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x1f84e1141646282c7e09271cd267c15537298b8086f03c97d2cdefb1f7a181e5 rel="noopener noreferrer" target="_blank">0x1f84e11</a></th>
+      <td>0.778487</td>
+      <td>1.215175e+07</td>
+      <td>False</td>
+      <td>Require weighted voting</td>
+      <td>Require weighted voting</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xfd80fb620a1bfc80f1796d5f3cdc47bb62223e7ccbb8333bd4d7deb76c9f1fd9 rel="noopener noreferrer" target="_blank">0xfd80fb6</a></th>
+      <td>0.778167</td>
+      <td>1.451675e+07</td>
+      <td>False</td>
+      <td>Option 1 + Accept revenue split.</td>
+      <td>Option 1 + Accept revenue split.</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x08e86b49931141561456cd9c298eca026f0adf4b78fad7c0d46988f30697cc6d rel="noopener noreferrer" target="_blank">0x08e86b4</a></th>
+      <td>0.773896</td>
+      <td>1.585762e+07</td>
+      <td>False</td>
+      <td>Another way (new prop required)</td>
+      <td>Another way (new prop required)</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x120a44dd03ae9a0b3c298b2dffd46ae2a480527aa7dbd124154de686801d4bf6 rel="noopener noreferrer" target="_blank">0x120a44d</a></th>
+      <td>0.767307</td>
+      <td>1.243877e+07</td>
+      <td>False</td>
+      <td>Yes. Increase USDC remove MATIC.</td>
+      <td>Yes. Increase USDC remove MATIC.</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x0ad57c0cffa815efcc3f41afac774245777f4bae11fee8d0c0ea956ce34a2427 rel="noopener noreferrer" target="_blank">0x0ad57c0</a></th>
+      <td>0.766353</td>
+      <td>1.233056e+07</td>
+      <td>False</td>
+      <td>Sunset FRENS immediately</td>
+      <td>Sunset FRENS immediately</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x35f331772e625d209848a32cc25e84fef06d56cca7d270ff0031dcdeb38f3b4c rel="noopener noreferrer" target="_blank">0x35f3317</a></th>
+      <td>0.762038</td>
+      <td>1.583765e+07</td>
+      <td>False</td>
+      <td>Yes, launch the Aavegotchi Forge</td>
+      <td>Yes, launch the Aavegotchi Forge</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x378153f1fe22c673bb57d4c421b6ef93f5562f806317950be7c189547c0458c2 rel="noopener noreferrer" target="_blank">0x378153f</a></th>
+      <td>0.760312</td>
+      <td>1.903546e+07</td>
+      <td>True</td>
+      <td>Yes. Launch Round 2 parcel roll</td>
+      <td>No. Wait until the great battle.</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x711c79d517b315b252e90cb6cf7a22e9291c5e052370b2582e4979cf55f055e9 rel="noopener noreferrer" target="_blank">0x711c79d</a></th>
+      <td>0.758433</td>
+      <td>1.498413e+07</td>
+      <td>False</td>
+      <td>Yes. Fund the Project 50k GHST</td>
+      <td>Yes. Fund the Project 50k GHST</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x1930189873f7591fa60fc108d632c0f11fc35d8fff3eaccc349d05756c54c321 rel="noopener noreferrer" target="_blank">0x1930189</a></th>
+      <td>0.758127</td>
+      <td>1.866236e+07</td>
+      <td>False</td>
+      <td>Yes. Accept the Core Framework.</td>
+      <td>Yes. Accept the Core Framework.</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x658926263e4ce1eca559950bcb0f5d8f203758c5c99b30999bb7f082552695b8 rel="noopener noreferrer" target="_blank">0x6589262</a></th>
+      <td>0.757947</td>
+      <td>1.432553e+07</td>
+      <td>False</td>
+      <td>Yes, 8k Parcels in June</td>
+      <td>Yes, 8k Parcels in June</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x628d199d302aa3739ce9f53f3bc5ab4f60f28db680ba15196778db9e6f9aa354 rel="noopener noreferrer" target="_blank">0x628d199</a></th>
+      <td>0.754647</td>
+      <td>1.439559e+07</td>
+      <td>False</td>
+      <td>For</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xf83adaa50a92a963961d07c3547635dd9dfbcf35183bf4cc61a244f6cd1097eb rel="noopener noreferrer" target="_blank">0xf83adaa</a></th>
+      <td>0.753339</td>
+      <td>1.414073e+07</td>
+      <td>False</td>
+      <td>Yes. Accept the Core Framework.</td>
+      <td>Yes. Accept the Core Framework.</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x4c43e12bf5d84d049e907194c48f514e1efacb6ec1f1c5c742d0530a86df021a rel="noopener noreferrer" target="_blank">0x4c43e12</a></th>
+      <td>0.752317</td>
+      <td>1.835749e+07</td>
+      <td>False</td>
+      <td>Fund Gotchi Lodge 2023</td>
+      <td>Fund Gotchi Lodge 2023</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x8754ab7527916880e03882d48f0fafe3621dee0b02b642685baf306a43f41809 rel="noopener noreferrer" target="_blank">0x8754ab7</a></th>
+      <td>0.749510</td>
+      <td>1.259960e+07</td>
+      <td>True</td>
+      <td>Do nothing</td>
+      <td>Option 1</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x49a21a570ed089b0ec7ec72fe4578f836fe05825e41f82e2dbd14801563b929d rel="noopener noreferrer" target="_blank">0x49a21a5</a></th>
+      <td>0.748431</td>
+      <td>1.543329e+07</td>
+      <td>False</td>
+      <td>Yes, follow this Emergency Plan</td>
+      <td>Yes, follow this Emergency Plan</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x69f0ac4e4dc5c651d56940ba4717fedcf8813743c4f5a27967317a8fb29e69da rel="noopener noreferrer" target="_blank">0x69f0ac4</a></th>
+      <td>0.746357</td>
+      <td>1.845643e+07</td>
+      <td>False</td>
+      <td>YES, fund 4.5k GHST partnership</td>
+      <td>YES, fund 4.5k GHST partnership</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xfb622fe34ebf295d55d6d9a44d6da55176861f24c8d9393af7838cae393e6f7f rel="noopener noreferrer" target="_blank">0xfb622fe</a></th>
+      <td>0.744468</td>
+      <td>1.899749e+07</td>
+      <td>False</td>
+      <td>Yes, fund the experience</td>
+      <td>Yes, fund the experience</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x4141053b88d168cde02a864ea20551f087f8eda33b24fbdde2e7a58d0509c01e rel="noopener noreferrer" target="_blank">0x4141053</a></th>
+      <td>0.740650</td>
+      <td>1.258750e+07</td>
+      <td>False</td>
+      <td>Yes, formally start RF Szn 4</td>
+      <td>Yes, formally start RF Szn 4</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x894039351d89063285281b2d941c7b5ffc2dcde5899b981785843fe7bc3eb37c rel="noopener noreferrer" target="_blank">0x8940393</a></th>
+      <td>0.739786</td>
+      <td>1.263160e+07</td>
+      <td>False</td>
+      <td>implement original KIN mechanics</td>
+      <td>implement original KIN mechanics</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xe79c9632c0f2c82b80e38c9a3a6642c20d42fd1340921ceb114772d794995454 rel="noopener noreferrer" target="_blank">0xe79c963</a></th>
+      <td>0.739728</td>
+      <td>1.497934e+07</td>
+      <td>False</td>
+      <td>Yes. Accept the proposed SOP.</td>
+      <td>Yes. Accept the proposed SOP.</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xa749417f53627cc60140332e3c9e37fbb2779b50b96e71aff005244e71367a46 rel="noopener noreferrer" target="_blank">0xa749417</a></th>
+      <td>0.739424</td>
+      <td>1.766668e+07</td>
+      <td>False</td>
+      <td>Fund Completed Work/Bounties</td>
+      <td>Fund Completed Work/Bounties</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x0083cbe7075879510d4990592942fc9a34e03eebef45f996d0e4b85b796362a0 rel="noopener noreferrer" target="_blank">0x0083cbe</a></th>
+      <td>0.734638</td>
+      <td>1.317606e+07</td>
+      <td>False</td>
+      <td>Delay the LAND 3 release</td>
+      <td>Delay the LAND 3 release</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x8802a8883ff724f80752cdcfde817b4fdae48d7bc8d7ba7c47e9ed7106d67ee9 rel="noopener noreferrer" target="_blank">0x8802a88</a></th>
+      <td>0.729245</td>
+      <td>1.793698e+07</td>
+      <td>False</td>
+      <td>Yes, fund the competition</td>
+      <td>Yes, fund the competition</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x0e2211f4b37efd7dc38710aa13a1b8e7411998a8f53cd872fc0ddd6ed7996ac0 rel="noopener noreferrer" target="_blank">0x0e2211f</a></th>
+      <td>0.728909</td>
+      <td>1.634496e+07</td>
+      <td>False</td>
+      <td>Create the ATF</td>
+      <td>Create the ATF</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x5f3b6ff62ae4b8535e057b4f3af2c85ec93762dac95031a014c409969e3a0fc8 rel="noopener noreferrer" target="_blank">0x5f3b6ff</a></th>
+      <td>0.725702</td>
+      <td>1.786815e+07</td>
+      <td>True</td>
+      <td>Mori#5912</td>
+      <td>Nofuturistic#1972</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x4d23c874b06c16d5cdda687b12c891dc9a12681a43d1470c770a6c092c70decd rel="noopener noreferrer" target="_blank">0x4d23c87</a></th>
+      <td>0.724443</td>
+      <td>1.411857e+07</td>
+      <td>True</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xe9bddee5dfe05a1294844f0e77a1d989051a096cbf2f118b946400f6abb60fc3 rel="noopener noreferrer" target="_blank">0xe9bddee</a></th>
+      <td>0.723178</td>
+      <td>1.582622e+07</td>
+      <td>False</td>
+      <td>Yes, stop new wearables</td>
+      <td>Yes, stop new wearables</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x5436b9282dc8bff710b89110a9bcfd81010fe606f4306673f8e7a46058adc658 rel="noopener noreferrer" target="_blank">0x5436b92</a></th>
+      <td>0.723035</td>
+      <td>1.537425e+07</td>
+      <td>False</td>
+      <td>5% Aalloy burn; 5% Aalloy to DAO</td>
+      <td>5% Aalloy burn; 5% Aalloy to DAO</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x0961e22cee743a73c357290164af0346550d9a8d63bb5aba7a566e92ff922e99 rel="noopener noreferrer" target="_blank">0x0961e22</a></th>
+      <td>0.722591</td>
+      <td>1.333074e+07</td>
+      <td>False</td>
+      <td>Yes, perform a swap of 1.75M DAI</td>
+      <td>Yes, perform a swap of 1.75M DAI</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xac0a2081017c0540538e877d9bb5f2d8c87dcc1bc47d50435bbfd89cdfcb4962 rel="noopener noreferrer" target="_blank">0xac0a208</a></th>
+      <td>0.722311</td>
+      <td>1.518188e+07</td>
+      <td>False</td>
+      <td>Use the Hybrid Ratio</td>
+      <td>Use the Hybrid Ratio</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xcae82273be9b783832d85214303e0f9f52e2220cedd5acc254b81f5b9457bae7 rel="noopener noreferrer" target="_blank">0xcae8227</a></th>
+      <td>0.718789</td>
+      <td>1.718468e+07</td>
+      <td>False</td>
+      <td>Require Weighted Voting</td>
+      <td>Require Weighted Voting</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xf9dafc88fce3ceff0e6c0c04936862c9e4cc5889850749631632af2e5b903452 rel="noopener noreferrer" target="_blank">0xf9dafc8</a></th>
+      <td>0.714499</td>
+      <td>1.341286e+07</td>
+      <td>False</td>
+      <td>Yes, use the proposed model</td>
+      <td>Yes, use the proposed model</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x123768584b0e878a6466a293e402702de7427f0657ea24fd60d71589d0b3003e rel="noopener noreferrer" target="_blank">0x1237685</a></th>
+      <td>0.712453</td>
+      <td>1.718854e+07</td>
+      <td>False</td>
+      <td>Create the ATF</td>
+      <td>Create the ATF</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xd610a038fb70717cefa788332d6cfbfd4504723fa2b33dc5689b542752da3cde rel="noopener noreferrer" target="_blank">0xd610a03</a></th>
+      <td>0.709341</td>
+      <td>1.755739e+07</td>
+      <td>False</td>
+      <td>Yes, use the proposed model</td>
+      <td>Yes, use the proposed model</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x771338965e9040fc8b8994986d7d74e162f1142a5cdd4c3c8a2faae11cffcbe7 rel="noopener noreferrer" target="_blank">0x7713389</a></th>
+      <td>0.706933</td>
+      <td>1.538110e+07</td>
+      <td>False</td>
+      <td>Change to proposed aaltar rates</td>
+      <td>Change to proposed aaltar rates</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x0ba9fdfc595ea0f77e240ecccf9627b473b9e6be19d00ed9f9ff716fac40cc06 rel="noopener noreferrer" target="_blank">0x0ba9fdf</a></th>
+      <td>0.706566</td>
+      <td>1.448898e+07</td>
+      <td>False</td>
+      <td>Use GLTR to Move Channeling</td>
+      <td>Use GLTR to Move Channeling</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x599754e6bf5a683d0a44aadbcad78df0522bdeb448437ff79c70b6077408fe58 rel="noopener noreferrer" target="_blank">0x599754e</a></th>
+      <td>0.705587</td>
+      <td>1.749907e+07</td>
+      <td>False</td>
+      <td>Yes, Change the Recipes</td>
+      <td>Yes, Change the Recipes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xdf007c7241ed7711b7675e67d2331d7e49d2b4f2c397b94c2ed19bd0d8be9a82 rel="noopener noreferrer" target="_blank">0xdf007c7</a></th>
+      <td>0.705096</td>
+      <td>1.445701e+07</td>
+      <td>False</td>
+      <td>Continue with outcome of AGIP49</td>
+      <td>Continue with outcome of AGIP49</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x68dc76a5d1069e58f1409d644824044df823c304fc349f85b38ccb0fcd95e4a4 rel="noopener noreferrer" target="_blank">0x68dc76a</a></th>
+      <td>0.703868</td>
+      <td>1.719672e+07</td>
+      <td>False</td>
+      <td>Yes. Vote for vQi-Qi</td>
+      <td>Yes. Vote for vQi-Qi</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x2ddd04ae165c6f6245f4cdd83abd00bb1644bf78fd6719eae394f9db4e00d910 rel="noopener noreferrer" target="_blank">0x2ddd04a</a></th>
+      <td>0.703622</td>
+      <td>1.756595e+07</td>
+      <td>False</td>
+      <td>Yes, formally start RF Szn 4</td>
+      <td>Yes, formally start RF Szn 4</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xe9ceb07837c7b04420f33fb324c220694241c84ffd6bb50c2651e3376326adb3 rel="noopener noreferrer" target="_blank">0xe9ceb07</a></th>
+      <td>0.703066</td>
+      <td>1.719286e+07</td>
+      <td>False</td>
+      <td>Yes, perform a swap of 1.75M DAI</td>
+      <td>Yes, perform a swap of 1.75M DAI</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xf614634f7b1864d19ea144dd68280df6c3cb3e514e2e20929767e6ccd2f4022c rel="noopener noreferrer" target="_blank">0xf614634</a></th>
+      <td>0.703048</td>
+      <td>1.704044e+07</td>
+      <td>False</td>
+      <td>Yes, delay LAND 3 Release</td>
+      <td>Yes, delay LAND 3 Release</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x9ea87c07638280312a87f9e59f795710bd982e44214b5d796e9502bc3362e4e8 rel="noopener noreferrer" target="_blank">0x9ea87c0</a></th>
+      <td>0.701161</td>
+      <td>1.640270e+07</td>
+      <td>False</td>
+      <td>Yes, have S5 RF</td>
+      <td>Yes, have S5 RF</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xa9fb5cbdeae064bf114b27ea77390e93d8515c6c3512d4352f21e99212628483 rel="noopener noreferrer" target="_blank">0xa9fb5cb</a></th>
+      <td>0.699905</td>
+      <td>1.342294e+07</td>
+      <td>False</td>
+      <td>YES, let's form AavegotchiDAO</td>
+      <td>YES, let's form AavegotchiDAO</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x68d71869abad49650bfc9caff038329e46071bb007aab9b7a2756d6550864e79 rel="noopener noreferrer" target="_blank">0x68d7186</a></th>
+      <td>0.695071</td>
+      <td>1.466744e+07</td>
+      <td>False</td>
+      <td>Yes, Change the Recipes</td>
+      <td>Yes, Change the Recipes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xfecb010001c499cb65a4b5f0c19f729fb1135fadea497f099f3b612a57decb21 rel="noopener noreferrer" target="_blank">0xfecb010</a></th>
+      <td>0.692377</td>
+      <td>1.138666e+07</td>
+      <td>False</td>
+      <td>yes, fund 25'000 GHST</td>
+      <td>yes, fund 25'000 GHST</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x5a0a08babde96cc719c7726fa84e299b313a33048932a147bb8b19035f253885 rel="noopener noreferrer" target="_blank">0x5a0a08b</a></th>
+      <td>0.691811</td>
+      <td>9.233889e+06</td>
+      <td>True</td>
+      <td>No. Do Not Fund the Forge Team.</td>
+      <td>Yes. Fund the Forge Team.</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xfb3766f05a6990514c618db06c2a74d8fd36298694740799e2dd23424a297115 rel="noopener noreferrer" target="_blank">0xfb3766f</a></th>
+      <td>0.687883</td>
+      <td>1.933429e+07</td>
+      <td>True</td>
+      <td>Do not implement</td>
+      <td>Implement orig kinship mechanics</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x1b8438ec161f2b18dad49ebfcc9524340d030f4ec69a5fd71f732290ccb51bb4 rel="noopener noreferrer" target="_blank">0x1b8438e</a></th>
+      <td>0.687058</td>
+      <td>1.934264e+07</td>
+      <td>False</td>
+      <td>Yanik#0015</td>
+      <td>Yanik#0015</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x84119ecd3be2cd0fd2382ffaf2db0490967b3456ff19695e6629fdeeb9058dbb rel="noopener noreferrer" target="_blank">0x84119ec</a></th>
+      <td>0.686705</td>
+      <td>1.982175e+07</td>
+      <td>False</td>
+      <td>Yes, have S5 RF</td>
+      <td>Yes, have S5 RF</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x11f3f56e9553d8f07b76f462deaec00b8ae8e2430a49f12999fcb00ca8f38efc rel="noopener noreferrer" target="_blank">0x11f3f56</a></th>
+      <td>0.681187</td>
+      <td>1.730282e+07</td>
+      <td>False</td>
+      <td>Disable spillover</td>
+      <td>Disable spillover</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x345ddec87f19d29b438ac88d0f947798af6edadbe1116cb64f96edc931f06fb3 rel="noopener noreferrer" target="_blank">0x345ddec</a></th>
+      <td>0.678038</td>
+      <td>1.911325e+07</td>
+      <td>False</td>
+      <td>YES, let's form the Foundation!</td>
+      <td>YES, let's form the Foundation!</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x2e8ca843b06faf0be9cc14b33cc819095e9f6a508af9ef52f442d791c00af25f rel="noopener noreferrer" target="_blank">0x2e8ca84</a></th>
+      <td>0.677414</td>
+      <td>9.327355e+06</td>
+      <td>False</td>
+      <td>Yes. Transfer Parcels/alchemica</td>
+      <td>Yes. Transfer Parcels/alchemica</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x534f44397f79c8583ceef44e42ffa8e246e15f3498aac92b3e34b65c313782f3 rel="noopener noreferrer" target="_blank">0x534f443</a></th>
+      <td>0.677376</td>
+      <td>1.658902e+07</td>
+      <td>False</td>
+      <td>Change to Proposed Aaltar Rates</td>
+      <td>Change to Proposed Aaltar Rates</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x9923aab6825158ec2503d88e3ee2f9c5fbb12000581d06343ac9829aa59b66a6 rel="noopener noreferrer" target="_blank">0x9923aab</a></th>
+      <td>0.672512</td>
+      <td>1.856131e+07</td>
+      <td>False</td>
+      <td>Yes, do it.</td>
+      <td>Yes, do it.</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xec282bd937a1d85a17726cc00711b78e2fc2f0125ff9af127ddb77497dd024e5 rel="noopener noreferrer" target="_blank">0xec282bd</a></th>
+      <td>0.671818</td>
+      <td>1.858512e+07</td>
+      <td>False</td>
+      <td>Yes, stop new wearables</td>
+      <td>Yes, stop new wearables</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xdae48a92f83f8317dac11e1f28475ce38f6cf9b1986695b6d229e50ca24c03ea rel="noopener noreferrer" target="_blank">0xdae48a9</a></th>
+      <td>0.669490</td>
+      <td>1.300211e+07</td>
+      <td>False</td>
+      <td>Yes, agree to 25/25/25/25 split</td>
+      <td>Yes, agree to 25/25/25/25 split</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x6cabf7712786db0f3a954fe03e84c44a12d4b14aa2fb5243c606607bf6296bf1 rel="noopener noreferrer" target="_blank">0x6cabf77</a></th>
+      <td>0.663796</td>
+      <td>1.296880e+07</td>
+      <td>False</td>
+      <td>Yes close the GHST Curve</td>
+      <td>Yes close the GHST Curve</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xb58136cda9c36f74fce48403002c269c07feb5f327326cafc581b18a0bd50cf0 rel="noopener noreferrer" target="_blank">0xb58136c</a></th>
+      <td>0.663281</td>
+      <td>9.180043e+06</td>
+      <td>False</td>
+      <td>Stop owner channel listed gotchi</td>
+      <td>Stop owner channel listed gotchi</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x3f162f96d0bf396cb2cc3f9f39818cbaee7747441e0c50785b84aa243797b940 rel="noopener noreferrer" target="_blank">0x3f162f9</a></th>
+      <td>0.658444</td>
+      <td>1.232194e+07</td>
+      <td>False</td>
+      <td>Yes, fund the Project 50k GHST</td>
+      <td>Yes, fund the Project 50k GHST</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x73f93b7e65d0e45f5cce9e46b019d60f49a7a3d1b43bf9e3e12a718cccbe7769 rel="noopener noreferrer" target="_blank">0x73f93b7</a></th>
+      <td>0.657149</td>
+      <td>1.253322e+07</td>
+      <td>False</td>
+      <td>Yes, follow this Emergency Plan</td>
+      <td>Yes, follow this Emergency Plan</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x8d17ac8fd583bfa75412b29cc74cdd3cfd20dd5719ea2d4687c8f6e7ad746b1d rel="noopener noreferrer" target="_blank">0x8d17ac8</a></th>
+      <td>0.650706</td>
+      <td>1.153104e+07</td>
+      <td>False</td>
+      <td>Limit market to # of parcels + 1</td>
+      <td>Limit market to # of parcels + 1</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x667b8620be3ada61b56ab193aa4a9f90f1e3b40368e1b2c15b59df1bd444574e rel="noopener noreferrer" target="_blank">0x667b862</a></th>
+      <td>0.649926</td>
+      <td>9.750123e+06</td>
+      <td>False</td>
+      <td>Do nothing and keep current syst</td>
+      <td>Do nothing and keep current syst</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x4955553b76b9bcaaa0bb0cec2928d0bed759cf957c17f02496452f8d1426c85c rel="noopener noreferrer" target="_blank">0x4955553</a></th>
+      <td>0.648553</td>
+      <td>1.210780e+07</td>
+      <td>False</td>
+      <td>Yes, create new sets</td>
+      <td>Yes, create new sets</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x93f3e0fc14dec5ca662b6ec0df89a8ec3e22502e0171c326d087defd93c5ac2f rel="noopener noreferrer" target="_blank">0x93f3e0f</a></th>
+      <td>0.646575</td>
+      <td>1.135875e+07</td>
+      <td>False</td>
+      <td>Yes. Form and fund the CTT.</td>
+      <td>Yes. Form and fund the CTT.</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xfa99468d3de270ad12ae805651cae5b7a2a52ac3f1e0ff547308c6c7055ee040 rel="noopener noreferrer" target="_blank">0xfa99468</a></th>
+      <td>0.638887</td>
+      <td>1.173120e+07</td>
+      <td>False</td>
+      <td>Stop listed Gotchi from channeli</td>
+      <td>Stop listed Gotchi from channeli</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x84f361a72e89cee4e27f4d9a7eb5793e0209a0f364a6de9f4f076c43e49b9404 rel="noopener noreferrer" target="_blank">0x84f361a</a></th>
+      <td>0.637458</td>
+      <td>1.292270e+07</td>
+      <td>False</td>
+      <td>Add 50k GHST + equal alchemica</td>
+      <td>Add 50k GHST + equal alchemica</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x5a2dc2a36b6d616a087c16cf2f4713e87abad28d9eb292a0e78a9872dec44665 rel="noopener noreferrer" target="_blank">0x5a2dc2a</a></th>
+      <td>0.627621</td>
+      <td>1.063859e+07</td>
+      <td>False</td>
+      <td>Yes, Airdrop  Potion</td>
+      <td>Yes, Airdrop  Potion</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x8285f38e7d49580b73b0040d96984c6284c0f453d6e2abfc7f64e7c51a6ec774 rel="noopener noreferrer" target="_blank">0x8285f38</a></th>
+      <td>0.576125</td>
+      <td>5.974093e+06</td>
+      <td>False</td>
+      <td>Revote</td>
+      <td>Revote</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x9b2559ed4cd5dd0c4c3c9b90b73e0e93c839aef64cd00df2d65cc8e97886ac0f rel="noopener noreferrer" target="_blank">0x9b2559e</a></th>
+      <td>0.534680</td>
+      <td>1.214988e+07</td>
+      <td>False</td>
+      <td>Limit market to # of parcels + 1</td>
+      <td>Limit market to # of parcels + 1</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x9d8fa69132f66ad8e665549cff91c08de8687a72d2702cb66cd41dbb877f09f7 rel="noopener noreferrer" target="_blank">0x9d8fa69</a></th>
+      <td>0.533595</td>
+      <td>1.217450e+07</td>
+      <td>False</td>
+      <td>Sunset FRENS immediately</td>
+      <td>Sunset FRENS immediately</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x304df0644d5ba0c929066959c5a2d585a2597630fa90a4642ffe8315e256d31a rel="noopener noreferrer" target="_blank">0x304df06</a></th>
+      <td>0.533467</td>
+      <td>1.217745e+07</td>
+      <td>False</td>
+      <td>Yes. Increase USDC remove MATIC.</td>
+      <td>Yes. Increase USDC remove MATIC.</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0xb41fe70a12f107d9dc8f0c8aa0346b53d9c35866a5e71ce717253f02ba4ddd7b rel="noopener noreferrer" target="_blank">0xb41fe70</a></th>
+      <td>0.524215</td>
+      <td>1.188240e+07</td>
+      <td>False</td>
+      <td>Keep the current solution</td>
+      <td>Keep the current solution</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x60e907e1b5465b089716fac0948547f712bcdcc995cec101d6ce08e36cfcf9e9 rel="noopener noreferrer" target="_blank">0x60e907e</a></th>
+      <td>0.522180</td>
+      <td>6.519650e+06</td>
+      <td>False</td>
+      <td>Do Nothing</td>
+      <td>Do Nothing</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x50be144b1e349ef1c7d5058d56748a315f41e692f245da2beb18df36cb7b063b rel="noopener noreferrer" target="_blank">0x50be144</a></th>
+      <td>0.515304</td>
+      <td>6.208336e+06</td>
+      <td>False</td>
+      <td>Create the ATF</td>
+      <td>Create the ATF</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aavegotchi.eth/proposal/0x02a20a7fa64f8013a3c859167f4c3404efcf11325ef5ea7cbd4a3b26362c4521 rel="noopener noreferrer" target="_blank">0x02a20a7</a></th>
+      <td>0.493634</td>
+      <td>5.214360e+06</td>
+      <td>False</td>
+      <td>YES!  Let players pick.</td>
+      <td>YES!  Let players pick.</td>
+    </tr>
+  </tbody>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_differences_dfs</span><span class="p">[</span><span class="s2">&quot;Aavegotchi&quot;</span><span class="p">][</span><span class="s2">&quot;outcome_changed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False    0.928571
+True     0.071429
+Name: outcome_changed, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">score_differences_dfs</span><span class="p">[</span><span class="s2">&quot;Rook&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s2">&quot;total_vp&quot;</span><span class="p">:</span> <span class="s2">&quot;float64&quot;</span><span class="p">},</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;score_differences&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;whale_vp_proportion&quot;</span><span class="p">,</span> <span class="s2">&quot;total_vp&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">render_links</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">escape</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>whale_vp_proportion</th>
+      <th>total_vp</th>
+      <th>outcome_changed</th>
+      <th>outcome_old</th>
+      <th>outcome_new</th>
+    </tr>
+    <tr>
+      <th>Proposal ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0xa95d98a4287a16dda98f2d14e145ef1dc7f8e3678bf437d8d872d825e5781426 rel="noopener noreferrer" target="_blank">0xa95d98a</a></th>
+      <td>0.823478</td>
+      <td>19612.908172</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0x87e91896fc38ce397467c828b97e9c8c7de27fd47a4ef5ba73a5289ff3c17b6c rel="noopener noreferrer" target="_blank">0x87e9189</a></th>
+      <td>0.787806</td>
+      <td>15575.916427</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0x74bf937eddebff11241de997b4c20248bdb504831395ba232e9573a20a152580 rel="noopener noreferrer" target="_blank">0x74bf937</a></th>
+      <td>0.756495</td>
+      <td>16243.977807</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0x0b3ad003df515b497481ae1b88b6b9bf9186e03dd62ce5bf6b60ef6ed9c07ebf rel="noopener noreferrer" target="_blank">0x0b3ad00</a></th>
+      <td>0.734236</td>
+      <td>16736.431371</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0xcf296f7efcce344c0803f3550bb9a13fc4e9926ce9a7a8bd05e683d83f29b6d4 rel="noopener noreferrer" target="_blank">0xcf296f7</a></th>
+      <td>0.733281</td>
+      <td>22067.657107</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0x44e5b1cd278841e97bebb22f40f1c594cbe31e124de1db82e5e4c62375570783 rel="noopener noreferrer" target="_blank">0x44e5b1c</a></th>
+      <td>0.700316</td>
+      <td>19669.863695</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0x68f5e4c97f252aad24d023d9dd526ca8faee8565a462e39b0ece7184fb12d06b rel="noopener noreferrer" target="_blank">0x68f5e4c</a></th>
+      <td>0.684806</td>
+      <td>20115.343064</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0x5715c13cfec5218696171f5d2356a01194ffd9d2e86a73f865d95645cae86a21 rel="noopener noreferrer" target="_blank">0x5715c13</a></th>
+      <td>0.650868</td>
+      <td>18414.550127</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0x5ab539730bbd24a66e1119eebdcd78b5abdbc4f36fadcbaa40a74b976e06c6f7 rel="noopener noreferrer" target="_blank">0x5ab5397</a></th>
+      <td>0.641678</td>
+      <td>19590.509500</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0x1db7082c647e7b14b521b183a1650d470b44bbfeb1b1e5b260338f84e89e609e rel="noopener noreferrer" target="_blank">0x1db7082</a></th>
+      <td>0.638384</td>
+      <td>19656.245248</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0x1cdaeee61634fd50b15b401b8d0e4c67e7899adeb445f2fcbfc20961afb06642 rel="noopener noreferrer" target="_blank">0x1cdaeee</a></th>
+      <td>0.638017</td>
+      <td>13806.802874</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0x83e51ce27582685cf7b0a08fc863214971f529d16064e2f307f456a181096377 rel="noopener noreferrer" target="_blank">0x83e51ce</a></th>
+      <td>0.601932</td>
+      <td>29491.112801</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0x7c7ee0c3c4c6c81240ed474dd0e2c82dba32aa0bde7c5ff49d30796a353baddb rel="noopener noreferrer" target="_blank">0x7c7ee0c</a></th>
+      <td>0.583637</td>
+      <td>7143.225111</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/QmWwtAJA38AT3z7pUg9C1j6oGcWvAerw4nSa8byuxisMR4 rel="noopener noreferrer" target="_blank">QmWwtAJA3</a></th>
+      <td>0.545631</td>
+      <td>27817.592684</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0x7c2a823eb03fd6f8d98c7112e2b5bc942e394338d802d66994e5cd22f9980b99 rel="noopener noreferrer" target="_blank">0x7c2a823</a></th>
+      <td>0.470901</td>
+      <td>7335.535272</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0xf5824d2f73e29b7b9c4bf0208c8ca089a4cd31c34e07e6153d3c8f07764a29f9 rel="noopener noreferrer" target="_blank">0xf5824d2</a></th>
+      <td>0.470851</td>
+      <td>16073.397397</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0xef419ade29572911bdcf34132c2d5687958cf3d8607014292b0210e0ccf462b4 rel="noopener noreferrer" target="_blank">0xef419ad</a></th>
+      <td>0.469556</td>
+      <td>37789.954753</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/Qmcz7uCQm3qAUJuewe73VzLTZZAYfMjr2sxmi6LUSyuct9 rel="noopener noreferrer" target="_blank">Qmcz7uCQm</a></th>
+      <td>0.462780</td>
+      <td>32797.753691</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/Qmd7bLee9HB9nftay99girdf61CEimMo2U2tY1QVJ6hBFM rel="noopener noreferrer" target="_blank">Qmd7bLee9</a></th>
+      <td>0.461524</td>
+      <td>47044.437426</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0x523ea386c3e42c71e18e1f4a143533201083655dc04e6f1a99f1f0b340523c58 rel="noopener noreferrer" target="_blank">0x523ea38</a></th>
+      <td>0.452169</td>
+      <td>16737.486588</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0x36737cb57a5c24213f9210b7622360a02a134f584f0c517c52063617201c4a27 rel="noopener noreferrer" target="_blank">0x36737cb</a></th>
+      <td>0.438103</td>
+      <td>40503.047967</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0x3f1c55b4749376cc123754bd0adc7fc78bc2d35bcb45c52ef4937c74ec8e2c9b rel="noopener noreferrer" target="_blank">0x3f1c55b</a></th>
+      <td>0.436361</td>
+      <td>32546.501622</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0xed78ca54d7df8415cc3d7d35f8bf3da07b71a60b6c83ff2397d191b1f53846c7 rel="noopener noreferrer" target="_blank">0xed78ca5</a></th>
+      <td>0.435719</td>
+      <td>80336.227750</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/QmPiaGZMszdETZgJp6THTzzATqZELG1Bwpvh41pm74W8Mp rel="noopener noreferrer" target="_blank">QmPiaGZMs</a></th>
+      <td>0.425909</td>
+      <td>32819.909218</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0x563e8834409f624020f09da2a6ec966794a58e29caf8176f1ab09abc477387a7 rel="noopener noreferrer" target="_blank">0x563e883</a></th>
+      <td>0.422484</td>
+      <td>37916.522429</td>
+      <td>True</td>
+      <td>No objection</td>
+      <td>Object</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0x621d2c8a2abf634559a6b7b360dd131c6796fe5a00aad06a14c20e19cabcbf11 rel="noopener noreferrer" target="_blank">0x621d2c8</a></th>
+      <td>0.420429</td>
+      <td>48129.071236</td>
+      <td>False</td>
+      <td>No Objection</td>
+      <td>No Objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0x742ab15ec880da2abd046a85d5cd5d425b658906921b48cbbd9dbfd55118e69a rel="noopener noreferrer" target="_blank">0x742ab15</a></th>
+      <td>0.417217</td>
+      <td>5547.441026</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0xdc62394c7f962988f8be8fcc4834f3d057e26f8328bedd69288fc33ce529743e rel="noopener noreferrer" target="_blank">0xdc62394</a></th>
+      <td>0.369192</td>
+      <td>9356.417790</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0xfec2dc618d97161b21c743af3b60dbd6874ed5966082b7a9775bbffa4db07313 rel="noopener noreferrer" target="_blank">0xfec2dc6</a></th>
+      <td>0.358489</td>
+      <td>46106.241859</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0x78a62a7af0f0b152d842329f8d25556eead718a03387546511d3518bf6f76381 rel="noopener noreferrer" target="_blank">0x78a62a7</a></th>
+      <td>0.356457</td>
+      <td>56766.594397</td>
+      <td>True</td>
+      <td>Object</td>
+      <td>No Objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0x7ab201d541578f60991cdc81cee31662f5d4be7494cc26633d37ce507fbf8140 rel="noopener noreferrer" target="_blank">0x7ab201d</a></th>
+      <td>0.339338</td>
+      <td>8474.164037</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/QmPejeYnjUZHAdzvgdUZLGjdc98kHbkp846LXJnT6epT2G rel="noopener noreferrer" target="_blank">QmPejeYnj</a></th>
+      <td>0.335358</td>
+      <td>39763.309494</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0x2c6ad65c30ccd9e3b7b47b64b29ffa098d33d727b0d3e2c43977f4d750c1def5 rel="noopener noreferrer" target="_blank">0x2c6ad65</a></th>
+      <td>0.333682</td>
+      <td>15150.233357</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0xe3ef0fb91ed373fb80093233fc9231bada7233cbffcb9d9ee0e788033b21fd29 rel="noopener noreferrer" target="_blank">0xe3ef0fb</a></th>
+      <td>0.321232</td>
+      <td>5086.045166</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0xfd05c73beb9b02f4840604fd12f91411c11004658fea74919ee0251288951116 rel="noopener noreferrer" target="_blank">0xfd05c73</a></th>
+      <td>0.314897</td>
+      <td>4970.543431</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/rook.eth/proposal/0x828df6a5a4d623f020f7b68dc4fc062ba00335fd81e8c827288cc3c68f3e1991 rel="noopener noreferrer" target="_blank">0x828df6a</a></th>
+      <td>0.235036</td>
+      <td>15709.022352</td>
+      <td>False</td>
+      <td>No objection</td>
+      <td>No objection</td>
+    </tr>
+  </tbody>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_differences_dfs</span><span class="p">[</span><span class="s2">&quot;Rook&quot;</span><span class="p">][</span><span class="s2">&quot;outcome_changed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False    0.944444
+True     0.055556
+Name: outcome_changed, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">score_differences_dfs</span><span class="p">[</span><span class="s2">&quot;ApeCoin DAO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s2">&quot;total_vp&quot;</span><span class="p">:</span> <span class="s2">&quot;float64&quot;</span><span class="p">},</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;score_differences&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;whale_vp_proportion&quot;</span><span class="p">,</span> <span class="s2">&quot;total_vp&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">render_links</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">escape</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>whale_vp_proportion</th>
+      <th>total_vp</th>
+      <th>outcome_changed</th>
+      <th>outcome_old</th>
+      <th>outcome_new</th>
+    </tr>
+    <tr>
+      <th>Proposal ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x7e43228153e27e274d469bd172b273ff58cf0ba16539e2787a796a4b4a46c28c rel="noopener noreferrer" target="_blank">0x7e43228</a></th>
+      <td>0.990179</td>
+      <td>6.256527e+05</td>
+      <td>False</td>
+      <td>I confirm this is a test vote.</td>
+      <td>I confirm this is a test vote.</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x8e360c0038563faeceafc0670dd2b6f94de84b4527855b346568b8a86a2b2a81 rel="noopener noreferrer" target="_blank">0x8e360c0</a></th>
+      <td>0.981936</td>
+      <td>4.379614e+06</td>
+      <td>False</td>
+      <td>In Favor</td>
+      <td>In Favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xfe0e75af3b93fbeb3b86e2f4d000231910bab9d4ddbf1f787cb0b89f6af5d96e rel="noopener noreferrer" target="_blank">0xfe0e75a</a></th>
+      <td>0.980226</td>
+      <td>1.659834e+06</td>
+      <td>False</td>
+      <td>Against</td>
+      <td>Against</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x5840047edf5225ddf1ce93f68e6ba2eb361e11c69a47525c4cbc5f4e07455f24 rel="noopener noreferrer" target="_blank">0x5840047</a></th>
+      <td>0.973400</td>
+      <td>1.550751e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x564cd765ea535107efcb6c968eb5b80501ad4447a4c9da53ea4282e691cae20f rel="noopener noreferrer" target="_blank">0x564cd76</a></th>
+      <td>0.971424</td>
+      <td>1.286369e+06</td>
+      <td>False</td>
+      <td>Against</td>
+      <td>Against</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x6ed3c094f8f519adee3a6c0a66e7b2b04edcea96f0082d555c5151a0f6440bdf rel="noopener noreferrer" target="_blank">0x6ed3c09</a></th>
+      <td>0.971044</td>
+      <td>2.076817e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xf9d857cb7749619918cbe11be7de57c72581a2d4953b5df9746a6ebeea9973c1 rel="noopener noreferrer" target="_blank">0xf9d857c</a></th>
+      <td>0.968874</td>
+      <td>2.008295e+06</td>
+      <td>True</td>
+      <td>Against</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x5d449bda195b43f274da4281785f3bc8b1223c4fc0a762192704b4b69887ca14 rel="noopener noreferrer" target="_blank">0x5d449bd</a></th>
+      <td>0.967873</td>
+      <td>1.009663e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xbff08fe1ba17ab497b261bccbe1ef87a287f6fe9b3d2c6a213c308842faa0c3f rel="noopener noreferrer" target="_blank">0xbff08fe</a></th>
+      <td>0.965701</td>
+      <td>4.219239e+05</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x27c3987b794d4438fa1783108f5fe7d8e87f09dadd01050731dd1042eec61218 rel="noopener noreferrer" target="_blank">0x27c3987</a></th>
+      <td>0.963415</td>
+      <td>2.726180e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xf37d7cd210947cb33875e66d85ffae3a63684cf9f6cc70d92f68876a3faaf337 rel="noopener noreferrer" target="_blank">0xf37d7cd</a></th>
+      <td>0.961695</td>
+      <td>1.317353e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x4fd913f391c9b5e19cacf09045f34c8167eeb2329efeb22e54ae3afad921f3bc rel="noopener noreferrer" target="_blank">0x4fd913f</a></th>
+      <td>0.959452</td>
+      <td>1.652688e+06</td>
+      <td>False</td>
+      <td>Against</td>
+      <td>Against</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xe5a9380c7632542084f31ff43069f46d918dded38b6c2fbbc3837e3213c2d83e rel="noopener noreferrer" target="_blank">0xe5a9380</a></th>
+      <td>0.959441</td>
+      <td>1.571965e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x41e6ad57a942ee9eb6cd5194ccf1dc06d04a80f4c4f96375432dc8bc56b4bcdd rel="noopener noreferrer" target="_blank">0x41e6ad5</a></th>
+      <td>0.950320</td>
+      <td>9.867625e+05</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xbaf724416aa6e56c5458e498fb044dbfe41fa63f59eb05ac829cdfa6ea4787c8 rel="noopener noreferrer" target="_blank">0xbaf7244</a></th>
+      <td>0.946063</td>
+      <td>9.725028e+05</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x01cef6a1fd4b03503d63dc98dd66dec6ed32e94ce6e17cd916e13448b5191eee rel="noopener noreferrer" target="_blank">0x01cef6a</a></th>
+      <td>0.942583</td>
+      <td>1.360279e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xe56f21046eb675ec8b800bc7ffab77e2c018a800dfb9ae32cf9258e91cc4a8ad rel="noopener noreferrer" target="_blank">0xe56f210</a></th>
+      <td>0.941583</td>
+      <td>5.741309e+06</td>
+      <td>True</td>
+      <td>Against</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x532923865f38c007562a4842e69c930567c39de29ef318c48202ed0a33daf031 rel="noopener noreferrer" target="_blank">0x5329238</a></th>
+      <td>0.940700</td>
+      <td>5.672065e+06</td>
+      <td>False</td>
+      <td>Against</td>
+      <td>Against</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x680732b272ce1147755a0dea3b06752dc03e0a4b3fbeea37215515f8322303b1 rel="noopener noreferrer" target="_blank">0x680732b</a></th>
+      <td>0.938742</td>
+      <td>1.403693e+06</td>
+      <td>False</td>
+      <td>Against</td>
+      <td>Against</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xde21896afe94c1e64974368f2b37a4d1ef9485bb92dada940238725a6ab53278 rel="noopener noreferrer" target="_blank">0xde21896</a></th>
+      <td>0.937455</td>
+      <td>1.838237e+06</td>
+      <td>False</td>
+      <td>Against</td>
+      <td>Against</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xcb00a0d70c727edc1b26ab3bad3b5d7e2a1bed481ccaf676d10a7c555b83e2a6 rel="noopener noreferrer" target="_blank">0xcb00a0d</a></th>
+      <td>0.935425</td>
+      <td>3.298483e+06</td>
+      <td>True</td>
+      <td>Against</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x6001e5424a57e8c65666f2a542b830ba798dd6d680abe7f612a2f047dfa2a960 rel="noopener noreferrer" target="_blank">0x6001e54</a></th>
+      <td>0.925658</td>
+      <td>2.251170e+06</td>
+      <td>False</td>
+      <td>Against</td>
+      <td>Against</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x706977b0a9a6908a37cc596ce695f1cd70fa25cb6b1f70b55647899564490f0b rel="noopener noreferrer" target="_blank">0x706977b</a></th>
+      <td>0.921958</td>
+      <td>4.523201e+06</td>
+      <td>True</td>
+      <td>Against</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x95f67591533bf16f8d02a680cba96a4b90e3ec3f17e27f5a673e9ca9dc9c7776 rel="noopener noreferrer" target="_blank">0x95f6759</a></th>
+      <td>0.918375</td>
+      <td>5.136202e+06</td>
+      <td>False</td>
+      <td>Against</td>
+      <td>Against</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xeeadabe1f31ac85d8d1e73328966194921a533e4179f327d244db092aa80a302 rel="noopener noreferrer" target="_blank">0xeeadabe</a></th>
+      <td>0.915746</td>
+      <td>5.220499e+06</td>
+      <td>False</td>
+      <td>Against</td>
+      <td>Against</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xaa198619ef57196e1ce38e5197498a438203334bacbe57fa826b42e55ce8f0a0 rel="noopener noreferrer" target="_blank">0xaa19861</a></th>
+      <td>0.915468</td>
+      <td>2.372477e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x6be2b90d144b28c0c1f002336f0a381a434a6c23adb66851797fa7d490a76c7a rel="noopener noreferrer" target="_blank">0x6be2b90</a></th>
+      <td>0.912665</td>
+      <td>2.311975e+06</td>
+      <td>False</td>
+      <td>Against</td>
+      <td>Against</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xfd084fffed0236ce505a4d08d559a7a17af245f3470613704101bcddbee1caf8 rel="noopener noreferrer" target="_blank">0xfd084ff</a></th>
+      <td>0.912657</td>
+      <td>4.203606e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xff55dc0f26fa70967dd0ac64613247252abae95588b9e3ffe5f83291025f18f1 rel="noopener noreferrer" target="_blank">0xff55dc0</a></th>
+      <td>0.907535</td>
+      <td>4.353632e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x724b9ffd0842f0b83f1a70e2486d578d2b0b9fcc945cd65e03b863e4a98c7414 rel="noopener noreferrer" target="_blank">0x724b9ff</a></th>
+      <td>0.906799</td>
+      <td>2.841070e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xdf2315bd3e02e383b9bb5a505b820de0fbba04de07b69440627bc50f0b0182f8 rel="noopener noreferrer" target="_blank">0xdf2315b</a></th>
+      <td>0.902051</td>
+      <td>6.082078e+06</td>
+      <td>True</td>
+      <td>Against</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xad108a2d3222680089d0762a75955efc7919a90fc6b54d4c8554bd15b699e4bc rel="noopener noreferrer" target="_blank">0xad108a2</a></th>
+      <td>0.895375</td>
+      <td>1.163938e+06</td>
+      <td>False</td>
+      <td>Against</td>
+      <td>Against</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x5222214e742168df0297589a78b3bd346159fe88f89f536d4f273fe315f23c8c rel="noopener noreferrer" target="_blank">0x5222214</a></th>
+      <td>0.888311</td>
+      <td>4.660788e+06</td>
+      <td>False</td>
+      <td>WebSlinger</td>
+      <td>WebSlinger</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xe0443223619a8eaf201ba98bb6cb980e33fa2f5f9af87abec0b0302d4e07eced rel="noopener noreferrer" target="_blank">0xe044322</a></th>
+      <td>0.883213</td>
+      <td>5.908821e+05</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x6fe2ce5e18499c09da8f2cd8a19f8fce5b09f63e44cad2b2bbdcf6cdd6956364 rel="noopener noreferrer" target="_blank">0x6fe2ce5</a></th>
+      <td>0.879135</td>
+      <td>7.870868e+05</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x43f00cfa36ddddd371d12d02a477568adda0ae54077a70cc23679f02f8d6b7b1 rel="noopener noreferrer" target="_blank">0x43f00cf</a></th>
+      <td>0.876839</td>
+      <td>3.571919e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xb3db31ac1ee8253d8177cc768d588d2fb79fac6a7c331cde08abeba31b376e5e rel="noopener noreferrer" target="_blank">0xb3db31a</a></th>
+      <td>0.874900</td>
+      <td>3.855822e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x837d842809f25ce039867e02cbee1cf0169665bbaa0c9718cf5b02b4fbd606e7 rel="noopener noreferrer" target="_blank">0x837d842</a></th>
+      <td>0.864583</td>
+      <td>3.304516e+06</td>
+      <td>False</td>
+      <td>Against</td>
+      <td>Against</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x6af43733ecc7a53824205ce53c6e6d10b27706f694560edc8af1237c850a2923 rel="noopener noreferrer" target="_blank">0x6af4373</a></th>
+      <td>0.862378</td>
+      <td>5.175564e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x538c49304ef485ba4ea09ebce3dfd0548e6e230b5d338b2ba428928e3848f912 rel="noopener noreferrer" target="_blank">0x538c493</a></th>
+      <td>0.856531</td>
+      <td>2.417049e+06</td>
+      <td>False</td>
+      <td>Against</td>
+      <td>Against</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x2758b25d9b4a326a81c19d706ea52fc74aabb2ba57a38510b1982270afee5517 rel="noopener noreferrer" target="_blank">0x2758b25</a></th>
+      <td>0.852632</td>
+      <td>4.904874e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x60145f63863e7a14bb7bd5457a112deb74d350bffde998812ba490692f594438 rel="noopener noreferrer" target="_blank">0x60145f6</a></th>
+      <td>0.848819</td>
+      <td>1.231582e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x96c835fa2bc366fa710575cf759666c5a1489f43909ec6b34045f8ac8f39d1f2 rel="noopener noreferrer" target="_blank">0x96c835f</a></th>
+      <td>0.845459</td>
+      <td>2.018025e+06</td>
+      <td>False</td>
+      <td>Against</td>
+      <td>Against</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xc9401e88b57a6f7cd78fa2230482e7b90c7001e9fe0b438834bd8a078a8d8977 rel="noopener noreferrer" target="_blank">0xc9401e8</a></th>
+      <td>0.835794</td>
+      <td>6.460863e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x8406217ebe5264c868d8c1be4829f05037b3a27a6089ac4845390ab7cbb9db20 rel="noopener noreferrer" target="_blank">0x8406217</a></th>
+      <td>0.830570</td>
+      <td>6.237507e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x4167832021af581b25e8c1f9527999604364da4a7773981008ee2c9ec4127d90 rel="noopener noreferrer" target="_blank">0x4167832</a></th>
+      <td>0.826638</td>
+      <td>1.313514e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xeb7f4208451f003634f1076517a56d6de122e39d7891fd3647cec3f592cbdca5 rel="noopener noreferrer" target="_blank">0xeb7f420</a></th>
+      <td>0.819976</td>
+      <td>1.106652e+07</td>
+      <td>True</td>
+      <td>Against</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x5b495182b087481490a79891cfd6456ea05473451a7a47b0f73f306ea8c5ee40 rel="noopener noreferrer" target="_blank">0x5b49518</a></th>
+      <td>0.812843</td>
+      <td>2.904306e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xfb1787b0d9e94229a48ffa854d72f7e92c4c51687ceb16b2d86597c903d11c55 rel="noopener noreferrer" target="_blank">0xfb1787b</a></th>
+      <td>0.798779</td>
+      <td>2.734010e+06</td>
+      <td>False</td>
+      <td>Against</td>
+      <td>Against</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xd1f8c8c50046f19d89436d541693e6ba982c68290a263dd43c321d2600996239 rel="noopener noreferrer" target="_blank">0xd1f8c8c</a></th>
+      <td>0.783842</td>
+      <td>3.888917e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x9a4b8fb56f01186c67cb853bd57bfe98d09a0b0abfc2d4c9f050aca3d7aeb19e rel="noopener noreferrer" target="_blank">0x9a4b8fb</a></th>
+      <td>0.780864</td>
+      <td>3.929616e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x815d74c488628038e961fdb7382ac9066b157927bdc632687b1d20c386b57c98 rel="noopener noreferrer" target="_blank">0x815d74c</a></th>
+      <td>0.769096</td>
+      <td>2.550246e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x2485aa565a28902bd33bbba1f91e9c7b66cf34010bd25c4bef82cd8e341071d8 rel="noopener noreferrer" target="_blank">0x2485aa5</a></th>
+      <td>0.767899</td>
+      <td>1.058330e+07</td>
+      <td>False</td>
+      <td>Against</td>
+      <td>Against</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xc00835414aa6ee84e01d03683877f0bb4660b3594bd8575070384c1ca6ad023b rel="noopener noreferrer" target="_blank">0xc008354</a></th>
+      <td>0.766792</td>
+      <td>4.592843e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x367eecaffc20976a4f913154eceb61279793b06ac0ad93ab948d2d3b207ff860 rel="noopener noreferrer" target="_blank">0x367eeca</a></th>
+      <td>0.764945</td>
+      <td>7.168023e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x4a069f6d5626472c20719dcc41222303c1d5a6c1fe7d089230225b5816e0115a rel="noopener noreferrer" target="_blank">0x4a069f6</a></th>
+      <td>0.758740</td>
+      <td>3.079938e+06</td>
+      <td>False</td>
+      <td>Against</td>
+      <td>Against</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x0bef4055458aaa2c40c20d26051af92b5dc608d88ff2aee45a8666ad8fdaa920 rel="noopener noreferrer" target="_blank">0x0bef405</a></th>
+      <td>0.751414</td>
+      <td>6.082668e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x34d2e9b420c85805a3dd94a77d7688722959713d2b5f70ac60c89616e215b811 rel="noopener noreferrer" target="_blank">0x34d2e9b</a></th>
+      <td>0.747455</td>
+      <td>6.133428e+06</td>
+      <td>False</td>
+      <td>Against</td>
+      <td>Against</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x60259de31407354ddb7af42ad0126771a0017519d9c31a85760bccecdbb6d0b2 rel="noopener noreferrer" target="_blank">0x60259de</a></th>
+      <td>0.682636</td>
+      <td>6.776431e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xcf4d7199323572b9cc7e212d29d07df974280bc3d18e35dcfeafb30d1c3e17fb rel="noopener noreferrer" target="_blank">0xcf4d719</a></th>
+      <td>0.668198</td>
+      <td>5.850441e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xa24dab47d3526574dcc19add7024c774b5ed02714a0a774f2053925ea601bc1d rel="noopener noreferrer" target="_blank">0xa24dab4</a></th>
+      <td>0.665186</td>
+      <td>5.851915e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x0fb1d66dc79f164290a485fa2227c6e086dab1a87257db8139a4de4c27892c9c rel="noopener noreferrer" target="_blank">0x0fb1d66</a></th>
+      <td>0.656165</td>
+      <td>2.264243e+07</td>
+      <td>True</td>
+      <td>BoredApeG</td>
+      <td>Gerry</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x0a80806508be099dfc76fc3a891b809d70b9d10a73c70c6f6a8002fb9b61cd8a rel="noopener noreferrer" target="_blank">0x0a80806</a></th>
+      <td>0.652674</td>
+      <td>4.987553e+06</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x79ae5f9eb3c710179cfbf706fa451459ddd18d4b0bce37c22aae601128efe927 rel="noopener noreferrer" target="_blank">0x79ae5f9</a></th>
+      <td>0.640293</td>
+      <td>1.913044e+07</td>
+      <td>True</td>
+      <td>veratheape</td>
+      <td>Gerry</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xf0a7649e3f64eb4bacc16e6bf54346fe8151109bd4cda38fe53f0a2b02c99f63 rel="noopener noreferrer" target="_blank">0xf0a7649</a></th>
+      <td>0.589881</td>
+      <td>1.490340e+07</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0xabaa0f5571ad0f81fa70f0b6a70c1360994ee4b774544de615698069fc25dc72 rel="noopener noreferrer" target="_blank">0xabaa0f5</a></th>
+      <td>0.586938</td>
+      <td>2.061024e+07</td>
+      <td>False</td>
+      <td>Against</td>
+      <td>Against</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x01e3c33c061d68dbe308ed85d6cd34f38293dbee71ec37df6599ca4306a49a63 rel="noopener noreferrer" target="_blank">0x01e3c33</a></th>
+      <td>0.582419</td>
+      <td>1.505590e+07</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x8b6287d0d5341c36748d2f6093419b34655ceb6adf895be80bb69e53639d5a77 rel="noopener noreferrer" target="_blank">0x8b6287d</a></th>
+      <td>0.581712</td>
+      <td>1.543426e+07</td>
+      <td>False</td>
+      <td>In favor</td>
+      <td>In favor</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/apecoin.eth/proposal/0x9e7c6f1a14193aba4e7d13579a6124744e9a2dd3e5395e56a83b645d900e54a0 rel="noopener noreferrer" target="_blank">0x9e7c6f1</a></th>
+      <td>0.574838</td>
+      <td>1.967061e+07</td>
+      <td>False</td>
+      <td>Against</td>
+      <td>Against</td>
+    </tr>
+  </tbody>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_differences_dfs</span><span class="p">[</span><span class="s2">&quot;ApeCoin DAO&quot;</span><span class="p">][</span><span class="s2">&quot;outcome_changed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False    0.884058
+True     0.115942
+Name: outcome_changed, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">score_differences_dfs</span><span class="p">[</span><span class="s2">&quot;Klima DAO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s2">&quot;total_vp&quot;</span><span class="p">:</span> <span class="s2">&quot;float64&quot;</span><span class="p">},</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;score_differences&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;whale_vp_proportion&quot;</span><span class="p">,</span> <span class="s2">&quot;total_vp&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">render_links</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">escape</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>whale_vp_proportion</th>
+      <th>total_vp</th>
+      <th>outcome_changed</th>
+      <th>outcome_old</th>
+      <th>outcome_new</th>
+    </tr>
+    <tr>
+      <th>Proposal ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0x930b6004d537544bd996fd2e90d07fb1c55e37010cb3cf59d88a20f9bca85036 rel="noopener noreferrer" target="_blank">0x930b600</a></th>
+      <td>0.996920</td>
+      <td>504433.644339</td>
+      <td>False</td>
+      <td>For</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0xa2d8bd41a802c91aefec315923c41e8e724032858c5393e18fcd05272e56d5c7 rel="noopener noreferrer" target="_blank">0xa2d8bd4</a></th>
+      <td>0.996727</td>
+      <td>474787.421434</td>
+      <td>False</td>
+      <td>For: split fee 80/20</td>
+      <td>For: split fee 80/20</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0xa50ab29cec789ef036da914742ad68020b93369f53b5cc1e78511e6c78a979b9 rel="noopener noreferrer" target="_blank">0xa50ab29</a></th>
+      <td>0.987467</td>
+      <td>425434.738707</td>
+      <td>False</td>
+      <td>For</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0x8e4ef40a18b00d40ad041200d3f30ae7f8c015c2d75560a8b100b126fb4cea78 rel="noopener noreferrer" target="_blank">0x8e4ef40</a></th>
+      <td>0.980098</td>
+      <td>750178.179232</td>
+      <td>False</td>
+      <td>For</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/QmZUSGcMqLU63bKKtCfuBeTPqPDYdvEY3vu7qLmzR7Un9r rel="noopener noreferrer" target="_blank">QmZUSGcMq</a></th>
+      <td>0.840598</td>
+      <td>9264.591987</td>
+      <td>False</td>
+      <td>48 hours</td>
+      <td>48 hours</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0xd358805de0e8730a9f6e48f0f5f1bd83765d1d6c519d5568accf8be3726cf756 rel="noopener noreferrer" target="_blank">0xd358805</a></th>
+      <td>0.727192</td>
+      <td>195233.769979</td>
+      <td>False</td>
+      <td>For: Build NCT liquidity</td>
+      <td>For: Build NCT liquidity</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0xe69c1ccf0fe4c9a09586c3bd3263d4e8728698319560070cea1209785a2da462 rel="noopener noreferrer" target="_blank">0xe69c1cc</a></th>
+      <td>0.699951</td>
+      <td>335036.922800</td>
+      <td>False</td>
+      <td>For: Reduce AKR to 20%</td>
+      <td>For: Reduce AKR to 20%</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0x23ad83944ace8d3676cb44a8dadefe845c2db8a78ba7dd008eaa8d2a0bfb50e5 rel="noopener noreferrer" target="_blank">0x23ad839</a></th>
+      <td>0.680467</td>
+      <td>52686.991299</td>
+      <td>False</td>
+      <td>For: Reduce rate to match actual</td>
+      <td>For: Reduce rate to match actual</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0xe9de3ba110ee4faec24ef39379cdfbdbd36be7b84557e1fb0b31b3f0e033535f rel="noopener noreferrer" target="_blank">0xe9de3ba</a></th>
+      <td>0.677817</td>
+      <td>236863.094312</td>
+      <td>False</td>
+      <td>For: Bolster UBO & NBO liquidity</td>
+      <td>For: Bolster UBO & NBO liquidity</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0x9df154d1531aabcc2ed7258833c18e0c39d6f527394b387233a63ff3eabdb010 rel="noopener noreferrer" target="_blank">0x9df154d</a></th>
+      <td>0.676759</td>
+      <td>40020.017732</td>
+      <td>False</td>
+      <td>YES: I agree, create the program</td>
+      <td>YES: I agree, create the program</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0x2ae3fce131f98bf22ec9ef306a13e359002eaea0d111328149204dfd9dc9b2e4 rel="noopener noreferrer" target="_blank">0x2ae3fce</a></th>
+      <td>0.663135</td>
+      <td>124452.357235</td>
+      <td>False</td>
+      <td>For: clean up HFC-23 credits</td>
+      <td>For: clean up HFC-23 credits</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0xb6eb87e78a6ab84fca64e9cbc5b08d9261bc6b7d6dc236c440e19420312412eb rel="noopener noreferrer" target="_blank">0xb6eb87e</a></th>
+      <td>0.648505</td>
+      <td>82923.686414</td>
+      <td>False</td>
+      <td>For: Add MCO2 Bonds</td>
+      <td>For: Add MCO2 Bonds</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0xbe5ba88701e09fad2548ec2aca539b23cc04a5b7bc1961397fc98a0a303c5249 rel="noopener noreferrer" target="_blank">0xbe5ba88</a></th>
+      <td>0.647190</td>
+      <td>74272.836616</td>
+      <td>False</td>
+      <td>Accept the Reward Framework</td>
+      <td>Accept the Reward Framework</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0x554482501e69eb4da3fcb6c98de54b932e87bd635319224765a5c495d4be7f0f rel="noopener noreferrer" target="_blank">0x5544825</a></th>
+      <td>0.624344</td>
+      <td>54015.460984</td>
+      <td>False</td>
+      <td>Introduce wsKLIMA/gOHM bonds</td>
+      <td>Introduce wsKLIMA/gOHM bonds</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0x7359c09b24ed01eec218f03c1aa51b6efef4fbd9e454a5acb505fa36c559512b rel="noopener noreferrer" target="_blank">0x7359c09</a></th>
+      <td>0.619185</td>
+      <td>70059.481479</td>
+      <td>False</td>
+      <td>For</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0xa63e839bbde9160b779adcf53005d15a67c55b9174742e853711cf743834053a rel="noopener noreferrer" target="_blank">0xa63e839</a></th>
+      <td>0.606848</td>
+      <td>99999.485128</td>
+      <td>False</td>
+      <td>Adopt and Increase to 30%</td>
+      <td>Adopt and Increase to 30%</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0x8841e5e8a015ee2a9bc435f6ec76e9259fc32f9ff29456d340a6f5c3ce78bcc6 rel="noopener noreferrer" target="_blank">0x8841e5e</a></th>
+      <td>0.603193</td>
+      <td>94978.744872</td>
+      <td>False</td>
+      <td>For Proposal</td>
+      <td>For Proposal</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0xc84e955607baa9860d9f5880f3d23fa0a5321feb73d3390304a5faeac3bf8cae rel="noopener noreferrer" target="_blank">0xc84e955</a></th>
+      <td>0.595234</td>
+      <td>97372.203374</td>
+      <td>False</td>
+      <td>For Proposal</td>
+      <td>For Proposal</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0xfede6077876de9777b6ecfb4fe60968c2ff5d0ceaa44178c734f957a6a630f03 rel="noopener noreferrer" target="_blank">0xfede607</a></th>
+      <td>0.594485</td>
+      <td>76696.939504</td>
+      <td>False</td>
+      <td>Yea: Accept C3 as an Ally</td>
+      <td>Yea: Accept C3 as an Ally</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0xee393ab8954a605556b2fb0ea30aae4dd86c852a9343c8a8fe8b9306aaee785b rel="noopener noreferrer" target="_blank">0xee393ab</a></th>
+      <td>0.583331</td>
+      <td>77541.476863</td>
+      <td>False</td>
+      <td>Option 1</td>
+      <td>Option 1</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0x3918360336e5f92e72b57e46a129c674ce738ff33d84d639303f1ca8bc3132b7 rel="noopener noreferrer" target="_blank">0x3918360</a></th>
+      <td>0.579341</td>
+      <td>125735.010825</td>
+      <td>False</td>
+      <td>For Proposal</td>
+      <td>For Proposal</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0xcc99da71fd0aa8dbffddff98cb5f5662193944cef9d604e91f265323c7ddedc8 rel="noopener noreferrer" target="_blank">0xcc99da7</a></th>
+      <td>0.573597</td>
+      <td>67046.384614</td>
+      <td>False</td>
+      <td>For</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0xc8e25eb8aa499b343c521c3ff339923f7743cc76a9b08ca14568c89feab3fff9 rel="noopener noreferrer" target="_blank">0xc8e25eb</a></th>
+      <td>0.566710</td>
+      <td>120833.178893</td>
+      <td>False</td>
+      <td>For: delegate inclusions</td>
+      <td>For: delegate inclusions</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0x4b57eabc9372a2680df257a5cd1257ac541bed7f82617306162ae6dbeb116707 rel="noopener noreferrer" target="_blank">0x4b57eab</a></th>
+      <td>0.565975</td>
+      <td>136991.606579</td>
+      <td>False</td>
+      <td>For: whitelist Aave & Curve</td>
+      <td>For: whitelist Aave & Curve</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0xa72601fcee690c061a8bba6e717ee74db09f782eb3bbbefeaf27ce1e2dad0a35 rel="noopener noreferrer" target="_blank">0xa72601f</a></th>
+      <td>0.557952</td>
+      <td>133593.222803</td>
+      <td>False</td>
+      <td>Allow for Inverse Bonds</td>
+      <td>Allow for Inverse Bonds</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0x918abd2ee465726bbe44e26e9afdef705c755d6356d0d13e72e8ddc2847660a4 rel="noopener noreferrer" target="_blank">0x918abd2</a></th>
+      <td>0.553488</td>
+      <td>175283.734511</td>
+      <td>False</td>
+      <td>For: dissolve</td>
+      <td>For: dissolve</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/QmTvD4PzBCDABipuJvAkYKDBVaVmkN2aFA7aWWdBatzjp4 rel="noopener noreferrer" target="_blank">QmTvD4PzB</a></th>
+      <td>0.550331</td>
+      <td>64722.401415</td>
+      <td>False</td>
+      <td>For: Add BCT Bonds</td>
+      <td>For: Add BCT Bonds</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0xf6c26e1519a017b48e5c9be812a3746eaf4e27872560068cb0e379339adb5e83 rel="noopener noreferrer" target="_blank">0xf6c26e1</a></th>
+      <td>0.549575</td>
+      <td>89971.317766</td>
+      <td>False</td>
+      <td>Yea: Deepen Klima/USDC Pool</td>
+      <td>Yea: Deepen Klima/USDC Pool</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0xb6f70f84fbb0f5a24f67f73c30a7966af4f8e3572a2885011c6a0e705fb8178b rel="noopener noreferrer" target="_blank">0xb6f70f8</a></th>
+      <td>0.547444</td>
+      <td>70055.175638</td>
+      <td>False</td>
+      <td>Allow for TCO2 conversions</td>
+      <td>Allow for TCO2 conversions</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0x5518f644377aad2bbf2a25296215ad7db257ad983fe67973927daca051213d7b rel="noopener noreferrer" target="_blank">0x5518f64</a></th>
+      <td>0.546137</td>
+      <td>216897.326968</td>
+      <td>False</td>
+      <td>For Proposal</td>
+      <td>For Proposal</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0xb81487aac681331c5b2244df47c46765ed5d5c8a2f9a2b583569557dbab11ed9 rel="noopener noreferrer" target="_blank">0xb81487a</a></th>
+      <td>0.530491</td>
+      <td>113643.855324</td>
+      <td>False</td>
+      <td>Reduce BCT/USDC LP</td>
+      <td>Reduce BCT/USDC LP</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0x10b6a151ddf29092d4790f655ba4d7de34e42606b51c572d1b849fae670e3a7a rel="noopener noreferrer" target="_blank">0x10b6a15</a></th>
+      <td>0.509925</td>
+      <td>84808.729973</td>
+      <td>False</td>
+      <td>For: allocate</td>
+      <td>For: allocate</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/klimadao.eth/proposal/0xfb993e02d6481161330c3064bbc64cd715eb9814d8bcaaa2a298a0a7aa3d27f1 rel="noopener noreferrer" target="_blank">0xfb993e0</a></th>
+      <td>0.460379</td>
+      <td>206372.980934</td>
+      <td>False</td>
+      <td>For: Ratify New Framework</td>
+      <td>For: Ratify New Framework</td>
+    </tr>
+  </tbody>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_differences_dfs</span><span class="p">[</span><span class="s2">&quot;Klima DAO&quot;</span><span class="p">][</span><span class="s2">&quot;outcome_changed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False    1.0
+Name: outcome_changed, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">score_differences_dfs</span><span class="p">[</span><span class="s2">&quot;Hector Network&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s2">&quot;total_vp&quot;</span><span class="p">:</span> <span class="s2">&quot;float64&quot;</span><span class="p">},</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;score_differences&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;whale_vp_proportion&quot;</span><span class="p">,</span> <span class="s2">&quot;total_vp&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">render_links</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">escape</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>whale_vp_proportion</th>
+      <th>total_vp</th>
+      <th>outcome_changed</th>
+      <th>outcome_old</th>
+      <th>outcome_new</th>
+    </tr>
+    <tr>
+      <th>Proposal ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x55918aa62958c77c7b6715cb1756f121bf3bd86b91d767c932da38823af50d4b rel="noopener noreferrer" target="_blank">0x55918aa</a></th>
+      <td>0.740052</td>
+      <td>100942.001096</td>
+      <td>True</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xf61dfa674f4d908010fb56156a59b58ab824fc7f4d2231977a952bc7dde1b6c2 rel="noopener noreferrer" target="_blank">0xf61dfa6</a></th>
+      <td>0.735902</td>
+      <td>111331.738215</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x37de6bd542e6bb95ebb6af55965f5899f7f4a1a28a47afd2b96bd135d761d7f4 rel="noopener noreferrer" target="_blank">0x37de6bd</a></th>
+      <td>0.731288</td>
+      <td>121959.039539</td>
+      <td>False</td>
+      <td>Illuvium</td>
+      <td>Illuvium</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x74b62bc97b367af72a765d77e9e4d552d6a46f783bc1e3e636b4c4f39a6d7a3a rel="noopener noreferrer" target="_blank">0x74b62bc</a></th>
+      <td>0.728766</td>
+      <td>107968.121715</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x6ec98d7131236f4ce2e10399eb6ef7c0a24678f79b696c8d33647605f163ec72 rel="noopener noreferrer" target="_blank">0x6ec98d7</a></th>
+      <td>0.716335</td>
+      <td>77377.042178</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xc4e6334df19c8bd4d05ebb0088f1e3e28551eadfbb26dd54f0cfff626bcc6436 rel="noopener noreferrer" target="_blank">0xc4e6334</a></th>
+      <td>0.714887</td>
+      <td>125301.767306</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x4475e8a0a56212d32c7e8843833667bd26a905c8cfe9754e219494fd528dc758 rel="noopener noreferrer" target="_blank">0x4475e8a</a></th>
+      <td>0.712459</td>
+      <td>131082.049927</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x205c78d0e1ec78bdff0f96df53618e02e379ae8b2d7c73616e749cf8661ff90b rel="noopener noreferrer" target="_blank">0x205c78d</a></th>
+      <td>0.712411</td>
+      <td>97912.273004</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x754a389ef0773f86cd4bb45d0defe05a134c8c84a2fc2585cf31457ff3fe7bce rel="noopener noreferrer" target="_blank">0x754a389</a></th>
+      <td>0.695676</td>
+      <td>192498.291501</td>
+      <td>False</td>
+      <td>NO</td>
+      <td>NO</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x32aebd2ef634eb6dd8a90c4344eb58a8c44d464e69ea5ebebb9d172bdafce5ae rel="noopener noreferrer" target="_blank">0x32aebd2</a></th>
+      <td>0.679733</td>
+      <td>201794.480237</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x702b02283f817315b8ef953057352b380882e7875600c624a905648b6b75403d rel="noopener noreferrer" target="_blank">0x702b022</a></th>
+      <td>0.668822</td>
+      <td>121375.480268</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x7bcf970099a36cbe144016b1d6a6f59c54e7e06d7e5bd7944ae4f2c198369829 rel="noopener noreferrer" target="_blank">0x7bcf970</a></th>
+      <td>0.639238</td>
+      <td>21892.340031</td>
+      <td>False</td>
+      <td>Yes!</td>
+      <td>Yes!</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x444c3ae9ddad2c3ddf4cb3d68b65c28c906dc692146c56e3472ab53be5bb080f rel="noopener noreferrer" target="_blank">0x444c3ae</a></th>
+      <td>0.629598</td>
+      <td>142589.716153</td>
+      <td>True</td>
+      <td>NO</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xd644cd99f834d86684512be785fe3e95ea5298dc662af17bb7fadab4c1d62172 rel="noopener noreferrer" target="_blank">0xd644cd9</a></th>
+      <td>0.602049</td>
+      <td>50597.362947</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x220cd36b2a42dfb060aa183ac2507200f0000458a9ea71a7b1a8508ae322e59c rel="noopener noreferrer" target="_blank">0x220cd36</a></th>
+      <td>0.601347</td>
+      <td>46927.849490</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xc07ff32d6f442db33028798638af9a926c7d2c857f5a76aa408ac001f4e84db3 rel="noopener noreferrer" target="_blank">0xc07ff32</a></th>
+      <td>0.595398</td>
+      <td>39461.333409</td>
+      <td>False</td>
+      <td>Yess</td>
+      <td>Yess</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x127ca2e1ce987a1c4e644bcb2b4a914247ccbcf5d1621d7ce78dc4d55a96d4dc rel="noopener noreferrer" target="_blank">0x127ca2e</a></th>
+      <td>0.589370</td>
+      <td>60121.720824</td>
+      <td>False</td>
+      <td>Travala</td>
+      <td>Travala</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xaa8e8f2b661205a64fa138cab63ab1879aa5f1124b3afed8d0bf1469dcdeba95 rel="noopener noreferrer" target="_blank">0xaa8e8f2</a></th>
+      <td>0.567859</td>
+      <td>35850.237183</td>
+      <td>False</td>
+      <td>Yes, 10M USDC and 10M DAI</td>
+      <td>Yes, 10M USDC and 10M DAI</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xc27407799639513c278d7a8317390b600ea69d7f42cc27b908d2c17208827d8d rel="noopener noreferrer" target="_blank">0xc274077</a></th>
+      <td>0.565856</td>
+      <td>95353.950759</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x718b84dfe50d19403e81a564546600f8e1fc11aa1f94a42aa8bf361ca5e9008c rel="noopener noreferrer" target="_blank">0x718b84d</a></th>
+      <td>0.564870</td>
+      <td>38227.060972</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xf60e687110b574702a23b8d87a44af16e44f6476593e5a5e980607ebe4430829 rel="noopener noreferrer" target="_blank">0xf60e687</a></th>
+      <td>0.554887</td>
+      <td>40722.106769</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x86d06ccd3f82a2bf5c824077cf05ec819acb797154ad54ae46e4c0da46665fed rel="noopener noreferrer" target="_blank">0x86d06cc</a></th>
+      <td>0.553219</td>
+      <td>42592.736151</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x66be5491ee493d28bc40ccd2cdae80cb74b7633e73e903389c9d001a34b69500 rel="noopener noreferrer" target="_blank">0x66be549</a></th>
+      <td>0.550804</td>
+      <td>208358.571458</td>
+      <td>True</td>
+      <td>ETH</td>
+      <td>MATIC</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xbef6eb9ffe09189ec4037c015122b0ac6d28488fe8e9cae94ea6a01dfde1f165 rel="noopener noreferrer" target="_blank">0xbef6eb9</a></th>
+      <td>0.546675</td>
+      <td>173442.729105</td>
+      <td>False</td>
+      <td>USDH - $USDH</td>
+      <td>USDH - $USDH</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x387ac007e6fb899407e8dc0dab010d083ed2bd694879530b255fdccc914a5cb9 rel="noopener noreferrer" target="_blank">0x387ac00</a></th>
+      <td>0.534998</td>
+      <td>22440.104822</td>
+      <td>False</td>
+      <td>Project HOPE</td>
+      <td>Project HOPE</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x90f4fb65508780944281f8d31a1639d9e0b0769de4d70d864efd2c86eca28f01 rel="noopener noreferrer" target="_blank">0x90f4fb6</a></th>
+      <td>0.534833</td>
+      <td>55489.990172</td>
+      <td>False</td>
+      <td>Remove SpiritSwap LP</td>
+      <td>Remove SpiritSwap LP</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x42674e97d5606e877d4e5a7d7a744ce5213f210e82f68a3fb5424c191be7f860 rel="noopener noreferrer" target="_blank">0x42674e9</a></th>
+      <td>0.524616</td>
+      <td>35321.182821</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x93095bb32223bda489d5535d094242e0a50eb42d6122f1a70f49aa5afbe5c448 rel="noopener noreferrer" target="_blank">0x93095bb</a></th>
+      <td>0.522852</td>
+      <td>140303.549922</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xf7980a05e0bdb55fe6be81edb9c1d75dcc118e2887f154c30cd41c7a46a04ead rel="noopener noreferrer" target="_blank">0xf7980a0</a></th>
+      <td>0.521363</td>
+      <td>198029.898003</td>
+      <td>False</td>
+      <td>Dynamic APY from 200-1500%</td>
+      <td>Dynamic APY from 200-1500%</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x0138ee0f121fd1519b83d522478f7709a886fd1d014317426c2acc7c76a65529 rel="noopener noreferrer" target="_blank">0x0138ee0</a></th>
+      <td>0.521121</td>
+      <td>128537.068531</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x805084597794886288101ae54e9b1d6d2d19e5aa33e2c069fe1f52e96502d726 rel="noopener noreferrer" target="_blank">0x8050845</a></th>
+      <td>0.513576</td>
+      <td>74178.907612</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xa5a8d9454caeb760b384dc4511f8e96f8e340f8d52ecf3768637db86e93923ae rel="noopener noreferrer" target="_blank">0xa5a8d94</a></th>
+      <td>0.510443</td>
+      <td>65047.514369</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x67ee37395956381958ca5aaf626e15886304c25a9db2ef17e58fcce855582c00 rel="noopener noreferrer" target="_blank">0x67ee373</a></th>
+      <td>0.505648</td>
+      <td>131133.997638</td>
+      <td>False</td>
+      <td>BOO</td>
+      <td>BOO</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xe4d61e385c812f86ce22fe9e423497fc72af715d3d12152610f4a5eb0e309f16 rel="noopener noreferrer" target="_blank">0xe4d61e3</a></th>
+      <td>0.501281</td>
+      <td>34113.458337</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xf755777dc0c5ba4989997ecb948b1ab008a29eab479621c8e679ef94ccd8242a rel="noopener noreferrer" target="_blank">0xf755777</a></th>
+      <td>0.496331</td>
+      <td>93014.174655</td>
+      <td>False</td>
+      <td>MATIC</td>
+      <td>MATIC</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xea4e96911c5aeea1e29b0bf85b249c99b498b5750f5570443d6e04741bed59d9 rel="noopener noreferrer" target="_blank">0xea4e969</a></th>
+      <td>0.495701</td>
+      <td>67224.664286</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x26ce993aa2d43b70590a098323fe23590a746e9c372ec33dea350bcb1af51cfe rel="noopener noreferrer" target="_blank">0x26ce993</a></th>
+      <td>0.494457</td>
+      <td>121063.528672</td>
+      <td>False</td>
+      <td>Yes - reduce to 10,000%</td>
+      <td>Yes - reduce to 10,000%</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x0d7ece30e58e26a1578ef06d3fce76ee74113dfe3f9053e48e1d396a56f1d883 rel="noopener noreferrer" target="_blank">0x0d7ece3</a></th>
+      <td>0.494354</td>
+      <td>64142.375038</td>
+      <td>False</td>
+      <td>Warm-up period of 3 rebases</td>
+      <td>Warm-up period of 3 rebases</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xb8ab7dc32ff4971a05bd3875dc6b4236d8ffc28e216e74c62f5a239258899ee7 rel="noopener noreferrer" target="_blank">0xb8ab7dc</a></th>
+      <td>0.488916</td>
+      <td>22178.371374</td>
+      <td>False</td>
+      <td>MIM</td>
+      <td>MIM</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xfa62aef5bddc786fa3dbc7305bb3d3361139996d652fccb31d8f2d2bb52408d7 rel="noopener noreferrer" target="_blank">0xfa62aef</a></th>
+      <td>0.488013</td>
+      <td>135941.132508</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x75b9f1efad959a1a5de46565a9ae8b80f1c1ca6375bbf3a2cb08cd8501b275a5 rel="noopener noreferrer" target="_blank">0x75b9f1e</a></th>
+      <td>0.485571</td>
+      <td>71918.465513</td>
+      <td>False</td>
+      <td>BOO</td>
+      <td>BOO</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xa530872e89e16e2a5fb90f5a0710f2d29ee240abc3fc61adfed942382ad04f68 rel="noopener noreferrer" target="_blank">0xa530872</a></th>
+      <td>0.483916</td>
+      <td>55692.868210</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xaac07ac281b09e859ac28691f1f3115169119b2e36d29402c8060f33007d1235 rel="noopener noreferrer" target="_blank">0xaac07ac</a></th>
+      <td>0.476569</td>
+      <td>52422.439848</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x4bc224f5da2542c23d114ae4bc1018a88a991d054920afa2dd7f1200e4ad9852 rel="noopener noreferrer" target="_blank">0x4bc224f</a></th>
+      <td>0.476521</td>
+      <td>47419.058316</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xe9d84ae644e0a0d8e2bbe24cc38aba0fe152f3023955b3afe809be363fd1e646 rel="noopener noreferrer" target="_blank">0xe9d84ae</a></th>
+      <td>0.476178</td>
+      <td>91783.496143</td>
+      <td>False</td>
+      <td>CRV</td>
+      <td>CRV</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x7bee6a7645e95a6180e834b040055c363165e82c556949b41c6cdc0986aae936 rel="noopener noreferrer" target="_blank">0x7bee6a7</a></th>
+      <td>0.474639</td>
+      <td>121545.995346</td>
+      <td>False</td>
+      <td>Hector Finance</td>
+      <td>Hector Finance</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xbf93f34ace2f666d7b2b181a616cfeb2ef58b4308c89dfd2367b235b41417887 rel="noopener noreferrer" target="_blank">0xbf93f34</a></th>
+      <td>0.472875</td>
+      <td>153725.413249</td>
+      <td>False</td>
+      <td>TOR</td>
+      <td>TOR</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x2dedb311340f5077e368ca9901996376168a3add3bdb53792252a8af01dc1460 rel="noopener noreferrer" target="_blank">0x2dedb31</a></th>
+      <td>0.472149</td>
+      <td>81358.051865</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xcdf92ad4a5816d8a1a3c65dffb48dac62d172aeae5d46fadfde7e8b5076b66e2 rel="noopener noreferrer" target="_blank">0xcdf92ad</a></th>
+      <td>0.471673</td>
+      <td>22714.948428</td>
+      <td>False</td>
+      <td>Childhood Leukemia Foundation</td>
+      <td>Childhood Leukemia Foundation</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x9d10eb332e83cee41ad553e0cbb31e991f0ae7a17d57bfab896cdf595b18bb90 rel="noopener noreferrer" target="_blank">0x9d10eb3</a></th>
+      <td>0.467028</td>
+      <td>72085.640670</td>
+      <td>False</td>
+      <td>FTM</td>
+      <td>FTM</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x801b46b59dea7470f65ecb95c49c2be8cada120aa91f164b04991c6446a37f06 rel="noopener noreferrer" target="_blank">0x801b46b</a></th>
+      <td>0.463690</td>
+      <td>35354.755092</td>
+      <td>False</td>
+      <td>Agree with the deal with Rari</td>
+      <td>Agree with the deal with Rari</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x7c19621c30d4d56b5bd4b359b8fca5d0170c1c8bae800b28fe9893f66ffcdd96 rel="noopener noreferrer" target="_blank">0x7c19621</a></th>
+      <td>0.461657</td>
+      <td>149845.817318</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x91526f1963066f3203f3fe58b2f4132d02f05c3d99295c46330e449d5ab6cef5 rel="noopener noreferrer" target="_blank">0x91526f1</a></th>
+      <td>0.457705</td>
+      <td>73828.038428</td>
+      <td>False</td>
+      <td>Remove Warmup</td>
+      <td>Remove Warmup</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x205e7d177d48378b9f15c26d9a73638841bfac145cd76f8b33362923ddbe2b92 rel="noopener noreferrer" target="_blank">0x205e7d1</a></th>
+      <td>0.451031</td>
+      <td>86127.574046</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x95cf8d838230c6fc81daa01b461530fa7fff22683761404b98c2d5885021a210 rel="noopener noreferrer" target="_blank">0x95cf8d8</a></th>
+      <td>0.446677</td>
+      <td>119503.455596</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xb261b0e81fc1887b47065af80c2e6d2ae59de14ba824a23ddf5f64db7b6f729e rel="noopener noreferrer" target="_blank">0xb261b0e</a></th>
+      <td>0.437363</td>
+      <td>112160.841699</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x38ca4ada94a868888344fde57ea020ed01e162d461390d923521a744c3d2faaf rel="noopener noreferrer" target="_blank">0x38ca4ad</a></th>
+      <td>0.432176</td>
+      <td>37360.828620</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xeae961ccbd524dca4301626abf157f0c5955ff222cc88bd4e8c569059e82ec38 rel="noopener noreferrer" target="_blank">0xeae961c</a></th>
+      <td>0.431707</td>
+      <td>56257.597814</td>
+      <td>False</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x8f323c76a80c51f3d26de5fc07cf74cce2dcd5c6b363689928c88f82bd881914 rel="noopener noreferrer" target="_blank">0x8f323c7</a></th>
+      <td>0.429524</td>
+      <td>66938.220026</td>
+      <td>False</td>
+      <td>A. APY 20%, 50% @emission launch</td>
+      <td>A. APY 20%, 50% @emission launch</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xb5d0ffd172262308aa071f98b30ccadf53c19ab4244729d7d8d9b14f4a1dd355 rel="noopener noreferrer" target="_blank">0xb5d0ffd</a></th>
+      <td>0.425329</td>
+      <td>32576.747961</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x85dfa1914a85a35eaf6bd92610e9445aef779b9914e002fbe215b8ff4ce014bb rel="noopener noreferrer" target="_blank">0x85dfa19</a></th>
+      <td>0.418286</td>
+      <td>119441.781099</td>
+      <td>False</td>
+      <td>3 weeks</td>
+      <td>3 weeks</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x2195f928cbdc60438d6fa515a522347c883d28a07a156f94d6638332df4f0da6 rel="noopener noreferrer" target="_blank">0x2195f92</a></th>
+      <td>0.413472</td>
+      <td>22284.054392</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x7cb25c76dbd390de1a17165063eaaf2b3d63dc5242f667728faab405d945c2df rel="noopener noreferrer" target="_blank">0x7cb25c7</a></th>
+      <td>0.410429</td>
+      <td>33759.437595</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xf1c86cfd8014d7fd272e1a9a4eca36c2bddbcbbc902f8d1accce808cca26cb07 rel="noopener noreferrer" target="_blank">0xf1c86cf</a></th>
+      <td>0.395280</td>
+      <td>35007.157666</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x6bfce2921d14a8eb9fb5912637604dbbe5c5aa14624171270894ebafbc0b6b57 rel="noopener noreferrer" target="_blank">0x6bfce29</a></th>
+      <td>0.387319</td>
+      <td>70655.610868</td>
+      <td>False</td>
+      <td>Approve Separation</td>
+      <td>Approve Separation</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x5691b6eff7a6911116d6e441784fe4319de5733df8900f97a5a50c7eba686de6 rel="noopener noreferrer" target="_blank">0x5691b6e</a></th>
+      <td>0.385792</td>
+      <td>35009.047856</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xebd59bf0de0e4f92adb0705cf8269524dd573a0d7083caa5e758243f82d167c3 rel="noopener noreferrer" target="_blank">0xebd59bf</a></th>
+      <td>0.371077</td>
+      <td>98928.555662</td>
+      <td>False</td>
+      <td>Option 1</td>
+      <td>Option 1</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0xddb21b336a82c3f9d4775e79afb7872c935e7bf948272b8bce6fd7858d1d4e22 rel="noopener noreferrer" target="_blank">0xddb21b3</a></th>
+      <td>0.360722</td>
+      <td>38360.897144</td>
+      <td>False</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/hectordao.eth/proposal/0x499c7f337d4a5625b341ab4b90432b9a5228e0c7bc5901cd62d82200d4bb558e rel="noopener noreferrer" target="_blank">0x499c7f3</a></th>
+      <td>0.337037</td>
+      <td>130440.649365</td>
+      <td>True</td>
+      <td>Approve additional Investment</td>
+      <td>Don't Approve</td>
+    </tr>
+  </tbody>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_differences_dfs</span><span class="p">[</span><span class="s2">&quot;Hector Network&quot;</span><span class="p">][</span><span class="s2">&quot;outcome_changed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False    0.942029
+True     0.057971
+Name: outcome_changed, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="n">score_differences_dfs</span><span class="p">[</span><span class="s2">&quot;Vesta&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s2">&quot;total_vp&quot;</span><span class="p">:</span> <span class="s2">&quot;float64&quot;</span><span class="p">},</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;score_differences&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;whale_vp_proportion&quot;</span><span class="p">,</span> <span class="s2">&quot;total_vp&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">render_links</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">escape</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>whale_vp_proportion</th>
+      <th>total_vp</th>
+      <th>outcome_changed</th>
+      <th>outcome_old</th>
+      <th>outcome_new</th>
+    </tr>
+    <tr>
+      <th>Proposal ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href=http://snapshot.org/#/vestafinance.eth/proposal/0x4a478d34c61ac0fbb8b68bb7f144a44a285f159c0ae2315f4d0e449bbe81ede4 rel="noopener noreferrer" target="_blank">0x4a478d3</a></th>
+      <td>0.999585</td>
+      <td>5.153223e+05</td>
+      <td>False</td>
+      <td>Restructure as outlined</td>
+      <td>Restructure as outlined</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/vestafinance.eth/proposal/0x02ada853586a9fa9b8917952aa88c4dea2cd935d4282b9bf6edaa39301d8ec98 rel="noopener noreferrer" target="_blank">0x02ada85</a></th>
+      <td>0.987708</td>
+      <td>3.364918e+05</td>
+      <td>False</td>
+      <td>add VRR and halt redemption</td>
+      <td>add VRR and halt redemption</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/vestafinance.eth/proposal/0xd22f9ab2536efd9b777c83267838cc3968635fff84eea6af92772f75b483e64d rel="noopener noreferrer" target="_blank">0xd22f9ab</a></th>
+      <td>0.902557</td>
+      <td>1.218759e+06</td>
+      <td>True</td>
+      <td>agree with this term and proceed</td>
+      <td>re-evaluate the term</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/vestafinance.eth/proposal/0x128bc7351ba71002e4adade7fb4075cdde7e43ec03c3abb782464d7e75dcd6e6 rel="noopener noreferrer" target="_blank">0x128bc73</a></th>
+      <td>0.817738</td>
+      <td>2.568059e+05</td>
+      <td>False</td>
+      <td>For Unvested Token Swap</td>
+      <td>For Unvested Token Swap</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/vestafinance.eth/proposal/0xe36d551482b09146ce84f001a3b45510bc75445b5c22593f28643856cbb9adff rel="noopener noreferrer" target="_blank">0xe36d551</a></th>
+      <td>0.810129</td>
+      <td>1.234371e+06</td>
+      <td>False</td>
+      <td>Yes, engage Risk DAO</td>
+      <td>Yes, engage Risk DAO</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/vestafinance.eth/proposal/0xec88562c9c948d9e565468b4cd67628030221a10e77e28542ac6c6a8212e5102 rel="noopener noreferrer" target="_blank">0xec88562</a></th>
+      <td>0.663747</td>
+      <td>3.886962e+04</td>
+      <td>False</td>
+      <td>For</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/vestafinance.eth/proposal/0x5887b4d9ca353bb8af8e73518299f2d602a3e9b5e5de42e1ac3b3892d1834720 rel="noopener noreferrer" target="_blank">0x5887b4d</a></th>
+      <td>0.281922</td>
+      <td>4.341528e+05</td>
+      <td>False</td>
+      <td>Remove GMX performance fee</td>
+      <td>Remove GMX performance fee</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/vestafinance.eth/proposal/0x938268e18067861a530c1e6d8f087baa2bfd7b743f7c2febc7c243cfd4fc125d rel="noopener noreferrer" target="_blank">0x938268e</a></th>
+      <td>0.078807</td>
+      <td>2.727852e+05</td>
+      <td>False</td>
+      <td>For</td>
+      <td>For</td>
+    </tr>
+  </tbody>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">score_differences_dfs</span><span class="p">[</span><span class="s2">&quot;Vesta&quot;</span><span class="p">][</span><span class="s2">&quot;outcome_changed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False    0.875
+True     0.125
+Name: outcome_changed, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>
