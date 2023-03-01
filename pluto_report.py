@@ -106,7 +106,7 @@ async def get_proposal_payload(proposal: dict, dao_metadata: dict) -> dict | Non
     print(f"\tprocessing proposal {proposal['id']}")
     dao_id, token_metadata, _ = dao_metadata.values()
 
-    proposal_id = proposal["id"]
+    proposal_id: str = proposal["id"]
     payload = {proposal_id: dict()}
 
     proposal["space_name"] = proposal["space"]["name"]
@@ -201,23 +201,23 @@ def get_snapshot_dataframe(dao_snapshot_vote_data: list[dict]) -> pd.DataFrame:
     )
 
 
-def get_all_snapshot_dataframes_for_dao(
-    dao_snapshot_datas: list[dict],
+def get_all_proposal_dataframes(
+    dao_snapshot_datas: list[dict[str, dict]],
 ) -> list[pd.DataFrame]:
     print("Generating DFs for dao snapshot data")
-    dao_snapshot_dfs = []
-    for snapshot_data in dao_snapshot_datas:
-        for proposal in snapshot_data.values():
-            dao_snapshot_dfs.append(get_snapshot_dataframe(proposal["votes"]))
+    proposal_dfs = []
+    for dao in dao_snapshot_datas:
+        for proposal in dao.values():
+            proposal_dfs.append(get_snapshot_dataframe(proposal["votes"]))
 
-    return dao_snapshot_dfs
-
-
-snapshot_datas = asyncio_run(get_all_dao_snapshot_data(50, 20, 100))
-snapshot_dataframes = get_all_snapshot_dataframes_for_dao(snapshot_datas)
+    return proposal_dfs
 
 
-def filter_top_shareholders_from_df(snapshot_df: pd.DataFrame) -> pd.DataFrame:
+raw_dao_data = asyncio_run(get_all_dao_snapshot_data(85, 60, 100))
+proposal_dataframes = get_all_proposal_dataframes(raw_dao_data)
+
+
+def filter_top_shareholders_from_df(proposal_df: pd.DataFrame) -> pd.DataFrame:
     def reaggregate_votes(
         unfiltered_proposal: pd.DataFrame, top_shareholders: pd.Series
     ) -> pd.DataFrame:
@@ -235,50 +235,46 @@ def filter_top_shareholders_from_df(snapshot_df: pd.DataFrame) -> pd.DataFrame:
 
         return result
 
-    top_shareholders_df = get_quartile_by_vp(snapshot_df, 0.95)
+    top_shareholders_df = get_quartile_by_vp(proposal_df, 0.95)
     top_shareholder_addresses = top_shareholders_df["voter"]
-    reaggregated_snapshot_df = reaggregate_votes(snapshot_df, top_shareholder_addresses)
-    if not reaggregated_snapshot_df.empty:
-        snapshot_df = reaggregated_snapshot_df
+    reaggregated_proposal_df = reaggregate_votes(proposal_df, top_shareholder_addresses)
+    if not reaggregated_proposal_df.empty:
+        proposal_df = reaggregated_proposal_df
     return (
-        snapshot_df.loc[
+        proposal_df.loc[
             lambda df: [voter not in top_shareholder_addresses for voter in df["voter"]]
         ]
     ).drop(["voter", "id"], axis=1)
 
 
 def filter_top_shareholders_from_all_dfs(
-    snapshot_dfs: list[pd.DataFrame],
+    proposal_dfs: list[pd.DataFrame],
 ) -> list[pd.DataFrame]:
     print("Filtereing out top 10 holders for each dao")
     filtered_dfs = []
-    for snapshot_df in snapshot_dfs:
-        snapshot_df_copy = snapshot_df.copy()
-        try:
-            snapshot_df_copy["proposal_scores"] = deepcopy(
-                snapshot_df["proposal_scores"].values
-            )
-        except KeyError:
-            pp.pprint(snapshot_df)
-            raise
-        filtered_dfs.append(filter_top_shareholders_from_df(snapshot_df_copy))
+    for proposal_df in proposal_dfs:
+        proposal_df_copy = proposal_df.copy()
+        proposal_df_copy["proposal_scores"] = deepcopy(
+            proposal_df["proposal_scores"].values
+        )
+        filtered_dfs.append(filter_top_shareholders_from_df(proposal_df_copy))
     return filtered_dfs
 
 
-filtered_snapshot_dfs = filter_top_shareholders_from_all_dfs(snapshot_dataframes)
+filtered_proposal_dfs = filter_top_shareholders_from_all_dfs(proposal_dataframes)
 
 
 def merge_organization_dataframes(
-    filtered_snapshot_dfs: list[pd.DataFrame],
+    filtered_proposal_dfs: list[pd.DataFrame],
 ) -> list[pd.DataFrame]:
     organization_map: dict[str, list[pd.DataFrame]] = dict()
-    for snapshot_df in filtered_snapshot_dfs:
-        if snapshot_df.empty:
+    for proposal_df in filtered_proposal_dfs:
+        if proposal_df.empty:
             continue
-        organization_name: str = snapshot_df.iloc[0]["proposal_space_name"]
+        organization_name: str = proposal_df.iloc[0]["proposal_space_name"]
         if organization_name not in organization_map.keys():
             organization_map[organization_name] = []
-        organization_map[organization_name].append(snapshot_df)
+        organization_map[organization_name].append(proposal_df)
 
     organization_dfs = []
     for organization in organization_map.keys():
@@ -288,7 +284,7 @@ def merge_organization_dataframes(
     return organization_dfs
 
 
-organization_dataframes = merge_organization_dataframes(filtered_snapshot_dfs)
+organization_dataframes = merge_organization_dataframes(filtered_proposal_dfs)
 
 
 def export_organization_dataframes_to_xls(
@@ -307,12 +303,8 @@ def export_organization_dataframes_to_xls(
     print("Done")
 
 
-# pd.set_option("display.width", 4000)
-# pd.set_option("display.max_columns", 1000)
-# [print(df, end="\n\n") for df in organization_dataframes]
-
 export_organization_dataframes_to_xls(
-    merge_organization_dataframes(snapshot_dataframes), "./plutocracy_report.xlsx"
+    merge_organization_dataframes(proposal_dataframes), "./plutocracy_report.xlsx"
 )
 export_organization_dataframes_to_xls(
     organization_dataframes, "./plutocracy_report_filtered.xlsx"
