@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - "book/plutocracy_report.ipynb"
-      - ".github/workflows/publish_report"
+      - ".github/workflows/publish_report.yml"
     branches:
       - main
 
