@@ -273,6 +273,18 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#radicle">
+   Radicle
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Proportion of Outcomes Changed
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </nav>
@@ -343,6 +355,18 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#radicle">
+   Radicle
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Proportion of Outcomes Changed
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                         </nav>
@@ -364,7 +388,7 @@ title="Print to PDF"
 <div class="cell tag_remove-input tag_remove-output docutils container">
 </div>
 <p>We then ask the following question: <strong>How many whales have voted up to the last 100 proposals for each of the DAOs we analyzed?</strong> Voting power for each of these DAOs varies by the type of <a class="reference external" href="https://docs.snapshot.org/strategies/what-is-a-strategy">voting strategy</a> outlined in their respective Snapshot spaces.</p>
-<p>However, to keep this analysis simple, we assume the common <code class="docutils literal notranslate"><span class="pre">erc-20-balance</span></code> strategy and define the cost of voting power (<code class="docutils literal notranslate"><span class="pre">vp</span></code>) as the US dollar value of a DAO’s native token at the time of the proposal.</p>
+<p>However, to keep this analysis simple, we assume the common <code class="docutils literal notranslate"><span class="pre">erc-20-balance</span></code> strategy.</p>
 <div class="cell tag_remove-input docutils container">
 </div>
 <div class="cell tag_remove-input docutils container">
@@ -671,7 +695,7 @@ title="Print to PDF"
 </table>
 </div></div></div>
 </div>
-<p>Here we see that there are quite a few proposals whose outcomes would’ve changed if whales were not involved, in this analysis, we take a look at some of these cases in Uniswap, Decentraland and Curve Finance in particular.</p>
+<p>Here we see that there are quite a few proposals whose outcomes would’ve changed if whales were not involved, in this analysis, we take a look at some of these cases in Decentraland, Curve Finance and Radicle in particular.</p>
 <hr class="docutils" />
 <p>Next, we take a look at how governance decisions are affected once whale votes are discounted. We do so by comparing the scores of each proposal and checking whether the outcome of the proposal is changed when whales are filtered out.</p>
 <p>We check whether a proposal’s outcome changes by checking if the largest vote choice score changes after filtering out whales. Specifically, in python we do the following:</p>
@@ -684,7 +708,7 @@ title="Print to PDF"
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#proportion-of-outcomes-changed" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input tag_full-width docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.46% of Uniswap&#39;s proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.46% of Uniswap&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -745,7 +769,7 @@ title="Print to PDF"
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input tag_full-width docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23.00% of Decentraland&#39;s proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23.00% of Decentraland&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -805,7 +829,7 @@ title="Print to PDF"
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input tag_full-width docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.93% of Curve Finance&#39;s proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.93% of Curve Finance&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -858,6 +882,60 @@ title="Print to PDF"
 </div>
 <p>Just over 4% of voting power for this proposal was allocated by whales to vote “Yes” (which is just over half the total voting power allocated to the “Yes” choice for this proposal), whereas ~89% of whale voting power was allocated to voting “NO” (~97% of total voting power for this choice).</p>
 <p>It’s important to highlight that whales are also sensible and not always “evil”, which I would classify as entities that promote proposals that are detrimental to the DAO for their own interests. It’s a good thing that CRV whales didn’t have an incentive to pass this proposal as well.</p>
+<p>Just over 10% of whale voting power for this proposal was allocated to voting “Aye” on this proposal (~27% of voting power allocated to the “Aye” choice came from whales). Whereas ~45% of voting power from whales was allocated to the “Nay” choice (~73% of whale voting power allocated to “Nay”).</p>
+</section>
+</section>
+<section id="radicle">
+<h2>Radicle<a class="headerlink" href="#radicle" title="Permalink to this headline">#</a></h2>
+<section id="id5">
+<h3>Proportion of Outcomes Changed<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.18% of Radicle&#39;s proposal outcomes change after filtering out whale voting power.
+</pre></div>
+</div>
+</div>
+</div>
+<p>One such proposal was the one to <a class="reference external" href="https://snapshot.org/#/gov.radicle.eth/proposal/QmepPgXwo5q9GipZFKa32rnxaYoo3LrfRqduinftbU3L3S">distribute RAD remaining</a> following a Liquidity Bootsrapping (LBP) round conducted in February ‘21. This leftover RAD was proposed to be redistributed to participants of the LBP, i.e. people who bought RAD in this period from the Balancer LBP for RAD tokens.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Aye</th>
+      <th>Nay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>78136.278442</td>
+      <td>123126.401817</td>
+    </tr>
+    <tr>
+      <th>Score Differences</th>
+      <td>20708.270722</td>
+      <td>90218.650933</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 <p>Just over 10% of whale voting power for this proposal was allocated to voting “Aye” on this proposal (~27% of voting power allocated to the “Aye” choice came from whales). Whereas ~45% of voting power from whales was allocated to the “Nay” choice (~73% of whale voting power allocated to “Nay”).</p>
 </section>
 </section>
