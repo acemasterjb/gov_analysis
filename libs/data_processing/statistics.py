@@ -1,7 +1,5 @@
 import pandas as pd
 
-from .filters import get_quartile_by_vp
-
 
 def get_number_of_whales_to_all_voters_ratio(
     dao_proposals: dict[str, pd.DataFrame],
@@ -14,9 +12,7 @@ def get_number_of_whales_to_all_voters_ratio(
             all_proposals_filtered = dao_proposals_filtered[organization]
         except KeyError:
             continue
-        top_shareholders_df = get_quartile_by_vp(all_proposals, 0.95)
-        top_shareholders_addresses = top_shareholders_df["voter"]
-        tally = {organization: [0, 0, 0, 0, 0]}
+        tally = {organization: [0, 0]}
 
         num_of_voters = all_proposals["voter"].unique().shape[0]
         num_of_voters_filtered = (
@@ -24,13 +20,6 @@ def get_number_of_whales_to_all_voters_ratio(
         )
         tally[organization][0] = num_of_voters - num_of_voters_filtered
         tally[organization][1] = num_of_voters
-        tally[organization][2] = all_proposals_filtered["vp"].mean()
-        tally[organization][3] = all_proposals.loc[
-            lambda df: [
-                voter in top_shareholders_addresses.values for voter in df["voter"]
-            ]
-        ]["vp"].mean()
-        tally[organization][4] = all_proposals["cost_per_vote"].mean()
         ratios.append(tally)
 
     return ratios
