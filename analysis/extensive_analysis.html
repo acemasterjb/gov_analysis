@@ -952,7 +952,7 @@ title="Print to PDF"
 <div class="cell tag_remove-input tag_remove-output docutils container">
 </div>
 <p>We then ask the following question: <strong>How many whales have voted up to the last 100 proposals for each of the DAOs we analyzed?</strong> Voting power for each of these DAOs varies by the type of <a class="reference external" href="https://docs.snapshot.org/strategies/what-is-a-strategy">voting strategy</a> outlined in their respective Snapshot spaces.</p>
-<p>However, to keep this analysis simple, we assume the common <code class="docutils literal notranslate"><span class="pre">erc-20-balance</span></code> strategy and define the cost of voting power (<code class="docutils literal notranslate"><span class="pre">vp</span></code>) as the US dollar value of a DAO’s native token at the time of the proposal.</p>
+<p>However, to keep this analysis simple, we assume the common <code class="docutils literal notranslate"><span class="pre">erc-20-balance</span></code> strategy.</p>
 <div class="cell tag_remove-input docutils container">
 </div>
 <div class="cell tag_remove-input docutils container">
@@ -1259,7 +1259,7 @@ title="Print to PDF"
 </table>
 </div></div></div>
 </div>
-<p>Here we see that there are quite a few proposals whose outcomes would’ve changed if whales were not involved, in this analysis, we take a look at some of these cases in Uniswap, Decentraland and Curve Finance in particular.</p>
+<p>Here we see that there are quite a few proposals whose outcomes would’ve changed if whales were not involved, in this analysis, we take a look at some of these cases in Uniswap, Decentraland, Curve Finance and Radicle in particular.</p>
 <hr class="docutils" />
 <p>Next, we take a look at how governance decisions are affected once whale votes are discounted. We do so by comparing the scores of each proposal and checking whether the outcome of the proposal is changed when whales are filtered out.</p>
 <p>We check whether a proposal’s outcome changes by checking if the largest vote choice score changes after filtering out whales. Specifically, in python we do the following:</p>
@@ -1932,7 +1932,7 @@ title="Print to PDF"
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#proportion-of-outcomes-changed" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.46% of Uniswap&#39;s proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.46% of Uniswap&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -2290,7 +2290,7 @@ title="Print to PDF"
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.57% of ENS&#39; proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.57% of ENS&#39; proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -3131,7 +3131,7 @@ title="Print to PDF"
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.00% of Lido&#39;s proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.00% of Lido&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -4018,7 +4018,7 @@ title="Print to PDF"
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.00% of Frax&#39;s proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.00% of Frax&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -4860,7 +4860,7 @@ title="Print to PDF"
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23.00% of Decentraland&#39;s proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23.00% of Decentraland&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -5633,7 +5633,7 @@ title="Print to PDF"
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.93% of Curve Finance&#39;s proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.93% of Curve Finance&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -5807,7 +5807,7 @@ title="Print to PDF"
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.18% of Radicle&#39;s proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.18% of Radicle&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -6593,7 +6593,7 @@ title="Print to PDF"
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.50% of Gitcoin&#39;s proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.50% of Gitcoin&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -7050,7 +7050,7 @@ title="Print to PDF"
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.46% of Euler&#39;s proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13.46% of Euler&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -7163,7 +7163,7 @@ title="Print to PDF"
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.00% of Gearbox&#39;s proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.00% of Gearbox&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -7332,7 +7332,7 @@ title="Print to PDF"
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id18" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.00% of SuperRare DAO&#39;s proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.00% of SuperRare DAO&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -7557,7 +7557,7 @@ title="Print to PDF"
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id20" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.35% of Hop&#39;s proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.35% of Hop&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -8006,7 +8006,7 @@ title="Print to PDF"
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id22" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.84% of JPEG’d&#39;s proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.84% of JPEG’d&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -8255,7 +8255,7 @@ title="Print to PDF"
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id24" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.00% of Merit Circle&#39;s proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.00% of Merit Circle&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -9080,7 +9080,7 @@ title="Print to PDF"
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id26" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.14% of Aavegotchi&#39;s proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.14% of Aavegotchi&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -9409,7 +9409,7 @@ title="Print to PDF"
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id28" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.56% of Rook&#39;s proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.56% of Rook&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -10002,7 +10002,7 @@ title="Print to PDF"
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id30" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.59% of ApeCoin DAO&#39;s proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.59% of ApeCoin DAO&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -10307,7 +10307,7 @@ title="Print to PDF"
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id32" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.00% of Klima DAO&#39;s proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.00% of Klima DAO&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -10900,7 +10900,7 @@ title="Print to PDF"
 <h3>Proportion of Outcomes Changed<a class="headerlink" href="#id34" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.80% of Hector Network&#39;s proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.80% of Hector Network&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -11005,7 +11005,7 @@ title="Print to PDF"
 <h3>Filtered Proposals Analysis<a class="headerlink" href="#id36" title="Permalink to this headline">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.50% of Vesta&#39;s proposal outcomes change after fitering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.50% of Vesta&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
