@@ -1,4 +1,4 @@
-name: publish-book
+name: publish-book-report
 
 on:
   push:
@@ -36,3 +36,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./book/_build/_page/plutocracy_report/html
           destination_dir: ./report/
+          allow_empty_commit: true

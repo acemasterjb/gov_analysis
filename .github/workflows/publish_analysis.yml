@@ -1,4 +1,4 @@
-name: publish-book
+name: publish-book-analysis
 
 on:
   push:
@@ -36,3 +36,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./book/_build/_page/extensive_analysis/html
           destination_dir: ./analysis/
+          allow_empty_commit: true
