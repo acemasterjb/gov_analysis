@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "book/**"
+      - ".github/workflows"
     branches:
       - main
 
@@ -28,25 +29,18 @@ jobs:
       - name: Build the books
         run: |
           jupyter-book build ./book/plutocracy_report.ipynb
-          # jupyter-book build ./book/extensive_analysis.ipynb
+          jupyter-book build ./book/extensive_analysis.ipynb
 
       - name: GitHub Pages publish Report
-        uses: peaceiris/actions-gh-pages@v3.6.1
+        uses: peaceiris/actions-gh-pages@v3.9.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./book/_build/_page/plutocracy_report/html
-          destination_dir: ./books
+          destination_dir: ./report/
 
-      - name: GitHub Pages publish Report
-        uses: peaceiris/actions-gh-pages@v3.6.1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./book/_build/_page/plutocracy_report/html
-          destination_dir: ./books/plutocracy_report
-
-      - name: GitHub Pages publish Extensive Analysis
-        uses: peaceiris/actions-gh-pages@v3.6.1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./book/_build/_page/extensive_analysis/html
-          destination_dir: ./books/extensive_analysis
+      # - name: GitHub Pages publish Extensive Analysis
+      #   uses: peaceiris/actions-gh-pages@v3.6.1
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./book/_build/_page/extensive_analysis/html
+      #     keep_files: true
