@@ -1,0 +1,4 @@
+Proposal ID,score_differences,whale_vp_proportion,total_vp,outcome_changed,outcome_old,outcome_new
+0xc7daa484f42412d007c3fcbdc46bc2c7a3d17746e31faa741470670e97c7fc56,"[1153497.1363351413, 0.0]",0.6416801307100564,1797620.155479537,False,"Yes, Change Voting Parameters","Yes, Change Voting Parameters"
+0xff581c679917bb267de717d3d7f010ed3fbda471773f7f00df028d5d11222289,"[454186.39938208275, 0]",0.42813198389362805,1060856.036149189,False,Yes create PSB-SGB SuperFarm,Yes create PSB-SGB SuperFarm
+0x31c98356e0d161b487793adfac1b3ab20bb2c3dccd85e9b76c979a3f9114b988,"[0.0, 269623.0322505705, 211763.73543087277]",0.3314449322017448,1452388.378617391,False,Option 3,Option 3
