@@ -10,4 +10,4 @@ pip install -r ./requirements.txt
 ```bash
 python pluto_report.py
 ```
-A `xls` file will be generated in the cloned project's root as `plutocracy_report.xls`.
+A `xlsx` file will be generated in the cloned project's `plutocracy_data/full_report` directory as `plutocracy_report.xlsx`.

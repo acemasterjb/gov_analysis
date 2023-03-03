@@ -3,7 +3,7 @@ name: publish-book-report
 on:
   push:
     paths:
-      - "book/plutocracy_report.ipynb"
+      - "book/**"
       - ".github/workflows/publish_report.yml"
     branches:
       - main
