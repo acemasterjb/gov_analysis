@@ -4,3 +4,5 @@ openpyxl==3.0.10
 pandas==1.5.2
 matplotlib==3.6.2
 jupyter-book==0.13.1
+tenacity==8.2.2
+aiohttp==3.8.4
