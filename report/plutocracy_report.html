@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Plutocracy Report &#8212; My Jupyter Book</title>
+    <title>How decisive are whales votes? &#8212; My Jupyter Book</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -223,65 +223,92 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#uniswap">
-   Uniswap
+  <a class="reference internal nav-link" href="#aims-of-this-report">
+   Aims of this report
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#takeaways">
+   Takeaways
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculations">
+   Calculations
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#proportion-of-outcomes-changed">
-     Proportion of Outcomes Changed
+    <a class="reference internal nav-link" href="#load-data">
+     Load data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#proposal-analysis">
-     Proposal Analysis
+    <a class="reference internal nav-link" href="#compute-score-differences">
+     Compute score differences
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#synthesis">
+     Synthesis
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#decentraland">
-   Decentraland
+  <a class="reference internal nav-link" href="#case-studies">
+   Case studies
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Proportion of Outcomes Changed
+    <a class="reference internal nav-link" href="#decentraland">
+     Decentraland
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#proportion-of-outcomes-changed">
+       Proportion of Outcomes Changed:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#proposal-analysis">
+       Proposal Analysis:
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Proposal Analysis
+    <a class="reference internal nav-link" href="#curve-finance">
+     Curve Finance
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Proportion of Outcomes Changed:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Proposal Analysis:
+      </a>
+     </li>
+    </ul>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#curve-finance">
-   Curve Finance
-  </a>
-  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Proportion of Outcomes Changed
+    <a class="reference internal nav-link" href="#radicle">
+     Radicle
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Proposal Analysis
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#radicle">
-   Radicle
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     Proportion of Outcomes Changed
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Proportion of Outcomes Changed:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Proposal Analysis:
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -294,7 +321,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Plutocracy Report</h1>
+                <h1>How decisive are whales votes?</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -305,65 +332,92 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#uniswap">
-   Uniswap
+  <a class="reference internal nav-link" href="#aims-of-this-report">
+   Aims of this report
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#takeaways">
+   Takeaways
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculations">
+   Calculations
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#proportion-of-outcomes-changed">
-     Proportion of Outcomes Changed
+    <a class="reference internal nav-link" href="#load-data">
+     Load data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#proposal-analysis">
-     Proposal Analysis
+    <a class="reference internal nav-link" href="#compute-score-differences">
+     Compute score differences
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#synthesis">
+     Synthesis
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#decentraland">
-   Decentraland
+  <a class="reference internal nav-link" href="#case-studies">
+   Case studies
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     Proportion of Outcomes Changed
+    <a class="reference internal nav-link" href="#decentraland">
+     Decentraland
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#proportion-of-outcomes-changed">
+       Proportion of Outcomes Changed:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#proposal-analysis">
+       Proposal Analysis:
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     Proposal Analysis
+    <a class="reference internal nav-link" href="#curve-finance">
+     Curve Finance
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Proportion of Outcomes Changed:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Proposal Analysis:
+      </a>
+     </li>
+    </ul>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#curve-finance">
-   Curve Finance
-  </a>
-  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     Proportion of Outcomes Changed
+    <a class="reference internal nav-link" href="#radicle">
+     Radicle
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Proposal Analysis
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#radicle">
-   Radicle
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     Proportion of Outcomes Changed
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Proportion of Outcomes Changed:
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Proposal Analysis:
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -377,24 +431,67 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="plutocracy-report">
-<h1>Plutocracy Report<a class="headerlink" href="#plutocracy-report" title="Permalink to this headline">#</a></h1>
-<p>This article aims to analyze the top 60 Decentralised Autonomous Organizations (DAOs), ranked by <a class="reference external" href="https://deepdao.io/">treasury size</a> to determine the impact of large token holders on their governance.</p>
-<p>For this, we create a report based on on-chain data about proposals and voters. This report will focus on three proposals and assess their <em>decisiveness of whales</em> metric, representing how governance decisions are affected once whale votes are discounted. For an analysis of the decisiveness of whales for all 60 DAOs, check out our <a class="reference external" href="https://acemasterjb.github.io/gov_analysis/analysis/extensive_analysis">extensive report here</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="how-decisive-are-whales-votes">
+<h1>How decisive are whales votes?<a class="headerlink" href="#how-decisive-are-whales-votes" title="Permalink to this headline">#</a></h1>
+<section id="aims-of-this-report">
+<h2>Aims of this report<a class="headerlink" href="#aims-of-this-report" title="Permalink to this headline">#</a></h2>
+<p>This article aims to analyze the top 60 DAOs, ranked by <a class="reference external" href="https://deepdao.io/">treasury size</a> to determine the impact of large token holders (whales) on their governance.</p>
+<p>Our main contribution is the <strong><em>whale decisiveness</em> metric</strong>, representing how governance decisions in a given DAO are affected by whale votes.</p>
+<p>In this report we produce:</p>
+<ul class="simple">
+<li><p>The whale decisiveness metric on each of the top 60 DAOs.</p></li>
+<li><p>On three proposals, a case study on how large was the influence of whales in their outcome.</p></li>
+</ul>
+<p>For the purpose of this report, whales are defined as the <strong>top 5% voters in terms of voting power</strong> for a given proposal (voters with voting power at or above the 95th percentile of voting power for that proposal).<br />
+Whale decisiveness is defined for each DAO as the percentage of proposals which <strong>outcome would have been changed if whales hadn’t voted</strong>.</p>
+<p>This report relies on on-chain data as well as Snapshot data about proposals and voters.<br />
+For more detailed data and case studies, check out our <a class="reference external" href="https://acemasterjb.github.io/gov_analysis/analysis/extensive_analysis">extensive report here</a>.</p>
+<p>This is a work in progress and will get updated with newer learnings, so stay tuned!</p>
+</section>
+<section id="takeaways">
+<h2>Takeaways<a class="headerlink" href="#takeaways" title="Permalink to this headline">#</a></h2>
+<p>Out of 60 DAOs:</p>
+<ul class="simple">
+<li><p>5 of them (8%) have a whale decisiveness metric &gt; 20%.</p></li>
+<li><p>16 of them (27%) have whale decisiveness &gt; 10%.</p></li>
+</ul>
+<p>Meaning that in 16 DAOs, whales votes have produced a different outcome than minority votes in 10 proposals of the last 100.</p>
+<p>Looking at some of these proposals (in Decentraland, Curve Finance and Radicle) in detail, we start having a hint at the reasons why whale votes were diverging from minority votes. Namely:</p>
+<ul class="simple">
+<li><p>Massive whale voting power dominance coupled with meager participation from minority holders.</p></li>
+<li><p>Divergence of interests.</p></li>
+</ul>
+</section>
+<section id="calculations">
+<h2>Calculations<a class="headerlink" href="#calculations" title="Permalink to this headline">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 </div>
-<p>Our data sources include DeepDAO and Snapshot, both of which specialize in providing data on DAO governance. We also use Coingecko to find market data for DAO governance tokens.</p>
-<p>Using this data, we compile two spreadsheets that act as the local database for this analysis. Each spreadsheet contains each voter’s choice and voting power for up to the last one hundred proposals in each DAO. <strong>One spreadsheet filters out “whales”</strong> which, in the context of this analysis, are voters that have voting power <strong>at or above the 95th percentile of voting power for that proposal</strong>.</p>
+<section id="load-data">
+<h3>Load data<a class="headerlink" href="#load-data" title="Permalink to this headline">#</a></h3>
+<p>Two spreadsheets are generated using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">pluto_report.py</span></code> (see the README).</p>
+<p>They contains each voter’s choice and voting power for up to the last one hundred proposals in each DAO. The “filtered” spreadsheet filters out whales.</p>
 <div class="cell tag_remove-input tag_remove-output docutils container">
 </div>
-<p>We then ask the following question: <strong>How many whales have voted up to the last 100 proposals for each of the DAOs we analyzed?</strong> Voting power for each of these DAOs varies by the type of <a class="reference external" href="https://docs.snapshot.org/strategies/what-is-a-strategy">voting strategy</a> outlined in their respective Snapshot spaces.</p>
-<p>However, to keep this analysis simple, we assume the common <code class="docutils literal notranslate"><span class="pre">erc-20-balance</span></code> strategy.</p>
 <div class="cell tag_remove-input docutils container">
 </div>
+</section>
+<section id="compute-score-differences">
+<h3>Compute score differences<a class="headerlink" href="#compute-score-differences" title="Permalink to this headline">#</a></h3>
+<p>For each choice of each proposal, get:</p>
+<ul class="simple">
+<li><p>Actual score.</p></li>
+<li><p>Hypothetical score that would have been produced if whales didn’t vote.</p></li>
+</ul>
+<p>Then compute if the outcome is different, meaning if the outcome would have been changed if whales didn’t vote.</p>
+<p>Then compute, for each DAO, the changed outcome propotion among the last 100 proposals.</p>
 <div class="cell tag_remove-input docutils container">
 </div>
 <div class="cell tag_remove-input tag_remove-output docutils container">
 </div>
+</section>
+<section id="synthesis">
+<h3>Synthesis<a class="headerlink" href="#synthesis" title="Permalink to this headline">#</a></h3>
+<p>For each DAO, show the %age of proposals which outcome would have been changed if whales didn’t vote.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -417,7 +514,7 @@ title="Print to PDF"
       <th></th>
       <th># of whales</th>
       <th>all voters</th>
-      <th>changed outcomes %</th>
+      <th>whale decisiveness</th>
     </tr>
     <tr>
       <th>DAO</th>
@@ -431,353 +528,289 @@ title="Print to PDF"
       <th>Uniswap</th>
       <td>801</td>
       <td>23136</td>
-      <td>16.46%</td>
+      <td>16%</td>
     </tr>
     <tr>
       <th>ENS</th>
       <td>321</td>
       <td>9742</td>
-      <td>3.57%</td>
+      <td>4%</td>
     </tr>
     <tr>
       <th>Lido</th>
       <td>143</td>
       <td>4664</td>
-      <td>6.00%</td>
+      <td>6%</td>
     </tr>
     <tr>
       <th>Frax</th>
       <td>1</td>
       <td>339</td>
-      <td>4.00%</td>
+      <td>4%</td>
     </tr>
     <tr>
       <th>Curve Finance</th>
       <td>21</td>
       <td>285</td>
-      <td>20.93%</td>
+      <td>21%</td>
     </tr>
     <tr>
       <th>Decentraland</th>
       <td>62</td>
       <td>1768</td>
-      <td>23.00%</td>
+      <td>23%</td>
     </tr>
     <tr>
       <th>Hop</th>
       <td>30</td>
       <td>1483</td>
-      <td>4.35%</td>
+      <td>4%</td>
     </tr>
     <tr>
       <th>Radicle</th>
       <td>18</td>
       <td>395</td>
-      <td>18.18%</td>
+      <td>18%</td>
     </tr>
     <tr>
       <th>Gitcoin</th>
       <td>189</td>
       <td>6258</td>
-      <td>12.50%</td>
+      <td>12%</td>
     </tr>
     <tr>
       <th>Euler</th>
       <td>29</td>
       <td>780</td>
-      <td>13.46%</td>
+      <td>13%</td>
     </tr>
     <tr>
       <th>Gearbox</th>
       <td>32</td>
       <td>881</td>
-      <td>0.00%</td>
+      <td>0%</td>
     </tr>
     <tr>
       <th>SuperRare DAO</th>
       <td>17</td>
       <td>563</td>
-      <td>0.00%</td>
+      <td>0%</td>
     </tr>
     <tr>
       <th>Merit Circle</th>
       <td>16</td>
       <td>981</td>
-      <td>0.00%</td>
+      <td>0%</td>
     </tr>
     <tr>
       <th>JPEG’d</th>
       <td>29</td>
       <td>837</td>
-      <td>7.84%</td>
+      <td>8%</td>
     </tr>
     <tr>
       <th>Aavegotchi</th>
       <td>50</td>
       <td>5702</td>
-      <td>7.14%</td>
+      <td>7%</td>
     </tr>
     <tr>
       <th>Rook</th>
       <td>11</td>
       <td>261</td>
-      <td>5.56%</td>
+      <td>6%</td>
     </tr>
     <tr>
       <th>ApeCoin DAO</th>
       <td>192</td>
       <td>6812</td>
-      <td>11.59%</td>
+      <td>12%</td>
     </tr>
     <tr>
       <th>Klima DAO</th>
       <td>140</td>
       <td>6503</td>
-      <td>0.00%</td>
+      <td>0%</td>
     </tr>
     <tr>
       <th>Radiant Capital</th>
       <td>244</td>
       <td>4783</td>
-      <td>0.00%</td>
+      <td>0%</td>
     </tr>
     <tr>
       <th>Instadapp</th>
       <td>3</td>
       <td>75</td>
-      <td>10.00%</td>
+      <td>10%</td>
     </tr>
     <tr>
       <th>Vesta</th>
       <td>689</td>
       <td>15382</td>
-      <td>12.50%</td>
+      <td>12%</td>
     </tr>
     <tr>
       <th>Hector Network</th>
       <td>139</td>
       <td>6554</td>
-      <td>5.80%</td>
+      <td>6%</td>
     </tr>
     <tr>
       <th>Spool DAO</th>
       <td>3</td>
       <td>54</td>
-      <td>0.00%</td>
+      <td>0%</td>
     </tr>
     <tr>
       <th>Qi Dao | Mai.Finance</th>
       <td>51</td>
       <td>4112</td>
-      <td>20.00%</td>
+      <td>20%</td>
     </tr>
     <tr>
       <th>Angle Protocol</th>
       <td>16</td>
       <td>473</td>
-      <td>10.26%</td>
+      <td>10%</td>
     </tr>
     <tr>
       <th>Redacted</th>
       <td>11</td>
       <td>360</td>
-      <td>22.22%</td>
+      <td>22%</td>
     </tr>
     <tr>
       <th>ssv.network</th>
       <td>7</td>
       <td>250</td>
-      <td>0.00%</td>
+      <td>0%</td>
     </tr>
     <tr>
       <th>Metronome DAO</th>
       <td>1</td>
       <td>9</td>
-      <td>0.00%</td>
+      <td>0%</td>
     </tr>
     <tr>
       <th>BadgerDAO</th>
       <td>251</td>
       <td>11169</td>
-      <td>5.26%</td>
+      <td>5%</td>
     </tr>
     <tr>
       <th>Ampleforth</th>
       <td>6</td>
       <td>119</td>
-      <td>6.25%</td>
+      <td>6%</td>
     </tr>
     <tr>
       <th>Pangolin Songbird</th>
       <td>5</td>
       <td>105</td>
-      <td>0.00%</td>
+      <td>0%</td>
     </tr>
     <tr>
       <th>Alchemix</th>
       <td>49</td>
       <td>2210</td>
-      <td>4.49%</td>
+      <td>4%</td>
     </tr>
     <tr>
       <th>Magic Internet Money</th>
       <td>56</td>
       <td>1676</td>
-      <td>0.00%</td>
+      <td>0%</td>
     </tr>
     <tr>
       <th>New Order</th>
       <td>22</td>
       <td>572</td>
-      <td>2.63%</td>
+      <td>3%</td>
     </tr>
     <tr>
       <th>Rally</th>
       <td>1313</td>
       <td>1531</td>
-      <td>0.00%</td>
+      <td>0%</td>
     </tr>
     <tr>
       <th>1inch Network</th>
       <td>26</td>
       <td>604</td>
-      <td>0.00%</td>
+      <td>0%</td>
     </tr>
     <tr>
       <th>Synapse Protocol</th>
       <td>14</td>
       <td>456</td>
-      <td>0.00%</td>
+      <td>0%</td>
     </tr>
     <tr>
       <th>Nexus Mutual Community Fund</th>
       <td>3</td>
       <td>198</td>
-      <td>16.67%</td>
+      <td>17%</td>
     </tr>
     <tr>
       <th>Silo</th>
       <td>8</td>
       <td>316</td>
-      <td>3.23%</td>
+      <td>3%</td>
     </tr>
     <tr>
       <th>Popcorn</th>
       <td>8</td>
       <td>249</td>
-      <td>14.81%</td>
+      <td>15%</td>
     </tr>
     <tr>
       <th>Botto</th>
       <td>7</td>
       <td>292</td>
-      <td>9.52%</td>
+      <td>10%</td>
     </tr>
     <tr>
       <th>Cryptex</th>
       <td>4</td>
       <td>24</td>
-      <td>6.25%</td>
+      <td>6%</td>
     </tr>
     <tr>
       <th>Decentral Games</th>
       <td>57</td>
       <td>2084</td>
-      <td>17.00%</td>
+      <td>17%</td>
     </tr>
     <tr>
       <th>Unlock Protocol</th>
       <td>5</td>
       <td>97</td>
-      <td>23.08%</td>
+      <td>23%</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>Here we see that there are quite a few proposals whose outcomes would’ve changed if whales were not involved, in this analysis, we take a look at some of these cases in Decentraland, Curve Finance and Radicle in particular.</p>
-<hr class="docutils" />
-<p>Next, we take a look at how governance decisions are affected once whale votes are discounted. We do so by comparing the scores of each proposal and checking whether the outcome of the proposal is changed when whales are filtered out.</p>
-<p>We check whether a proposal’s outcome changes by checking if the largest vote choice score changes after filtering out whales. Specifically, in python we do the following:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">has_changed_outcome</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">unfiltered_winning_choice_index</span> <span class="o">==</span> <span class="n">filtered_winning_choice_index</span>
-</pre></div>
-</div>
-<section id="uniswap">
-<h2>Uniswap<a class="headerlink" href="#uniswap" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+<section id="case-studies">
+<h2>Case studies<a class="headerlink" href="#case-studies" title="Permalink to this headline">#</a></h2>
+<section id="decentraland">
+<h3>Decentraland<a class="headerlink" href="#decentraland" title="Permalink to this headline">#</a></h3>
 <section id="proportion-of-outcomes-changed">
-<h3>Proportion of Outcomes Changed<a class="headerlink" href="#proportion-of-outcomes-changed" title="Permalink to this headline">#</a></h3>
+<h4>Proportion of Outcomes Changed:<a class="headerlink" href="#proportion-of-outcomes-changed" title="Permalink to this headline">#</a></h4>
 <div class="cell tag_remove-input tag_full-width docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.46% of Uniswap&#39;s proposal outcomes change after filtering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23% of Decentraland&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="proposal-analysis">
-<h3>Proposal Analysis<a class="headerlink" href="#proposal-analysis" title="Permalink to this headline">#</a></h3>
-<p>The outcome of the proposal to add a Liquidity Mining Manager (LMM) for the <a class="reference external" href="https://snapshot.org/#/uniswap/proposal/0xfd3d3807bd2a6eda1327c311b83de235061d39ff1bdfb616c9f9b0d367c3ac2c">Optimism-Uniswap Liquidity Mining Program</a> changes after removing whales.</p>
-<p>If not for whale intervention, “Overnight Finance” would have been chosen as the LMM. Instead, “DeFiEdge” was selected. From the data, we see that without whale intervention, DeFiEdge would’ve had ~2,708,025 fewer votes out of the total ~2,728,492 voting power on this proposal. That is ~99.3% of voting power allocated for this proposal directed to choosing “DeFiEdge”.</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>add Overnight Finance</th>
-      <th>add DeFiEdge</th>
-      <th>add none</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Scores</th>
-      <td>14335.930887</td>
-      <td>2.710600e+06</td>
-      <td>3556.089173</td>
-    </tr>
-    <tr>
-      <th>Score Differences</th>
-      <td>10054.585076</td>
-      <td>2.708025e+06</td>
-      <td>3412.851497</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-</section>
-</section>
-<section id="decentraland">
-<h2>Decentraland<a class="headerlink" href="#decentraland" title="Permalink to this headline">#</a></h2>
-<p>Let’s now look at Decentraland, where the largest holders regularly participate in governance.</p>
-<section id="id1">
-<h3>Proportion of Outcomes Changed<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
-<div class="cell tag_remove-input tag_full-width docutils container">
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23.00% of Decentraland&#39;s proposal outcomes change after filtering out whale voting power.
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="id2">
-<h3>Proposal Analysis<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
-<p>For example, <a class="reference external" href="https://snapshot.org/#/snapshot.dcl.eth/proposal/0x7f6fed8c7645d1b793526564104e4f79864a9e30ae284029f752b6297478b4f5">this proposal</a> to set a duration period for the tenure of Decentraland DAO committee members saw 99.9% of voting power attributed to whales, with 94.85% of proposal voting power allocated to voting for the proposal not to pass.</p>
+<h4>Proposal Analysis:<a class="headerlink" href="#proposal-analysis" title="Permalink to this headline">#</a></h4>
+<p>For example, <a class="reference external" href="https://snapshot.org/#/snapshot.dcl.eth/proposal/0x7f6fed8c7645d1b793526564104e4f79864a9e30ae284029f752b6297478b4f5">this proposal</a> to set a duration period for the tenure of Decentraland DAO committee members had decisive whale votes: had whales not voted, the outcome would have been inversed.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -806,41 +839,49 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>Scores</th>
-      <td>168338.243827</td>
-      <td>1.394610e+06</td>
-      <td>0.025206</td>
+      <td>168338.2</td>
+      <td>1394610.4</td>
+      <td>0.0</td>
     </tr>
     <tr>
-      <th>Score Differences</th>
-      <td>166209.638630</td>
-      <td>1.392896e+06</td>
-      <td>0.000000</td>
+      <th>Whale-only scores</th>
+      <td>166209.6</td>
+      <td>1392896.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>Non-whale scores</th>
+      <td>2128.6</td>
+      <td>1714.4</td>
+      <td>0.0</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>This is clearly a case of large holders voting to support their own interests. Once whales are filtered out of the votes (which would’ve given existing and future committee members set terms, making the roles more democratic) the proposal would’ve passed, albeit, with very low voting power by comparison.</p>
+<p>99.9% of voting power was attributed to whales, with 94.85% of proposal voting power allocated to voting for the proposal not to pass.</p>
+<p>We also observe that non-whale voting power is very low in this proposal.</p>
 </section>
 </section>
 <section id="curve-finance">
-<h2>Curve Finance<a class="headerlink" href="#curve-finance" title="Permalink to this headline">#</a></h2>
-<section id="id3">
-<h3>Proportion of Outcomes Changed<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>Curve Finance<a class="headerlink" href="#curve-finance" title="Permalink to this headline">#</a></h3>
+<section id="id1">
+<h4>Proportion of Outcomes Changed:<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
 <div class="cell tag_remove-input tag_full-width docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.93% of Curve Finance&#39;s proposal outcomes change after filtering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21% of Curve Finance&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="id4">
-<h3>Proposal Analysis<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
-<p>One proposal which would’ve passed if not for whale intervention was this proposal to <a class="reference external" href="https://snapshot.org/#/curve.eth/proposal/0x0eb23ea0b877666ad3ddcd0d7da0114acdfe5ae6390b5628b7509f4338022db5">add the XSTUSD-3CRV pair</a> to Curve’s <a class="reference external" href="https://resources.curve.fi/reward-gauges/understanding-gauges">gauge</a> <a class="reference external" href="https://curve.readthedocs.io/dao-gauges.html#the-gauge-controller">controller</a> to accrue CRV for liquidity providers of XSTUSD-3CRV.</p>
-<p>XSTUSD is a stablecoin deployed on Polkadot and Kusama that’s backed by a synthetic token called XOR (<a class="reference external" href="https://sora.org/">Sora</a>’s native token). The <a class="reference external" href="https://gov.curve.fi/t/proposal-to-add-xstusd-3crv-to-the-gauge-controller/2998/15">governance discussion</a> about the vote was particularly interesting.</p>
+<section id="id2">
+<h4>Proposal Analysis:<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
+<p>One proposal which would have passed if not for whale intervention was this proposal to <a class="reference external" href="https://snapshot.org/#/curve.eth/proposal/0x0eb23ea0b877666ad3ddcd0d7da0114acdfe5ae6390b5628b7509f4338022db5">add the XSTUSD-3CRV pair</a> to Curve’s <a class="reference external" href="https://resources.curve.fi/reward-gauges/understanding-gauges">gauge</a> <a class="reference external" href="https://curve.readthedocs.io/dao-gauges.html#the-gauge-controller">controller</a> to accrue CRV for liquidity providers of XSTUSD-3CRV. XSTUSD is a stablecoin deployed on Polkadot and Kusama that is backed by a synthetic token called XOR (<a class="reference external" href="https://sora.org/">Sora</a>’s native token).</p>
+<p>The <a class="reference external" href="https://gov.curve.fi/t/proposal-to-add-xstusd-3crv-to-the-gauge-controller/2998/15">governance discussion</a> about the vote shows reckless promotion of XST.</p>
 <p><img alt="" src="_images/curve_governance_shenanigans.png" /></p>
-<p>What stands out is XSTUSD’s comparison with LUNA/UST. This proposal was created before the LUNA/UST <a class="reference external" href="https://rekt.news/luna-rekt/">depegging disaster</a>, but even before that, <a class="reference external" href="https://twitter.com/runekek/status/1478166276979793922">quite a</a> <a class="reference external" href="https://twitter.com/FreddieRaynolds/status/1463960623402913797">few people</a> had their concerns about it. So I checked out the first 16 accounts which showed really strong support for this proposal, and almost <a class="reference external" href="https://gov.curve.fi/u/meowtopia">every single</a> <a class="reference external" href="https://gov.curve.fi/u/LiquidityKing">one was</a> <a class="reference external" href="https://gov.curve.fi/u/Ryandotrrr">created within</a> 2 days of the proposal’s forum post. Clear signs of governance forum shenanigans, executed to raise hype for a proposal.</p>
+<p><a class="reference external" href="https://twitter.com/runekek/status/1478166276979793922">Quite a</a> <a class="reference external" href="https://twitter.com/FreddieRaynolds/status/1463960623402913797">few people</a> had their concerns about XST early on.</p>
+<p>We looked at the first 16 accounts which showed really strong support for this proposal, and almost <a class="reference external" href="https://gov.curve.fi/u/meowtopia">every single</a> <a class="reference external" href="https://gov.curve.fi/u/LiquidityKing">one was</a> <a class="reference external" href="https://gov.curve.fi/u/Ryandotrrr">created within</a> 2 days of the proposal’s forum post. One can reasonably conclude that they were created for the sole purpose of “shilling”.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -868,34 +909,42 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>Scores</th>
-      <td>45352.592228</td>
-      <td>529201.282019</td>
+      <td>45352.6</td>
+      <td>529201.3</td>
     </tr>
     <tr>
-      <th>Score Differences</th>
-      <td>23462.994316</td>
-      <td>511330.472493</td>
+      <th>Whale-only scores</th>
+      <td>23463.0</td>
+      <td>511330.5</td>
+    </tr>
+    <tr>
+      <th>Non-whale scores</th>
+      <td>21889.6</td>
+      <td>17870.8</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>Just over 4% of voting power for this proposal was allocated by whales to vote “Yes” (which is just over half the total voting power allocated to the “Yes” choice for this proposal), whereas ~89% of whale voting power was allocated to voting “NO” (~97% of total voting power for this choice).</p>
-<p>It’s important to highlight that whales are also sensible and not always “evil”, which I would classify as entities that promote proposals that are detrimental to the DAO for their own interests. It’s a good thing that CRV whales didn’t have an incentive to pass this proposal as well.</p>
-<p>Just over 10% of whale voting power for this proposal was allocated to voting “Aye” on this proposal (~27% of voting power allocated to the “Aye” choice came from whales). Whereas ~45% of voting power from whales was allocated to the “Nay” choice (~73% of whale voting power allocated to “Nay”).</p>
+<p>Just over 4% of voting power for this proposal was allocated by whales to vote “Yes” (which is just over half the total voting power allocated to the “Yes” choice for this proposal), whereas 89% of whale voting power was allocated to voting “No” (97% of total voting power for this choice).</p>
+<p>Clearly, large token holders had an incentive not to let this proposal pass. It seems some such large CRV whales voted sensibly.</p>
+<p>Just over 10% of whale voting power for this proposal was allocated to voting “Aye” on this proposal (27% of voting power allocated to the “Aye” choice came from whales). Whereas 45% of voting power from whales was allocated to the “Nay” choice (73% of whale voting power allocated to “Nay”).</p>
 </section>
 </section>
 <section id="radicle">
-<h2>Radicle<a class="headerlink" href="#radicle" title="Permalink to this headline">#</a></h2>
-<section id="id5">
-<h3>Proportion of Outcomes Changed<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<h3>Radicle<a class="headerlink" href="#radicle" title="Permalink to this headline">#</a></h3>
+<section id="id3">
+<h4>Proportion of Outcomes Changed:<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
 <div class="cell tag_remove-input tag_full-width docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.18% of Radicle&#39;s proposal outcomes change after filtering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18% of Radicle&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="id4">
+<h4>Proposal Analysis:<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
 <p>For Radicle, we look at this proposal to <a class="reference external" href="https://snapshot.org/#/gov.radicle.eth/proposal/QmepPgXwo5q9GipZFKa32rnxaYoo3LrfRqduinftbU3L3S">distribute RAD remaining</a> following a Liquidity Bootsrapping (LBP) round conducted in February ‘21. This leftover RAD was proposed to be redistributed to participants of the LBP, i.e. people who bought RAD in this period from the Balancer LBP for RAD tokens.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -924,19 +973,25 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>Scores</th>
-      <td>78136.278442</td>
-      <td>123126.401817</td>
+      <td>78136.3</td>
+      <td>123126.4</td>
     </tr>
     <tr>
-      <th>Score Differences</th>
-      <td>20708.270722</td>
-      <td>90218.650933</td>
+      <th>Whale-only scores</th>
+      <td>20708.3</td>
+      <td>90218.7</td>
+    </tr>
+    <tr>
+      <th>Non-whale scores</th>
+      <td>57428.0</td>
+      <td>32907.8</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>Just over 10% of voting power for this proposal was allocated by whales to vote “Aye” on this proposal (~27% of voting power allocated to the “Aye” choice came from whales). Whereas ~45% of voting power that came from whales was allocated to the “Nay” choice (~73% of whale voting power allocated to “Nay”).</p>
+<p>Just over 10% of voting power for this proposal was allocated by whales to vote “Aye” on this proposal (27% of voting power allocated to the “Aye” choice came from whales). Whereas 45% of voting power that came from whales was allocated to the “Nay” choice (73% of whale voting power allocated to “Nay”).</p>
+</section>
 </section>
 </section>
 </section>
