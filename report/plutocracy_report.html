@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>How decisive are whales votes? &#8212; My Jupyter Book</title>
+    <title>Decisiveness: The influence of whales in DAO Governance &#8212; My Jupyter Book</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -223,6 +223,11 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definition">
+   Definition
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aims-of-this-report">
    Aims of this report
   </a>
@@ -321,7 +326,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>How decisive are whales votes?</h1>
+                <h1>Decisiveness: The influence of whales in DAO Governance</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -331,6 +336,11 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definition">
+   Definition
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aims-of-this-report">
    Aims of this report
@@ -431,45 +441,51 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="how-decisive-are-whales-votes">
-<h1>How decisive are whales votes?<a class="headerlink" href="#how-decisive-are-whales-votes" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="decisiveness-the-influence-of-whales-in-dao-governance">
+<h1>Decisiveness: The influence of whales in DAO Governance<a class="headerlink" href="#decisiveness-the-influence-of-whales-in-dao-governance" title="Permalink to this headline">#</a></h1>
+<section id="definition">
+<h2>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">#</a></h2>
+<p><strong>Decisiveness</strong> is <a class="reference external" href="https://www.merriam-webster.com/dictionary/decisive">defined</a> as having the power or quality of deciding as in <em>The council president cast the decisive vote.</em></p>
+<p>More precisely, decisiveness here is used in the <a class="reference external" href="https://www.jstor.org/stable/30026126">game-theoretical sense</a> of <em>casting a vote that affects the outcome of the election</em>.</p>
+</section>
 <section id="aims-of-this-report">
 <h2>Aims of this report<a class="headerlink" href="#aims-of-this-report" title="Permalink to this headline">#</a></h2>
 <p>This article aims to analyze the top 60 DAOs, ranked by <a class="reference external" href="https://deepdao.io/">treasury size</a> to determine the impact of large token holders (whales) on their governance.</p>
 <p>Our main contribution is the <strong><em>whale decisiveness</em> metric</strong>, representing how governance decisions in a given DAO are affected by whale votes.</p>
 <p>In this report we produce:</p>
 <ul class="simple">
-<li><p>The whale decisiveness metric on each of the top 60 DAOs.</p></li>
-<li><p>On three proposals, a case study on how large was the influence of whales in their outcome.</p></li>
+<li><p>The whale decisiveness metric on each of the top 60 DAOs</p></li>
+<li><p>On three proposals, a case study on the influence whales held over the outcome</p></li>
 </ul>
-<p>For the purpose of this report, whales are defined as the <strong>top 5% voters in terms of voting power</strong> for a given proposal (voters with voting power at or above the 95th percentile of voting power for that proposal).<br />
-Whale decisiveness is defined for each DAO as the percentage of proposals which <strong>outcome would have been changed if whales hadn’t voted</strong>.</p>
+<p>For the purpose of this report, whales are defined as the <strong>top 5% voters in terms of voting power</strong> for a given proposal (voters with voting power at or above the 95th percentile of voting power for that proposal).</p>
+<p>The whale decisiveness metric is calculated for each DAO as the percentage of proposals, <strong>the outcome of which change once whale votes are not counted</strong>.</p>
 <p>This report relies on on-chain data as well as Snapshot data about proposals and voters.<br />
 For more detailed data and case studies, check out our <a class="reference external" href="https://acemasterjb.github.io/gov_analysis/analysis/extensive_analysis">extensive report here</a>.</p>
-<p>This is a work in progress and will get updated with newer learnings, so stay tuned!</p>
+<p>This is a work in progress and will be updated as we learn more, so stay tuned!</p>
 </section>
 <section id="takeaways">
 <h2>Takeaways<a class="headerlink" href="#takeaways" title="Permalink to this headline">#</a></h2>
 <p>Out of 60 DAOs:</p>
 <ul class="simple">
-<li><p>5 of them (8%) have a whale decisiveness metric &gt; 20%.</p></li>
-<li><p>16 of them (27%) have whale decisiveness &gt; 10%.</p></li>
+<li><p>5 of them (8%) have a whale decisiveness metric &gt; 20%</p></li>
+<li><p>16 of them (27%) have whale decisiveness &gt; 10%</p></li>
 </ul>
-<p>Meaning that in 16 DAOs, whales votes have produced a different outcome than minority votes in 10 proposals of the last 100.</p>
-<p>Looking at some of these proposals (in Decentraland, Curve Finance and Radicle) in detail, we start having a hint at the reasons why whale votes were diverging from minority votes. Namely:</p>
+<p>In 16 DAOs, whales’ votes produced a different outcome than minority votes in 10 proposals of the last 100.</p>
+<p>Reviewing proposals (in Decentraland, Curve Finance and Radicle) in detail, we hint at the reasons why whale votes diverge from minority votes. Namely:</p>
 <ul class="simple">
-<li><p>Massive whale voting power dominance coupled with meager participation from minority holders.</p></li>
-<li><p>Divergence of interests.</p></li>
+<li><p>Massive whale voting power dominance coupled with meager participation from minority holders</p></li>
+<li><p>Divergence of interests</p></li>
 </ul>
 </section>
 <section id="calculations">
 <h2>Calculations<a class="headerlink" href="#calculations" title="Permalink to this headline">#</a></h2>
+<p>Below, a brief summary of calculations performed to build the whale decisiveness statistics.</p>
+<p>See the <a class="reference external" href="https://github.com/butterymoney/gov_analysis">repository</a> for more details.</p>
 <div class="cell tag_remove-input docutils container">
 </div>
 <section id="load-data">
 <h3>Load data<a class="headerlink" href="#load-data" title="Permalink to this headline">#</a></h3>
-<p>Two spreadsheets are generated using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">pluto_report.py</span></code> (see the README).</p>
-<p>They contains each voter’s choice and voting power for up to the last one hundred proposals in each DAO. The “filtered” spreadsheet filters out whales.</p>
+<p>Load each voter’s choice and voting power for up to the last one hundred proposals in each DAO.</p>
 <div class="cell tag_remove-input tag_remove-output docutils container">
 </div>
 <div class="cell tag_remove-input docutils container">
@@ -491,7 +507,7 @@ For more detailed data and case studies, check out our <a class="reference exter
 </section>
 <section id="synthesis">
 <h3>Synthesis<a class="headerlink" href="#synthesis" title="Permalink to this headline">#</a></h3>
-<p>For each DAO, show the %age of proposals which outcome would have been changed if whales didn’t vote.</p>
+<p>For each DAO, show the percentage of proposals, the outcome of which would have changed if whales didn’t vote (<em>whale decisiveness</em>).</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -810,7 +826,7 @@ For more detailed data and case studies, check out our <a class="reference exter
 </section>
 <section id="proposal-analysis">
 <h4>Proposal Analysis:<a class="headerlink" href="#proposal-analysis" title="Permalink to this headline">#</a></h4>
-<p>For example, <a class="reference external" href="https://snapshot.org/#/snapshot.dcl.eth/proposal/0x7f6fed8c7645d1b793526564104e4f79864a9e30ae284029f752b6297478b4f5">this proposal</a> to set a duration period for the tenure of Decentraland DAO committee members had decisive whale votes: had whales not voted, the outcome would have been inversed.</p>
+<p>For example, <a class="reference external" href="https://snapshot.org/#/snapshot.dcl.eth/proposal/0x7f6fed8c7645d1b793526564104e4f79864a9e30ae284029f752b6297478b4f5">this proposal</a> to set a duration period for the tenure of Decentraland DAO committee members had decisive whale votes; had whales not voted, the outcome would have been inversed.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -877,7 +893,7 @@ For more detailed data and case studies, check out our <a class="reference exter
 </section>
 <section id="id2">
 <h4>Proposal Analysis:<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
-<p>One proposal which would have passed if not for whale intervention was this proposal to <a class="reference external" href="https://snapshot.org/#/curve.eth/proposal/0x0eb23ea0b877666ad3ddcd0d7da0114acdfe5ae6390b5628b7509f4338022db5">add the XSTUSD-3CRV pair</a> to Curve’s <a class="reference external" href="https://resources.curve.fi/reward-gauges/understanding-gauges">gauge</a> <a class="reference external" href="https://curve.readthedocs.io/dao-gauges.html#the-gauge-controller">controller</a> to accrue CRV for liquidity providers of XSTUSD-3CRV. XSTUSD is a stablecoin deployed on Polkadot and Kusama that is backed by a synthetic token called XOR (<a class="reference external" href="https://sora.org/">Sora</a>’s native token).</p>
+<p>Another proposal which would have passed if not for whale intervention is this proposal to <a class="reference external" href="https://snapshot.org/#/curve.eth/proposal/0x0eb23ea0b877666ad3ddcd0d7da0114acdfe5ae6390b5628b7509f4338022db5">add the XSTUSD-3CRV pair</a> to Curve’s <a class="reference external" href="https://resources.curve.fi/reward-gauges/understanding-gauges">gauge</a> <a class="reference external" href="https://curve.readthedocs.io/dao-gauges.html#the-gauge-controller">controller</a> to accrue CRV for liquidity providers of XSTUSD-3CRV. XSTUSD is a stablecoin deployed on Polkadot and Kusama that is backed by a synthetic token called XOR (<a class="reference external" href="https://sora.org/">Sora</a>’s native token).</p>
 <p>The <a class="reference external" href="https://gov.curve.fi/t/proposal-to-add-xstusd-3crv-to-the-gauge-controller/2998/15">governance discussion</a> about the vote shows reckless promotion of XST.</p>
 <p><img alt="" src="_images/curve_governance_shenanigans.png" /></p>
 <p><a class="reference external" href="https://twitter.com/runekek/status/1478166276979793922">Quite a</a> <a class="reference external" href="https://twitter.com/FreddieRaynolds/status/1463960623402913797">few people</a> had their concerns about XST early on.</p>
