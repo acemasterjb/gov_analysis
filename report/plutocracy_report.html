@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Decisiveness: The influence of whales in DAO Governance &#8212; My Jupyter Book</title>
+    <title>Pivotality: The influence of whales in DAO Governance &#8212; My Jupyter Book</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -326,7 +326,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Decisiveness: The influence of whales in DAO Governance</h1>
+                <h1>Pivotality: The influence of whales in DAO Governance</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -441,24 +441,23 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="decisiveness-the-influence-of-whales-in-dao-governance">
-<h1>Decisiveness: The influence of whales in DAO Governance<a class="headerlink" href="#decisiveness-the-influence-of-whales-in-dao-governance" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="pivotality-the-influence-of-whales-in-dao-governance">
+<h1>Pivotality: The influence of whales in DAO Governance<a class="headerlink" href="#pivotality-the-influence-of-whales-in-dao-governance" title="Permalink to this headline">#</a></h1>
 <section id="definition">
 <h2>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">#</a></h2>
-<p><strong>Decisiveness</strong> is <a class="reference external" href="https://www.merriam-webster.com/dictionary/decisive">defined</a> as having the power or quality of deciding as in <em>The council president cast the decisive vote.</em></p>
-<p>More precisely, decisiveness here is used in the <a class="reference external" href="https://www.jstor.org/stable/30026126">game-theoretical sense</a> of <em>casting a vote that affects the outcome of the election</em>.</p>
+<p>On a given proposal, whales are considered <em>pivotal voters</em> when, taken together, casting their votes altered the result. <a class="reference external" href="https://www.researchgate.net/publication/249676423_Pivotal_Voting">[1]</a> <a class="reference external" href="https://publications.ut-capitole.fr/id/eprint/15307/1/PivotProbabilitiesMay2014ShortVersionR.pdf">[2]</a>.</p>
 </section>
 <section id="aims-of-this-report">
 <h2>Aims of this report<a class="headerlink" href="#aims-of-this-report" title="Permalink to this headline">#</a></h2>
 <p>This article aims to analyze the top 60 DAOs, ranked by <a class="reference external" href="https://deepdao.io/">treasury size</a> to determine the impact of large token holders (whales) on their governance.</p>
-<p>Our main contribution is the <strong><em>whale decisiveness</em> metric</strong>, representing how governance decisions in a given DAO are affected by whale votes.</p>
+<p>Our main contribution is the <strong><em>whale pivotality</em> metric</strong>, representing how governance decisions in a given DAO are affected by whale votes.</p>
 <p>In this report we produce:</p>
 <ul class="simple">
-<li><p>The whale decisiveness metric on each of the top 60 DAOs</p></li>
+<li><p>The whale pivotality metric on each of the top 60 DAOs</p></li>
 <li><p>On three proposals, a case study on the influence whales held over the outcome</p></li>
 </ul>
 <p>For the purpose of this report, whales are defined as the <strong>top 5% voters in terms of voting power</strong> for a given proposal (voters with voting power at or above the 95th percentile of voting power for that proposal).</p>
-<p>The whale decisiveness metric is calculated for each DAO as the percentage of proposals, <strong>the outcome of which change once whale votes are not counted</strong>.</p>
+<p>The whale pivotality metric is calculated for each DAO as the percentage of proposals, <strong>the outcome of which change once whale votes are not counted</strong>.</p>
 <p>This report relies on on-chain data as well as Snapshot data about proposals and voters.<br />
 For more detailed data and case studies, check out our <a class="reference external" href="https://acemasterjb.github.io/gov_analysis/analysis/extensive_analysis">extensive report here</a>.</p>
 <p>This is a work in progress and will be updated as we learn more, so stay tuned!</p>
@@ -467,8 +466,8 @@ For more detailed data and case studies, check out our <a class="reference exter
 <h2>Takeaways<a class="headerlink" href="#takeaways" title="Permalink to this headline">#</a></h2>
 <p>Out of 60 DAOs:</p>
 <ul class="simple">
-<li><p>5 of them (8%) have a whale decisiveness metric &gt; 20%</p></li>
-<li><p>16 of them (27%) have whale decisiveness &gt; 10%</p></li>
+<li><p>5 of them (8%) have a whale pivotality metric &gt; 20%</p></li>
+<li><p>16 of them (27%) have whale pivotality &gt; 10%</p></li>
 </ul>
 <p>In 16 DAOs, whales’ votes produced a different outcome than minority votes in 10 proposals of the last 100.</p>
 <p>Reviewing proposals (in Decentraland, Curve Finance and Radicle) in detail, we hint at the reasons why whale votes diverge from minority votes. Namely:</p>
@@ -479,7 +478,7 @@ For more detailed data and case studies, check out our <a class="reference exter
 </section>
 <section id="calculations">
 <h2>Calculations<a class="headerlink" href="#calculations" title="Permalink to this headline">#</a></h2>
-<p>Below, a brief summary of calculations performed to build the whale decisiveness statistics.</p>
+<p>Below, a brief summary of calculations performed to build the whale pivotality statistics.</p>
 <p>See the <a class="reference external" href="https://github.com/butterymoney/gov_analysis">repository</a> for more details.</p>
 <div class="cell tag_remove-input docutils container">
 </div>
@@ -509,7 +508,7 @@ For more detailed data and case studies, check out our <a class="reference exter
 </section>
 <section id="synthesis">
 <h3>Synthesis<a class="headerlink" href="#synthesis" title="Permalink to this headline">#</a></h3>
-<p>For each DAO, show the percentage of proposals, the outcome of which would have changed if whales didn’t vote (<em>whale decisiveness</em>).</p>
+<p>For each DAO, show the percentage of proposals, the outcome of which would have changed if whales didn’t vote (_whale pivotality).</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
@@ -532,7 +531,7 @@ For more detailed data and case studies, check out our <a class="reference exter
       <th></th>
       <th># of whales</th>
       <th>all voters</th>
-      <th>whale decisiveness</th>
+      <th>whale pivotality</th>
     </tr>
     <tr>
       <th>DAO</th>
@@ -840,54 +839,42 @@ For more detailed data and case studies, check out our <a class="reference exter
 </section>
 <section id="proposal-analysis">
 <h4>Proposal Analysis:<a class="headerlink" href="#proposal-analysis" title="Permalink to this headline">#</a></h4>
-<p>For example, <a class="reference external" href="https://snapshot.org/#/snapshot.dcl.eth/proposal/0x7f6fed8c7645d1b793526564104e4f79864a9e30ae284029f752b6297478b4f5">this proposal</a> to set a duration period for the tenure of Decentraland DAO committee members had decisive whale votes; had whales not voted, the outcome would have been inversed.</p>
+<p>For example, <a class="reference external" href="https://snapshot.org/#/snapshot.dcl.eth/proposal/0x7f6fed8c7645d1b793526564104e4f79864a9e30ae284029f752b6297478b4f5">this proposal</a> to set a duration period for the tenure of Decentraland DAO committee members had pivotal whale votes; had whales not voted, the outcome would have been inversed.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+<div class="output text_html"><style type="text/css">
 </style>
-<table border="1" class="dataframe">
+<table id="T_ad104">
   <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Yes</th>
-      <th>No</th>
-      <th>Invalid question/options</th>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_ad104_level0_col0" class="col_heading level0 col0" >Yes</th>
+      <th id="T_ad104_level0_col1" class="col_heading level0 col1" >No</th>
+      <th id="T_ad104_level0_col2" class="col_heading level0 col2" >Invalid question/options</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Scores</th>
-      <td>168338.243827</td>
-      <td>1.394610e+06</td>
-      <td>0.025206</td>
+      <th id="T_ad104_level0_row0" class="row_heading level0 row0" >Scores</th>
+      <td id="T_ad104_row0_col0" class="data row0 col0" >168338.2</td>
+      <td id="T_ad104_row0_col1" class="data row0 col1" >1394610.4</td>
+      <td id="T_ad104_row0_col2" class="data row0 col2" >0.0</td>
     </tr>
     <tr>
-      <th>Whale-only scores</th>
-      <td>166209.638630</td>
-      <td>1.392896e+06</td>
-      <td>0.000000</td>
+      <th id="T_ad104_level0_row1" class="row_heading level0 row1" >Whale-only scores</th>
+      <td id="T_ad104_row1_col0" class="data row1 col0" >166209.6</td>
+      <td id="T_ad104_row1_col1" class="data row1 col1" >1392896.0</td>
+      <td id="T_ad104_row1_col2" class="data row1 col2" >0.0</td>
     </tr>
     <tr>
-      <th>Non-whale scores</th>
-      <td>2128.605197</td>
-      <td>1.714368e+03</td>
-      <td>0.025206</td>
+      <th id="T_ad104_level0_row2" class="row_heading level0 row2" >Non-whale scores</th>
+      <td id="T_ad104_row2_col0" class="data row2 col0" >2128.6</td>
+      <td id="T_ad104_row2_col1" class="data row2 col1" >1714.4</td>
+      <td id="T_ad104_row2_col2" class="data row2 col2" >0.0</td>
     </tr>
   </tbody>
 </table>
-</div></div></div>
+</div></div>
 </div>
 <p>99.9% of voting power was attributed to whales, with 94.85% of proposal voting power allocated to voting for the proposal not to pass.</p>
 <p>We also observe that non-whale voting power is very low in this proposal.</p>
@@ -914,47 +901,35 @@ For more detailed data and case studies, check out our <a class="reference exter
 <p>We looked at the first 16 accounts which showed really strong support for this proposal, and almost <a class="reference external" href="https://gov.curve.fi/u/meowtopia">every single</a> <a class="reference external" href="https://gov.curve.fi/u/LiquidityKing">one was</a> <a class="reference external" href="https://gov.curve.fi/u/Ryandotrrr">created within</a> 2 days of the proposal’s forum post. One can reasonably conclude that they were created for the sole purpose of “shilling”.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+<div class="output text_html"><style type="text/css">
 </style>
-<table border="1" class="dataframe">
+<table id="T_dacf1">
   <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Yes</th>
-      <th>No</th>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_dacf1_level0_col0" class="col_heading level0 col0" >Yes</th>
+      <th id="T_dacf1_level0_col1" class="col_heading level0 col1" >No</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Scores</th>
-      <td>45352.592228</td>
-      <td>529201.282019</td>
+      <th id="T_dacf1_level0_row0" class="row_heading level0 row0" >Scores</th>
+      <td id="T_dacf1_row0_col0" class="data row0 col0" >45352.6</td>
+      <td id="T_dacf1_row0_col1" class="data row0 col1" >529201.3</td>
     </tr>
     <tr>
-      <th>Whale-only scores</th>
-      <td>23462.994316</td>
-      <td>511330.472493</td>
+      <th id="T_dacf1_level0_row1" class="row_heading level0 row1" >Whale-only scores</th>
+      <td id="T_dacf1_row1_col0" class="data row1 col0" >23463.0</td>
+      <td id="T_dacf1_row1_col1" class="data row1 col1" >511330.5</td>
     </tr>
     <tr>
-      <th>Non-whale scores</th>
-      <td>21889.597912</td>
-      <td>17870.809526</td>
+      <th id="T_dacf1_level0_row2" class="row_heading level0 row2" >Non-whale scores</th>
+      <td id="T_dacf1_row2_col0" class="data row2 col0" >21889.6</td>
+      <td id="T_dacf1_row2_col1" class="data row2 col1" >17870.8</td>
     </tr>
   </tbody>
 </table>
-</div></div></div>
+</div></div>
 </div>
 <p>Just over 4% of voting power for this proposal was allocated by whales to vote “Yes” (which is just over half the total voting power allocated to the “Yes” choice for this proposal), whereas 89% of whale voting power was allocated to voting “No” (97% of total voting power for this choice).</p>
 <p>Clearly, large token holders had an incentive not to let this proposal pass. It seems some such large CRV whales voted sensibly.</p>
@@ -978,47 +953,35 @@ For more detailed data and case studies, check out our <a class="reference exter
 <p>For Radicle, we look at this proposal to <a class="reference external" href="https://snapshot.org/#/gov.radicle.eth/proposal/QmepPgXwo5q9GipZFKa32rnxaYoo3LrfRqduinftbU3L3S">distribute RAD remaining</a> following a Liquidity Bootsrapping (LBP) round conducted in February ‘21. This leftover RAD was proposed to be redistributed to participants of the LBP, i.e. people who bought RAD in this period from the Balancer LBP for RAD tokens.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
+<div class="output text_html"><style type="text/css">
 </style>
-<table border="1" class="dataframe">
+<table id="T_78c7c">
   <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Aye</th>
-      <th>Nay</th>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_78c7c_level0_col0" class="col_heading level0 col0" >Aye</th>
+      <th id="T_78c7c_level0_col1" class="col_heading level0 col1" >Nay</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>Scores</th>
-      <td>78136.278442</td>
-      <td>123126.401817</td>
+      <th id="T_78c7c_level0_row0" class="row_heading level0 row0" >Scores</th>
+      <td id="T_78c7c_row0_col0" class="data row0 col0" >78136.3</td>
+      <td id="T_78c7c_row0_col1" class="data row0 col1" >123126.4</td>
     </tr>
     <tr>
-      <th>Whale-only scores</th>
-      <td>20708.270722</td>
-      <td>90218.650933</td>
+      <th id="T_78c7c_level0_row1" class="row_heading level0 row1" >Whale-only scores</th>
+      <td id="T_78c7c_row1_col0" class="data row1 col0" >20708.3</td>
+      <td id="T_78c7c_row1_col1" class="data row1 col1" >90218.7</td>
     </tr>
     <tr>
-      <th>Non-whale scores</th>
-      <td>57428.007720</td>
-      <td>32907.750885</td>
+      <th id="T_78c7c_level0_row2" class="row_heading level0 row2" >Non-whale scores</th>
+      <td id="T_78c7c_row2_col0" class="data row2 col0" >57428.0</td>
+      <td id="T_78c7c_row2_col1" class="data row2 col1" >32907.8</td>
     </tr>
   </tbody>
 </table>
-</div></div></div>
+</div></div>
 </div>
 <p>Just over 10% of voting power for this proposal was allocated by whales to vote “Aye” on this proposal (27% of voting power allocated to the “Aye” choice came from whales). Whereas 45% of voting power that came from whales was allocated to the “Nay” choice (73% of whale voting power allocated to “Nay”).</p>
 </section>
