@@ -2,12 +2,12 @@ from copy import deepcopy
 
 import pandas as pd
 
-from data_processing.reaggregation import (
+from .data_processing.reaggregation import (
     reaggregate_votes_approval,
     reaggregate_votes_single_choice_or_basic,
     reaggregate_votes_weighted,
 )
-from data_processing.filters import get_quartile_by_vp
+from .data_processing.filters import get_quartile_by_vp
 
 def filter_top_shareholders_from_df(proposal_df: pd.DataFrame) -> pd.DataFrame:
     def reaggregate_votes(
@@ -36,7 +36,7 @@ def filter_top_shareholders_from_df(proposal_df: pd.DataFrame) -> pd.DataFrame:
         proposal_df.loc[
             lambda df: [voter not in top_shareholder_addresses for voter in df["voter"]]
         ]
-    ).drop(["voter", "id"], axis=1)
+    ).drop(["id"], axis=1)
 
 
 def filter_top_shareholders(

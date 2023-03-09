@@ -1,17 +1,17 @@
 from datetime import datetime, timedelta
 from typing import Any
-from apis.coingecko.queries import (
+from .apis.coingecko.queries import (
     get_raw_historical_price_range,
 )
-from apis.deepdao.adapters import (
+from .apis.deepdao.adapters import (
     get_snapshot_id,
 )
-from apis.deepdao.queries import (
+from .apis.deepdao.queries import (
     get_raw_dao_data,
     get_raw_dao_list,
     get_raw_token_metadata,
 )
-from apis.snapshot.execution import get_proposals, get_votes
+from .apis.snapshot.execution import get_proposals, get_votes
 
 
 def sanitize_vote(vote: dict, price_map: dict[float, float], dao_id: str):

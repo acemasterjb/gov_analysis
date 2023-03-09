@@ -1,11 +1,11 @@
 import pandas as pd
 
 
-def organization_dataframes(
-    filtered_proposal_dfs: list[pd.DataFrame],
+def into_organization_dataframes(
+    filtered_propsal_dataframes: list[pd.DataFrame],
 ) -> list[pd.DataFrame]:
     organization_map: dict[str, list[pd.DataFrame]] = dict()
-    for proposal_df in filtered_proposal_dfs:
+    for proposal_df in filtered_propsal_dataframes:
         if proposal_df.empty:
             continue
         organization_name: str = proposal_df.iloc[0]["proposal_space_name"]
@@ -19,3 +19,9 @@ def organization_dataframes(
         organization_dfs.append(organization_df)
 
     return organization_dfs
+
+
+def into_single_dataframe(
+    filtered_propsal_dataframes: list[pd.DataFrame],
+) -> pd.DataFrame:
+    return pd.concat(into_organization_dataframes(filtered_propsal_dataframes))

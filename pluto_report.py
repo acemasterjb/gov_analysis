@@ -15,11 +15,12 @@ filtered_proposal_dataframes = dataframe_filters.filter_top_shareholders(
     proposal_dataframes
 )
 
-organization_dataframes = merge.organization_dataframes(filtered_proposal_dataframes)
+filtered_all_organizations_dataframe = merge.into_single_dataframe(filtered_proposal_dataframes)
+all_organizations_dataframe = merge.into_single_dataframe(proposal_dataframes)
 
-export.organization_dataframes_to_xls(
-    merge.organization_dataframes(proposal_dataframes), "./plutocracy_data/full_report/plutocracy_report.xlsx"
+export.organization_dataframes_to_csv(
+    all_organizations_dataframe, "./plutocracy_data/full_report/plutocracy_report.csv"
 )
-export.organization_dataframes_to_xls(
-    organization_dataframes, "./plutocracy_data/full_report/plutocracy_report_filtered.xlsx"
+export.organization_dataframes_to_csv(
+    filtered_all_organizations_dataframe, "./plutocracy_data/full_report/plutocracy_report_filtered.csv"
 )

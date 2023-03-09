@@ -16,7 +16,7 @@ def get_number_of_whales_to_all_voters_ratio(
 
         num_of_voters = all_proposals["voter"].unique().shape[0]
         num_of_voters_filtered = (
-            all_proposals_filtered["Voter Address"].unique().shape[0]
+            all_proposals_filtered["voter"].unique().shape[0]
         )
         tally[organization][0] = num_of_voters - num_of_voters_filtered
         tally[organization][1] = num_of_voters
