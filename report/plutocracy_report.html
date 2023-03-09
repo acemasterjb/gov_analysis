@@ -488,6 +488,25 @@ For more detailed data and case studies, check out our <a class="reference exter
 <p>Load each voter’s choice and voting power for up to the last one hundred proposals in each DAO.</p>
 <div class="cell tag_remove-input tag_remove-output docutils container">
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">to_organization_map</span><span class="p">(</span><span class="n">flat_organization_dataframe</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="n">organization_name</span><span class="p">:</span> <span class="n">proposal_df</span>
+        <span class="k">for</span> <span class="n">organization_name</span><span class="p">,</span> <span class="n">proposal_df</span> <span class="ow">in</span> <span class="p">[</span>
+            <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">space_name</span><span class="p">),</span> <span class="n">space_proposals</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">space_name</span><span class="p">,</span> <span class="n">space_proposals</span> <span class="ow">in</span> <span class="n">flat_organization_dataframe</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+                <span class="s2">&quot;proposal_space_name&quot;</span>
+            <span class="p">)</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+
+<span class="n">plutocracy_report_data</span> <span class="o">=</span> <span class="n">to_organization_map</span><span class="p">(</span><span class="n">all_organization_proposals</span><span class="p">)</span>
+<span class="n">plutocracy_report_data_filtered</span> <span class="o">=</span> <span class="n">to_organization_map</span><span class="p">(</span><span class="n">all_organization_proposals_filtered</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell tag_remove-input docutils container">
 </div>
 </section>
@@ -541,100 +560,34 @@ For more detailed data and case studies, check out our <a class="reference exter
   </thead>
   <tbody>
     <tr>
-      <th>Uniswap</th>
-      <td>801</td>
-      <td>23136</td>
-      <td>16%</td>
-    </tr>
-    <tr>
-      <th>ENS</th>
-      <td>321</td>
-      <td>9742</td>
-      <td>4%</td>
-    </tr>
-    <tr>
-      <th>Lido</th>
-      <td>143</td>
-      <td>4664</td>
-      <td>6%</td>
-    </tr>
-    <tr>
-      <th>Frax</th>
-      <td>1</td>
-      <td>339</td>
-      <td>4%</td>
-    </tr>
-    <tr>
-      <th>Curve Finance</th>
-      <td>21</td>
-      <td>285</td>
-      <td>21%</td>
-    </tr>
-    <tr>
-      <th>Decentraland</th>
-      <td>62</td>
-      <td>1768</td>
-      <td>23%</td>
-    </tr>
-    <tr>
-      <th>Hop</th>
-      <td>30</td>
-      <td>1483</td>
-      <td>4%</td>
-    </tr>
-    <tr>
-      <th>Radicle</th>
-      <td>18</td>
-      <td>395</td>
-      <td>18%</td>
-    </tr>
-    <tr>
-      <th>Gitcoin</th>
-      <td>189</td>
-      <td>6258</td>
-      <td>12%</td>
-    </tr>
-    <tr>
-      <th>Euler</th>
-      <td>29</td>
-      <td>780</td>
-      <td>13%</td>
-    </tr>
-    <tr>
-      <th>Gearbox</th>
-      <td>32</td>
-      <td>881</td>
+      <th>1inch Network</th>
+      <td>26</td>
+      <td>604</td>
       <td>0%</td>
-    </tr>
-    <tr>
-      <th>SuperRare DAO</th>
-      <td>17</td>
-      <td>563</td>
-      <td>0%</td>
-    </tr>
-    <tr>
-      <th>Merit Circle</th>
-      <td>16</td>
-      <td>981</td>
-      <td>0%</td>
-    </tr>
-    <tr>
-      <th>JPEG’d</th>
-      <td>29</td>
-      <td>837</td>
-      <td>8%</td>
     </tr>
     <tr>
       <th>Aavegotchi</th>
-      <td>50</td>
-      <td>5702</td>
+      <td>47</td>
+      <td>5624</td>
       <td>7%</td>
     </tr>
     <tr>
-      <th>Rook</th>
-      <td>11</td>
-      <td>261</td>
+      <th>Alchemix</th>
+      <td>49</td>
+      <td>2212</td>
+      <td>4%</td>
+    </tr>
+    <tr>
+      <th>Ampleforth</th>
+      <td>6</td>
+      <td>119</td>
       <td>6%</td>
+    </tr>
+    <tr>
+      <th>Angle Protocol</th>
+      <td>17</td>
+      <td>475</td>
+      <td>10%</td>
     </tr>
     <tr>
       <th>ApeCoin DAO</th>
@@ -643,27 +596,63 @@ For more detailed data and case studies, check out our <a class="reference exter
       <td>12%</td>
     </tr>
     <tr>
-      <th>Klima DAO</th>
-      <td>140</td>
-      <td>6503</td>
+      <th>BadgerDAO</th>
+      <td>251</td>
+      <td>11169</td>
+      <td>5%</td>
+    </tr>
+    <tr>
+      <th>Cryptex</th>
+      <td>4</td>
+      <td>24</td>
+      <td>6%</td>
+    </tr>
+    <tr>
+      <th>Curve Finance</th>
+      <td>21</td>
+      <td>285</td>
+      <td>21%</td>
+    </tr>
+    <tr>
+      <th>Decentral Games</th>
+      <td>45</td>
+      <td>1540</td>
+      <td>17%</td>
+    </tr>
+    <tr>
+      <th>Decentraland</th>
+      <td>58</td>
+      <td>1665</td>
+      <td>27%</td>
+    </tr>
+    <tr>
+      <th>ENS</th>
+      <td>321</td>
+      <td>9742</td>
+      <td>4%</td>
+    </tr>
+    <tr>
+      <th>Euler</th>
+      <td>29</td>
+      <td>782</td>
+      <td>15%</td>
+    </tr>
+    <tr>
+      <th>Frax</th>
+      <td>1</td>
+      <td>340</td>
+      <td>4%</td>
+    </tr>
+    <tr>
+      <th>Gearbox</th>
+      <td>32</td>
+      <td>886</td>
       <td>0%</td>
     </tr>
     <tr>
-      <th>Radiant Capital</th>
-      <td>244</td>
-      <td>4783</td>
-      <td>0%</td>
-    </tr>
-    <tr>
-      <th>Instadapp</th>
-      <td>3</td>
-      <td>75</td>
-      <td>10%</td>
-    </tr>
-    <tr>
-      <th>Vesta</th>
-      <td>689</td>
-      <td>15382</td>
+      <th>Gitcoin</th>
+      <td>191</td>
+      <td>6309</td>
       <td>12%</td>
     </tr>
     <tr>
@@ -673,33 +662,45 @@ For more detailed data and case studies, check out our <a class="reference exter
       <td>6%</td>
     </tr>
     <tr>
-      <th>Spool DAO</th>
+      <th>Hop</th>
+      <td>30</td>
+      <td>1506</td>
+      <td>4%</td>
+    </tr>
+    <tr>
+      <th>Instadapp</th>
       <td>3</td>
-      <td>54</td>
-      <td>0%</td>
-    </tr>
-    <tr>
-      <th>Qi Dao | Mai.Finance</th>
-      <td>51</td>
-      <td>4112</td>
-      <td>20%</td>
-    </tr>
-    <tr>
-      <th>Angle Protocol</th>
-      <td>16</td>
-      <td>473</td>
+      <td>75</td>
       <td>10%</td>
     </tr>
     <tr>
-      <th>Redacted</th>
-      <td>11</td>
-      <td>360</td>
-      <td>22%</td>
+      <th>JPEG’d</th>
+      <td>29</td>
+      <td>845</td>
+      <td>7%</td>
     </tr>
     <tr>
-      <th>ssv.network</th>
-      <td>7</td>
-      <td>250</td>
+      <th>Klima DAO</th>
+      <td>140</td>
+      <td>6503</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <th>Lido</th>
+      <td>167</td>
+      <td>5060</td>
+      <td>6%</td>
+    </tr>
+    <tr>
+      <th>Magic Internet Money</th>
+      <td>56</td>
+      <td>1676</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <th>Merit Circle</th>
+      <td>16</td>
+      <td>981</td>
       <td>0%</td>
     </tr>
     <tr>
@@ -709,58 +710,10 @@ For more detailed data and case studies, check out our <a class="reference exter
       <td>0%</td>
     </tr>
     <tr>
-      <th>BadgerDAO</th>
-      <td>251</td>
-      <td>11169</td>
-      <td>5%</td>
-    </tr>
-    <tr>
-      <th>Ampleforth</th>
-      <td>6</td>
-      <td>119</td>
-      <td>6%</td>
-    </tr>
-    <tr>
-      <th>Pangolin Songbird</th>
-      <td>5</td>
-      <td>105</td>
-      <td>0%</td>
-    </tr>
-    <tr>
-      <th>Alchemix</th>
-      <td>49</td>
-      <td>2210</td>
-      <td>4%</td>
-    </tr>
-    <tr>
-      <th>Magic Internet Money</th>
-      <td>56</td>
-      <td>1676</td>
-      <td>0%</td>
-    </tr>
-    <tr>
       <th>New Order</th>
       <td>22</td>
-      <td>572</td>
+      <td>578</td>
       <td>3%</td>
-    </tr>
-    <tr>
-      <th>Rally</th>
-      <td>1313</td>
-      <td>1531</td>
-      <td>0%</td>
-    </tr>
-    <tr>
-      <th>1inch Network</th>
-      <td>26</td>
-      <td>604</td>
-      <td>0%</td>
-    </tr>
-    <tr>
-      <th>Synapse Protocol</th>
-      <td>14</td>
-      <td>456</td>
-      <td>0%</td>
     </tr>
     <tr>
       <th>Nexus Mutual Community Fund</th>
@@ -769,40 +722,118 @@ For more detailed data and case studies, check out our <a class="reference exter
       <td>17%</td>
     </tr>
     <tr>
+      <th>Notional Finance</th>
+      <td>7</td>
+      <td>149</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <th>Pangolin Songbird</th>
+      <td>5</td>
+      <td>105</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <th>Popcorn</th>
+      <td>8</td>
+      <td>249</td>
+      <td>14%</td>
+    </tr>
+    <tr>
+      <th>Qi Dao | Mai.Finance</th>
+      <td>51</td>
+      <td>4112</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+      <th>Radiant Capital</th>
+      <td>244</td>
+      <td>4783</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <th>Radicle</th>
+      <td>18</td>
+      <td>396</td>
+      <td>17%</td>
+    </tr>
+    <tr>
+      <th>Rally</th>
+      <td>1313</td>
+      <td>1531</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <th>Redacted</th>
+      <td>11</td>
+      <td>369</td>
+      <td>16%</td>
+    </tr>
+    <tr>
+      <th>Rook</th>
+      <td>12</td>
+      <td>273</td>
+      <td>5%</td>
+    </tr>
+    <tr>
+      <th>Sarcophagus Ambassadors Voting</th>
+      <td>2</td>
+      <td>22</td>
+      <td>14%</td>
+    </tr>
+    <tr>
       <th>Silo</th>
       <td>8</td>
       <td>316</td>
       <td>3%</td>
     </tr>
     <tr>
-      <th>Popcorn</th>
-      <td>8</td>
-      <td>249</td>
-      <td>15%</td>
-    </tr>
-    <tr>
-      <th>Botto</th>
-      <td>7</td>
-      <td>292</td>
-      <td>10%</td>
-    </tr>
-    <tr>
-      <th>Cryptex</th>
-      <td>4</td>
-      <td>24</td>
-      <td>6%</td>
-    </tr>
-    <tr>
-      <th>Decentral Games</th>
+      <th>Spool DAO</th>
+      <td>3</td>
       <td>57</td>
-      <td>2084</td>
-      <td>17%</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <th>Stargate DAO</th>
+      <td>2479</td>
+      <td>65410</td>
+      <td>5%</td>
+    </tr>
+    <tr>
+      <th>SuperRare DAO</th>
+      <td>17</td>
+      <td>563</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <th>Synapse Protocol</th>
+      <td>15</td>
+      <td>487</td>
+      <td>0%</td>
+    </tr>
+    <tr>
+      <th>Uniswap</th>
+      <td>813</td>
+      <td>23337</td>
+      <td>16%</td>
     </tr>
     <tr>
       <th>Unlock Protocol</th>
       <td>5</td>
       <td>97</td>
       <td>23%</td>
+    </tr>
+    <tr>
+      <th>Vesta</th>
+      <td>689</td>
+      <td>15382</td>
+      <td>12%</td>
+    </tr>
+    <tr>
+      <th>ssv.network</th>
+      <td>6</td>
+      <td>268</td>
+      <td>0%</td>
     </tr>
   </tbody>
 </table>
@@ -818,7 +849,7 @@ For more detailed data and case studies, check out our <a class="reference exter
 <h4>Proportion of Outcomes Changed:<a class="headerlink" href="#proportion-of-outcomes-changed" title="Permalink to this headline">#</a></h4>
 <div class="cell tag_remove-input tag_full-width docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23% of Decentraland&#39;s proposal outcomes change after filtering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>27% of Decentraland&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -855,21 +886,21 @@ For more detailed data and case studies, check out our <a class="reference exter
   <tbody>
     <tr>
       <th>Scores</th>
-      <td>168338.2</td>
-      <td>1394610.4</td>
-      <td>0.0</td>
+      <td>168338.243827</td>
+      <td>1.394610e+06</td>
+      <td>0.025206</td>
     </tr>
     <tr>
       <th>Whale-only scores</th>
-      <td>166209.6</td>
-      <td>1392896.0</td>
-      <td>0.0</td>
+      <td>166209.638630</td>
+      <td>1.392896e+06</td>
+      <td>0.000000</td>
     </tr>
     <tr>
       <th>Non-whale scores</th>
-      <td>2128.6</td>
-      <td>1714.4</td>
-      <td>0.0</td>
+      <td>2128.605197</td>
+      <td>1.714368e+03</td>
+      <td>0.025206</td>
     </tr>
   </tbody>
 </table>
@@ -925,18 +956,18 @@ For more detailed data and case studies, check out our <a class="reference exter
   <tbody>
     <tr>
       <th>Scores</th>
-      <td>45352.6</td>
-      <td>529201.3</td>
+      <td>45352.592228</td>
+      <td>529201.282019</td>
     </tr>
     <tr>
       <th>Whale-only scores</th>
-      <td>23463.0</td>
-      <td>511330.5</td>
+      <td>23462.994316</td>
+      <td>511330.472493</td>
     </tr>
     <tr>
       <th>Non-whale scores</th>
-      <td>21889.6</td>
-      <td>17870.8</td>
+      <td>21889.597912</td>
+      <td>17870.809526</td>
     </tr>
   </tbody>
 </table>
@@ -953,7 +984,7 @@ For more detailed data and case studies, check out our <a class="reference exter
 <h4>Proportion of Outcomes Changed:<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
 <div class="cell tag_remove-input tag_full-width docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18% of Radicle&#39;s proposal outcomes change after filtering out whale voting power.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17% of Radicle&#39;s proposal outcomes change after filtering out whale voting power.
 </pre></div>
 </div>
 </div>
@@ -989,18 +1020,18 @@ For more detailed data and case studies, check out our <a class="reference exter
   <tbody>
     <tr>
       <th>Scores</th>
-      <td>78136.3</td>
-      <td>123126.4</td>
+      <td>78136.278442</td>
+      <td>123126.401817</td>
     </tr>
     <tr>
       <th>Whale-only scores</th>
-      <td>20708.3</td>
-      <td>90218.7</td>
+      <td>20708.270722</td>
+      <td>90218.650933</td>
     </tr>
     <tr>
       <th>Non-whale scores</th>
-      <td>57428.0</td>
-      <td>32907.8</td>
+      <td>57428.007720</td>
+      <td>32907.750885</td>
     </tr>
   </tbody>
 </table>
