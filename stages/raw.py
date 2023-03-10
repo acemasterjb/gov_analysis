@@ -122,6 +122,8 @@ async def get_single_dao_snapshot(
 ) -> dict[str, dict] | None:
     print(f"Getting raw snapshot data for {raw_dao['daoName']}")
     dao_metadata = await get_dao_metadata(raw_dao)
+    if not dao_metadata["token_metadata"]:
+        return None
     _, _, dao_snapshot_id = dao_metadata.values()
     if not dao_snapshot_id:
         return None
