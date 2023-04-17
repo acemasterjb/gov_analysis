@@ -1,3 +1,5 @@
+from copy import deepcopy
+
 import pandas as pd
 
 
@@ -13,13 +15,15 @@ def reaggregate_votes_single_choice_or_basic(
     unfiltered_proposal: pd.DataFrame, top_shareholders: pd.Series
 ) -> pd.DataFrame | None:
     whales: pd.DataFrame = get_whales(unfiltered_proposal, top_shareholders)
+    scores: list[float | int] = deepcopy(unfiltered_proposal["proposal_scores"].iloc[0])
+    n_rows = unfiltered_proposal.shape[0]
+
     for _, whale in whales.iterrows():
         if type(whale["choice"]) is dict:
             whale["choice"] = list(whale["choice"].values())[0]
 
-        scores: list[float | int] = unfiltered_proposal["proposal_scores"].iloc[0]
         scores[whale["choice"] - 1] -= whale["vp"]
-        unfiltered_proposal["proposal_scores"] = [scores] * unfiltered_proposal.shape[0]
+    unfiltered_proposal["proposal_scores"] = [scores] * n_rows
 
     return unfiltered_proposal
 
@@ -28,11 +32,14 @@ def reaggregate_votes_approval(
     unfiltered_proposal: pd.DataFrame, top_shareholders: pd.Series
 ) -> pd.DataFrame:
     whales: pd.DataFrame = get_whales(unfiltered_proposal, top_shareholders)
+    scores: list[float | int] = deepcopy(unfiltered_proposal["proposal_scores"].iloc[0])
+    n_rows = unfiltered_proposal.shape[0]
+
     for _, whale in whales.iterrows():
-        scores: list[float | int] = unfiltered_proposal["proposal_scores"].iloc[0]
-        new_scores = [score - whale["vp"] for score in scores]
-        n_rows = unfiltered_proposal.shape[0]
-        unfiltered_proposal["proposal_scores"] = [new_scores] * n_rows
+        choices: list[int] = whale["choice"]
+        for choice in choices:
+            scores[choice - 1] -= whale["vp"]
+    unfiltered_proposal["proposal_scores"] = [scores] * n_rows
 
     return unfiltered_proposal
 
@@ -41,8 +48,10 @@ def reaggregate_votes_weighted(
     unfiltered_proposal: pd.DataFrame, top_shareholders: pd.Series
 ) -> pd.DataFrame:
     whales: pd.DataFrame = get_whales(unfiltered_proposal, top_shareholders)
+    n_rows = unfiltered_proposal.shape[0]
+    scores: list[int | float] = deepcopy(unfiltered_proposal["proposal_scores"].iloc[0])
+
     for _, whale in whales.iterrows():
-        scores: list[int | float] = unfiltered_proposal["proposal_scores"].iloc[0]
         weights: list[int | float] = whale["choice"].values()
         weight_total = sum(weights)
         weight_values: list[float] = [
@@ -54,7 +63,6 @@ def reaggregate_votes_weighted(
         }
         for choice in new_scores.keys():
             scores[choice - 1] = new_scores[choice]
-        n_rows = unfiltered_proposal.shape[0]
-        unfiltered_proposal["proposal_scores"] = [scores] * n_rows
+    unfiltered_proposal["proposal_scores"] = [scores] * n_rows
 
     return unfiltered_proposal

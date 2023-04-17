@@ -12,6 +12,7 @@ from .apis.deepdao.queries import (
     get_raw_token_metadata,
 )
 from .apis.snapshot.execution import get_proposals, get_votes
+from .data_processing.filters import find_dao
 
 
 def sanitize_vote(vote: dict, price_map: dict[float, float], dao_id: str):
@@ -21,6 +22,10 @@ def sanitize_vote(vote: dict, price_map: dict[float, float], dao_id: str):
     vote_price = price_map.get(vote_time.timestamp())
 
     vote["proposal_id"] = vote["proposal"]["id"]
+    vote["proposal_title"] = vote["proposal"]["title"]
+    vote["proposal_created"] = vote["proposal"]["created"]
+    vote["proposal_start"] = vote["proposal"]["start"]
+    vote["proposal_end"] = vote["proposal"]["end"]
     vote["proposal_scores_total"] = vote["proposal"]["scores_total"]
     vote["proposal_state"] = vote["proposal"]["state"]
     vote["proposal_space_name"] = vote["proposal"]["space"]["name"]
@@ -172,3 +177,15 @@ async def dao_snapshot_data(
         i += 1
 
     return daos
+
+
+async def dao_snapshot_data_for(
+    dao_name: str, proposal_limit: int, list_cutoff: int = 100
+) -> dict[str, dict]:
+    raw_daos = get_raw_dao_list(list_cutoff)
+    raw_dao = find_dao(dao_name, raw_daos)
+
+    if not raw_dao:
+        return {}
+
+    return await get_single_dao_snapshot(raw_dao, proposal_limit)

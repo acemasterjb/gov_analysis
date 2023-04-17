@@ -1,8 +1,9 @@
+aiohttp==3.8.4
+click==8.0.4
 gql==3.4.0
 httpx==0.23.3
+jupyter-book==0.13.1
+matplotlib==3.6.2
 openpyxl==3.0.10
 pandas==1.5.2
-matplotlib==3.6.2
-jupyter-book==0.13.1
 tenacity==8.2.2
-aiohttp==3.8.4

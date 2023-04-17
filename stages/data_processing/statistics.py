@@ -1,6 +1,22 @@
 import pandas as pd
 
 
+def get_number_of_voters_per_proposal(
+    dao_proposals: dict[str, pd.Series]
+) -> list[tuple[str, pd.DataFrame]]:
+    voters = []
+
+    for organization in dao_proposals.keys():
+        all_proposals = dao_proposals[organization]
+        voter_turnout: pd.Series[int] = all_proposals.groupby("proposal_id")[
+            "voter"
+        ].size()
+
+        voters.append((organization, voter_turnout))
+
+    return voters
+
+
 def get_number_of_whales_to_all_voters_ratio(
     dao_proposals: dict[str, pd.DataFrame],
     dao_proposals_filtered: dict[str, pd.DataFrame],
@@ -15,9 +31,7 @@ def get_number_of_whales_to_all_voters_ratio(
         tally = {organization: [0, 0]}
 
         num_of_voters = all_proposals["voter"].unique().shape[0]
-        num_of_voters_filtered = (
-            all_proposals_filtered["voter"].unique().shape[0]
-        )
+        num_of_voters_filtered = all_proposals_filtered["voter"].unique().shape[0]
         tally[organization][0] = num_of_voters - num_of_voters_filtered
         tally[organization][1] = num_of_voters
         ratios.append(tally)
@@ -91,7 +105,9 @@ def get_score_comparisons(
             try:
                 proposal_df = all_proposals[proposal_id]
             except KeyError:
-                print(f"issue w/ {proposal_filtered_df.iloc[0]['proposal_space_name']} on {proposal_filtered_df.iloc[0]['proposal_id']}")
+                print(
+                    f"issue w/ {proposal_filtered_df.iloc[0]['proposal_space_name']} on {proposal_filtered_df.iloc[0]['proposal_id']}"
+                )
                 continue
 
             first_row = proposal_df.iloc[0]
@@ -116,11 +132,14 @@ def get_score_comparisons(
                 whale_voting_power = sum(score_differences)
 
             organization_proposals[first_row["proposal_id"]] = [
+                first_row["proposal_id"],
+                first_row["proposal_title"],
+                first_row["proposal_start"],
+                first_row["proposal_end"],
                 score_differences,
                 whale_voting_power / total_voting_power,
                 total_voting_power,
-                not unfiltered_winning_choice_index
-                == filtered_winning_choice_index,
+                not unfiltered_winning_choice_index == filtered_winning_choice_index,
                 choices[unfiltered_winning_choice_index],
                 choices[filtered_winning_choice_index],
             ]
