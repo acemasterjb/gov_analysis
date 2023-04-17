@@ -116,6 +116,9 @@ def get_score_comparisons(
                 whale_voting_power = sum(score_differences)
 
             organization_proposals[first_row["proposal_id"]] = [
+                first_row["proposal_title"],
+                first_row["proposal_start"],
+                first_row["proposal_end"],
                 score_differences,
                 whale_voting_power / total_voting_power,
                 total_voting_power,

@@ -51,6 +51,7 @@ def votes(proposal_id: str, skip: int) -> DocumentNode:
         vp
         proposal {
             id
+            title
             scores
             scores_total
             state
@@ -60,6 +61,8 @@ def votes(proposal_id: str, skip: int) -> DocumentNode:
             }
             type
             created
+            start
+            end
             choices
             votes
             snapshot
