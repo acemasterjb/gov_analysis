@@ -1,0 +1,1273 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Aave Proposal Pivotality &#8212; My Jupyter Book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint single-page" id="site-navigation">
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/aave_proposals.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/aave_proposals.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synthesis">
+   Synthesis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparison-of-the-top-10-proposals">
+   Comparison of the top 10 proposals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proportion-of-outcomes-changed">
+     Proportion of Outcomes Changed
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#case-studies">
+   Case Studies
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arc-gauntlet-aave-renewal">
+     [ARC] Gauntlet &lt;&gt; Aave Renewal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arc-updated-gauntlet-aave-renewal">
+     [ARC] Updated: Gauntlet &lt;&gt; Aave Renewal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arc-community-risk-preference-on-aave-v3-borrow-supply-caps">
+     [ARC] Community Risk Preference on Aave V3 Borrow/Supply Caps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arc-chaos-labs-risk-parameter-updates-aave-v3-ethereum-2023-02-22">
+     [ARC]- Chaos Labs Risk Parameter Updates - Aave V3 Ethereum - 2023.02.22
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#supply-and-borrow-cap-updates-aave-v3-avalanche">
+     Supply and Borrow Cap Updates - Aave V3 Avalanche
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temp-check-incentivized-delegate-campaign-3-month">
+     [TEMP CHECK] Incentivized Delegate Campaign (3-month)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#safety-module-upgrade-to-v1-5">
+     Safety Module upgrade to v1.5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arc-community-preference-for-v3-migration-levers">
+     [ARC] Community Preference for V3 Migration Levers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deploy-aave-v3-to-metis-andromeda-mainnet">
+     Deploy Aave V3 to Metis Andromeda Mainnet
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chaos-labs-risk-parameter-updates-aave-v3-arbitrum-2023-02-20">
+     Chaos Labs Risk Parameter Updates - Aave V3 Arbitrum - 2023.02.20
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Aave Proposal Pivotality</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synthesis">
+   Synthesis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparison-of-the-top-10-proposals">
+   Comparison of the top 10 proposals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proportion-of-outcomes-changed">
+     Proportion of Outcomes Changed
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#case-studies">
+   Case Studies
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arc-gauntlet-aave-renewal">
+     [ARC] Gauntlet &lt;&gt; Aave Renewal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arc-updated-gauntlet-aave-renewal">
+     [ARC] Updated: Gauntlet &lt;&gt; Aave Renewal
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arc-community-risk-preference-on-aave-v3-borrow-supply-caps">
+     [ARC] Community Risk Preference on Aave V3 Borrow/Supply Caps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arc-chaos-labs-risk-parameter-updates-aave-v3-ethereum-2023-02-22">
+     [ARC]- Chaos Labs Risk Parameter Updates - Aave V3 Ethereum - 2023.02.22
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#supply-and-borrow-cap-updates-aave-v3-avalanche">
+     Supply and Borrow Cap Updates - Aave V3 Avalanche
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temp-check-incentivized-delegate-campaign-3-month">
+     [TEMP CHECK] Incentivized Delegate Campaign (3-month)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#safety-module-upgrade-to-v1-5">
+     Safety Module upgrade to v1.5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arc-community-preference-for-v3-migration-levers">
+     [ARC] Community Preference for V3 Migration Levers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deploy-aave-v3-to-metis-andromeda-mainnet">
+     Deploy Aave V3 to Metis Andromeda Mainnet
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chaos-labs-risk-parameter-updates-aave-v3-arbitrum-2023-02-20">
+     Chaos Labs Risk Parameter Updates - Aave V3 Arbitrum - 2023.02.20
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="aave-proposal-pivotality">
+<h1>Aave Proposal Pivotality<a class="headerlink" href="#aave-proposal-pivotality" title="Permalink to this headline">#</a></h1>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Last updated on 2023-04-20
+</pre></div>
+</div>
+</div>
+</div>
+<p>This article is part of a series of reports that aims to determine the impact of large token holders (whales) on DAO governance.</p>
+<p>We take a look at the top 10 Aave Snapshot proposals ranked by voting power and voter count, including the first Butter Aave Elections.</p>
+<p>We compare their voter turnout and pivotality metric (a measure of whale influence, described in our previous <a class="reference external" href="https://mirror.xyz/butterd.eth/_VrHsBXZU0IYuIUMq0ifJTffvH0e1AKNh6I-BIV3Nc4">Mirror article</a> and <a class="reference external" href="https://butterymoney.github.io/gov_analysis/report/plutocracy_report.html">data report</a>).</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input tag_remove-output docutils container">
+</div>
+<section id="synthesis">
+<h2>Synthesis<a class="headerlink" href="#synthesis" title="Permalink to this headline">#</a></h2>
+<p>Show the percentage of proposals whose outcome changes if whales did not vote (i.e. <em>whale pivotality</em>).</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th># of whales</th>
+      <th>all voters</th>
+      <th>changed outcomes %</th>
+    </tr>
+    <tr>
+      <th>DAO</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Aave</th>
+      <td>1438</td>
+      <td>42586</td>
+      <td>9.33%</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="comparison-of-the-top-10-proposals">
+<h2>Comparison of the top 10 proposals<a class="headerlink" href="#comparison-of-the-top-10-proposals" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date Started</th>
+      <th>Date Ended</th>
+      <th>Result</th>
+      <th>Result w/o Whales</th>
+    </tr>
+    <tr>
+      <th>Proposal</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href=http://snapshot.org/#/aave.eth/proposal/0x549fa2186f321a4e8a07e0d5e82f85f3e2c83189cfaee678a6df144bb67d8f54 rel="noopener noreferrer" target="_blank">[ARC] Gauntlet <> Aave Renewal</a></th>
+      <td>16/11/22</td>
+      <td>23/11/22</td>
+      <td>NAY</td>
+      <td>YAE</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aave.eth/proposal/0xd096f98237c642614fe154844c5037a85c1f287f3323c4b003a83bd3f4ea658a rel="noopener noreferrer" target="_blank">[ARC] Updated: Gauntlet <> Aave Renewal</a></th>
+      <td>16/12/22</td>
+      <td>19/12/22</td>
+      <td>YAE</td>
+      <td>YAE</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aave.eth/proposal/0xb4c756ac701b5cbc0ec2d832652e4f1c820aa40f7d9be18eb81f87080a52c5f1 rel="noopener noreferrer" target="_blank">[ARC] Community Risk Preference on Aave V3 Borrow/Supply Caps</a></th>
+      <td>15/02/23</td>
+      <td>21/02/23</td>
+      <td>Aggressive</td>
+      <td>Conservative only for small mkts</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aave.eth/proposal/0xa3f5b45c0238ae1363eb50ffbd59dd19b07c2ce52b7afd21179d6e1416a8ed4c rel="noopener noreferrer" target="_blank">[ARC]- Chaos Labs Risk Parameter Updates - Aave V3 Ethereum - 2023.02.22</a></th>
+      <td>28/02/23</td>
+      <td>03/03/23</td>
+      <td>YAE</td>
+      <td>YAE</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aave.eth/proposal/0x4bbd4dc6928b3d341381c5ba25cf9dfa41386229706832c627aef300963f5864 rel="noopener noreferrer" target="_blank">Supply and Borrow Cap Updates - Aave V3 Avalanche </a></th>
+      <td>02/03/23</td>
+      <td>05/03/23</td>
+      <td>Aggressive</td>
+      <td>Aggressive</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aave.eth/proposal/0xf6da417983653f7e7f5560a8e16ad77d5e25533bba9157abfd222347b40d09d0 rel="noopener noreferrer" target="_blank">[TEMP CHECK] Incentivized Delegate Campaign (3-month)</a></th>
+      <td>03/04/23</td>
+      <td>10/04/23</td>
+      <td>TokenLogic</td>
+      <td>Blockworks Research</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aave.eth/proposal/0x743ae6001bb0fdfa9a8c4475a2489c20917a79084725f0101ac7c1e7f0cf27c6 rel="noopener noreferrer" target="_blank">Safety Module upgrade to v1.5</a></th>
+      <td>15/03/23</td>
+      <td>20/03/23</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aave.eth/proposal/0x2eca177d50449f541586d4816d27022b73417952f8c5996d99f500cf0c7ec1c3 rel="noopener noreferrer" target="_blank">[ARC] Community Preference for V3 Migration Levers</a></th>
+      <td>27/03/23</td>
+      <td>05/04/23</td>
+      <td>NO decrease V2 LT/LTV</td>
+      <td>NO decrease V2 LT/LTV</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aave.eth/proposal/0x7e6175c21342dbd88dc5b0dabf2d0a86339e3ef3f199fc7d778a9a6f05ed0df9 rel="noopener noreferrer" target="_blank">Deploy Aave V3 to Metis Andromeda Mainnet</a></th>
+      <td>17/03/23</td>
+      <td>23/03/23</td>
+      <td>YAE</td>
+      <td>YAE</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aave.eth/proposal/0x7fa9944e6866ab6dafcebdf1536655faf5a5ba0adc36e6df467702f7ae096c17 rel="noopener noreferrer" target="_blank">Chaos Labs Risk Parameter Updates - Aave V3 Arbitrum - 2023.02.20</a></th>
+      <td>26/02/23</td>
+      <td>01/03/23</td>
+      <td>YAE</td>
+      <td>YAE</td>
+    </tr>
+  </tbody>
+</table></div></div>
+</div>
+<section id="proportion-of-outcomes-changed">
+<h3>Proportion of Outcomes Changed<a class="headerlink" href="#proportion-of-outcomes-changed" title="Permalink to this headline">#</a></h3>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.33% of Aave&#39;s proposal outcomes change after filtering out whale voting power.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="case-studies">
+<h2>Case Studies<a class="headerlink" href="#case-studies" title="Permalink to this headline">#</a></h2>
+<section id="arc-gauntlet-aave-renewal">
+<h3>[ARC] Gauntlet &lt;&gt; Aave Renewal<a class="headerlink" href="#arc-gauntlet-aave-renewal" title="Permalink to this headline">#</a></h3>
+<p><strong>Proposal ID</strong>: <a class="reference external" href="https://snapshot.org/#/aave.eth/proposal/0x549fa2186f321a4e8a07e0d5e82f85f3e2c83189cfaee678a6df144bb67d8f54">0x549fa21</a></p>
+<p><strong>Start Date</strong>: 16/11/22
+<strong>End Date</strong>: 23/11/22</p>
+<p><strong>Voting System</strong>: Single Choice Voting</p>
+<p><strong>Voting Strategies</strong>:</p>
+<ul class="simple">
+<li><p>aAAVE</p></li>
+<li><p>AAVE + stkAAVE</p></li>
+<li><p>Matic AAVE + amAAVE</p></li>
+<li><p>AAVE in stkBPT (Balancer Pool Token)</p></li>
+</ul>
+<p>This ARC proposal is for the renewal of Gauntlet’s 12-month engagement on Aave as a risk manager. This proposal did not pass, but would have passed if whales had not participated.</p>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YAE</th>
+      <th>NAY</th>
+      <th>ABSTAIN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>477505.187812</td>
+      <td>639091.170223</td>
+      <td>9.932691</td>
+    </tr>
+    <tr>
+      <th>Whale-only Scores</th>
+      <td>477179.561740</td>
+      <td>639076.325697</td>
+      <td>5.758735</td>
+    </tr>
+    <tr>
+      <th>Non-whale Scores</th>
+      <td>325.626072</td>
+      <td>14.844526</td>
+      <td>4.173956</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="arc-updated-gauntlet-aave-renewal">
+<h3>[ARC] Updated: Gauntlet &lt;&gt; Aave Renewal<a class="headerlink" href="#arc-updated-gauntlet-aave-renewal" title="Permalink to this headline">#</a></h3>
+<p><strong>Proposal ID</strong>: <a class="reference external" href="https://snapshot.org/#/aave.eth/proposal/0xd096f98237c642614fe154844c5037a85c1f287f3323c4b003a83bd3f4ea658a">0xd096f98</a></p>
+<p><strong>Start Date</strong>: 15/12/22
+<strong>End Date</strong>: 19/12/22</p>
+<p><strong>Voting System</strong>: Single Choice Voting</p>
+<p><strong>Voting Strategies</strong>:</p>
+<ul class="simple">
+<li><p>aAAVE</p></li>
+<li><p>AAVE + stkAAVE</p></li>
+<li><p>Matic AAVE + amAAVE</p></li>
+<li><p>AAVE in stkBPT (Balancer Pool Token)</p></li>
+</ul>
+<p>This is an updated proposal from the previous proposal which did not pass. It’s outcome did not change after filtering out whales.</p>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YAE</th>
+      <th>ABSTAIN</th>
+      <th>NAY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>810968.966804</td>
+      <td>38.584084</td>
+      <td>13.109700</td>
+    </tr>
+    <tr>
+      <th>Whale-only Scores</th>
+      <td>810686.317376</td>
+      <td>17.505492</td>
+      <td>10.953800</td>
+    </tr>
+    <tr>
+      <th>Non-whale Scores</th>
+      <td>282.649428</td>
+      <td>21.078592</td>
+      <td>2.155901</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="arc-community-risk-preference-on-aave-v3-borrow-supply-caps">
+<h3>[ARC] Community Risk Preference on Aave V3 Borrow/Supply Caps<a class="headerlink" href="#arc-community-risk-preference-on-aave-v3-borrow-supply-caps" title="Permalink to this headline">#</a></h3>
+<p><strong>Proposal ID</strong>: <a class="reference external" href="https://snapshot.org/#/aave.eth/proposal/0xb4c756ac701b5cbc0ec2d832652e4f1c820aa40f7d9be18eb81f87080a52c5f1">0xb4c756a</a></p>
+<p><strong>Start Date</strong>: 15/02/23
+<strong>End Date</strong>: 21/02/23</p>
+<p><strong>Voting System</strong>: Single Choice Voting</p>
+<p><strong>Voting Strategies</strong>:</p>
+<ul class="simple">
+<li><p>aAAVE</p></li>
+<li><p>AAVE + stkAAVE</p></li>
+<li><p>Matic AAVE + amAAVE</p></li>
+<li><p>AAVE in stkBPT (Balancer Pool Token)</p></li>
+</ul>
+<p>A proposal to set supply and borrow cap parameters on non-Ethereum chains. Filtering out whales changed the outcome of this proposal from setting aggressive parameters to only setting conservative parameters for small market cap assets.</p>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Conservative</th>
+      <th>Aggressive</th>
+      <th>Conservative only for small mkts</th>
+      <th>Abstain</th>
+      <th>Nay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>1748.206533</td>
+      <td>492177.899982</td>
+      <td>305646.846008</td>
+      <td>45.704975</td>
+      <td>160.376733</td>
+    </tr>
+    <tr>
+      <th>Whale-only Scores</th>
+      <td>1578.218473</td>
+      <td>492126.107082</td>
+      <td>305006.709358</td>
+      <td>37.704366</td>
+      <td>153.841623</td>
+    </tr>
+    <tr>
+      <th>Non-whale Scores</th>
+      <td>169.988060</td>
+      <td>51.792900</td>
+      <td>640.136650</td>
+      <td>8.000609</td>
+      <td>6.535110</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="arc-chaos-labs-risk-parameter-updates-aave-v3-ethereum-2023-02-22">
+<h3>[ARC]- Chaos Labs Risk Parameter Updates - Aave V3 Ethereum - 2023.02.22<a class="headerlink" href="#arc-chaos-labs-risk-parameter-updates-aave-v3-ethereum-2023-02-22" title="Permalink to this headline">#</a></h3>
+<p><strong>Proposal ID</strong>: <a class="reference external" href="https://snapshot.org/#/aave.eth/proposal/0xa3f5b45c0238ae1363eb50ffbd59dd19b07c2ce52b7afd21179d6e1416a8ed4c">0xa3f5b45</a></p>
+<p><strong>Start Date</strong>: 28/02/23
+<strong>End Date</strong>: 03/03/23</p>
+<p><strong>Voting System</strong>: Single Choice Voting</p>
+<p><strong>Voting Strategies</strong>:</p>
+<ul class="simple">
+<li><p>aAAVE</p></li>
+<li><p>AAVE + stkAAVE</p></li>
+<li><p>Matic AAVE + amAAVE</p></li>
+<li><p>AAVE in stkBPT (Balancer Pool Token)</p></li>
+</ul>
+<p>This proposal is for the adjustment of four risk parameters for USDC and DAI on Aave V3 assets. The outcome of this proposal did not change after filtering out whales.</p>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YAE</th>
+      <th>NAE</th>
+      <th>Abstain</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>794857.573876</td>
+      <td>17.605791</td>
+      <td>12.161327</td>
+    </tr>
+    <tr>
+      <th>Whale-only Scores</th>
+      <td>752869.995664</td>
+      <td>15.597452</td>
+      <td>9.350240</td>
+    </tr>
+    <tr>
+      <th>Non-whale Scores</th>
+      <td>41987.578212</td>
+      <td>2.008339</td>
+      <td>2.811087</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="supply-and-borrow-cap-updates-aave-v3-avalanche">
+<h3>Supply and Borrow Cap Updates - Aave V3 Avalanche<a class="headerlink" href="#supply-and-borrow-cap-updates-aave-v3-avalanche" title="Permalink to this headline">#</a></h3>
+<p><strong>Proposal ID</strong>: <a class="reference external" href="https://snapshot.org/#/aave.eth/proposal/0x4bbd4dc6928b3d341381c5ba25cf9dfa41386229706832c627aef300963f5864">0x4bbd4dc</a></p>
+<p><strong>Start Date</strong>: 02/03/23
+<strong>End Date</strong>: 05/03/23</p>
+<p><strong>Voting System</strong>: Single Choice Voting</p>
+<p><strong>Voting Strategies</strong>:</p>
+<ul class="simple">
+<li><p>aAAVE</p></li>
+<li><p>AAVE + stkAAVE</p></li>
+<li><p>Matic AAVE + amAAVE</p></li>
+<li><p>AAVE in stkBPT (Balancer Pool Token)</p></li>
+</ul>
+<p>This proposal aims to adjust twenty supply and borrow caps for eleven Aave V3 assets on Avalanche. The outcome of this proposal did not change after filtering out whales.</p>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Conservative</th>
+      <th>Aggressive</th>
+      <th>NAY</th>
+      <th>Abstain</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>230.814430</td>
+      <td>749548.068606</td>
+      <td>6.004477</td>
+      <td>220.980583</td>
+    </tr>
+    <tr>
+      <th>Whale-only Scores</th>
+      <td>122.780886</td>
+      <td>470152.599102</td>
+      <td>3.547180</td>
+      <td>64.500585</td>
+    </tr>
+    <tr>
+      <th>Non-whale Scores</th>
+      <td>108.033544</td>
+      <td>279395.469504</td>
+      <td>2.457296</td>
+      <td>156.479998</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="temp-check-incentivized-delegate-campaign-3-month">
+<h3>[TEMP CHECK] Incentivized Delegate Campaign (3-month)<a class="headerlink" href="#temp-check-incentivized-delegate-campaign-3-month" title="Permalink to this headline">#</a></h3>
+<p>Aka the first Butter’d Aave Election.</p>
+<p><strong>Proposal ID</strong>: <a class="reference external" href="https://snapshot.org/#/aave.eth/proposal/0xf6da417983653f7e7f5560a8e16ad77d5e25533bba9157abfd222347b40d09d0">0xf6da417</a></p>
+<p><strong>Start Date</strong>: 03/04/23
+<strong>End Date</strong>: 10/04/23</p>
+<p><strong>Voting System</strong>: Weighted Voting</p>
+<p><strong>Voting Strategies</strong>:</p>
+<ul class="simple">
+<li><p>aAAVE</p></li>
+<li><p>AAVE + stkAAVE</p></li>
+<li><p>Matic AAVE + amAAVE</p></li>
+<li><p>AAVE in stkBPT (Balancer Pool Token)</p></li>
+</ul>
+<p>Aave votes to select a delegate who will receive a $15k grant (paid in AAVE) from Aave Grants after a three-month term as a delegate, a delegate election. TokenLogic ultimately won this election, however, if we remove whale voting power from this proposal we find that Blockworks Research would’ve been selected by the Aave community instead.</p>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Blockworks Research</th>
+      <th>ConsenSys</th>
+      <th>Curia</th>
+      <th>DAOStewards</th>
+      <th>Fire Eyes</th>
+      <th>Flipside Crypto</th>
+      <th>FranklinDAO</th>
+      <th>OnChainCoop</th>
+      <th>Oxytocin</th>
+      <th>Saludiego201.eth</th>
+      <th>StableLab</th>
+      <th>TokenLogic</th>
+      <th>Wallfacer Labs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>87232.635594</td>
+      <td>17620.565593</td>
+      <td>12742.462405</td>
+      <td>434.508563</td>
+      <td>104834.493934</td>
+      <td>90345.343934</td>
+      <td>66127.639535</td>
+      <td>409.610873</td>
+      <td>30504.177435</td>
+      <td>437.382397</td>
+      <td>146246.026838</td>
+      <td>185171.775039</td>
+      <td>435.859890</td>
+    </tr>
+    <tr>
+      <th>Whale-only Scores</th>
+      <td>86487.989188</td>
+      <td>16950.926291</td>
+      <td>12712.705752</td>
+      <td>407.073261</td>
+      <td>104802.547664</td>
+      <td>90318.258696</td>
+      <td>65886.207100</td>
+      <td>391.862324</td>
+      <td>30491.294636</td>
+      <td>393.737487</td>
+      <td>146194.584615</td>
+      <td>185153.921653</td>
+      <td>420.744217</td>
+    </tr>
+    <tr>
+      <th>Non-whale Scores</th>
+      <td>744.646406</td>
+      <td>669.639302</td>
+      <td>29.756653</td>
+      <td>27.435302</td>
+      <td>31.946270</td>
+      <td>27.085238</td>
+      <td>241.432435</td>
+      <td>17.748550</td>
+      <td>12.882799</td>
+      <td>43.644910</td>
+      <td>51.442223</td>
+      <td>17.853386</td>
+      <td>15.115673</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="safety-module-upgrade-to-v1-5">
+<h3>Safety Module upgrade to v1.5<a class="headerlink" href="#safety-module-upgrade-to-v1-5" title="Permalink to this headline">#</a></h3>
+<p><strong>Proposal ID</strong>: <a class="reference external" href="https://snapshot.org/#/aave.eth/proposal/0x743ae6001bb0fdfa9a8c4475a2489c20917a79084725f0101ac7c1e7f0cf27c6">0x743ae60</a></p>
+<p><strong>Start Date</strong>: 15/03/23
+<strong>End Date</strong>: 20/03/23</p>
+<p><strong>Voting System</strong>: Single Choice Voting</p>
+<p><strong>Voting Strategies</strong>:</p>
+<ul class="simple">
+<li><p>aAAVE</p></li>
+<li><p>AAVE + stkAAVE</p></li>
+<li><p>Matic AAVE + amAAVE</p></li>
+<li><p>AAVE in stkBPT (Balancer Pool Token)</p></li>
+</ul>
+<p>A proposal to gauge the community’s sentiments on upgrading the Safety Module smart contracts (stkAAVE, stkABPT) to v1.5. The outcome of this proposal did not change after filtering out whales.</p>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YES</th>
+      <th>NO</th>
+      <th>ABSTAIN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>728927.638707</td>
+      <td>34.541017</td>
+      <td>32.507649</td>
+    </tr>
+    <tr>
+      <th>Whale-only Scores</th>
+      <td>572570.468097</td>
+      <td>31.963758</td>
+      <td>3.550356</td>
+    </tr>
+    <tr>
+      <th>Non-whale Scores</th>
+      <td>156357.170609</td>
+      <td>2.577259</td>
+      <td>28.957293</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="arc-community-preference-for-v3-migration-levers">
+<h3>[ARC] Community Preference for V3 Migration Levers<a class="headerlink" href="#arc-community-preference-for-v3-migration-levers" title="Permalink to this headline">#</a></h3>
+<p><strong>Proposal ID</strong>: <a class="reference external" href="https://snapshot.org/#/aave.eth/proposal/0x2eca177d50449f541586d4816d27022b73417952f8c5996d99f500cf0c7ec1c3">0x2eca177</a></p>
+<p><strong>Start Date</strong>: 27/03/23
+<strong>End Date</strong>: 05/04/23</p>
+<p><strong>Voting System</strong>: Approval Voting</p>
+<p><strong>Voting Strategies</strong>:</p>
+<ul class="simple">
+<li><p>aAAVE</p></li>
+<li><p>AAVE + stkAAVE</p></li>
+<li><p>Matic AAVE + amAAVE</p></li>
+<li><p>AAVE in stkBPT (Balancer Pool Token)</p></li>
+</ul>
+<p>The analysis for this proposal is not yet ready to be published.</p>
+<div class="cell tag_remove-input tag_full-width docutils container">
+</div>
+</section>
+<section id="deploy-aave-v3-to-metis-andromeda-mainnet">
+<h3>Deploy Aave V3 to Metis Andromeda Mainnet<a class="headerlink" href="#deploy-aave-v3-to-metis-andromeda-mainnet" title="Permalink to this headline">#</a></h3>
+<p><strong>Proposal ID</strong>: <a class="reference external" href="https://snapshot.org/#/aave.eth/proposal/0x7e6175c21342dbd88dc5b0dabf2d0a86339e3ef3f199fc7d778a9a6f05ed0df9">0x7e6175c</a></p>
+<p><strong>Start Date</strong>: 17/03/23
+<strong>End Date</strong>: 23/03/23</p>
+<p><strong>Voting System</strong>: Single Choice Voting</p>
+<p><strong>Voting Strategies</strong>:</p>
+<ul class="simple">
+<li><p>aAAVE</p></li>
+<li><p>AAVE + stkAAVE</p></li>
+<li><p>Matic AAVE + amAAVE</p></li>
+<li><p>AAVE in stkBPT (Balancer Pool Token)</p></li>
+</ul>
+<p>This is a proposal to gauge the community’s sentiments to deploy Aave V3 to the Metis “Andromeda” Mainnet. The outcome of this proposal did not change after filtering out whales.</p>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YAE</th>
+      <th>NAY</th>
+      <th>ABSTAIN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>555698.763981</td>
+      <td>162135.341400</td>
+      <td>140.725517</td>
+    </tr>
+    <tr>
+      <th>Whale-only Scores</th>
+      <td>133249.462649</td>
+      <td>161953.210564</td>
+      <td>137.650972</td>
+    </tr>
+    <tr>
+      <th>Non-whale Scores</th>
+      <td>422449.301332</td>
+      <td>182.130836</td>
+      <td>3.074545</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="chaos-labs-risk-parameter-updates-aave-v3-arbitrum-2023-02-20">
+<h3>Chaos Labs Risk Parameter Updates - Aave V3 Arbitrum - 2023.02.20<a class="headerlink" href="#chaos-labs-risk-parameter-updates-aave-v3-arbitrum-2023-02-20" title="Permalink to this headline">#</a></h3>
+<p><strong>Proposal ID</strong>: <a class="reference external" href="https://snapshot.org/#/aave.eth/proposal/0x7fa9944e6866ab6dafcebdf1536655faf5a5ba0adc36e6df467702f7ae096c17">0x7fa9944</a></p>
+<p><strong>Start Date</strong>: 25/02/23
+<strong>End Date</strong>: 01/03/23</p>
+<p><strong>Voting System</strong>: Single Choice Voting</p>
+<p><strong>Voting Strategies</strong>:</p>
+<ul class="simple">
+<li><p>aAAVE</p></li>
+<li><p>AAVE + stkAAVE</p></li>
+<li><p>Matic AAVE + amAAVE</p></li>
+<li><p>AAVE in stkBPT (Balancer Pool Token)</p></li>
+</ul>
+<p>This is a proposal to adjust all nine risk parameters for four Aave V3 assets on Arbitrum. The outcome of this proposal did not change after filtering out whales.</p>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YAE</th>
+      <th>NAE</th>
+      <th>Abastain</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>687137.995655</td>
+      <td>237.064747</td>
+      <td>1126.592836</td>
+    </tr>
+    <tr>
+      <th>Whale-only Scores</th>
+      <td>686603.505151</td>
+      <td>222.546671</td>
+      <td>1118.761185</td>
+    </tr>
+    <tr>
+      <th>Non-whale Scores</th>
+      <td>534.490504</td>
+      <td>14.518076</td>
+      <td>7.831651</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
