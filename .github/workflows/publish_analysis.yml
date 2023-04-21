@@ -3,7 +3,7 @@ name: publish-book-analysis
 on:
   push:
     paths:
-      - "book/**"
+      - "book/extensive_analysis.ipynb"
       - ".github/workflows/publish_analysis.yml"
     branches:
       - main

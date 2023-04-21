@@ -1,10 +1,10 @@
-name: publish-book-aave
+name: publish-book-euler
 
 on:
   push:
     paths:
-      - "book/aave_proposals.ipynb"
-      - ".github/workflows/publish_report_aave.yml"
+      - "book/euler_proposals.ipynb"
+      - ".github/workflows/publish_report_euler.yml"
     branches:
       - main
 
@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 jobs:
-  publish-book-aave:
+  publish-book-euler:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -28,12 +28,12 @@ jobs:
 
       - name: Build the books
         run: |
-          jupyter-book build ./book/aave_proposals.ipynb
+          jupyter-book build ./book/euler.ipynb
 
       - name: GitHub Pages publish Report
         uses: peaceiris/actions-gh-pages@v3.9.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./book/_build/_page/aave_proposals/html
-          destination_dir: ./report_aave/
+          publish_dir: ./book/_build/_page/euler/html
+          destination_dir: ./report_euler/
           allow_empty_commit: true

@@ -3,8 +3,8 @@ import pandas as pd
 
 def get_number_of_voters_per_proposal(
     dao_proposals: dict[str, pd.Series]
-) -> list[tuple[str, pd.DataFrame]]:
-    voters = []
+) -> dict[str, pd.DataFrame]:
+    voters = {}
 
     for organization in dao_proposals.keys():
         all_proposals = dao_proposals[organization]
@@ -12,7 +12,7 @@ def get_number_of_voters_per_proposal(
             "voter"
         ].size()
 
-        voters.append((organization, voter_turnout))
+        voters[organization] =  voter_turnout
 
     return voters
 
