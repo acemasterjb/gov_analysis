@@ -1016,22 +1016,22 @@ title="Print to PDF"
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">plutocracy_report_data</span><span class="p">,</span> <span class="n">plutocracy_report_data_filtered</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">)</span>
 
-<span class="nn">File ~/work/gov_analysis/gov_analysis/stages/data_processing/statistics.py:119,</span> in <span class="ni">get_score_comparisons</span><span class="nt">(dao_proposals, dao_proposals_filtered)</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">116</span>             <span class="n">whale_voting_power</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">score_differences</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span>         <span class="n">organization_proposals</span><span class="p">[</span><span class="n">first_row</span><span class="p">[</span><span class="s2">&quot;proposal_id&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span>
-<span class="ne">--&gt; </span><span class="mi">119</span>             <span class="n">first_row</span><span class="p">[</span><span class="s2">&quot;proposal_title&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">120</span>             <span class="n">first_row</span><span class="p">[</span><span class="s2">&quot;proposal_start&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span>             <span class="n">first_row</span><span class="p">[</span><span class="s2">&quot;proposal_end&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">122</span>             <span class="n">score_differences</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span>             <span class="n">whale_voting_power</span> <span class="o">/</span> <span class="n">total_voting_power</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">124</span>             <span class="n">total_voting_power</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span>             <span class="ow">not</span> <span class="n">unfiltered_winning_choice_index</span>
-<span class="g g-Whitespace">    </span><span class="mi">126</span>             <span class="o">==</span> <span class="n">filtered_winning_choice_index</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span>             <span class="n">choices</span><span class="p">[</span><span class="n">unfiltered_winning_choice_index</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">128</span>             <span class="n">choices</span><span class="p">[</span><span class="n">filtered_winning_choice_index</span><span class="p">],</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span>         <span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span> <span class="k">return</span> <span class="n">differences</span>
+<span class="nn">File ~/work/gov_analysis/gov_analysis/stages/data_processing/statistics.py:136,</span> in <span class="ni">get_score_comparisons</span><span class="nt">(dao_proposals, dao_proposals_filtered)</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">132</span>             <span class="n">whale_voting_power</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">score_differences</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span>         <span class="n">organization_proposals</span><span class="p">[</span><span class="n">first_row</span><span class="p">[</span><span class="s2">&quot;proposal_id&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span>             <span class="n">first_row</span><span class="p">[</span><span class="s2">&quot;proposal_id&quot;</span><span class="p">],</span>
+<span class="ne">--&gt; </span><span class="mi">136</span>             <span class="n">first_row</span><span class="p">[</span><span class="s2">&quot;proposal_title&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span>             <span class="n">first_row</span><span class="p">[</span><span class="s2">&quot;proposal_start&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span>             <span class="n">first_row</span><span class="p">[</span><span class="s2">&quot;proposal_end&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">139</span>             <span class="n">score_differences</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span>             <span class="n">whale_voting_power</span> <span class="o">/</span> <span class="n">total_voting_power</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">141</span>             <span class="n">total_voting_power</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">142</span>             <span class="ow">not</span> <span class="n">unfiltered_winning_choice_index</span> <span class="o">==</span> <span class="n">filtered_winning_choice_index</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span>             <span class="n">choices</span><span class="p">[</span><span class="n">unfiltered_winning_choice_index</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">144</span>             <span class="n">choices</span><span class="p">[</span><span class="n">filtered_winning_choice_index</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">145</span>         <span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">146</span> <span class="k">return</span> <span class="n">differences</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/pandas/core/series.py:981,</span> in <span class="ni">Series.__getitem__</span><span class="nt">(self, key)</span>
 <span class="g g-Whitespace">    </span><span class="mi">978</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_values</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
