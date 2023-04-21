@@ -7,6 +7,7 @@ on:
       - ".github/workflows/publish_report_euler.yml"
     branches:
       - main
+      - book/*
 
 permissions:
   contents: write
