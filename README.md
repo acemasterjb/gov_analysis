@@ -1,20 +1,36 @@
-# DAO Governance Analysis
-### Prerequisites
+
+# 🔎 DAO Governance Analysis
+
+## Prerequisites
+
 A Python 3.9+ environment.
 The dependencies listed in [requirements.txt](./requirements.txt):
+
 ```bash
 pip install -r ./requirements.txt
 ```
+
 ## Plutocracy Report
-### Usage
-```bash
-python pluto_report.py [--dao_name <name_of_dao>]
+
+```console
+$ python pluto_report.py --help
+Usage: pluto_report.py [OPTIONS]
+
+Options:
+  -n, --number INTEGER RANGE  Get the top `n` DAOs. Has no effect if `-d` is
+                              used.  [default: 60; 1<=x<=60]
+  -d, --dao_name TEXT         Name of the DAO you would like to run the report
+                              on. [default: Get all DAOs]
+  -t, --use_tally             Whether or not to run the report on on-chain vote data.
+                              [default: Use Off-Chain data]
+  -b, --blacklist JSON_LIST   Exclude the listed DAOs. e.g. '["Fei", "OlympusDAO"]'
+  --help                      Show this message and exit.
 ```
 
-By default, it will run the report for the top 60 DAOs. If the name of the DAO is passed in the `--dao_name` option (e.g. `Aave`), it will attempt to search for the given DAO and generate the data for its report for its last 10 proposals.
+The notebooks found in `./book` depend on the `.csv.gzip` files the script generated and stored in the `./plutocracy_data/full_report` directory.
 
-Two `.csv.gzip` files will be generated in the cloned project's `plutocracy_data/full_report` directory as `plutocracy_report.csv.gzip` and `plutocracy_report_filtered.csv.gzip`.
+To edit and run the notebooks it's recommended that you use the [Jupyter Notebook Interface](https://github.com/jupyter/notebook):
 
-The report generated depends on these files to update the data on the notebooks in `./book/`.
-
-To run the notebook, you can run `jupyter notebook ./book/` and access the book, via your browser, from the provided link in your terminal.
+```console
+jupyter notebook ./book/
+```

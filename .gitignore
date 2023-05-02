@@ -12,3 +12,6 @@ _build
 
 ## vscode
 settings.json
+
+## Environment
+.env

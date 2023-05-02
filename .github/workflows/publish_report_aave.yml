@@ -3,7 +3,7 @@ name: publish-book-aave
 on:
   push:
     paths:
-      - "book/**"
+      - "book/aave_proposals.ipynb"
       - ".github/workflows/publish_report_aave.yml"
     branches:
       - main

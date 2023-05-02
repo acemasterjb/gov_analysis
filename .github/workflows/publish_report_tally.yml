@@ -1,0 +1,40 @@
+name: publish_book-on_chain
+
+on:
+  push:
+    paths:
+      - "book/plutocracy_report_tally.ipynb"
+      - ".github/workflows/publish_report_tally.yml"
+    branches:
+      - main
+      - book/on_chain
+
+permissions:
+  contents: write
+
+jobs:
+  publish_book-on_chain:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Build the books
+        run: |
+          jupyter-book build ./book/plutocracy_report_tally.ipynb
+
+      - name: GitHub Pages publish Report
+        uses: peaceiris/actions-gh-pages@v3.9.2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./book/_build/_page/plutocracy_report_tally/html
+          destination_dir: ./report_on_chain/
+          allow_empty_commit: true

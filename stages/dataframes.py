@@ -9,9 +9,13 @@ def get_snapshot_dataframe(dao_snapshot_vote_data: list[dict]) -> pd.DataFrame:
         tupleize_cols=False,
     )
 
-    return pd.DataFrame(
-        dao_snapshot_vote_data,
-        index=index,
+    return (
+        pd.DataFrame(
+            dao_snapshot_vote_data,
+            index=index,
+        )
+        .astype({"vp": "float", "proposal_scores_total": "float"})
+        .drop_duplicates(["id"])
     )
 
 
