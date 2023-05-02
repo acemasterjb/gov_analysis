@@ -8,7 +8,7 @@ def into_organization_dataframes(
     for proposal_df in filtered_propsal_dataframes:
         if proposal_df.empty:
             continue
-        organization_name: str = proposal_df.iloc[0]["proposal_space_name"]
+        organization_name: str = proposal_df.iloc[0]["proposal_organization_name"]
         if organization_name not in organization_map.keys():
             organization_map[organization_name] = []
         organization_map[organization_name].append(proposal_df)

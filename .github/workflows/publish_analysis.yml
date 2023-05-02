@@ -5,14 +5,12 @@ on:
     paths:
       - "book/**"
       - ".github/workflows/publish_analysis.yml"
-    branches:
-      - main
 
 permissions:
   contents: write
 
 jobs:
-  publish-book:
+  publish-analysis:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
