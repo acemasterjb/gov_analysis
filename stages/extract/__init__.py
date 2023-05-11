@@ -60,8 +60,10 @@ async def get_single_dao_snapshot(
 
 
 async def sanitize_tally_proposals(
-    proposals: list[dict], governance_metadata: dict[str, str]
+    proposals: list[dict], governance_metadata: dict[str, str] | None
 ) -> dict[str, dict] | None:
+    if not governance_metadata:
+        return None
     dao_tally_id, _, _ = governance_metadata.values()
     if not dao_tally_id:
         return None
@@ -116,7 +118,7 @@ async def get_all_daos_tally(raw_daos: list[dict]) -> dict[str, dict] | None:
 
         except Exception:
             print(f"issue with {governance['organization']['name']}\n\n")
-            raise
+            return None
         print(
             f"number of votes in {governance['organization']['name']}: {sum([len(proposal['votes']) for proposal in votes.values()])}"
         )
@@ -140,7 +142,7 @@ async def get_all_daos_tally(raw_daos: list[dict]) -> dict[str, dict] | None:
 
 async def select_dimension(
     raw_dao: dict | list[dict], proposal_limit: int = None, from_onchain: bool = False
-) -> dict[str, dict] | list[dict]:
+) -> dict[str, dict] | list[dict] | None:
     if from_onchain:
         assert type(raw_dao) == list, "`raw_dao` needs to be a list for tally"
         return await get_all_daos_tally(raw_dao)
