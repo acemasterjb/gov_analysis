@@ -16,13 +16,10 @@ transport = AIOHTTPTransport(
 client = Client(transport=transport, fetch_schema_from_transport=True)
 
 
-def get_governances_in_next_page(tally_result: dict[str, dict]) -> dict[str, dict]:
-    proposals_with_more_pages = dict()
-    for proposal_id, proposal in tally_result.items():
-        if proposal["votes"]:
-            proposals_with_more_pages[str(proposal_id)] = proposal
+def get_governances_in_next_page(proposal_payload: tuple[int, dict]) -> dict[str, dict]:
+    _, proposal = proposal_payload
 
-    return proposals_with_more_pages
+    return True if proposal["votes"] else False
 
 
 async def get_votes(
@@ -47,7 +44,8 @@ async def get_votes(
     for proposal in response["proposals"]:
         result[proposal["id"]] = proposal
 
-    maybe_next_page = get_governances_in_next_page(result)
+    maybe_next_page = dict(filter(get_governances_in_next_page, result.items()))
+
     if maybe_next_page:
         maybe_next_page_proposal_ids = list(maybe_next_page.keys())
         next_page = await get_votes(

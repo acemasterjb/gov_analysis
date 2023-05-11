@@ -35,9 +35,11 @@ class Blacklist(ParamType):
             return value
         try:
             maybe_blacklist = loads(value)
-            assert maybe_blacklist is list, "Given `blacklist` is not a list of strings"
+            assert (
+                type(maybe_blacklist) is list
+            ), "Given `blacklist` is not a list of strings"
             assert all(
-                [dao is str for dao in maybe_blacklist]
+                [type(dao) is str for dao in maybe_blacklist]
             ), "DAO names must be strings"
             return maybe_blacklist
         except:
