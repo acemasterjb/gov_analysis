@@ -1,0 +1,1356 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Whale Pivotality in Aave top Snapshot proposals &#8212; My Jupyter Book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint single-page" id="site-navigation">
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/aave_proposals.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/aave_proposals.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synthesis">
+   Synthesis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparison-of-the-top-10-proposals">
+   Comparison of the Top 10 Proposals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proportion-of-outcomes-changed">
+     Proportion of Outcomes Changed
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#case-studies">
+   Case Studies
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temp-check-incentivized-delegate-campaign-3-month">
+     [TEMP CHECK] Incentivized Delegate Campaign (3-month)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temp-check-launch-aave-v3-on-starknet">
+     [TEMP CHECK] - Launch Aave V3 on Starknet
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arc-e-mode-parameter-changes-for-v3-avalanche-optimism-polygon-and-arbitrum">
+     [ARC] E-Mode Parameter Changes for V3 Avalanche, Optimism, Polygon, and Arbitrum
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temp-check-whitelist-stargate-for-v3-portals">
+     [TEMP CHECK] - Whitelist Stargate for V3 Portals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#safety-module-upgrade-to-v1-5">
+     Safety Module upgrade to v1.5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deploy-aave-v3-to-metis-andromeda-mainnet">
+     Deploy Aave V3 to Metis Andromeda Mainnet
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arfc-add-mkr-to-ethereum-v3">
+     [ARFC] Add MKR to Ethereum v3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temp-check-aave-v3-deployment-on-zksync-era-mainnet">
+     [TEMP CHECK] Aave V3 Deployment on zkSync Era Mainnet
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temp-check-aave-v3-deployment-on-bnb-chain">
+     [TEMP CHECK] Aave V3 deployment on BNB Chain
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arfc-grant-op-emission-admin-for-optimism-v3-liquidity-pool-to-lido-dao">
+     [ARFC] Grant OP
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Emission_Admin
+      </span>
+     </code>
+     for Optimism v3 Liquidity Pool to Lido DAO
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Whale Pivotality in Aave top Snapshot proposals</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synthesis">
+   Synthesis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparison-of-the-top-10-proposals">
+   Comparison of the Top 10 Proposals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proportion-of-outcomes-changed">
+     Proportion of Outcomes Changed
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#case-studies">
+   Case Studies
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temp-check-incentivized-delegate-campaign-3-month">
+     [TEMP CHECK] Incentivized Delegate Campaign (3-month)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temp-check-launch-aave-v3-on-starknet">
+     [TEMP CHECK] - Launch Aave V3 on Starknet
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arc-e-mode-parameter-changes-for-v3-avalanche-optimism-polygon-and-arbitrum">
+     [ARC] E-Mode Parameter Changes for V3 Avalanche, Optimism, Polygon, and Arbitrum
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temp-check-whitelist-stargate-for-v3-portals">
+     [TEMP CHECK] - Whitelist Stargate for V3 Portals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#safety-module-upgrade-to-v1-5">
+     Safety Module upgrade to v1.5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deploy-aave-v3-to-metis-andromeda-mainnet">
+     Deploy Aave V3 to Metis Andromeda Mainnet
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arfc-add-mkr-to-ethereum-v3">
+     [ARFC] Add MKR to Ethereum v3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temp-check-aave-v3-deployment-on-zksync-era-mainnet">
+     [TEMP CHECK] Aave V3 Deployment on zkSync Era Mainnet
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temp-check-aave-v3-deployment-on-bnb-chain">
+     [TEMP CHECK] Aave V3 deployment on BNB Chain
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arfc-grant-op-emission-admin-for-optimism-v3-liquidity-pool-to-lido-dao">
+     [ARFC] Grant OP
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       Emission_Admin
+      </span>
+     </code>
+     for Optimism v3 Liquidity Pool to Lido DAO
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="whale-pivotality-in-aave-top-snapshot-proposals">
+<h1>Whale Pivotality in Aave top Snapshot proposals<a class="headerlink" href="#whale-pivotality-in-aave-top-snapshot-proposals" title="Permalink to this headline">#</a></h1>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Last updated on 2023-05-12
+</pre></div>
+</div>
+</div>
+</div>
+<p>This article is part of a series of reports that aims to determine the impact of large token holders (whales) on DAO governance.</p>
+<p>We take a look at the top 10 Aave Snapshot proposals ranked by voting power and voter count, including the first Butter Aave Elections.</p>
+<p>We compare their voter turnout and pivotality metric (a measure of whale influence, described in our previous <a class="reference external" href="https://mirror.xyz/butterd.eth/_VrHsBXZU0IYuIUMq0ifJTffvH0e1AKNh6I-BIV3Nc4">Mirror article</a> and <a class="reference external" href="https://butterymoney.github.io/gov_analysis/report/plutocracy_report.html">data report</a>).</p>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">12</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">to_organization_map</span><span class="p">(</span><span class="n">flat_organization_dataframe</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="k">return</span> <span class="p">{</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>         <span class="n">organization_name</span><span class="p">:</span> <span class="n">proposal_df</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="k">for</span> <span class="n">organization_name</span><span class="p">,</span> <span class="n">proposal_df</span> <span class="ow">in</span> <span class="p">[</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="p">}</span>
+<span class="ne">---&gt; </span><span class="mi">12</span> <span class="n">plutocracy_report_data</span> <span class="o">=</span> <span class="n">to_organization_map</span><span class="p">(</span><span class="n">all_organization_proposals</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">plutocracy_report_data_filtered</span> <span class="o">=</span> <span class="n">to_organization_map</span><span class="p">(</span><span class="n">all_organization_proposals_filtered</span><span class="p">)</span>
+
+<span class="nn">Cell In[4], line 6,</span> in <span class="ni">to_organization_map</span><span class="nt">(flat_organization_dataframe)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">to_organization_map</span><span class="p">(</span><span class="n">flat_organization_dataframe</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="k">return</span> <span class="p">{</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>         <span class="n">organization_name</span><span class="p">:</span> <span class="n">proposal_df</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>         <span class="k">for</span> <span class="n">organization_name</span><span class="p">,</span> <span class="n">proposal_df</span> <span class="ow">in</span> <span class="p">[</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>             <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">organization_name</span><span class="p">),</span> <span class="n">space_proposals</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>             <span class="k">for</span> <span class="n">organization_name</span><span class="p">,</span> <span class="n">space_proposals</span> <span class="ow">in</span> <span class="n">flat_organization_dataframe</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>                 <span class="s2">&quot;proposal_organization_name&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>             <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="p">}</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/pandas/core/frame.py:8399,</span> in <span class="ni">DataFrame.groupby</span><span class="nt">(self, by, axis, level, as_index, sort, group_keys, squeeze, observed, dropna)</span>
+<span class="g g-Whitespace">   </span><span class="mi">8396</span>     <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;You have to supply one of &#39;by&#39; and &#39;level&#39;&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">8397</span> <span class="n">axis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_axis_number</span><span class="p">(</span><span class="n">axis</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">8399</span> <span class="k">return</span> <span class="n">DataFrameGroupBy</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">8400</span>     <span class="n">obj</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">8401</span>     <span class="n">keys</span><span class="o">=</span><span class="n">by</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">8402</span>     <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">8403</span>     <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">8404</span>     <span class="n">as_index</span><span class="o">=</span><span class="n">as_index</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">8405</span>     <span class="n">sort</span><span class="o">=</span><span class="n">sort</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">8406</span>     <span class="n">group_keys</span><span class="o">=</span><span class="n">group_keys</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">8407</span>     <span class="n">squeeze</span><span class="o">=</span><span class="n">squeeze</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">8408</span>     <span class="n">observed</span><span class="o">=</span><span class="n">observed</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">8409</span>     <span class="n">dropna</span><span class="o">=</span><span class="n">dropna</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">8410</span> <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/pandas/core/groupby/groupby.py:959,</span> in <span class="ni">GroupBy.__init__</span><span class="nt">(self, obj, keys, axis, level, grouper, exclusions, selection, as_index, sort, group_keys, squeeze, observed, mutated, dropna)</span>
+<span class="g g-Whitespace">    </span><span class="mi">956</span> <span class="k">if</span> <span class="n">grouper</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">957</span>     <span class="kn">from</span> <span class="nn">pandas.core.groupby.grouper</span> <span class="kn">import</span> <span class="n">get_grouper</span>
+<span class="ne">--&gt; </span><span class="mi">959</span>     <span class="n">grouper</span><span class="p">,</span> <span class="n">exclusions</span><span class="p">,</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">get_grouper</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">960</span>         <span class="n">obj</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">961</span>         <span class="n">keys</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">962</span>         <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">963</span>         <span class="n">level</span><span class="o">=</span><span class="n">level</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">964</span>         <span class="n">sort</span><span class="o">=</span><span class="n">sort</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">965</span>         <span class="n">observed</span><span class="o">=</span><span class="n">observed</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">966</span>         <span class="n">mutated</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">mutated</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">967</span>         <span class="n">dropna</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dropna</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">968</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">970</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span> <span class="o">=</span> <span class="n">obj</span>
+<span class="g g-Whitespace">    </span><span class="mi">971</span> <span class="bp">self</span><span class="o">.</span><span class="n">axis</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">_get_axis_number</span><span class="p">(</span><span class="n">axis</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.11/x64/lib/python3.10/site-packages/pandas/core/groupby/grouper.py:888,</span> in <span class="ni">get_grouper</span><span class="nt">(obj, key, axis, level, sort, observed, mutated, validate, dropna)</span>
+<span class="g g-Whitespace">    </span><span class="mi">886</span>         <span class="n">in_axis</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">gpr</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">gpr</span><span class="p">,</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">887</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">888</span>         <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">gpr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">889</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">gpr</span><span class="p">,</span> <span class="n">Grouper</span><span class="p">)</span> <span class="ow">and</span> <span class="n">gpr</span><span class="o">.</span><span class="n">key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">890</span>     <span class="c1"># Add key to exclusions</span>
+<span class="g g-Whitespace">    </span><span class="mi">891</span>     <span class="n">exclusions</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">gpr</span><span class="o">.</span><span class="n">key</span><span class="p">)</span>
+
+<span class="ne">KeyError</span>: &#39;proposal_organization_name&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input tag_remove-output docutils container">
+</div>
+<section id="synthesis">
+<h2>Synthesis<a class="headerlink" href="#synthesis" title="Permalink to this headline">#</a></h2>
+<p>Show the percentage of proposals whose outcome changes if whales did not vote (i.e. <em>whale pivotality</em>).</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th># of whales</th>
+      <th>all voters</th>
+      <th>changed outcomes %</th>
+    </tr>
+    <tr>
+      <th>DAO</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Aave</th>
+      <td>1438</td>
+      <td>42586</td>
+      <td>9.33%</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="comparison-of-the-top-10-proposals">
+<h2>Comparison of the Top 10 Proposals<a class="headerlink" href="#comparison-of-the-top-10-proposals" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date Started</th>
+      <th>Date Ended</th>
+      <th>Result</th>
+      <th>Result w/o Whales</th>
+    </tr>
+    <tr>
+      <th>Proposal</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href=http://snapshot.org/#/aave.eth/proposal/0xf6da417983653f7e7f5560a8e16ad77d5e25533bba9157abfd222347b40d09d0 rel="noopener noreferrer" target="_blank">[TEMP CHECK] Incentivized Delegate Campaign (3-month)</a></th>
+      <td>03/04/23</td>
+      <td>10/04/23</td>
+      <td>TokenLogic</td>
+      <td>Blockworks Research</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aave.eth/proposal/0xde90f4d29c4c5dd55cba023b29bdde8c49e37f70c3398668a78e2f173a61b4e6 rel="noopener noreferrer" target="_blank">[TEMP CHECK] - Launch Aave V3 on Starknet</a></th>
+      <td>03/04/23</td>
+      <td>10/04/23</td>
+      <td>YEA</td>
+      <td>YEA</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aave.eth/proposal/0x84deca82139320b2570f04211b249e37b8a7602b4a0ed70e6fa772c9f6e94550 rel="noopener noreferrer" target="_blank">[ARC] E-Mode Parameter Changes for V3 Avalanche, Optimism, Polygon, and Arbitrum </a></th>
+      <td>05/04/23</td>
+      <td>12/04/23</td>
+      <td>Option 3</td>
+      <td>Option 3</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aave.eth/proposal/0xc17bc863a09c72152c1ac25d09fcee4748b58eb2e10e70886e20e77ad4d8fad0 rel="noopener noreferrer" target="_blank">[TEMP CHECK] - Whitelist Stargate for V3 Portals</a></th>
+      <td>13/04/23</td>
+      <td>18/04/23</td>
+      <td>YAE</td>
+      <td>YAE</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aave.eth/proposal/0x743ae6001bb0fdfa9a8c4475a2489c20917a79084725f0101ac7c1e7f0cf27c6 rel="noopener noreferrer" target="_blank">Safety Module upgrade to v1.5</a></th>
+      <td>15/03/23</td>
+      <td>20/03/23</td>
+      <td>YES</td>
+      <td>YES</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aave.eth/proposal/0x7e6175c21342dbd88dc5b0dabf2d0a86339e3ef3f199fc7d778a9a6f05ed0df9 rel="noopener noreferrer" target="_blank">Deploy Aave V3 to Metis Andromeda Mainnet</a></th>
+      <td>17/03/23</td>
+      <td>23/03/23</td>
+      <td>YAE</td>
+      <td>YAE</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aave.eth/proposal/0xf4aec3fbab5096752be96f0e5b522f37318c1902cf8b897b049b7a94d478de73 rel="noopener noreferrer" target="_blank">[ARFC] Add MKR to Ethereum v3</a></th>
+      <td>08/03/23</td>
+      <td>13/03/23</td>
+      <td>YAE</td>
+      <td>YAE</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aave.eth/proposal/0x46cf72da892eb216edc1b7fe2f24f7491d8c37344b2b1f67632fa6950be034f7 rel="noopener noreferrer" target="_blank">[TEMP CHECK] Aave V3 Deployment on zkSync Era Mainnet</a></th>
+      <td>12/04/23</td>
+      <td>15/04/23</td>
+      <td>YAE</td>
+      <td>YAE</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aave.eth/proposal/0x4579b562a4ea07c52871f724a8baf156514a97384e9427156d04fb6f0ae91515 rel="noopener noreferrer" target="_blank">[TEMP CHECK] Aave V3 deployment on BNB Chain</a></th>
+      <td>29/03/23</td>
+      <td>01/04/23</td>
+      <td>YAE</td>
+      <td>YAE</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/aave.eth/proposal/0xd8a400fc731b6e807f4d89aa1fa47225f0dfaaa8fc49ef04b46b11b98fbfa15f rel="noopener noreferrer" target="_blank">[ARFC] Grant OP Emission_Admin for Optimism v3 Liquidity Pool to Lido DAO</a></th>
+      <td>08/03/23</td>
+      <td>13/03/23</td>
+      <td>YAE</td>
+      <td>YAE</td>
+    </tr>
+  </tbody>
+</table></div></div>
+</div>
+<p><sup>Source for proposal list: <a class="reference external" href="https://dune.com/butterd/aave-top-10-snapshot-proposals">https://dune.com/butterd/aave-top-10-snapshot-proposals</a></sup></p>
+<section id="proportion-of-outcomes-changed">
+<h3>Proportion of Outcomes Changed<a class="headerlink" href="#proportion-of-outcomes-changed" title="Permalink to this headline">#</a></h3>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.33% of Aave&#39;s proposal outcomes (of the 150 sampled) change after filtering out whale voting power.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="case-studies">
+<h2>Case Studies<a class="headerlink" href="#case-studies" title="Permalink to this headline">#</a></h2>
+<section id="temp-check-incentivized-delegate-campaign-3-month">
+<h3>[TEMP CHECK] Incentivized Delegate Campaign (3-month)<a class="headerlink" href="#temp-check-incentivized-delegate-campaign-3-month" title="Permalink to this headline">#</a></h3>
+<p>Aka the first Butter’d Aave Election.</p>
+<p><strong>Proposal ID</strong>: <a class="reference external" href="https://snapshot.org/#/aave.eth/proposal/0xf6da417983653f7e7f5560a8e16ad77d5e25533bba9157abfd222347b40d09d0">0xf6da417</a></p>
+<p><strong>Start Date</strong>: 03/04/23
+<strong>End Date</strong>: 10/04/23</p>
+<p><strong>Voting System</strong>: Weighted Voting</p>
+<p><strong>Voting Strategies</strong>:</p>
+<ul class="simple">
+<li><p>aAAVE</p></li>
+<li><p>AAVE + stkAAVE</p></li>
+<li><p>Matic AAVE + amAAVE</p></li>
+<li><p>AAVE in stkBPT (Balancer Pool Token)</p></li>
+</ul>
+<p>Aave votes to select a delegate who will receive a $15k grant (paid in AAVE) from Aave Grants after a three-month term as a delegate, a delegate election. TokenLogic ultimately won this election, however, if we remove whale voting power from this proposal we find that Blockworks Research would’ve been selected by the Aave community instead.</p>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Blockworks Research</th>
+      <th>ConsenSys</th>
+      <th>Curia</th>
+      <th>DAOStewards</th>
+      <th>Fire Eyes</th>
+      <th>Flipside Crypto</th>
+      <th>FranklinDAO</th>
+      <th>OnChainCoop</th>
+      <th>Oxytocin</th>
+      <th>Saludiego201.eth</th>
+      <th>StableLab</th>
+      <th>TokenLogic</th>
+      <th>Wallfacer Labs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>87232.635594</td>
+      <td>17620.565593</td>
+      <td>12742.462405</td>
+      <td>434.508563</td>
+      <td>104834.493934</td>
+      <td>90345.343934</td>
+      <td>66127.639535</td>
+      <td>409.610873</td>
+      <td>30504.177435</td>
+      <td>437.382397</td>
+      <td>146246.026838</td>
+      <td>185171.775039</td>
+      <td>435.859890</td>
+    </tr>
+    <tr>
+      <th>Whale-only Scores</th>
+      <td>86487.989188</td>
+      <td>16950.926291</td>
+      <td>12712.705752</td>
+      <td>407.073261</td>
+      <td>104802.547664</td>
+      <td>90318.258696</td>
+      <td>65886.207100</td>
+      <td>391.862324</td>
+      <td>30491.294636</td>
+      <td>393.737487</td>
+      <td>146194.584615</td>
+      <td>185153.921653</td>
+      <td>420.744217</td>
+    </tr>
+    <tr>
+      <th>Non-whale Scores</th>
+      <td>744.646406</td>
+      <td>669.639302</td>
+      <td>29.756653</td>
+      <td>27.435302</td>
+      <td>31.946270</td>
+      <td>27.085238</td>
+      <td>241.432435</td>
+      <td>17.748550</td>
+      <td>12.882799</td>
+      <td>43.644910</td>
+      <td>51.442223</td>
+      <td>17.853386</td>
+      <td>15.115673</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="temp-check-launch-aave-v3-on-starknet">
+<h3>[TEMP CHECK] - Launch Aave V3 on Starknet<a class="headerlink" href="#temp-check-launch-aave-v3-on-starknet" title="Permalink to this headline">#</a></h3>
+<p><strong>Proposal ID</strong>: <a class="reference external" href="https://snapshot.org/#/aave.eth/proposal/0xde90f4d29c4c5dd55cba023b29bdde8c49e37f70c3398668a78e2f173a61b4e6">0xde90f4d</a></p>
+<p><strong>Start Date</strong>: 03/04/23
+<strong>End Date</strong>: 10/04/23</p>
+<p><strong>Voting System</strong>: Single Choice</p>
+<p><strong>Voting Strategies</strong>:</p>
+<ul class="simple">
+<li><p>aAAVE</p></li>
+<li><p>AAVE + stkAAVE</p></li>
+<li><p>Matic AAVE + amAAVE</p></li>
+<li><p>AAVE in stkBPT (Balancer Pool Token)</p></li>
+</ul>
+<p>This is a proposal to gauge the Aave community’s sentiments on going on with phase 2 of the Aave’s integration on Starknet. Its outcome did not change after filtering out whales.</p>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YEA</th>
+      <th>NOP</th>
+      <th>ABSTAIN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>664848.446683</td>
+      <td>21.627573</td>
+      <td>136.417016</td>
+    </tr>
+    <tr>
+      <th>Whale-only Scores</th>
+      <td>407757.376934</td>
+      <td>4.772256</td>
+      <td>120.558800</td>
+    </tr>
+    <tr>
+      <th>Non-whale Scores</th>
+      <td>257091.069749</td>
+      <td>16.855317</td>
+      <td>15.858216</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="arc-e-mode-parameter-changes-for-v3-avalanche-optimism-polygon-and-arbitrum">
+<h3>[ARC] E-Mode Parameter Changes for V3 Avalanche, Optimism, Polygon, and Arbitrum<a class="headerlink" href="#arc-e-mode-parameter-changes-for-v3-avalanche-optimism-polygon-and-arbitrum" title="Permalink to this headline">#</a></h3>
+<p><strong>Proposal ID</strong>: <a class="reference external" href="https://snapshot.org/#/aave.eth/proposal/0x84deca82139320b2570f04211b249e37b8a7602b4a0ed70e6fa772c9f6e94550">0x84deca8</a></p>
+<p><strong>Start Date</strong>: 05/04/23
+<strong>End Date</strong>: 11/04/23</p>
+<p><strong>Voting System</strong>: Single Choice</p>
+<p><strong>Voting Strategies</strong>:</p>
+<ul class="simple">
+<li><p>aAAVE</p></li>
+<li><p>AAVE + stkAAVE</p></li>
+<li><p>Matic AAVE + amAAVE</p></li>
+<li><p>AAVE in stkBPT (Balancer Pool Token)</p></li>
+</ul>
+<p>This proposal aims to optimize stablecoin <a class="reference external" href="https://docs.aave.com/developers/whats-new/efficiency-mode-emode">E-Mode</a> parameters on various non-Ethereum chains. Its outcome did not change after filtering out whales.</p>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Option 1</th>
+      <th>Option 2</th>
+      <th>Option 3</th>
+      <th>Option 4</th>
+      <th>Abstain</th>
+      <th>Nay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>126545.660433</td>
+      <td>166.034309</td>
+      <td>532246.554661</td>
+      <td>140.712281</td>
+      <td>489.850798</td>
+      <td>2.067035</td>
+    </tr>
+    <tr>
+      <th>Whale-only Scores</th>
+      <td>84143.973524</td>
+      <td>83.499083</td>
+      <td>291145.238949</td>
+      <td>107.559375</td>
+      <td>416.456718</td>
+      <td>1.017788</td>
+    </tr>
+    <tr>
+      <th>Non-whale Scores</th>
+      <td>42401.686910</td>
+      <td>82.535226</td>
+      <td>241101.315713</td>
+      <td>33.152905</td>
+      <td>73.394080</td>
+      <td>1.049248</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="temp-check-whitelist-stargate-for-v3-portals">
+<h3>[TEMP CHECK] - Whitelist Stargate for V3 Portals<a class="headerlink" href="#temp-check-whitelist-stargate-for-v3-portals" title="Permalink to this headline">#</a></h3>
+<p><strong>Proposal ID</strong>: <a class="reference external" href="https://snapshot.org/#/aave.eth/proposal/0xc17bc863a09c72152c1ac25d09fcee4748b58eb2e10e70886e20e77ad4d8fad0">0xc17bc86</a></p>
+<p><strong>Start Date</strong>: 13/04/23
+<strong>End Date</strong>: 18/04/23</p>
+<p><strong>Voting System</strong>: Single Choice</p>
+<p><strong>Voting Strategies</strong>:</p>
+<ul class="simple">
+<li><p>aAAVE</p></li>
+<li><p>AAVE + stkAAVE</p></li>
+<li><p>Matic AAVE + amAAVE</p></li>
+<li><p>AAVE in stkBPT (Balancer Pool Token)</p></li>
+</ul>
+<p>Proposes that Aave whitelist Stargate on their <a class="reference external" href="https://docs.aave.com/developers/whats-new/portal">Portal</a> bridge. Its outcome did not change after filtering out whales.</p>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YAE</th>
+      <th>NAY</th>
+      <th>ABSTAIN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>654682.761288</td>
+      <td>16.887568</td>
+      <td>167.351060</td>
+    </tr>
+    <tr>
+      <th>Whale-only Scores</th>
+      <td>364423.857267</td>
+      <td>8.134670</td>
+      <td>143.935683</td>
+    </tr>
+    <tr>
+      <th>Non-whale Scores</th>
+      <td>290258.904021</td>
+      <td>8.752898</td>
+      <td>23.415377</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="safety-module-upgrade-to-v1-5">
+<h3>Safety Module upgrade to v1.5<a class="headerlink" href="#safety-module-upgrade-to-v1-5" title="Permalink to this headline">#</a></h3>
+<p><strong>Proposal ID</strong>: <a class="reference external" href="https://snapshot.org/#/aave.eth/proposal/0x743ae6001bb0fdfa9a8c4475a2489c20917a79084725f0101ac7c1e7f0cf27c6">0x743ae60</a></p>
+<p><strong>Start Date</strong>: 15/03/23
+<strong>End Date</strong>: 20/03/23</p>
+<p><strong>Voting System</strong>: Single Choice Voting</p>
+<p><strong>Voting Strategies</strong>:</p>
+<ul class="simple">
+<li><p>aAAVE</p></li>
+<li><p>AAVE + stkAAVE</p></li>
+<li><p>Matic AAVE + amAAVE</p></li>
+<li><p>AAVE in stkBPT (Balancer Pool Token)</p></li>
+</ul>
+<p>A proposal to gauge the community’s sentiments on upgrading the Safety Module smart contracts (stkAAVE, stkABPT) to v1.5. The outcome of this proposal did not change after filtering out whales.</p>
+<div class="cell tag_remove-input tag_full-width docutils container">
+</div>
+</section>
+<section id="deploy-aave-v3-to-metis-andromeda-mainnet">
+<h3>Deploy Aave V3 to Metis Andromeda Mainnet<a class="headerlink" href="#deploy-aave-v3-to-metis-andromeda-mainnet" title="Permalink to this headline">#</a></h3>
+<p><strong>Proposal ID</strong>: <a class="reference external" href="https://snapshot.org/#/aave.eth/proposal/0x7e6175c21342dbd88dc5b0dabf2d0a86339e3ef3f199fc7d778a9a6f05ed0df9">0x7e6175c</a></p>
+<p><strong>Start Date</strong>: 17/03/23
+<strong>End Date</strong>: 23/03/23</p>
+<p><strong>Voting System</strong>: Single Choice Voting</p>
+<p><strong>Voting Strategies</strong>:</p>
+<ul class="simple">
+<li><p>aAAVE</p></li>
+<li><p>AAVE + stkAAVE</p></li>
+<li><p>Matic AAVE + amAAVE</p></li>
+<li><p>AAVE in stkBPT (Balancer Pool Token)</p></li>
+</ul>
+<p>This is a proposal to gauge the community’s sentiments to deploy Aave V3 to the Metis “Andromeda” Mainnet. The outcome of this proposal did not change after filtering out whales.</p>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YAE</th>
+      <th>NAY</th>
+      <th>ABSTAIN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>555698.763981</td>
+      <td>162135.341400</td>
+      <td>140.725517</td>
+    </tr>
+    <tr>
+      <th>Whale-only Scores</th>
+      <td>133249.462649</td>
+      <td>161953.210564</td>
+      <td>137.650972</td>
+    </tr>
+    <tr>
+      <th>Non-whale Scores</th>
+      <td>422449.301332</td>
+      <td>182.130836</td>
+      <td>3.074545</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="arfc-add-mkr-to-ethereum-v3">
+<h3>[ARFC] Add MKR to Ethereum v3<a class="headerlink" href="#arfc-add-mkr-to-ethereum-v3" title="Permalink to this headline">#</a></h3>
+<p><strong>Proposal ID</strong>: <a class="reference external" href="https://snapshot.org/#/aave.eth/proposal/0xf4aec3fbab5096752be96f0e5b522f37318c1902cf8b897b049b7a94d478de73">0xf4aec3f</a></p>
+<p><strong>Start Date</strong>: 08/03/23
+<strong>End Date</strong>: 13/03/23</p>
+<p><strong>Voting System</strong>: Single Choice Voting</p>
+<p><strong>Voting Strategies</strong>:</p>
+<ul class="simple">
+<li><p>aAAVE</p></li>
+<li><p>AAVE + stkAAVE</p></li>
+<li><p>Matic AAVE + amAAVE</p></li>
+<li><p>AAVE in stkBPT (Balancer Pool Token)</p></li>
+</ul>
+<p>A proposal to onboard MKR to the Aave V3 Liquidity Pool. The outcome of this proposal did not change after filtering out whales.</p>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YAE</th>
+      <th>NAE</th>
+      <th>ABSTAIN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>660079.717273</td>
+      <td>12.211159</td>
+      <td>19.760356</td>
+    </tr>
+    <tr>
+      <th>Whale-only Scores</th>
+      <td>421665.918408</td>
+      <td>8.137339</td>
+      <td>17.155329</td>
+    </tr>
+    <tr>
+      <th>Non-whale Scores</th>
+      <td>238413.798865</td>
+      <td>4.073820</td>
+      <td>2.605028</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="temp-check-aave-v3-deployment-on-zksync-era-mainnet">
+<h3>[TEMP CHECK] Aave V3 Deployment on zkSync Era Mainnet<a class="headerlink" href="#temp-check-aave-v3-deployment-on-zksync-era-mainnet" title="Permalink to this headline">#</a></h3>
+<p><strong>Proposal ID</strong>: <a class="reference external" href="https://snapshot.org/#/aave.eth/proposal/0x46cf72da892eb216edc1b7fe2f24f7491d8c37344b2b1f67632fa6950be034f7">0x46cf72d</a></p>
+<p><strong>Start Date</strong>: 12/04/23
+<strong>End Date</strong>: 15/04/23</p>
+<p><strong>Voting System</strong>: Single Choice</p>
+<p><strong>Voting Strategies</strong>:</p>
+<ul class="simple">
+<li><p>aAAVE</p></li>
+<li><p>AAVE + stkAAVE</p></li>
+<li><p>Matic AAVE + amAAVE</p></li>
+<li><p>AAVE in stkBPT (Balancer Pool Token)</p></li>
+</ul>
+<p>A temperature check to gauge the community’s sentiments on deploying Aave V3 on <a class="reference external" href="https://zksync.io/">zkSync Era</a> Mainnet. This proposal’s outcome also was not changed after filtering out whales.</p>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YAE</th>
+      <th>NAY</th>
+      <th>ABSTAIN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>577937.331903</td>
+      <td>1133.242375</td>
+      <td>134.422288</td>
+    </tr>
+    <tr>
+      <th>Whale-only Scores</th>
+      <td>529876.707255</td>
+      <td>1.350356</td>
+      <td>1.585889</td>
+    </tr>
+    <tr>
+      <th>Non-whale Scores</th>
+      <td>48060.624648</td>
+      <td>1131.892020</td>
+      <td>132.836399</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="temp-check-aave-v3-deployment-on-bnb-chain">
+<h3>[TEMP CHECK] Aave V3 deployment on BNB Chain<a class="headerlink" href="#temp-check-aave-v3-deployment-on-bnb-chain" title="Permalink to this headline">#</a></h3>
+<p><strong>Proposal ID</strong>: <a class="reference external" href="https://snapshot.org/#/aave.eth/proposal/0x4579b562a4ea07c52871f724a8baf156514a97384e9427156d04fb6f0ae91515">0x4579b56</a></p>
+<p><strong>Start Date</strong>: 29/03/23
+<strong>End Date</strong>: 01/04/23</p>
+<p><strong>Voting System</strong>: Single Choice</p>
+<p><strong>Voting Strategies</strong>:</p>
+<ul class="simple">
+<li><p>aAAVE</p></li>
+<li><p>AAVE + stkAAVE</p></li>
+<li><p>Matic AAVE + amAAVE</p></li>
+<li><p>AAVE in stkBPT (Balancer Pool Token)</p></li>
+</ul>
+<p>A temperature check to gauge the community’s sentiments on deploying Aave V3 on BNB Chain. Its outcome did not change after filtering out whales.</p>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YAE</th>
+      <th>NAY</th>
+      <th>ABSTAIN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>583635.461921</td>
+      <td>2296.049067</td>
+      <td>124.059645</td>
+    </tr>
+    <tr>
+      <th>Whale-only Scores</th>
+      <td>191783.269653</td>
+      <td>1039.979339</td>
+      <td>113.040863</td>
+    </tr>
+    <tr>
+      <th>Non-whale Scores</th>
+      <td>391852.192268</td>
+      <td>1256.069728</td>
+      <td>11.018781</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="arfc-grant-op-emission-admin-for-optimism-v3-liquidity-pool-to-lido-dao">
+<h3>[ARFC] Grant OP <code class="docutils literal notranslate"><span class="pre">Emission_Admin</span></code> for Optimism v3 Liquidity Pool to Lido DAO<a class="headerlink" href="#arfc-grant-op-emission-admin-for-optimism-v3-liquidity-pool-to-lido-dao" title="Permalink to this headline">#</a></h3>
+<p><strong>Proposal ID</strong>: <a class="reference external" href="https://snapshot.org/#/aave.eth/proposal/0xd8a400fc731b6e807f4d89aa1fa47225f0dfaaa8fc49ef04b46b11b98fbfa15f">0xd8a400f</a></p>
+<p><strong>Start Date</strong>: 08/03/23
+<strong>End Date</strong>: 13/03/23</p>
+<p><strong>Voting System</strong>: Single Choice</p>
+<p><strong>Voting Strategies</strong>:</p>
+<ul class="simple">
+<li><p>aAAVE</p></li>
+<li><p>AAVE + stkAAVE</p></li>
+<li><p>Matic AAVE + amAAVE</p></li>
+<li><p>AAVE in stkBPT (Balancer Pool Token)</p></li>
+</ul>
+<p>This proposal aims to enable Lido DAO to distribute OP rewards to the Aave V3 Optimism Liquitdity Pool. Its outcome did not change after filtering out whales.</p>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>YAE</th>
+      <th>NAE</th>
+      <th>ABSTAIN</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Scores</th>
+      <td>578961.637041</td>
+      <td>6.087976</td>
+      <td>133.073240</td>
+    </tr>
+    <tr>
+      <th>Whale-only Scores</th>
+      <td>248331.876540</td>
+      <td>1.009792</td>
+      <td>122.666259</td>
+    </tr>
+    <tr>
+      <th>Non-whale Scores</th>
+      <td>330629.760501</td>
+      <td>5.078184</td>
+      <td>10.406981</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
