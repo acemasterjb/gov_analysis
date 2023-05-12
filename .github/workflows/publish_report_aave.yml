@@ -5,8 +5,6 @@ on:
     paths:
       - "book/aave_proposals.ipynb"
       - ".github/workflows/publish_report_aave.yml"
-    branches:
-      - main
 
 permissions:
   contents: write

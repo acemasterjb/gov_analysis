@@ -3,11 +3,11 @@
 
 ## Prerequisites
 
-A Python 3.9+ environment.
+A Python 3.10+ environment.
 The dependencies listed in [requirements.txt](./requirements.txt):
 
 ```bash
-pip install -r ./requirements.txt
+pip install -r ./requirements-dev.txt
 ```
 
 ## Plutocracy Report

@@ -5,9 +5,6 @@ on:
     paths:
       - "book/plutocracy_report_tally.ipynb"
       - ".github/workflows/publish_report_tally.yml"
-    branches:
-      - main
-      - book/on_chain
 
 permissions:
   contents: write

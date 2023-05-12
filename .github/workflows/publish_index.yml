@@ -1,16 +1,20 @@
-name: publish-book-analysis
+name: publish-index
 
 on:
   push:
     paths:
-      - "book/**"
-      - ".github/workflows/publish_analysis.yml"
+      - "book/home.ipynb"
+      - ".github/workflows/publish_index.yml"
+    branches:
+      - main
+      - feature/homepage
+      - maintentance/homepage
 
 permissions:
   contents: write
 
 jobs:
-  publish-analysis:
+  publish-index:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -26,12 +30,12 @@ jobs:
 
       - name: Build the books
         run: |
-          jupyter-book build ./book/extensive_analysis.ipynb
+          jupyter-book build ./book/home.ipynb
 
-      - name: GitHub Pages publish Report
+      - name: GitHub Pages publish Index
         uses: peaceiris/actions-gh-pages@v3.9.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./book/_build/_page/extensive_analysis/html
-          destination_dir: ./analysis/
-          allow_empty_commit: true
+          publish_dir: ./book/_build/_page/home/html
+          destination_dir: ./
+          keep_files: true
