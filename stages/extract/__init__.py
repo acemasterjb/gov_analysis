@@ -88,7 +88,7 @@ async def sanitize_tally_proposals(
 
 async def get_tally_organizations(raw_daos: list[dict]) -> list[dict[str, str]]:
     organization_names = []
-    [organization_names.extend(raw_dao["daoName"].split(" ")) for raw_dao in raw_daos]
+    [organization_names.extend(raw_dao["daoName"].split(" ") + [raw_dao["daoName"]]) for raw_dao in raw_daos]
 
     return (await get_organizations(organization_names))["organizations"]
 
