@@ -1,0 +1,37 @@
+name: publish_book-uniswap
+
+on:
+  push:
+    paths:
+      - "book/uniswap.ipynb"
+      - ".github/workflows/publish_uni.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  publish_book-uniswap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Build the books
+        run: |
+          jupyter-book build ./book/uniswap.ipynb
+
+      - name: GitHub Pages publish Report
+        uses: peaceiris/actions-gh-pages@v3.9.2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./book/_build/_page/uniswap/html
+          destination_dir: ./report_uniswap/
+          allow_empty_commit: true
