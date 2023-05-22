@@ -297,32 +297,11 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="whale-pivotality-in-aave-top-snapshot-proposals">
 <h1>Whale Pivotality in Aave top Snapshot proposals<a class="headerlink" href="#whale-pivotality-in-aave-top-snapshot-proposals" title="Permalink to this headline">#</a></h1>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="ne">---&gt; </span><span class="mi">10</span> <span class="kn">from</span> <span class="nn">apis.dune</span> <span class="kn">import</span> <span class="n">get_top_uniswap_proposals</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">module_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="k">if</span> <span class="n">module_path</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">gov_analysis</span><span class="o">/</span><span class="n">gov_analysis</span><span class="o">/</span><span class="n">book</span><span class="o">/</span><span class="n">apis</span><span class="o">/</span><span class="n">dune</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">getenv</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">httpx</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">Timeout</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">load_dotenv</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">DUNE_API</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;DUNE_API&quot;</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;httpx&#39;
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input tag_remove-output docutils container">
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Last updated on 2023-05-20
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Last updated on 2023-05-22
 </pre></div>
 </div>
 </div>
@@ -501,91 +480,77 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_748f9">
+<table id="T_b95bf">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_748f9_level0_col0" class="col_heading level0 col0" >Score w/o Whales</th>
+      <th id="T_b95bf_level0_col0" class="col_heading level0 col0" >Score w/o Whales</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_748f9_level0_row0" class="row_heading level0 row0" >Cam O'Donnell (Consensys)</th>
-      <td id="T_748f9_row0_col0" class="data row0 col0" >7518534.2</td>
+      <th id="T_b95bf_level0_row0" class="row_heading level0 row0" >Cam O'Donnell (Consensys)</th>
+      <td id="T_b95bf_row0_col0" class="data row0 col0" >7518534.2</td>
     </tr>
     <tr>
-      <th id="T_748f9_level0_row1" class="row_heading level0 row1" >Doo Wan Nam (StableLab)</th>
-      <td id="T_748f9_row1_col0" class="data row1 col0" >7511687.2</td>
+      <th id="T_b95bf_level0_row1" class="row_heading level0 row1" >Doo Wan Nam (StableLab)</th>
+      <td id="T_b95bf_row1_col0" class="data row1 col0" >7511687.2</td>
     </tr>
     <tr>
-      <th id="T_748f9_level0_row2" class="row_heading level0 row2" >Jun Sun (Penn Blockchain)</th>
-      <td id="T_748f9_row2_col0" class="data row2 col0" >7509748.1</td>
+      <th id="T_b95bf_level0_row2" class="row_heading level0 row2" >Jun Sun (Penn Blockchain)</th>
+      <td id="T_b95bf_row2_col0" class="data row2 col0" >7509748.1</td>
     </tr>
     <tr>
-      <th id="T_748f9_level0_row3" class="row_heading level0 row3" >Kydo (Stanford Blockchain)</th>
-      <td id="T_748f9_row3_col0" class="data row3 col0" >7507190.6</td>
+      <th id="T_b95bf_level0_row3" class="row_heading level0 row3" >Kydo (Stanford Blockchain)</th>
+      <td id="T_b95bf_row3_col0" class="data row3 col0" >7507190.6</td>
     </tr>
     <tr>
-      <th id="T_748f9_level0_row4" class="row_heading level0 row4" >Kendra Leong (She256)</th>
-      <td id="T_748f9_row4_col0" class="data row4 col0" >7506319.6</td>
+      <th id="T_b95bf_level0_row4" class="row_heading level0 row4" >Kendra Leong (She256)</th>
+      <td id="T_b95bf_row4_col0" class="data row4 col0" >7506319.6</td>
     </tr>
     <tr>
-      <th id="T_748f9_level0_row5" class="row_heading level0 row5" >Rafael Solari (Tally)</th>
-      <td id="T_748f9_row5_col0" class="data row5 col0" >5273.4</td>
+      <th id="T_b95bf_level0_row5" class="row_heading level0 row5" >Rafael Solari (Tally)</th>
+      <td id="T_b95bf_row5_col0" class="data row5 col0" >5273.4</td>
     </tr>
   </tbody>
 </table>
 </div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_scores</span> <span class="o">=</span> <span class="n">plutocracy_report_data</span><span class="p">[</span><span class="s2">&quot;Uniswap&quot;</span><span class="p">][</span><span class="n">plutocracy_report_data</span><span class="p">[</span><span class="s2">&quot;Uniswap&quot;</span><span class="p">][</span><span class="s2">&quot;proposal_id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;0xbadf3b39b681c98ba8fb988d5b6c9454ebeb5aae88545a6a852d0734e9f7c957&quot;</span><span class="p">][</span><span class="s2">&quot;proposal_scores&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">new_scores</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">new_scores</span><span class="p">)</span>
-<span class="n">choices</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">plutocracy_report_data</span><span class="p">[</span><span class="s2">&quot;Uniswap&quot;</span><span class="p">][</span><span class="n">plutocracy_report_data</span><span class="p">[</span><span class="s2">&quot;Uniswap&quot;</span><span class="p">][</span><span class="s2">&quot;proposal_id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;0xbadf3b39b681c98ba8fb988d5b6c9454ebeb5aae88545a6a852d0734e9f7c957&quot;</span><span class="p">][</span><span class="s2">&quot;proposal_choices&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-
-<span class="k">def</span> <span class="nf">by_value</span><span class="p">(</span><span class="n">dict_item</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">dict_item</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="n">new_tally</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">choices</span><span class="p">,</span> <span class="n">new_scores</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="n">by_value</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
-
-<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">v</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">new_tally</span><span class="o">.</span><span class="n">items</span><span class="p">()],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">new_tally</span><span class="o">.</span><span class="n">items</span><span class="p">()],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Score w/ Whales&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:.1f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_3f4c5">
+<table id="T_22268">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_3f4c5_level0_col0" class="col_heading level0 col0" >Score w/ Whales</th>
+      <th id="T_22268_level0_col0" class="col_heading level0 col0" >Score w/ Whales</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_3f4c5_level0_row0" class="row_heading level0 row0" >Doo Wan Nam (StableLab)</th>
-      <td id="T_3f4c5_row0_col0" class="data row0 col0" >15753061.9</td>
+      <th id="T_22268_level0_row0" class="row_heading level0 row0" >Doo Wan Nam (StableLab)</th>
+      <td id="T_22268_row0_col0" class="data row0 col0" >15753061.9</td>
     </tr>
     <tr>
-      <th id="T_3f4c5_level0_row1" class="row_heading level0 row1" >Jun Sun (Penn Blockchain)</th>
-      <td id="T_3f4c5_row1_col0" class="data row1 col0" >14251749.0</td>
+      <th id="T_22268_level0_row1" class="row_heading level0 row1" >Jun Sun (Penn Blockchain)</th>
+      <td id="T_22268_row1_col0" class="data row1 col0" >14251749.0</td>
     </tr>
     <tr>
-      <th id="T_3f4c5_level0_row2" class="row_heading level0 row2" >Kydo (Stanford Blockchain)</th>
-      <td id="T_3f4c5_row2_col0" class="data row2 col0" >13233161.1</td>
+      <th id="T_22268_level0_row2" class="row_heading level0 row2" >Kydo (Stanford Blockchain)</th>
+      <td id="T_22268_row2_col0" class="data row2 col0" >13233161.1</td>
     </tr>
     <tr>
-      <th id="T_3f4c5_level0_row3" class="row_heading level0 row3" >Cam O'Donnell (Consensys)</th>
-      <td id="T_3f4c5_row3_col0" class="data row3 col0" >12527800.2</td>
+      <th id="T_22268_level0_row3" class="row_heading level0 row3" >Cam O'Donnell (Consensys)</th>
+      <td id="T_22268_row3_col0" class="data row3 col0" >12527800.2</td>
     </tr>
     <tr>
-      <th id="T_3f4c5_level0_row4" class="row_heading level0 row4" >Kendra Leong (She256)</th>
-      <td id="T_3f4c5_row4_col0" class="data row4 col0" >9732773.7</td>
+      <th id="T_22268_level0_row4" class="row_heading level0 row4" >Kendra Leong (She256)</th>
+      <td id="T_22268_row4_col0" class="data row4 col0" >9732773.7</td>
     </tr>
     <tr>
-      <th id="T_3f4c5_level0_row5" class="row_heading level0 row5" >Rafael Solari (Tally)</th>
-      <td id="T_3f4c5_row5_col0" class="data row5 col0" >8479977.4</td>
+      <th id="T_22268_level0_row5" class="row_heading level0 row5" >Rafael Solari (Tally)</th>
+      <td id="T_22268_row5_col0" class="data row5 col0" >8479977.4</td>
     </tr>
   </tbody>
 </table>
