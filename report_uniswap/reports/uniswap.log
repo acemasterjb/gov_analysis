@@ -47,12 +47,13 @@ Cell [0;32mIn[1], line 10[0m
 [1;32m     12[0m module_path [38;5;241m=[39m os[38;5;241m.[39mpath[38;5;241m.[39mabspath(os[38;5;241m.[39mpath[38;5;241m.[39mjoin([38;5;124m"[39m[38;5;124m..[39m[38;5;124m"[39m))
 [1;32m     13[0m [38;5;28;01mif[39;00m module_path [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m sys[38;5;241m.[39mpath:
 
-File [0;32m~/work/gov_analysis/gov_analysis/book/apis/dune.py:3[0m
+File [0;32m~/work/gov_analysis/gov_analysis/book/apis/dune.py:4[0m
 [1;32m      1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mos[39;00m [38;5;28;01mimport[39;00m getenv
-[0;32m----> 3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mdotenv[39;00m [38;5;28;01mimport[39;00m load_dotenv
-[1;32m      4[0m [38;5;28;01mfrom[39;00m [38;5;21;01mhttpx[39;00m [38;5;28;01mimport[39;00m Client, Timeout
+[1;32m      3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mdotenv[39;00m [38;5;28;01mimport[39;00m load_dotenv
+[0;32m----> 4[0m [38;5;28;01mfrom[39;00m [38;5;21;01mhttpx[39;00m [38;5;28;01mimport[39;00m Client, Timeout
 [1;32m      7[0m load_dotenv()
+[1;32m      9[0m DUNE_API [38;5;241m=[39m getenv([38;5;124m"[39m[38;5;124mDUNE_API[39m[38;5;124m"[39m)
 
-[0;31mModuleNotFoundError[0m: No module named 'dotenv'
-ModuleNotFoundError: No module named 'dotenv'
+[0;31mModuleNotFoundError[0m: No module named 'httpx'
+ModuleNotFoundError: No module named 'httpx'
 
