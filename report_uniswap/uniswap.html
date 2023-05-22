@@ -1,0 +1,634 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Whale Pivotality in Aave top Snapshot proposals &#8212; My Jupyter Book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint single-page" id="site-navigation">
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/uniswap.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/uniswap.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synthesis">
+   Synthesis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparison-of-the-top-10-proposals">
+   Comparison of the Top 10 Proposals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proportion-of-outcomes-changed">
+     Proportion of Outcomes Changed
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#temperature-check-create-accountability-committee">
+   Temperature Check: Create Accountability Committee
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Whale Pivotality in Aave top Snapshot proposals</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synthesis">
+   Synthesis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparison-of-the-top-10-proposals">
+   Comparison of the Top 10 Proposals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#proportion-of-outcomes-changed">
+     Proportion of Outcomes Changed
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#temperature-check-create-accountability-committee">
+   Temperature Check: Create Accountability Committee
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="whale-pivotality-in-aave-top-snapshot-proposals">
+<h1>Whale Pivotality in Aave top Snapshot proposals<a class="headerlink" href="#whale-pivotality-in-aave-top-snapshot-proposals" title="Permalink to this headline">#</a></h1>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">10</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="kn">from</span> <span class="nn">apis.dune</span> <span class="kn">import</span> <span class="n">get_top_uniswap_proposals</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">module_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="k">if</span> <span class="n">module_path</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">gov_analysis</span><span class="o">/</span><span class="n">gov_analysis</span><span class="o">/</span><span class="n">book</span><span class="o">/</span><span class="n">apis</span><span class="o">/</span><span class="n">dune</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">getenv</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">httpx</span> <span class="kn">import</span> <span class="n">Client</span><span class="p">,</span> <span class="n">Timeout</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">load_dotenv</span><span class="p">()</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;dotenv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Last updated on 2023-05-20
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input tag_remove-output docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input tag_remove-output docutils container">
+</div>
+<section id="synthesis">
+<h2>Synthesis<a class="headerlink" href="#synthesis" title="Permalink to this headline">#</a></h2>
+<p>Show the percentage of proposals whose outcome changes if whales did not vote (i.e. <em>whale pivotality</em>).</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th># of whales</th>
+      <th>all voters</th>
+      <th>changed outcomes %</th>
+    </tr>
+    <tr>
+      <th>DAO</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Uniswap</th>
+      <td>783</td>
+      <td>24558</td>
+      <td>16.47%</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+</section>
+<section id="comparison-of-the-top-10-proposals">
+<h2>Comparison of the Top 10 Proposals<a class="headerlink" href="#comparison-of-the-top-10-proposals" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Date Started</th>
+      <th>Date Ended</th>
+      <th>Result</th>
+      <th>Result w/o Whales</th>
+    </tr>
+    <tr>
+      <th>Proposal</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th><a href=http://snapshot.org/#/uniswap/proposal/0x387b5e811e9673359b98729af5c7f14a50b7d0ea9b4dcf9278686b238932e25d rel="noopener noreferrer" target="_blank">Community Governance Process Changes</a></th>
+      <td>14/12/22</td>
+      <td>21/12/22</td>
+      <td>Yes - Enact changes</td>
+      <td>Yes - Enact changes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/uniswap/proposal/0x6b8df360fdf73085b21fdf5eef9f85916fbde95621a3d454cb20fbe545ffc852 rel="noopener noreferrer" target="_blank">[Temperature Check] Which bridge should Uniswap v3 use for cross-chain governance messaging between Ethereum and BNB Chain?</a></th>
+      <td>27/01/23</td>
+      <td>31/01/23</td>
+      <td>Wormhole</td>
+      <td>Wormhole</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/uniswap/proposal/0x15031b68121659b87a3f5e33c303cd517bcbc003d3f60fc82f1299620475bcab rel="noopener noreferrer" target="_blank"> [Temperature Check] Enable 1bp Fee Tier for UniswapV3 on Arbitrum</a></th>
+      <td>02/02/23</td>
+      <td>07/02/23</td>
+      <td>For</td>
+      <td>For</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/uniswap/proposal/0x0f8a85d90759acf3a6fdc018e20b991f3562847122a8142c4e166c71d0e755e3 rel="noopener noreferrer" target="_blank">[Temperature Check] Post-BSL cross-chain deployment process and creation of new uniswap.eth subdomain</a></th>
+      <td>06/04/23</td>
+      <td>13/04/23</td>
+      <td>Yes - create new subdomain</td>
+      <td>Yes - create new subdomain</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/uniswap/proposal/0xbadf3b39b681c98ba8fb988d5b6c9454ebeb5aae88545a6a852d0734e9f7c957 rel="noopener noreferrer" target="_blank">Temperature Check: Create Accoutability Committee</a></th>
+      <td>24/02/23</td>
+      <td>03/03/23</td>
+      <td>Doo Wan Nam (StableLab)</td>
+      <td>Cam O'Donnell (Consensys)</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/uniswap/proposal/0xdc3e034f9b7c876736f1b629c7c9ff9c466205dfe075607d70e69b6af2fa87ef rel="noopener noreferrer" target="_blank">Uniswap V3 Launch on zkEVM</a></th>
+      <td>29/03/23</td>
+      <td>03/04/23</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/uniswap/proposal/0xa47404722b9c8a6fb850cf5de79e8a95f073f06393290949644a627bfe85bced rel="noopener noreferrer" target="_blank">[Temperature Check] Deploy Uniswap v3 on Avalanche </a></th>
+      <td>04/03/23</td>
+      <td>09/03/23</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/uniswap/proposal/0xa3c7247632d3a08e4e73a63867908d0cd4402f48fa673945f93e3197dee5450a rel="noopener noreferrer" target="_blank">[Temperature Check] Should Uniswap v3 be deployed to BNB Chain? 🦄</a></th>
+      <td>17/01/23</td>
+      <td>22/01/23</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/uniswap/proposal/0x73021d63f985aba8e42c67165f80c0027a591980a5cc372cda9637bdf2173f95 rel="noopener noreferrer" target="_blank">[Temperature Check] Deploy Uniswap v3 on Moonbeam (2023)</a></th>
+      <td>25/04/23</td>
+      <td>30/04/23</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <th><a href=http://snapshot.org/#/uniswap/proposal/0x63f6c44e4245e5b90a0f30ebb6932506879f68b149a5f78fd2186125c9144535 rel="noopener noreferrer" target="_blank">[Temperature Check] Deploy Uniswap V3 on Gnosis Chain</a></th>
+      <td>24/03/23</td>
+      <td>29/03/23</td>
+      <td>Yes</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table></div></div>
+</div>
+<p><sup>Source for proposal list: <a class="reference external" href="https://dune.com/queries/2488751">https://dune.com/queries/2488751</a></sup></p>
+<section id="proportion-of-outcomes-changed">
+<h3>Proportion of Outcomes Changed<a class="headerlink" href="#proportion-of-outcomes-changed" title="Permalink to this headline">#</a></h3>
+<div class="cell tag_remove-input tag_full-width docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16.47% of Uniswap&#39;s proposal outcomes (of the 150 sampled) change after filtering out whale voting power.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="temperature-check-create-accountability-committee">
+<h2>Temperature Check: Create Accountability Committee<a class="headerlink" href="#temperature-check-create-accountability-committee" title="Permalink to this headline">#</a></h2>
+<p>This proposal aimed to elect an Accountability committee consisting of five individuals. Six candidates went up for election, the top 5 choices are selected for the committee.</p>
+<p>The outcome of this proposal changes after filtering out whales. When whales are filtered out, Rafael Solari (Tally) gets elected instead of Kydo (Stanford Blockchain):</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_d4bed">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_d4bed_level0_col0" class="col_heading level0 col0" >Score w/o Whales</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_d4bed_level0_row0" class="row_heading level0 row0" >Doo Wan Nam (StableLab)</th>
+      <td id="T_d4bed_row0_col0" class="data row0 col0" >7518534.2</td>
+    </tr>
+    <tr>
+      <th id="T_d4bed_level0_row1" class="row_heading level0 row1" >Cam O'Donnell (Consensys)</th>
+      <td id="T_d4bed_row1_col0" class="data row1 col0" >7511687.2</td>
+    </tr>
+    <tr>
+      <th id="T_d4bed_level0_row2" class="row_heading level0 row2" >Jun Sun (Penn Blockchain)</th>
+      <td id="T_d4bed_row2_col0" class="data row2 col0" >7509748.1</td>
+    </tr>
+    <tr>
+      <th id="T_d4bed_level0_row3" class="row_heading level0 row3" >Kendra Leong (She256)</th>
+      <td id="T_d4bed_row3_col0" class="data row3 col0" >7507190.6</td>
+    </tr>
+    <tr>
+      <th id="T_d4bed_level0_row4" class="row_heading level0 row4" >Rafael Solari (Tally)</th>
+      <td id="T_d4bed_row4_col0" class="data row4 col0" >7506319.6</td>
+    </tr>
+    <tr>
+      <th id="T_d4bed_level0_row5" class="row_heading level0 row5" >Kydo (Stanford Blockchain)</th>
+      <td id="T_d4bed_row5_col0" class="data row5 col0" >5273.4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_722e5">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_722e5_level0_col0" class="col_heading level0 col0" >Score w/ Whales</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_722e5_level0_row0" class="row_heading level0 row0" >Doo Wan Nam (StableLab)</th>
+      <td id="T_722e5_row0_col0" class="data row0 col0" >15753061.9</td>
+    </tr>
+    <tr>
+      <th id="T_722e5_level0_row1" class="row_heading level0 row1" >Jun Sun (Penn Blockchain)</th>
+      <td id="T_722e5_row1_col0" class="data row1 col0" >14251749.0</td>
+    </tr>
+    <tr>
+      <th id="T_722e5_level0_row2" class="row_heading level0 row2" >Kydo (Stanford Blockchain)</th>
+      <td id="T_722e5_row2_col0" class="data row2 col0" >13233161.1</td>
+    </tr>
+    <tr>
+      <th id="T_722e5_level0_row3" class="row_heading level0 row3" >Cam O'Donnell (Consensys)</th>
+      <td id="T_722e5_row3_col0" class="data row3 col0" >12527800.2</td>
+    </tr>
+    <tr>
+      <th id="T_722e5_level0_row4" class="row_heading level0 row4" >Kendra Leong (She256)</th>
+      <td id="T_722e5_row4_col0" class="data row4 col0" >9732773.7</td>
+    </tr>
+    <tr>
+      <th id="T_722e5_level0_row5" class="row_heading level0 row5" >Rafael Solari (Tally)</th>
+      <td id="T_722e5_row5_col0" class="data row5 col0" >8479977.4</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
