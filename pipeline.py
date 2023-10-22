@@ -32,8 +32,8 @@ def get_raw_reports(api_response: DaoData) -> RawReports:
 
 def extract_dao_data(
     number: int, name: str, use_tally: bool, blacklist: list[str]
-) -> DaoData | None:
-    raw_dao_data = None
+) -> DaoData:
+    raw_dao_data = []
     request = extract.Request(
         150, proposal_limit=150, use_tally=use_tally, blacklist=blacklist
     )
@@ -48,7 +48,7 @@ def extract_dao_data(
 
     if raw_dao_data == [{}] or not raw_dao_data:
         click.echo("ERROR: DAO(s) not found. Aborting...")
-        return
+        return DaoData("", [{}])
 
     return DaoData(export_file_name, raw_dao_data)
 

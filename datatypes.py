@@ -11,6 +11,9 @@ class DaoData:
     file_name: str
     raw_dao_data: list[dict]
 
+    def __bool__(self) -> bool:
+        return len(self.file_name) > 0 and len(self.raw_dao_data) > 0
+
 
 @dataclass
 class RawReports:

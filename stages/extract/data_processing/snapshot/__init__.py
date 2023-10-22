@@ -37,7 +37,7 @@ async def get_proposal_payload(proposal: dict, dao_metadata: dict) -> dict | Non
         "quadratic",
         "ranked-choice",
     ]:
-        return None
+        return {}
 
     payload[proposal_id]["proposal"] = proposal
 

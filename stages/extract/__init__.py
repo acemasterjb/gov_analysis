@@ -46,12 +46,12 @@ async def get_valid_proposal_payloads(
 
 async def get_single_dao_snapshot(
     raw_dao: dict, proposal_limit: int = None
-) -> dict[str, dict] | None:
+) -> dict[str, dict]:
     print(f"Getting raw snapshot data for {raw_dao['daoName']}")
     dao_metadata = await get_dao_metadata(raw_dao)
     _, dao_snapshot_id = dao_metadata.values()
     if not dao_snapshot_id:
-        return None
+        return {}
 
     raw_proposals: list[dict] = (
         await get_snapshot_proposals(dao_snapshot_id, proposal_limit)
@@ -68,13 +68,13 @@ async def get_single_dao_snapshot(
 
 
 async def sanitize_tally_proposals(
-    raw_proposals: list[dict], governance_metadata: dict[str, str] | None
-) -> dict[str, dict] | None:
+    raw_proposals: list[dict], governance_metadata: dict[str, str]
+) -> dict[str, dict]:
     if not governance_metadata:
-        return None
+        return {}
     dao_tally_id, _, _ = governance_metadata.values()
     if not dao_tally_id:
-        return None
+        return {}
 
     dao_proposals: dict[str, dict] = dict()
 
@@ -93,7 +93,7 @@ async def get_tally_organizations(raw_daos: list[dict]) -> list[dict[str, str]]:
     return (await get_organizations(organization_names))["organizations"]
 
 
-async def get_all_daos_tally(raw_daos: list[dict]) -> list[dict[str, dict]] | None:
+async def get_all_daos_tally(raw_daos: list[dict]) -> list[dict[str, dict]]:
     organizations = await get_tally_organizations(raw_daos)
     token_addresses = []
     for raw_dao in raw_daos:
@@ -148,7 +148,7 @@ async def get_all_daos_tally(raw_daos: list[dict]) -> list[dict[str, dict]] | No
 
 async def select_dimension(
     raw_dao: dict | list[dict], proposal_limit: int = None, from_onchain: bool = False
-) -> list[dict] | dict[str, dict] | None:
+) -> list[dict] | dict[str, dict]:
     if from_onchain:
         assert type(raw_dao) == list, "`raw_dao` needs to be a list for tally"
         return await get_all_daos_tally(raw_dao)
@@ -168,7 +168,7 @@ async def dao_snapshot_data(request: Request) -> list[dict]:
         daos = await select_dimension(
             whitelisted_raw_daos[: request.max_number_of_daos],
             request.proposal_limit,
-            request.use_tally,
+            True,
         )
     else:
         for raw_dao in whitelisted_raw_daos:
