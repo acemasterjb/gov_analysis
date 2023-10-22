@@ -3,7 +3,7 @@ from typing import Any
 
 def find_dao(
     user_dao_name: str, dao_metadata_list: list[dict[str, dict]]
-) -> dict | None:
+) -> dict:
     for dao_metadata in dao_metadata_list:
         api_dao_name = dao_metadata["daoName"]
         positive_cases: list[str] = [
@@ -14,7 +14,7 @@ def find_dao(
 
         if user_dao_name in positive_cases:
             return dao_metadata
-    return None
+    return {}
 
 
 def get_valid_organizations(
