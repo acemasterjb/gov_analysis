@@ -45,7 +45,7 @@ async def get_valid_proposal_payloads(
 
 
 async def get_single_dao_snapshot(
-    raw_dao: dict, proposal_limit: int = None
+    raw_dao: dict, proposal_limit: int = 0
 ) -> dict[str, dict]:
     print(f"Getting raw snapshot data for {raw_dao['daoName']}")
     dao_metadata = await get_dao_metadata(raw_dao)
@@ -149,10 +149,9 @@ async def get_all_daos_tally(raw_daos: list[dict]) -> list[dict[str, dict]]:
 
 
 async def select_dimension(
-    raw_dao: dict | list[dict], proposal_limit: int = None, from_onchain: bool = False
+    raw_dao: dict | list[dict], proposal_limit: int = 0, from_onchain: bool = False
 ) -> list[dict] | dict[str, dict]:
     if from_onchain:
-        assert type(raw_dao) == list, "`raw_dao` needs to be a list for tally"
         return await get_all_daos_tally(raw_dao)
     else:
         return await get_single_dao_snapshot(raw_dao, proposal_limit)

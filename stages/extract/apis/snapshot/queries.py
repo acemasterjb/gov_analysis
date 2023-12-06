@@ -24,7 +24,7 @@ def proposals(
     where_clause = "".join(["{", where_clause, "}"])
 
     query_params = query_params.format(
-        limit=limit if limit else 1000,
+        limit=limit if limit > 0 else 1000,
         order_direction=order_direction,
         skip=skip,
         where_clause=where_clause,
