@@ -20,7 +20,7 @@ def sanitize_vote(vote: dict, dao_id: str) -> dict:
     return vote
 
 
-async def get_proposal_payload(proposal: dict, dao_metadata: dict) -> dict | None:
+async def get_proposal_payload(proposal: dict, dao_metadata: dict) -> dict:
     print(f"\tprocessing proposal {proposal['id']}")
     dao_id, _ = dao_metadata.values()
 

@@ -5,6 +5,8 @@ __pycache__
 ## jupyter-book
 _build
 .ipynb_checkpoints
+## pytest
+.pytest_cache
 
 ## Excel
 *.xls

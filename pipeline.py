@@ -34,6 +34,7 @@ def extract_dao_data(
     number: int, name: str, use_tally: bool, blacklist: list[str]
 ) -> DaoData:
     raw_dao_data = []
+    export_file_name = ""
     request = extract.Request(
         150, proposal_limit=150, use_tally=use_tally, blacklist=blacklist
     )
