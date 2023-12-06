@@ -1,4 +1,5 @@
 from asyncio import sleep
+from asyncio.exceptions import TimeoutError
 
 from gql import Client
 from gql.transport.aiohttp import AIOHTTPTransport
@@ -17,7 +18,7 @@ async def try_result(client: Client, query: DocumentNode) -> dict[str, list[dict
 
     try:
         result = await session.execute(query)
-    except TransportServerError:
+    except (TransportServerError, TimeoutError):
         await client.close_async()
         await sleep(21)
         return await try_result(client, query)
@@ -28,7 +29,7 @@ async def try_result(client: Client, query: DocumentNode) -> dict[str, list[dict
 
 
 async def get_proposals(
-    organization_id: str, upper_limit: int = None, skip: int = 0
+    organization_id: str, upper_limit: int = 0, skip: int = 0
 ) -> dict[str, list[dict]]:
     query = proposals(organization_id, upper_limit, skip=skip)
     result = await try_result(client, query)
