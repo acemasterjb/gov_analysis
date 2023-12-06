@@ -1,6 +1,6 @@
 from typing import Any, Callable
 
-from eth_utils import to_checksum_address
+from eth_utils.address import to_checksum_address
 
 from .apis.deepdao.adapters import (
     get_snapshot_id,
@@ -25,7 +25,7 @@ from .data_processing.snapshot import get_proposal_payload as get_snapshot_paylo
 
 
 async def get_dao_metadata(raw_dao: dict) -> dict[str, Any]:
-    raw_dao_id = raw_dao.get("organizationId")
+    raw_dao_id: str = raw_dao.get("organizationId")
     raw_dao_data = get_raw_dao_data(raw_dao_id)
     dao_snapshot_id = get_snapshot_id(raw_dao_data)
 
@@ -88,7 +88,10 @@ async def sanitize_tally_proposals(
 
 async def get_tally_organizations(raw_daos: list[dict]) -> list[dict[str, str]]:
     organization_names = []
-    [organization_names.extend(raw_dao["daoName"].split(" ") + [raw_dao["daoName"]]) for raw_dao in raw_daos]
+    [
+        organization_names.extend(raw_dao["daoName"].split(" ") + [raw_dao["daoName"]])
+        for raw_dao in raw_daos
+    ]
 
     return (await get_organizations(organization_names))["organizations"]
 
@@ -106,7 +109,6 @@ async def get_all_daos_tally(raw_daos: list[dict]) -> list[dict[str, dict]]:
                     token_addresses.append(to_checksum_address(maybe_token_address))
                 except ValueError:
                     print(f"[warning] Converting {maybe_token_address} to checksum")
-                    continue
 
     organizations = get_valid_organizations(token_addresses, organizations)
 
@@ -172,7 +174,7 @@ async def dao_snapshot_data(request: Request) -> list[dict]:
         )
     else:
         for raw_dao in whitelisted_raw_daos:
-            maybe_dao_data = await select_dimension(
+            maybe_dao_data: dict[str, dict] = await select_dimension(
                 raw_dao, request.proposal_limit, request.use_tally
             )
             if maybe_dao_data:
@@ -186,7 +188,7 @@ async def dao_snapshot_data(request: Request) -> list[dict]:
 
 async def dao_snapshot_data_for(request: Request) -> dict[str, dict]:
     raw_daos = get_raw_dao_list(request.limit)
-    raw_dao = find_dao(request.dao_name, raw_daos)
+    raw_dao: dict = find_dao(request.dao_name, raw_daos)
 
     if not raw_dao:
         return {}

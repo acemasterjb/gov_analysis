@@ -15,5 +15,5 @@ help = {
     "blacklist": """
     \b
     Exclude the listed DAOs. e.g. '["Fei", "OlympusDAO"]'
-    """
+    """,
 }
