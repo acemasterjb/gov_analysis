@@ -55,9 +55,7 @@ async def get_dao_metadata(governance_metadata: dict) -> dict[str, str]:
     }
 
 
-async def get_proposal_payload(
-    proposal: dict, governance_metadata: dict
-) -> dict:
+async def get_proposal_payload(proposal: dict, governance_metadata: dict) -> dict:
     print(f"\tprocessing proposal {proposal['id']}")
     dao_tally_id, dao_name = (await get_dao_metadata(governance_metadata)).values()
 
