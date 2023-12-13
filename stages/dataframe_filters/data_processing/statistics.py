@@ -125,7 +125,7 @@ def get_score_comparisons(
             score_differences = get_score_differences(
                 proposal_scores, proposal_scores_filtered
             )
-            total_voting_power = int(first_row["proposal_scores_total"])
+            total_voting_power = float(first_row["proposal_scores_total"])
             if first_row["proposal_type"] == "approval":
                 whale_voting_power = score_differences[0]
             else:

@@ -34,3 +34,14 @@ def all_proposals(
             proposal_dfs.append(create_dataframe_from(proposal["votes"]))
 
     return proposal_dfs
+
+
+def proposals_from(
+    dao_name: str, dao_snapshot_data: dict[str, dict]
+) -> list[pd.DataFrame]:
+    print(f"Generating DFs for {dao_name} snapshot data")
+    proposal_dfs = []
+    for proposal in dao_snapshot_data.values():
+        proposal_dfs.append(create_dataframe_from(proposal["votes"]))
+
+    return proposal_dfs

@@ -50,3 +50,17 @@ def filter_top_shareholders(
         )
         filtered_dfs.append(filter_top_shareholders_from_df(proposal_df_copy))
     return filtered_dfs
+
+
+def filter_top_shareholders_for(
+    proposal_dfs: list[pd.DataFrame],
+) -> list[pd.DataFrame]:
+    print("Filtereing out top 10 holders for each dao")
+    filtered_dfs = []
+    for proposal_df in proposal_dfs:
+        proposal_df_copy = proposal_df.copy()
+        proposal_df_copy["proposal_scores"] = deepcopy(
+            proposal_df["proposal_scores"].values
+        )
+        filtered_dfs.append(filter_top_shareholders_from_df(proposal_df_copy))
+    return filtered_dfs

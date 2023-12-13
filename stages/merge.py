@@ -24,4 +24,7 @@ def into_organization_dataframes(
 def into_single_dataframe(
     filtered_propsal_dataframes: list[pd.DataFrame],
 ) -> pd.DataFrame:
-    return pd.concat(into_organization_dataframes(filtered_propsal_dataframes))
+    try:
+        return pd.concat(into_organization_dataframes(filtered_propsal_dataframes))
+    except ValueError:  # ToDo: investigate "no objects to concatenate"
+        return pd.DataFrame()

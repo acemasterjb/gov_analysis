@@ -52,7 +52,7 @@ async def get_votes(
 
         for proposal_id, proposal in next_page.copy().items():
             if proposal["votes"]:
-                votes_in_next_page = maybe_next_page[proposal_id]["votes"].copy()
+                votes_in_next_page = maybe_next_page[proposal_id]["votes"]
 
                 votes_in_next_page.extend(proposal["votes"])
                 result[proposal_id]["votes"].extend(votes_in_next_page)

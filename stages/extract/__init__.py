@@ -63,7 +63,7 @@ async def get_single_dao_snapshot(
         get_snapshot_payload, raw_proposals, dao_metadata
     ):
         if maybe_payload:
-            dao_proposals.update(maybe_payload.copy())
+            dao_proposals.update(maybe_payload)
     return dao_proposals
 
 
