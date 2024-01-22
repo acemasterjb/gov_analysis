@@ -48,7 +48,5 @@ async def get_votes(proposal_id: str, skip: int = 0) -> dict[str, list[dict]]:
     if skip < 4999:
         if skip == 4000:
             skip -= 1
-        result["votes"].extend(
-            (await get_votes(proposal_id, skip + 1000))["votes"]
-        )
+        result["votes"].extend((await get_votes(proposal_id, skip + 1000))["votes"])
     return result

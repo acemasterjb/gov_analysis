@@ -11,7 +11,7 @@ class DaoData:
     file_name: str
     raw_dao_data: dict
 
-    def __bool__(self) -> bool:
+    def __bool__(self):
         return len(self.file_name) > 0 and len(self.raw_dao_data) > 0
 
 
