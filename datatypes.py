@@ -9,9 +9,9 @@ from pandas import DataFrame
 @dataclass
 class DaoData:
     file_name: str
-    raw_dao_data: list[dict]
+    raw_dao_data: dict
 
-    def __bool__(self) -> bool:
+    def __bool__(self):
         return len(self.file_name) > 0 and len(self.raw_dao_data) > 0
 
 
@@ -22,7 +22,19 @@ class RawReports:
 
 
 @dataclass
+class RawReport:
+    filtered: DataFrame
+    unfiltered: DataFrame
+
+
+@dataclass
 class Reports(RawReports):
+    filtered: DataFrame
+    unfiltered: DataFrame
+
+
+@dataclass
+class Report(RawReport):
     filtered: DataFrame
     unfiltered: DataFrame
 
@@ -45,8 +57,8 @@ class Blacklist(ParamType):
                 [type(dao) is str for dao in maybe_blacklist]
             ), "DAO names must be strings"
             return maybe_blacklist
-        except:
-            self.fail(value, param, ctx)
+        except Exception as e:
+            self.fail(e.__str__, param, ctx)
 
     def __repr__(self) -> str:
         return "jsonList"

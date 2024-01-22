@@ -2,7 +2,7 @@ from asyncio import run as asyncio_run
 
 import click
 
-from datatypes import Blacklist, DaoData, RawReports, Reports
+from datatypes import Blacklist, DaoData, RawReports, Reports, RawReport, Report
 from docs import help
 from stages import (
     dataframes,
@@ -22,7 +22,8 @@ def get_reports(raw_reports: RawReports) -> Reports:
 
 def get_raw_reports(api_response: DaoData) -> RawReports:
     proposal_dataframes = dataframes.all_proposals(api_response.raw_dao_data)
-    raw_reports = RawReports(
+
+    raw_reports = RawReport(
         dataframe_filters.filter_top_shareholders(proposal_dataframes),
         proposal_dataframes,
     )
@@ -30,28 +31,64 @@ def get_raw_reports(api_response: DaoData) -> RawReports:
     return raw_reports
 
 
-def extract_dao_data(
-    number: int, name: str, use_tally: bool, blacklist: list[str]
-) -> DaoData:
-    raw_dao_data = []
-    export_file_name = ""
-    request = extract.Request(
-        150, proposal_limit=150, use_tally=use_tally, blacklist=blacklist
+def get_raw_report(api_response: DaoData) -> RawReport:
+    proposal_dataframes = dataframes.proposals_from(
+        api_response.file_name, api_response.raw_dao_data
     )
-    if name == "all":
-        request.max_number_of_daos = number
-        raw_dao_data = asyncio_run(extract.dao_snapshot_data(request))
-        export_file_name = "plutocracy_tally" if use_tally else "plutocracy"
-    else:
-        request.dao_name = name
-        raw_dao_data = [asyncio_run(extract.dao_snapshot_data_for(request))]
-        export_file_name = name + "_tally" if use_tally else name
 
-    if raw_dao_data == [{}] or not raw_dao_data:
-        click.echo("ERROR: DAO(s) not found. Aborting...")
-        return DaoData("", [{}])
+    raw_report = RawReport(
+        dataframe_filters.filter_top_shareholders_for(proposal_dataframes),
+        proposal_dataframes,
+    )
 
-    return DaoData(export_file_name, raw_dao_data)
+    return raw_report
+
+
+def get_report(raw_report: RawReport) -> Report:
+    return Report(
+        merge.into_single_dataframe(raw_report.filtered),
+        merge.into_single_dataframe(raw_report.unfiltered),
+    )
+
+
+async def extract_dao_data(request: extract.Request) -> DaoData:
+    default = DaoData("", [{}])
+
+    raw_daos: list[dict] = extract.get_raw_dao_list(request.limit)
+
+    for index, raw_dao in enumerate(raw_daos):
+        single_raw_dao_data = DaoData(
+            raw_dao["daoName"],
+            await extract.get_single_dao_snapshot(raw_dao, request.proposal_limit),
+        )
+        yield default if single_raw_dao_data == [
+            {}
+        ] or not single_raw_dao_data else single_raw_dao_data
+
+        if (index + 1) == request.max_number_of_daos:
+            break
+
+
+async def run(request: extract.Request):
+    async for api_response in extract_dao_data(request):
+        if not api_response:
+            continue
+
+        raw_report = get_raw_report(api_response)
+        report = get_report(raw_report)
+
+        export.organization_dataframes_to_csv(
+            report.unfiltered,
+            # ToDo: make report name dynamic
+            "./plutocracy_data/full_report/plutocracy_report.csv",
+            True,
+        )
+        export.organization_dataframes_to_csv(
+            report.filtered,
+            # ToDo: make report name dynamic
+            "./plutocracy_data/full_report/plutocracy_report_filtered.csv",
+            True,
+        )
 
 
 @click.command()
@@ -77,21 +114,20 @@ def extract_dao_data(
     type=Blacklist(),
     help=help["blacklist"],
 )
-def run(number: int, name: str, use_tally: bool, blacklist: list[str]):
+def entrypoint(number: int, name: str, use_tally: bool, blacklist: list[str]):
     if not blacklist:
         blacklist = []
-    api_response = extract_dao_data(number, name, use_tally, blacklist)
-    if not api_response:
-        return
 
-    raw_reports = get_raw_reports(api_response)
-    reports = get_reports(raw_reports)
+    raw_daos: list[dict] = extract.get_raw_dao_list(number)
+    whitelisted_raw_daos = [
+        raw_dao for raw_dao in raw_daos if raw_dao["daoName"] not in blacklist
+    ]
 
-    export.organization_dataframes_to_csv(
-        reports.unfiltered,
-        f"./plutocracy_data/full_report/{api_response.file_name}_report.csv",
+    request = extract.Request(
+        150,
+        proposal_limit=150,
+        whitelisted_raw_daos=whitelisted_raw_daos,
+        max_number_of_daos=number,
     )
-    export.organization_dataframes_to_csv(
-        reports.filtered,
-        f"./plutocracy_data/full_report/{api_response.file_name}_report_filtered.csv",
-    )
+
+    asyncio_run(run(request))

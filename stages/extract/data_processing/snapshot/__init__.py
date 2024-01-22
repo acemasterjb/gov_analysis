@@ -44,5 +44,5 @@ async def get_proposal_payload(proposal: dict, dao_metadata: dict) -> dict:
     for vote_index, vote in enumerate(votes.copy()):
         votes[vote_index] = sanitize_vote(vote, dao_id)
 
-    payload[proposal_id].update({"votes": votes.copy()})
+    payload[proposal_id].update({"votes": votes})
     return payload

@@ -5,7 +5,5 @@ def get_snapshot_id(raw_dao_data: list[dict], index: int = 0) -> str:
             return None
         return get_snapshot_id(raw_dao_data, index + 1)
     return (
-        snapshot_object["website"].split("/")[-1]
-        if snapshot_object["website"]
-        else ""
+        snapshot_object["website"].split("/")[-1] if snapshot_object["website"] else ""
     )
